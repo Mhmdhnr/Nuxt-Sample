@@ -21,7 +21,6 @@
 <style scoped>
   .header {
     width: 100vw;
-    height: 8vh;
     margin: 0 0 2vh;
     background-color: var(--header-color);
     box-shadow: 0 0 5px 5px rgba(0,0,0,0.2);

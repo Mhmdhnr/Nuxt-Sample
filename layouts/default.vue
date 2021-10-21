@@ -1,7 +1,7 @@
 <template>
-  <div>
-    <Header />
-    <nuxt />
+  <div class="total-view">
+    <Header class="header"/>
+    <nuxt class="nuxt"/>
   </div>
 </template>
 <script>
@@ -15,10 +15,18 @@
     --primary-color: #123456;
     --text-color: #999;
     --header-color: white;
+    --header-height: 8vh;
   }
   body{
     margin: 0;
     direction: rtl;
+  }
+  .total-view {
+    display: flex;
+    flex-direction: column;
+  }
+  .header {
+    height: var(--header-height);
   }
   .container {
     position: relative;
@@ -53,6 +61,15 @@
     }
     to{
       width: 0;
+    }
+  }
+  @media screen and (max-width: 992px) {
+    .total-view {
+      flex-direction: column-reverse;
+      height: 100vh;
+    }
+    .nuxt {
+      height: calc(100vh - var(--header-height));
     }
   }
 </style>
