@@ -42,6 +42,7 @@
     margin: 0;
     direction: rtl;
     background-color: var(--bg-color);
+    text-align: justify-all;
   }
   .total-view {
     display: flex;
