@@ -12,24 +12,34 @@
 </script>
 <style>
   :root {
-    --primary-color: #123456;
-    --text-color: #999;
-    --header-color: white;
-    --bg-color: #558800;
+    --primary-color: #444;
+    --text-color: #444;
+    --contrast-color: rgba(0,0,0,0.5);
+    --header-color: rgba(255,255,255,0.6);
+    --bg-color: #fff;
+    --main-shadow: 0 0 5px 5px rgba(0,0,0,0.1);
+
+
     --header-height: 10vh;
-    --header-top-height-ratio: 0.4;
+    --header-top-height-ratio: 0.5;
     --header-main-height-ratio: calc(1 - var(--header-top-height-ratio));
     --base-padding-r-l: 2vw;
   }
   .dark-mode {
-    --primary-color: #123456;
-    --text-color: #fff;
-    --header-color: #123456;
-    --bg-color: #123456;
+    --primary-color: #eee;
+    --text-color: #ccc;
+    --contrast-color: rgba(255,255,255,0.2);
+    --header-color: rgba(100,100,100,0.5);
+    --bg-color: #00665c;
+    --main-shadow: 0 0 5px 5px rgba(255,255,255,0.05);
+  }
+  span {
+    color: var(--text-color);
   }
   body{
     margin: 0;
     direction: rtl;
+    background-color: var(--bg-color);
   }
   .total-view {
     display: flex;

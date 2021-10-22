@@ -33,12 +33,6 @@
     --light: #d8dbe0;
     --dark: #28292c;
   }
-  .toggle-switch {
-    position: relative;
-    width: 200px;
-    height: 100px;
-    margin: 5px;
-  }
 
   label {
     position: absolute;
@@ -48,6 +42,7 @@
     background-color: var(--dark);
     border-radius: 50px;
     cursor: pointer;
+    margin: 0;
   }
   input {
     position: absolute;
@@ -67,19 +62,19 @@
   .slider::before {
     content: "";
     position: absolute;
-    top: 13px;
-    left: 16px;
-    width: 75px;
-    height: 75px;
+    top: 13%;
+    left: 8%;
+    width: 40%;
+    height: 75%;
     border-radius: 50%;
     background-color: var(--light);
     box-shadow: none;
     transition: 0.3s;
   }
   input:checked ~ .slider::before {
-    transform: translateX(95px);
+    transform: translateX(120%);
     background-color: var(--light);
-    box-shadow: inset 28px -4px 0 0 var(--dark);
+    box-shadow: inset -9px 0 0 0 var(--dark);
   }
 
 </style>

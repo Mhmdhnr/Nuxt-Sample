@@ -1,6 +1,10 @@
 <template>
   <div class="main flex flex-row">
-    <div v-for="m in menu" class="item"> {{m.title}}</div>
+    <div v-for="m in menu" class="item">
+      <span>
+        {{m.title}}
+      </span>
+    </div>
   </div>
 </template>
 

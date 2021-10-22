@@ -19,7 +19,7 @@
     width: 100vw;
     margin: 0;
     background-color: var(--header-color);
-    box-shadow: 0 0 5px 5px rgba(0,0,0,0.2);
+    box-shadow: var(--main-shadow);
     z-index: 10;
   }
   .logo {
