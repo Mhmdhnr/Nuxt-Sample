@@ -7,7 +7,7 @@
 <script>
     import {menu} from '~/data/data.js';
     export default {
-        name: "MainMenu",
+        name: "MainHeader",
         data (){
             return{
                 menu : menu
@@ -17,7 +17,10 @@
 </script>
 
 <style scoped>
+  .main {
+    height: calc(var(--header-height) * var(--header-main-height-ratio));
+  }
   .item {
-    margin: auto 1vw;
+    margin: auto 0 auto 2vw;
   }
 </style>

@@ -15,7 +15,17 @@
     --primary-color: #123456;
     --text-color: #999;
     --header-color: white;
-    --header-height: 8vh;
+    --bg-color: #558800;
+    --header-height: 10vh;
+    --header-top-height-ratio: 0.4;
+    --header-main-height-ratio: calc(1 - var(--header-top-height-ratio));
+    --base-padding-r-l: 2vw;
+  }
+  .dark-mode {
+    --primary-color: #123456;
+    --text-color: #fff;
+    --header-color: #123456;
+    --bg-color: #123456;
   }
   body{
     margin: 0;
@@ -24,9 +34,20 @@
   .total-view {
     display: flex;
     flex-direction: column;
+    position: relative;
   }
   .header {
     height: var(--header-height);
+    padding: 0 var(--base-padding-r-l);
+    position: fixed;
+    top: 0;
+    left: 0;
+  }
+  .nuxt {
+    padding: 0 var(--base-padding-r-l);
+    position: absolute;
+    top: var(--header-height);
+    left: 0;
   }
   .container {
     position: relative;
