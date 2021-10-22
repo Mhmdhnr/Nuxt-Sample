@@ -14,7 +14,7 @@
   :root {
     --primary-color: #444;
     --text-color: #444;
-    --contrast-color: rgba(0,0,0,0.5);
+    --contrast-color: rgba(0,0,0,0.2);
     --header-color: rgba(255,255,255,0.6);
     --bg-color: #fff;
     --main-shadow: 0 0 5px 5px rgba(0,0,0,0.1);
@@ -30,13 +30,15 @@
     --text-color: #ccc;
     --contrast-color: rgba(255,255,255,0.2);
     --header-color: rgba(100,100,100,0.5);
-    --bg-color: #00665c;
+    --bg-color: #222;
     --main-shadow: 0 0 5px 5px rgba(255,255,255,0.05);
   }
   span {
     color: var(--text-color);
   }
   body{
+    font-family: Lalezar,sans-serif;
+    font-size: 1.2em;
     margin: 0;
     direction: rtl;
     background-color: var(--bg-color);
@@ -44,20 +46,19 @@
   .total-view {
     display: flex;
     flex-direction: column;
-    position: relative;
+    align-items: center;
+    height: 100vh;
   }
   .header {
     height: var(--header-height);
     padding: 0 var(--base-padding-r-l);
-    position: fixed;
-    top: 0;
-    left: 0;
+    /*position: fixed;*/
+    /*top: 0;*/
+    /*left: 0;*/
   }
   .nuxt {
-    padding: 0 var(--base-padding-r-l);
-    position: absolute;
-    top: var(--header-height);
-    left: 0;
+    width: 1080px;
+    /*padding: 0 var(--base-padding-r-l);*/
   }
   .container {
     position: relative;

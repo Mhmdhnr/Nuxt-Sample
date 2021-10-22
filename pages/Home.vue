@@ -1,18 +1,16 @@
 <template>
-  <div class="main">
+  <div>
+    <Slider />
   </div>
 </template>
 
 <script>
+    import Slider from "../components/Slider";
     export default {
         name: "Home",
-        components: {}
+        components: {Slider}
     }
 </script>
 
 <style scoped>
-  .main {
-    height: 150vh;
-    width: 100%;
-  }
 </style>

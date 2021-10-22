@@ -1,6 +1,6 @@
 export const menu = [
   {
-    title : "first item",
+    title : "نمونه کارها",
     subItems : [
       {
         title : "first sub item"
@@ -14,7 +14,7 @@ export const menu = [
     ]
   },
   {
-    title : "second item",
+    title : "درباره من",
     subItems : [
       {
         title : "first sub item"

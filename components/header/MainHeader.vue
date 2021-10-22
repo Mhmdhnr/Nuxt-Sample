@@ -25,6 +25,15 @@
     height: calc(var(--header-height) * var(--header-main-height-ratio));
   }
   .item {
-    margin: auto 0 auto 2vw;
+    padding: 1vh 1vw;
+    margin: auto 0;
+    cursor: pointer;
+    border-radius: 8px;
+  }
+  .item:hover {
+    background-color: var(--primary-color);
+  }
+  .item:hover > span {
+    color: var(--bg-color);
   }
 </style>
