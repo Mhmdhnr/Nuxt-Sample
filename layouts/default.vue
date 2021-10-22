@@ -58,6 +58,7 @@
   }
   .nuxt {
     width: 1080px;
+    overflow: hidden;
     /*padding: 0 var(--base-padding-r-l);*/
   }
   .container {
