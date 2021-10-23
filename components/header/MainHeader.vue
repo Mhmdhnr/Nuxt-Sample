@@ -9,7 +9,7 @@
 </template>
 
 <script>
-    import {menu} from '~/data/data.js';
+    import {menu} from '../../data/data.js';
     export default {
         name: "MainHeader",
         data (){

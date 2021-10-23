@@ -14,7 +14,7 @@
   :root {
     --primary-color: #444;
     --text-color: #444;
-    --contrast-color: rgba(0,0,0,0.2);
+    --contrast-color: rgb(200,200,200);
     --header-color: rgba(255,255,255,0.6);
     --bg-color: #fff;
     --main-shadow: 0 0 5px 5px rgba(0,0,0,0.1);
@@ -24,11 +24,12 @@
     --header-top-height-ratio: 0.5;
     --header-main-height-ratio: calc(1 - var(--header-top-height-ratio));
     --base-padding-r-l: 2vw;
+    --main-padding-r-l: 10vw;
   }
   .dark-mode {
     --primary-color: #eee;
     --text-color: #ccc;
-    --contrast-color: rgba(255,255,255,0.2);
+    --contrast-color: rgb(100,100,100);
     --header-color: rgba(100,100,100,0.5);
     --bg-color: #222;
     --main-shadow: 0 0 5px 5px rgba(255,255,255,0.05);
@@ -58,8 +59,9 @@
     /*left: 0;*/
   }
   .nuxt {
-    width: 1080px;
-    overflow: hidden;
+    /*width: 100vw;*/
+    /*width: 1080px;*/
+    /*overflow: hidden;*/
     /*padding: 0 var(--base-padding-r-l);*/
   }
   .container {
