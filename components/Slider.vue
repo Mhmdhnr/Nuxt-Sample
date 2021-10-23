@@ -131,13 +131,13 @@
   }
   .flip {
     transform: rotateY(180deg);
-    transition: all 300ms;
+    transition: all 400ms;
   }
   .detail {
-    -webkit-animation: detail 300ms forwards;
+    -webkit-animation: detail 400ms forwards;
   }
   .summary {
-    -webkit-animation: summary 300ms forwards;
+    -webkit-animation: summary 400ms forwards;
   }
   @-webkit-keyframes detail {
     from {
@@ -147,6 +147,7 @@
       transform: translateX(100%);
     }
   }
+
   @-webkit-keyframes summary {
     from {
       transform: translateX(100%);

@@ -1,29 +1,28 @@
 export const menu = [
   {
+    id: 1,
     title : "نمونه کارها",
     subItems : [
       {
-        title : "first sub item"
+        title : "اولین"
       },
       {
-        title : "second sub item"
+        title : "دومین"
       },
       {
-        title : "third sub item"
+        title : "سومین"
       }
     ]
   },
   {
+    id: 2,
     title : "درباره من",
     subItems : [
       {
-        title : "first sub item"
+        title : "اولین"
       },
       {
-        title : "second sub item"
-      },
-      {
-        title : "third sub item"
+        title : "دومین"
       }
     ]
   }
