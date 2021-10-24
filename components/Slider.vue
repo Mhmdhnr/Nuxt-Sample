@@ -15,23 +15,40 @@
             <span v-show="!this.$store.state.fa"> {{slider.detail.en}} </span>
           </div>
          </div>
-        <div class="more flex flex-row" @mouseover="detail()" @mouseout="summary()">
-          <div v-for="n in 3" class="arrow">
-            <span> ◄ </span>
+        <div id="more" class="more flex flex-row" @mouseover="detail()" @mouseout="summary()">
+          <div  class="more-text">
+            <span v-show="this.$store.state.fa"> بیشتر </span>
+            <span v-show="!this.$store.state.fa"> More </span>
           </div>
-          <span v-show="this.$store.state.fa" class="bishtar"> بیشتر </span>
-          <span v-show="!this.$store.state.fa" class="bishtar"> More </span>
+          <div v-for="n in 3" class="arrow">
+            <span v-show="fa"> ◄ </span>
+            <span v-show="!fa"> ► </span>
+          </div>
         </div>
       </div>
     </div>
 </template>
 
 <script>
+    import { mapState } from 'vuex';
     export default {
         name: "Slider",
         props: ['slider'],
         data() {
             return{
+            }
+        },
+        computed: mapState(['fa']),
+        watch: {
+            fa (newValue) {
+                let styleElem = document.head.appendChild(document.createElement("style"));
+                if (!newValue) {
+                    styleElem.innerHTML = "#more::before {background: linear-gradient(90deg, rgba(255,255,255,0.3) 0%, rgba(255,255,255,0)  100%);}";
+                }
+                else {
+                    styleElem.innerHTML = "#more::before {background: linear-gradient(270deg, rgba(255,255,255,0.3) 0%, rgba(255,255,255,0)  100%);}";
+                }
+                this.fa = newValue
             }
         },
         methods: {
@@ -41,8 +58,7 @@
                 for(let n = 1; n <=3; n++) {
                   document.getElementsByClassName("arrow")[n - 1].classList.add("flip");
                 }
-                // document.getElementsByClassName("bishtar")[0].innerText = "";
-                document.getElementsByClassName("bishtar")[0].classList.add("fade")
+                document.getElementsByClassName("more-text")[0].classList.add("fade")
             },
             summary(){
                 document.getElementsByClassName("moving-area")[0].classList.remove("detail");
@@ -50,8 +66,7 @@
                 for(let n = 1; n <=3; n++) {
                     document.getElementsByClassName("arrow")[n - 1].classList.remove("flip");
                 }
-                // document.getElementsByClassName("bishtar")[0].innerText = "بیشتر ";
-                document.getElementsByClassName("bishtar")[0].classList.remove("fade")
+                document.getElementsByClassName("more-text")[0].classList.remove("fade")
             }
         },
     }
@@ -100,13 +115,12 @@
     font-size: 1em;
   }
   .more {
-    align-content: flex-end;
+    justify-content: flex-end;
     position: relative;
     width: 100%;
     font-size: 1em;
     cursor: pointer;
     margin: 3vh auto 0;
-    direction: ltr;
     padding: 1vh 0;
   }
   .more::before{
@@ -120,8 +134,8 @@
     background: linear-gradient(270deg, rgba(255,255,255,0.3) 0%, rgba(255,255,255,0)  100%);
     z-index: 1;
   }
-  .more > span{
-    margin-left: 1vw;
+  .more-text{
+    margin: auto 1vw;
     transition: all 300ms;
   }
   .arrow {

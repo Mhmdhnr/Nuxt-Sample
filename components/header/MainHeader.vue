@@ -26,6 +26,18 @@
         computed: mapState(['fa']),
         watch: {
             fa (newValue) {
+                if (!newValue) {
+                    for (let item of this.menu) {
+                        document.getElementById(item.id).style.left = "0";
+                        document.getElementById(item.id).style.right = "unset";
+                    }
+                }
+                else {
+                    for (let item of this.menu) {
+                        document.getElementById(item.id).style.right = "0";
+                        document.getElementById(item.id).style.left = "unset";
+                    }
+                }
                 this.fa = newValue
             }
         },

@@ -16,12 +16,12 @@
             fa (newValue) {
                 console.log("here i am...");
                 if (!newValue) {
-                    // document.body.style.direction = "ltr"
-                    document.body.style.textAlign = "left"
+                    document.body.style.direction = "ltr";
+                    document.body.style.textAlign = "left";
                 }
                 else {
-                    // document.body.style.direction = "rtl"
-                    document.body.style.textAlign = "right"
+                    document.body.style.direction = "rtl";
+                    document.body.style.textAlign = "right";
                 }
             }
         },
