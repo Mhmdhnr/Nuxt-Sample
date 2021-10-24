@@ -1,6 +1,7 @@
 <template>
   <div class="total-view">
-    <Toggle :id="mobile-toggle" subject="theme" class="toggle" />
+    <Toggle id="mobile-theme-toggle" subject="theme" class="toggle" />
+    <Toggle id="mobile-language-toggle" subject="language" class="toggle" />
     <Header class="header"/>
     <nuxt class="nuxt"/>
   </div>
@@ -130,10 +131,16 @@
       display: block;
       position: absolute;
       top: 1vh;
-      left: 2vw;
       width: 40px;
       height: 20px;
       z-index: 1000;
+    }
+    #mobile-theme-toggle {
+      left: 2vw;
+    }
+    #mobile-language-toggle {
+      top: 1vh;
+      left: calc(4vw + 40px);
     }
     .nuxt {
       height: calc(100vh - var(--mobile-footer-height));
