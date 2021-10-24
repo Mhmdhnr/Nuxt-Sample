@@ -46,7 +46,7 @@
   .item {
     padding: 0 1vw;
     height: 100%;
-    margin: auto 0;
+    display: flex;
     cursor: pointer;
     border-radius: 4px 4px 0 0;
     position: relative;
@@ -54,6 +54,7 @@
   }
   .sub-items {
     display: none;
+    flex-direction: column;
     opacity: 0;
     text-align: right;
     width: 200px;
@@ -69,8 +70,9 @@
     z-index: 1;
   }
   .sub-item {
-    padding: 0 1vw;
-    margin: auto 0;
+    padding: 1vh 1vw;
+    display: flex;
+    text-align: right;
     cursor: pointer;
     border-bottom: 1px solid rgba(255,255,255,0.5);
     height: 100%;
@@ -84,6 +86,10 @@
   }
   .item:hover > span, .sub-item:hover > span {
     color: var(--bg-color);
+  }
+
+  .sub-item > span, .item > span {
+    margin: auto 0 auto;
   }
   .come-in {
     -webkit-animation: 200ms come-in forwards;
@@ -129,6 +135,7 @@
     .sub-items {
       opacity: 0;
       display: flex;
+      flex-direction: row;
       width: 100vw;
       height: var(--mobile-footer-height);
       top: calc(-1 * var(--mobile-footer-height));
@@ -136,12 +143,11 @@
       box-shadow: none;
     }
     .sub-item {
-      display: flex;
       margin: auto;
+      display: flex;
       flex: 1;
     }
     .sub-item > span, .item > span {
-      display: table;
       margin: auto;
     }
     /*.item:hover, .sub-item:hover {*/
