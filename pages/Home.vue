@@ -30,11 +30,9 @@
   }
   .slider {
     width: 100vw;
-    padding: 5vh var(--main-padding-r-l) 20vh;
-    margin: auto auto -16vh auto;
+    margin: 0 auto -16vh auto;
     background-color: var(--contrast-color);
   }
   .waves {
-    /*transform: rotate(180deg);*/
   }
 </style>

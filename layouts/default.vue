@@ -1,13 +1,15 @@
 <template>
   <div class="total-view">
+    <Toggle class="toggle" />
     <Header class="header"/>
     <nuxt class="nuxt"/>
   </div>
 </template>
 <script>
     import Header from "~/components/header/Header";
+    import Toggle from "../components/Toggle";
     export default {
-        components: {Header}
+        components: {Toggle, Header}
     }
 </script>
 <style>
@@ -21,6 +23,7 @@
 
 
     --header-height: 10vh;
+    --mobile-footer-height: 6vh;
     --header-top-height-ratio: 0.5;
     --header-main-height-ratio: calc(1 - var(--header-top-height-ratio));
     --base-padding-r-l: 2vw;
@@ -50,6 +53,9 @@
     flex-direction: column;
     align-items: center;
     height: 100vh;
+  }
+  .toggle {
+    display: none;
   }
   .header {
     height: var(--header-height);
@@ -99,13 +105,26 @@
       width: 0;
     }
   }
-  @media screen and (max-width: 992px) {
+  @media screen and (max-width: 864px) {
     .total-view {
       flex-direction: column-reverse;
       height: 100vh;
+      overflow: hidden;
+    }
+    .toggle{
+      display: block;
+      position: absolute;
+      top: 1vh;
+      left: 2vw;
+      width: 40px;
+      height: 20px;
+      z-index: 1000;
     }
     .nuxt {
-      height: calc(100vh - var(--header-height));
+      height: calc(100vh - var(--mobile-footer-height));
+    }
+    .header {
+      height: var(--mobile-footer-height);
     }
   }
 </style>

@@ -102,4 +102,10 @@
       transform: translateX(85px);
     }
   }
+  @media screen and (max-width: 864px) {
+    .waves {
+      height: 10vh;
+      margin-bottom: -18vh;
+    }
+  }
 </style>

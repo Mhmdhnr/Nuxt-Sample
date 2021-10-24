@@ -17,7 +17,6 @@
 
 <style scoped>
   .main {
-    height: calc(var(--header-height) * var(--header-top-height-ratio));
     width: 100%;
     border-bottom: 1px solid var(--contrast-color);
   }

@@ -1,5 +1,5 @@
 <template xmlns:width="http://www.w3.org/1999/xhtml">
-    <div class="all flex flex-row">
+    <div class="all flex">
       <div class="gradient">
 <!--        <img class="image" :src="slider.imageUrl">-->
         <img class="image" src="~/assets/me.svg">
@@ -53,9 +53,9 @@
 <style scoped>
   .all {
     width: 100%;
-    padding: 3vh 0;
     justify-content: space-around;
-    margin: auto;
+    flex-direction: row;
+    padding: 5vh var(--main-padding-r-l) 20vh;
   }
   .image {
     width: 100%;
@@ -77,7 +77,7 @@
   }
   .content {
     width: 40%;
-    height: 100%;
+    height: 35vh;
     overflow: hidden;
     justify-content: space-between;
   }
@@ -161,6 +161,27 @@
     right: 100%;
     top: 0;
     width: 100%;
+  }
+  @media screen and (max-width: 864px) {
+    .all {
+      flex-direction: column;
+    }
+    .gradient {
+      width: 80%
+    }
+    .short-content {
+      font-size: 1em;
+    }
+    .long-content {
+      font-size: 0.75em;
+    }
+    .content {
+      width: 90%;
+      height: 25vh;
+    }
+    .all {
+      padding-bottom: 15vh;
+    }
   }
 
 </style>
