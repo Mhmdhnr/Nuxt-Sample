@@ -10,6 +10,7 @@
 <script>
     export default {
         name: "Toggle",
+        props: ['subject'],
         data() {
             return {
                 checked: false
@@ -17,11 +18,21 @@
         },
         watch: {
             checked (newChecked) {
-                if (newChecked){
-                    this.$colorMode.preference = "dark"
+                if (this.subject === "theme") {
+                  if (newChecked){
+                      this.$colorMode.preference = "dark"
+                  }
+                  else {
+                      this.$colorMode.preference = "light"
+                  }
                 }
-                else {
-                    this.$colorMode.preference = "light"
+                else if (this.subject === "language") {
+                  if (newChecked){
+                      this.$store.commit('fa', false)
+                  }
+                  else {
+                      this.$store.commit('fa', true)
+                  }
                 }
             }
         }

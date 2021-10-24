@@ -1,14 +1,12 @@
 <template>
   <div class="main flex flex-row">
     <div v-for="i in menu" @mouseover="showSubItems(i.id)" @mouseout="hideSubItems(i.id)" class="item">
-      <span>
-        {{i.title}}
-      </span>
+      <span  v-show="fa"> {{i.title.fa}} </span>
+      <span  v-show="!fa"> {{i.title.en}} </span>
       <div v-bind:id="i.id" class="sub-items">
         <div v-for="s in i.subItems" class="sub-item">
-         <span>
-            {{s.title}}
-          </span>
+         <span  v-show="fa"> {{s.title.fa}} </span>
+         <span  v-show="!fa"> {{s.title.en}} </span>
         </div>
       </div>
     </div>
@@ -17,11 +15,18 @@
 
 <script>
     import {menu} from '../../data/data.js';
+    import { mapState } from 'vuex';
     export default {
         name: "MainHeader",
         data (){
             return{
-                menu : menu
+                menu : menu,
+            }
+        },
+        computed: mapState(['fa']),
+        watch: {
+            fa (newValue) {
+                this.fa = newValue
             }
         },
         methods: {
@@ -56,7 +61,6 @@
     display: none;
     flex-direction: column;
     opacity: 0;
-    text-align: right;
     width: 200px;
     position: absolute;
     top: calc(var(--header-height) *(1 - var(--header-top-height-ratio)));
@@ -72,7 +76,6 @@
   .sub-item {
     padding: 1vh 1vw;
     display: flex;
-    text-align: right;
     cursor: pointer;
     border-bottom: 1px solid rgba(255,255,255,0.5);
     height: 100%;

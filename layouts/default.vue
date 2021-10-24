@@ -1,6 +1,6 @@
 <template>
   <div class="total-view">
-    <Toggle class="toggle" />
+    <Toggle :id="mobile-toggle" subject="theme" class="toggle" />
     <Header class="header"/>
     <nuxt class="nuxt"/>
   </div>
@@ -8,8 +8,23 @@
 <script>
     import Header from "~/components/header/Header";
     import Toggle from "../components/Toggle";
+    import { mapState } from 'vuex';
     export default {
-        components: {Toggle, Header}
+        components: {Toggle, Header},
+        computed: mapState(['fa']),
+        watch: {
+            fa (newValue) {
+                console.log("here i am...");
+                if (!newValue) {
+                    // document.body.style.direction = "ltr"
+                    document.body.style.textAlign = "left"
+                }
+                else {
+                    // document.body.style.direction = "rtl"
+                    document.body.style.textAlign = "right"
+                }
+            }
+        },
     }
 </script>
 <style>
@@ -44,9 +59,9 @@
     font-family: Lalezar,sans-serif;
     font-size: 1.2em;
     margin: 0;
+    text-align: right;
     direction: rtl;
     background-color: var(--bg-color);
-    text-align: justify-all;
   }
   .total-view {
     display: flex;

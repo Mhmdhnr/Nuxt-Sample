@@ -7,17 +7,20 @@
       <div class="content flex flex-column">
         <div class="moving-area">
           <div class="short-content">
-            <span> {{slider.summary}}</span>
+            <span v-show="this.$store.state.fa"> {{slider.summary.fa}}</span>
+            <span v-show="!this.$store.state.fa"> {{slider.summary.en}}</span>
           </div>
           <div class="long-content">
-            <span>{{slider.detail}} </span>
+            <span v-show="this.$store.state.fa"> {{slider.detail.fa}} </span>
+            <span v-show="!this.$store.state.fa"> {{slider.detail.en}} </span>
           </div>
          </div>
         <div class="more flex flex-row" @mouseover="detail()" @mouseout="summary()">
           <div v-for="n in 3" class="arrow">
             <span> ◄ </span>
           </div>
-          <span class="bishtar"> بیشتر </span>
+          <span v-show="this.$store.state.fa" class="bishtar"> بیشتر </span>
+          <span v-show="!this.$store.state.fa" class="bishtar"> More </span>
         </div>
       </div>
     </div>
@@ -27,6 +30,10 @@
     export default {
         name: "Slider",
         props: ['slider'],
+        data() {
+            return{
+            }
+        },
         methods: {
             detail(){
                 document.getElementsByClassName("moving-area")[0].classList.remove("summary");
@@ -82,7 +89,6 @@
     justify-content: space-between;
   }
   .moving-area {
-    text-align: right;
     position: relative;
     width: 100%;
     margin-top: 3vh;
