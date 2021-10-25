@@ -133,4 +133,21 @@
     color: var(--toggle-light);
   }
 
+  @media screen and (max-width: 864px) {
+    .fa {
+      top: 12%;
+      left: 11%;
+      font-size: 0.6em;
+      color: var(--toggle-dark);
+    }
+    .en {
+      top: 12%;
+      right: 11%;
+      font-size: 0.6em;
+      color: var(--toggle-light);
+    }
+    .sun, .moon {
+      top: 10%;
+    }
+  }
 </style>

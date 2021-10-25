@@ -13,6 +13,11 @@
     export default {
         components: {Toggle, Header},
         computed: mapState(['fa']),
+        data(){
+            return{
+
+            }
+        },
         watch: {
             fa (newValue) {
                 console.log("here i am...");
