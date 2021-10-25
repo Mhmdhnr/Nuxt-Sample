@@ -55,8 +55,8 @@ export const slider = [
       en: "Hi, I'm mohammad honari and this website is designed as a work sample"
     },
     detail: {
-      fa: "سلام، من محمد هنری هستم و این وبسایت به عنوان نمونه کار تهیه شده است!!! سلام، من محمد هنری هستم و این وبسایت به عنوان نمونه کار تهیه شده است!!! سلام، من محمد هنری هستم و این وبسایت به عنوان نمونه کار تهیه شده است!!!",
-      en: "Hi, I'm mohammad honari and this website is designed as a work sample!!! Hi, I'm mohammad honari and this website is designed as a work sampleHi, I'm mohammad honari and this website is designed as a work sample"
+      fa: "سلام دوباره..\ این وبسایت روی فریم ورک Nuxt اجرا شده. در برخی قسمت ها دیتا از API ساده نوشته شده با python گرفته میشه.سورس کد بک اند و فرانت اند روی git-hub هست و اگر مایل باشید میتونید یه نگاهی بهش بندازید. جستوجو روی وبسایت رو شروع کنید شاید چیزی پیدا کردید که براتون جالب بود... شاید همین موجهای متحرک که همین پایینه!!!",
+      en: "Hi again... this website is implemented on Nuxt framework. In some parts data is fetching from a simple API coded whit python. back-end and front-end source code is available on git-hub and you can have a look at it if you wish. begin your explore. there may be something that you find it interesting... Even this Animated Waves just below!!!"
     },
     imageUrl: "_nuxt/assets/me.svg"
   }

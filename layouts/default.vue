@@ -36,6 +36,8 @@
     --header-color: rgba(255,255,255,0.6);
     --bg-color: #fff;
     --main-shadow: 0 0 5px 5px rgba(0,0,0,0.1);
+    --toggle-light: #d8dbe0;
+    --toggle-dark: #28292c;
 
 
     --header-height: 10vh;
@@ -52,6 +54,8 @@
     --header-color: rgba(100,100,100,0.5);
     --bg-color: #222;
     --main-shadow: 0 0 5px 5px rgba(255,255,255,0.05);
+    --toggle-light: #28292c;
+    --toggle-dark: #d8dbe0;
   }
   span {
     color: var(--text-color);
