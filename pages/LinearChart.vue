@@ -1,27 +1,25 @@
 <template>
   <div class="main flex flex-column">
-    <Slider class="slider" v-bind:slider="slider[0]"/>
+    <Slider class="slider" v-bind:slider="slider[1]" />
     <AnimatedWaves class="animated-waves"/>
-    <Links />
+    <LinearChart class="sample" chartId="sample"/>
   </div>
 </template>
 
 <script>
     import {slider} from '../data/data.js';
-    import Slider from "../components/Slider";
+    import LinearChart from "../components/works/LinearChart";
     import AnimatedWaves from "../components/AnimatedWaves";
-    import Links from "../components/Links";
     export default {
-        name: "Home",
-        components: {Links, AnimatedWaves, Slider},
-        data () {
+        name: "SomeOfMyWorks",
+        components: {AnimatedWaves, LinearChart},
+        data(){
             return {
-                slider: slider,
+              slider: slider,
+              chartId: "sample",
             }
         },
-        mounted() {
-            console.log("from Home")
-        }
+
     }
 </script>
 
@@ -33,11 +31,14 @@
   }
   .slider {
     width: 100vw;
-    margin: 0 auto -10vh auto;
+    margin: 0 auto -10vh;
     background-color: var(--contrast-color);
   }
   .animated-waves {
     margin-top: 2vh;
+    width: 100vw;
+  }
+  .sample {
     width: 100vw;
   }
 </style>

@@ -77,7 +77,7 @@
     width: 100%;
     justify-content: space-around;
     flex-direction: row;
-    padding: 5vh var(--main-padding-r-l) 20vh;
+    padding: 5vh var(--main-padding-r-l) 10vh;
   }
   .image {
     width: 100%;

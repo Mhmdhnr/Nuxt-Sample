@@ -1,10 +1,10 @@
 <template>
   <div class="main flex flex-row">
-    <div v-for="i in menu" @mouseover="showSubItems(i.id)" @mouseout="hideSubItems(i.id)" class="item">
+    <div v-for="i in menu" @mouseover="showSubItems(i.id)" @mouseout="hideSubItems(i.id)" @click="navigate(i.link)" class="item">
       <span  v-show="fa"> {{i.title.fa}} </span>
       <span  v-show="!fa"> {{i.title.en}} </span>
       <div v-bind:id="i.id" class="sub-items">
-        <div v-for="s in i.subItems" class="sub-item">
+        <div v-for="s in i.subItems" class="sub-item" @click="navigate(i.link)">
          <span  v-show="fa"> {{s.title.fa}} </span>
          <span  v-show="!fa"> {{s.title.en}} </span>
         </div>
@@ -51,6 +51,9 @@
                 document.getElementById(id).classList.remove("come-in");
                 document.getElementById(id).classList.add("get-out");
                 document.getElementById(id).style.display = "none";
+            },
+            navigate(link) {
+                this.$router.push(link);
             }
         }
     }

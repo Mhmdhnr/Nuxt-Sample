@@ -1,7 +1,5 @@
 <template>
   <div class="main-container">
-    <div class="top-container flex">
-    </div>
     <div>
       <svg class="waves" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
            viewBox="0 24 150 28" preserveAspectRatio="none" shape-rendering="auto">
@@ -22,43 +20,20 @@
 <script>
     export default {
         name: "AnimatedWaves",
-        props: ['containerHeight'],
         mounted() {
-            document.getElementsByClassName("top-container")[0].style.height = this.containerHeight;
+            // document.getElementsByClassName("top-container")[0].style.height = this.containerHeight;
         }
     }
 </script>
 
 <style scoped>
-  span {
-    font-family: helvetica, sans-serif;
-    color: gray;
-  }
-  .top-container > span {
-    color: white;
-    font-size: 2em;
-  }
   .main-container {
-    position:relative;
-  }
-  .top-container {
-    width:100%;
-    margin: 0;
-    padding: 0;
-  }
-  .flex {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
+    /*position:relative;*/
   }
   .waves {
-    position: relative;
+    /*position: relative;*/
+    height: 10vh;
     width: 100%;
-    height: 20vh;
-    margin-bottom: -7px;
-    min-height: 100px;
-    max-height: 150px;
   }
   #wave-1, #wave-2, #wave-3, #wave-4{
     fill: var(--bg-color);

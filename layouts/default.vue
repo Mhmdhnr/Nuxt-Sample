@@ -50,7 +50,7 @@
     --header-top-height-ratio: 0.5;
     --header-main-height-ratio: calc(1 - var(--header-top-height-ratio));
     --base-padding-r-l: 2vw;
-    --main-padding-r-l: 10vw;
+    --main-padding-r-l: calc((100vw - 1080px) / 2);
   }
   .dark-mode {
     --primary-color: #eee;
@@ -77,7 +77,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    height: 100vh;
+    /*height: 100vh;*/
   }
   .toggle {
     display: none;
@@ -90,10 +90,14 @@
     /*left: 0;*/
   }
   .nuxt {
-    /*width: 100vw;*/
+    width: 100vw;
     /*width: 1080px;*/
-    /*overflow: hidden;*/
+    /*overflow-x: scroll;*/
     /*padding: 0 var(--base-padding-r-l);*/
+
+  }
+  .nuxt::-webkit-scrollbar {
+    display: none;
   }
   .container {
     position: relative;
