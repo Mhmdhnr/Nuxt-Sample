@@ -77,14 +77,14 @@
     width: 100%;
     justify-content: space-around;
     flex-direction: row;
-    padding: 5vh var(--main-padding-r-l) 10vh;
+    padding: 3vh var(--main-padding-r-l) 10vh;
   }
   .image {
     width: 100%;
     z-index: 10;
   }
   .gradient {
-    width: 40%;
+    width: 35%;
     position: relative;
   }
   .gradient:after {
@@ -99,7 +99,7 @@
   }
   .content {
     width: 40%;
-    height: 35vh;
+    height: 90%;
     overflow: hidden;
     justify-content: space-between;
   }

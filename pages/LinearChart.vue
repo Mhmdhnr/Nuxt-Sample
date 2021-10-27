@@ -33,12 +33,15 @@
     width: 100vw;
     margin: 0 auto -10vh;
     background-color: var(--contrast-color);
+    flex: 3;
   }
   .animated-waves {
     margin-top: 2vh;
     width: 100vw;
+    flex: 1;
   }
   .sample {
     width: 100vw;
+    flex: 6;
   }
 </style>

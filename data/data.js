@@ -13,21 +13,21 @@ export const menu = [
           fa: "اولین از اولین",
           en: "first"
         },
-        link: "SomeOfMyWorks",
+        link: "LinearChart",
       },
       {
         title : {
           fa: "دومین از اولین",
           en: "second"
         },
-        link: "SomeOfMyWorks",
+        link: "LinearChart",
       },
       {
         title : {
           fa: "سومین از اولین",
           en: "third"
         },
-        link: "SomeOfMyWorks",
+        link: "LinearChart",
       }
     ]
   },
@@ -37,21 +37,21 @@ export const menu = [
       fa: "درباره من",
       en: "About me"
     },
-    link: "SomeOfMyWorks",
+    link: "LinearChart",
     subItems : [
       {
         title : {
           fa: "اولین از دومین",
           en: "first"
         },
-        link: "SomeOfMyWorks",
+        link: "LinearChart",
       },
       {
         title : {
           fa: "دومین از دومین",
           en: "second"
         },
-        link: "SomeOfMyWorks",
+        link: "LinearChart",
       }
     ]
   }

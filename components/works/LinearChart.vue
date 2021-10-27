@@ -10,7 +10,7 @@
         class="input-slider"
         type="range"
         min="5"
-        max="60"
+        max="50"
         step="1"
         v-model="count"
       />
@@ -303,13 +303,14 @@
 
 <style scoped>
   .main {
+    padding: 3vh 0;
   }
   .input {
-    width: 50vw;
+    width: 500px;
     justify-content: space-between;
   }
   .input > div > span {
-    font-size: 1.3em;
+    font-size: 1.1em;
     margin: 0.5vw;
   }
   .input-slider {
@@ -318,17 +319,17 @@
   .chart {
     background-color: var(--text-color);
     position: relative;
-    width: 50vw;
-    height: 25vw;
-    margin: 4vh 0;
+    width: 500px;
+    height: 250px;
+    margin: 2vh 0;
     border-radius: 8px;
   }
   .chart-title {
     position: absolute;
     width: 100%;
     top: 5%;
-    padding: 0 4vw;
-    font-size: 2vw;
+    padding: 0 2vw;
+    font-size: 1.3vw;
     font-weight: 500;
     color: rgba(255, 255, 255, 1);
   }

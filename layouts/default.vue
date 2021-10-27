@@ -77,7 +77,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    /*height: 100vh;*/
+    height: 100vh;
   }
   .toggle {
     display: none;

@@ -2,7 +2,8 @@
   <div class="main flex flex-column">
     <Slider class="slider" v-bind:slider="slider[0]"/>
     <AnimatedWaves class="animated-waves"/>
-    <Links />
+    <div class="m"></div>
+    <Links class="links" />
   </div>
 </template>
 
@@ -35,9 +36,18 @@
     width: 100vw;
     margin: 0 auto -10vh auto;
     background-color: var(--contrast-color);
+    flex: 3;
   }
   .animated-waves {
     margin-top: 2vh;
     width: 100vw;
+  }
+  .m {
+    flex: 3;
+  }
+  .links {
+    max-height: 5vh;
+    flex: 1;
+    justify-content: flex-end;
   }
 </style>
