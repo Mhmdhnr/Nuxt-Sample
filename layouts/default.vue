@@ -1,17 +1,18 @@
 <template>
   <div class="total-view">
-    <Header class="header"/>
+    <TopHeader class="top-header" />
+    <MainHeader class="main-header"/>
     <nuxt class="nuxt"/>
-    <TopHeaderMobile class="mobile-header" />
   </div>
 </template>
 <script>
     import Header from "~/components/header/Header";
     import Toggle from "../components/Toggle";
     import { mapState } from 'vuex';
-    import TopHeaderMobile from "../components/header/TopHeaderMobile";
+    import MainHeader from "../components/header/MainHeader";
+    import TopHeader from "../components/header/TopHeader";
     export default {
-        components: {TopHeaderMobile, Toggle, Header},
+        components: {TopHeader, MainHeader, Toggle, Header},
         computed: mapState(['fa']),
         data(){
             return{
@@ -43,11 +44,9 @@
     --toggle-light: #d8dbe0;
     --toggle-dark: #28292c;
 
+    --main-header-height: 6vh;
+    --top-header-height: 4vh;
 
-    --header-height: 10vh;
-    --mobile-footer-height: 6vh;
-    --header-top-height-ratio: 0.5;
-    --header-main-height-ratio: calc(1 - var(--header-top-height-ratio));
     --base-padding-r-l: 2vw;
     --main-padding-r-l: calc((100vw - 1080px) / 2);
     --animated-waves-height: 12vh;
@@ -78,23 +77,23 @@
     flex-direction: column;
     align-items: center;
     height: 100vh;
+    width: 100vw;
   }
-  .header {
-    height: var(--header-height);
-    /*position: fixed;*/
-    /*top: 0;*/
-    /*left: 0;*/
+  .top-header {
+    order: 1;
+    height: var(--top-header-height);
+  }
+  .main-header {
+    order: 2;
+    height: var(--main-header-height);
   }
   .nuxt {
     width: 100vw;
-    /*overflow-x: scroll;*/
+    order: 3;
   }
-  .mobile-header {
+  .nuxt::-webkit-scrollbar {
     display: none;
   }
-  /*.nuxt::-webkit-scrollbar {*/
-  /*  display: none;*/
-  /*}*/
   .bg-animate {
     background: linear-gradient(270deg, #165ab4, #9856aa);
     background-size: 400% 400%;
@@ -128,18 +127,19 @@
   }
   @media screen and (max-width: 864px) {
     .total-view {
-      flex-direction: column-reverse;
       height: 100vh;
-      overflow: scroll;
+    }
+    .top-header {
+      order: 1;
+      height: var(--top-header-height);
     }
     .nuxt {
-      height: calc(100vh - var(--mobile-footer-height));
+      height: calc(100vh - var(--main-header-height) - var(--top-header-height));
+      order: 2;
     }
-    .header {
-      height: var(--mobile-footer-height);
-    }
-    .mobile-header {
-      display: unset;
+    .main-header {
+      order: 3;
+      height: var(--main-header-height);
     }
   }
 </style>

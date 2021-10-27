@@ -24,9 +24,10 @@
   .main {
     width: 100%;
     border-bottom: 1px solid var(--contrast-color);
+    padding: 0 var(--base-padding-r-l);
   }
   .toggles {
-    height: 75%;
+    height: 100%;
     flex: 1;
     justify-content: flex-end;
   }
@@ -35,12 +36,16 @@
   }
   .theme-toggle {
     position: relative;
-    height: 80%;
-    width: 60px;
+    height: 26px;
+    width: 54px;
     margin: auto 1vw auto 0;
   }
   .logo {
     width: 35px;
     height: 35px;
   }
+  @media screen and(max-width: 864px) {
+
+  }
+
 </style>

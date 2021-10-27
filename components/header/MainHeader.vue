@@ -61,15 +61,17 @@
 
 <style scoped>
   .main {
+    width: 100%;
     z-index: 2;
+    padding: 0 var(--base-padding-r-l);
   }
   .item {
     padding: 0 1vw;
+    position: relative;
     height: 100%;
     display: flex;
     cursor: pointer;
     border-radius: 4px 4px 0 0;
-    position: relative;
     font-size: 0.9em;
   }
   .sub-items {
@@ -78,7 +80,7 @@
     opacity: 0;
     width: 200px;
     position: absolute;
-    top: calc(var(--header-height) *(1 - var(--header-top-height-ratio)));
+    top: var(--main-header-height);
     right: 0;
     margin: auto 0;
     cursor: pointer;
@@ -139,6 +141,7 @@
     .main {
       position: relative;
       width: 100%;
+      padding: 0;
     }
     .item {
       padding: 0 4vw;
@@ -155,8 +158,8 @@
       display: flex;
       flex-direction: row;
       width: 100vw;
-      height: var(--mobile-footer-height);
-      top: calc(-1 * var(--mobile-footer-height));
+      height: var(--main-header-height);
+      top: calc(-1 * var(--main-header-height));
       right: 0;
       box-shadow: none;
     }
