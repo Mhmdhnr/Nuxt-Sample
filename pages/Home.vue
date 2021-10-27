@@ -1,9 +1,13 @@
 <template>
   <div class="main flex flex-column">
-    <Slider class="slider" v-bind:slider="slider[0]"/>
-    <AnimatedWaves class="animated-waves"/>
-    <div class="m"></div>
-    <Links class="links" />
+    <div class="flex slider-main">
+      <Slider class="slider" v-bind:slider="slider[0]"/>
+      <AnimatedWaves class="animated-waves"/>
+    </div>
+    <div class="m">
+
+    </div>
+    <Links class="links"/>
   </div>
 </template>
 
@@ -32,22 +36,28 @@
     width: 100vw;
     height: 100%;
   }
-  .slider {
-    width: 100vw;
-    margin: 0 auto -10vh auto;
-    background-color: var(--contrast-color);
+  .slider-main {
+    position: relative;
     flex: 3;
   }
+  .slider {
+    width: 100vw;
+    padding: 3vh var(--main-padding-r-l) var(--animated-waves-height);
+  }
   .animated-waves {
-    margin-top: 2vh;
     width: 100vw;
   }
   .m {
-    flex: 3;
+    flex: 4;
   }
   .links {
     max-height: 5vh;
     flex: 1;
     justify-content: flex-end;
+  }
+  @media screen and (max-width: 864px) {
+    .links {
+      /*display: none;*/
+    }
   }
 </style>

@@ -1,7 +1,9 @@
 <template>
   <div class="main flex flex-column">
-    <Slider class="slider" v-bind:slider="slider[1]" />
-    <AnimatedWaves class="animated-waves"/>
+    <div class="flex slider-main">
+      <Slider class="slider" v-bind:slider="slider[1]" />
+      <AnimatedWaves class="animated-waves"/>
+    </div>
     <LinearChart class="sample" chartId="sample"/>
   </div>
 </template>
@@ -27,18 +29,21 @@
   .main {
     position: relative;
     width: 100vw;
-    height: 100%;
+    /*height: 100%;*/
+  }
+  .nuxt {
+    overflow: scroll;
+  }
+  .slider-main {
+    position: relative;
+    flex: 3;
   }
   .slider {
     width: 100vw;
-    margin: 0 auto -10vh;
-    background-color: var(--contrast-color);
-    flex: 3;
+    padding: 3vh var(--main-padding-r-l) var(--animated-waves-height);
   }
   .animated-waves {
-    margin-top: 2vh;
     width: 100vw;
-    flex: 1;
   }
   .sample {
     width: 100vw;

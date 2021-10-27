@@ -29,10 +29,11 @@
 <style scoped>
   .main-container {
     /*position:relative;*/
+    position: absolute;
+    bottom: 0;
   }
   .waves {
-    /*position: relative;*/
-    height: 10vh;
+    height: var(--animated-waves-height);
     width: 100%;
   }
   #wave-1, #wave-2, #wave-3, #wave-4{
@@ -80,7 +81,6 @@
   @media screen and (max-width: 864px) {
     .waves {
       height: 10vh;
-      margin-bottom: -18vh;
     }
   }
 </style>

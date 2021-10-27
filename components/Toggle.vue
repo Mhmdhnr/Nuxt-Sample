@@ -48,10 +48,6 @@
 </script>
 
 <style scoped>
-  :root {
-    --toggle-light: #d8dbe0;
-    --toggle-dark: #28292c;
-  }
 
   label {
     position: absolute;
@@ -135,19 +131,23 @@
 
   @media screen and (max-width: 864px) {
     .fa {
-      top: 12%;
-      left: 11%;
+      top: 20%;
+      left: 12%;
       font-size: 0.6em;
       color: var(--toggle-dark);
     }
     .en {
-      top: 12%;
-      right: 11%;
+      top: 20%;
+      right: 12%;
       font-size: 0.6em;
       color: var(--toggle-light);
     }
     .sun, .moon {
       top: 10%;
+    }
+    .slider::before {
+      top: 12%;
+      left: 6%;
     }
   }
 </style>

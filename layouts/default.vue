@@ -1,17 +1,17 @@
 <template>
   <div class="total-view">
-    <Toggle id="mobile-theme-toggle" subject="theme" class="toggle" />
-    <Toggle id="mobile-language-toggle" subject="language" class="toggle" />
     <Header class="header"/>
     <nuxt class="nuxt"/>
+    <TopHeaderMobile class="mobile-header" />
   </div>
 </template>
 <script>
     import Header from "~/components/header/Header";
     import Toggle from "../components/Toggle";
     import { mapState } from 'vuex';
+    import TopHeaderMobile from "../components/header/TopHeaderMobile";
     export default {
-        components: {Toggle, Header},
+        components: {TopHeaderMobile, Toggle, Header},
         computed: mapState(['fa']),
         data(){
             return{
@@ -20,7 +20,6 @@
         },
         watch: {
             fa (newValue) {
-                console.log("here i am...");
                 if (!newValue) {
                     document.body.style.direction = "ltr";
                     document.body.style.textAlign = "left";
@@ -51,6 +50,7 @@
     --header-main-height-ratio: calc(1 - var(--header-top-height-ratio));
     --base-padding-r-l: 2vw;
     --main-padding-r-l: calc((100vw - 1080px) / 2);
+    --animated-waves-height: 12vh;
   }
   .dark-mode {
     --primary-color: #eee;
@@ -79,29 +79,22 @@
     align-items: center;
     height: 100vh;
   }
-  .toggle {
-    display: none;
-  }
   .header {
     height: var(--header-height);
-    padding: 0 var(--base-padding-r-l);
     /*position: fixed;*/
     /*top: 0;*/
     /*left: 0;*/
   }
   .nuxt {
     width: 100vw;
-    /*width: 1080px;*/
     /*overflow-x: scroll;*/
-    /*padding: 0 var(--base-padding-r-l);*/
-
   }
-  .nuxt::-webkit-scrollbar {
+  .mobile-header {
     display: none;
   }
-  .container {
-    position: relative;
-  }
+  /*.nuxt::-webkit-scrollbar {*/
+  /*  display: none;*/
+  /*}*/
   .bg-animate {
     background: linear-gradient(270deg, #165ab4, #9856aa);
     background-size: 400% 400%;
@@ -111,7 +104,6 @@
     display: flex;
     align-items: center;
     align-content: center;
-    text-align: center;
   }
   @-webkit-keyframes bg-animation {
      0%{background-position:0% 50%}
@@ -138,28 +130,16 @@
     .total-view {
       flex-direction: column-reverse;
       height: 100vh;
-      overflow: hidden;
-    }
-    .toggle{
-      display: block;
-      position: absolute;
-      top: 1vh;
-      width: 40px;
-      height: 20px;
-      z-index: 1000;
-    }
-    #mobile-theme-toggle {
-      left: 2vw;
-    }
-    #mobile-language-toggle {
-      top: 1vh;
-      left: calc(4vw + 40px);
+      overflow: scroll;
     }
     .nuxt {
       height: calc(100vh - var(--mobile-footer-height));
     }
     .header {
       height: var(--mobile-footer-height);
+    }
+    .mobile-header {
+      display: unset;
     }
   }
 </style>

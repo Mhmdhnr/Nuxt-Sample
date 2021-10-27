@@ -329,7 +329,7 @@
     width: 100%;
     top: 5%;
     padding: 0 2vw;
-    font-size: 1.3vw;
+    font-size: 1.3em;
     font-weight: 500;
     color: rgba(255, 255, 255, 1);
   }
@@ -363,5 +363,18 @@
   .chart {
     position: relative;
     border-radius: 8px;
+  }
+
+  @media screen and (max-width: 864px) {
+    .input {
+      width: 90vw;
+    }
+    .chart {
+      width: 90vw;
+      height: 45vw;
+    }
+    .chart-title {
+      font-size: 0.9em;
+    }
   }
 </style>

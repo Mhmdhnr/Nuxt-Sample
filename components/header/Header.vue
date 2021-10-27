@@ -20,6 +20,7 @@
     margin: 0;
     background-color: var(--header-color);
     box-shadow: var(--main-shadow);
+    padding: 0 var(--base-padding-r-l);
     z-index: 10;
   }
   .top-header {
@@ -27,9 +28,6 @@
   }
   .main-header {
     height: calc(var(--header-height) * var(--header-main-height-ratio));
-  }
-  .logo {
-    width: 50px;
   }
   @media screen and (max-width: 864px){
     .top-header {

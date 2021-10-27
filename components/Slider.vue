@@ -44,9 +44,11 @@
                 let styleElem = document.head.appendChild(document.createElement("style"));
                 if (!newValue) {
                     styleElem.innerHTML = "#more::before {background: linear-gradient(90deg, rgba(255,255,255,0.3) 0%, rgba(255,255,255,0)  100%);}";
+                    document.getElementsByClassName("moving-area")[0].style.textAlign = "left";
                 }
                 else {
                     styleElem.innerHTML = "#more::before {background: linear-gradient(270deg, rgba(255,255,255,0.3) 0%, rgba(255,255,255,0)  100%);}";
+                    document.getElementsByClassName("moving-area")[0].style.textAlign = "right";
                 }
                 this.fa = newValue
             }
@@ -74,18 +76,18 @@
 
 <style scoped>
   .all {
-    width: 100%;
+    background-color: var(--contrast-color);
     justify-content: space-around;
     flex-direction: row;
-    padding: 3vh var(--main-padding-r-l) 10vh;
+    height: 100%;
+  }
+  .gradient {
+    width: 30%;
+    position: relative;
   }
   .image {
     width: 100%;
     z-index: 10;
-  }
-  .gradient {
-    width: 35%;
-    position: relative;
   }
   .gradient:after {
     content: "";
@@ -98,7 +100,7 @@
     z-index: 1000;
   }
   .content {
-    width: 40%;
+    width: 50%;
     height: 90%;
     overflow: hidden;
     justify-content: space-between;
@@ -187,7 +189,8 @@
       flex-direction: column;
     }
     .gradient {
-      width: 80%
+      width: 80%;
+      display:none;
     }
     .short-content {
       font-size: 1em;
