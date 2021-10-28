@@ -101,13 +101,14 @@
   }
   .content {
     width: 50%;
-    height: 90%;
+    height: 100%;
     overflow: hidden;
     justify-content: space-between;
   }
   .moving-area {
     position: relative;
     width: 100%;
+    height: 18vh;
     margin-top: 3vh;
   }
   .short-content {

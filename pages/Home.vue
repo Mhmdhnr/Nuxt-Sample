@@ -4,18 +4,18 @@
       <Slider class="slider" v-bind:slider="slider[0]"/>
       <AnimatedWaves class="animated-waves"/>
     </div>
-    <div class="m flex flex-row">
+    <div class="m flex">
       <NuxtLink class="flip-card" to="LinearChart">
-        <FlipCard  duration=300 axis="X" :id="flipCard[0].id" v-bind:flipCardData=flipCard[0] />
+        <FlipCard  duration="500" axis="X" v-bind:flipCardData=flipCard[0] />
       </NuxtLink>
       <NuxtLink class="flip-card" to="LinearChart">
-        <FlipCard duration=300 axis="Y" :id="flipCard[1].id" v-bind:flipCardData=flipCard[1] />
+        <FlipCard duration="500" axis="Y" v-bind:flipCardData=flipCard[1] />
       </NuxtLink>
       <NuxtLink class="flip-card" to="LinearChart">
-        <FlipCard duration=300 axis="X" :id="flipCard[2].id" v-bind:flipCardData=flipCard[2] />
+        <FlipCard duration="500" axis="X" v-bind:flipCardData=flipCard[2] />
       </NuxtLink>
       <NuxtLink class="flip-card" to="LinearChart">
-        <FlipCard duration=300 axis="Y" :id="flipCard[3].id" v-bind:flipCardData=flipCard[3] />
+        <FlipCard duration="500" axis="Y" v-bind:flipCardData=flipCard[3] />
       </NuxtLink>
     </div>
     <Links class="links"/>
@@ -63,6 +63,7 @@
   }
   .m {
     flex: 6;
+    flex-direction: row;
     width: 100vw;
     padding: 3vh var(--main-padding-r-l) var(--animated-waves-height);
     justify-content: space-between;
@@ -76,8 +77,13 @@
     justify-content: flex-end;
   }
   @media screen and (max-width: 864px) {
-    .links {
-      /*display: none;*/
+    .m {
+      flex-direction: column;
     }
+    .flip-card {
+       width: 80%;
+       height: 250px;
+       margin: 1vh;
+     }
   }
 </style>

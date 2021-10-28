@@ -29,10 +29,7 @@
   .main {
     position: relative;
     width: 100vw;
-    /*height: 100%;*/
-  }
-  .nuxt {
-    overflow: scroll;
+    height: 100%;
   }
   .slider-main {
     position: relative;
@@ -48,5 +45,9 @@
   .sample {
     width: 100vw;
     flex: 6;
+  }
+  @media screen and(max-width: 864px) {
+    .slider-main {
+    }
   }
 </style>

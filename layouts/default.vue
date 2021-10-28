@@ -36,7 +36,7 @@
   :root {
     --primary-color: #444;
     --text-color: #444;
-    --contrast-color: rgba(200,200,200,0.8);
+    --contrast-color: rgba(200,200,200,1);
     --header-color: rgba(255,255,255,0.6);
     --bg-color: #fff;
     --main-shadow: 0 0 5px 5px rgba(0,0,0,0.1);
@@ -75,7 +75,6 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    height: 100vh;
     width: 100vw;
   }
   .top-header {
@@ -127,18 +126,25 @@
   @media screen and (max-width: 864px) {
     .total-view {
       height: 100vh;
+      overflow: hidden;
     }
     .top-header {
       order: 1;
       height: var(--top-header-height);
+      max-height: var(--top-header-height);
     }
     .nuxt {
       height: calc(100vh - var(--main-header-height) - var(--top-header-height));
+      max-height: calc(100vh - var(--main-header-height) - var(--top-header-height));
+      overflow: scroll;
       order: 2;
     }
     .main-header {
+      position: fixed;
+      bottom: 0;
       order: 3;
       height: var(--main-header-height);
+      max-height: var(--main-header-height);
     }
   }
 </style>

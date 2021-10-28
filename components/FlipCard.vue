@@ -1,17 +1,17 @@
 <template>
   <div class="flip-card-main">
-    <div class="solid" @mouseover="flip" @mouseout="flipBack">
-    </div>
-    <div class="front" :id="'front' + flipCardData.id">
-      <img class="image" :src="flipCardData.front.imageURL">
-    </div>
-    <div class="back flex" :id="'back' + flipCardData.id">
-      <span v-show="this.$store.state.fa">
-        {{flipCardData.back.title.fa}}
-      </span>
-      <span v-show="!this.$store.state.fa">
-        {{flipCardData.back.title.en}}
-      </span>
+    <div class="flip-card"  :id="flipCardData.id">
+      <div class="card-front">
+        <img class="image" :src="flipCardData.front.imageURL">
+      </div>
+      <div class="card-back flex">
+        <span v-show="this.$store.state.fa">
+          {{flipCardData.back.title.fa}}
+        </span>
+        <span v-show="!this.$store.state.fa">
+          {{flipCardData.back.title.en}}
+        </span>
+      </div>
     </div>
   </div>
 </template>
@@ -27,37 +27,13 @@
           }
         },
         methods: {
-          flip(){
-              let axis = this.axis;
-              let id = this.flipCardData.id;
-              let front = document.getElementById(`front${id}`);
-              let back = document.getElementById(`back${id}`);
-              back.classList.remove("show" + axis);
-              front.classList.add("hide" + axis);
-              setTimeout(function () {
-                back.classList.remove("hide" + axis);
-                back.classList.add("show" + axis);
-              }, this.duration)
-          },
-          flipBack(){
-              let axis = this.axis;
-              let id = this.flipCardData.id;
-              let front = document.getElementById(`front${id}`);
-              let back = document.getElementById(`back${id}`);
-              back.classList.remove("show" + axis);
-              back.classList.add("hide" + axis);
-              setTimeout(function () {
-                front.classList.remove("hide" + axis);
-                front.classList.add("show" + axis);
-              }, this.duration)
-          }
         },
         mounted() {
             let id = this.flipCardData.id;
-            let front = document.getElementById(`front${id}`);
-            let back = document.getElementById(`back${id}`);
-            front.style.animationDuration = this.duration + "ms";
-            back.style.animationDuration = this.duration + "ms";
+            let flipCard = document.getElementById(id);
+            console.log(flipCard);
+            flipCard.style.transition = this.duration + "ms ";
+            flipCard.style.transitionTimingFunction = "cubic-bezier(.175, .885, .32, 1.4)";
         }
     }
 </script>
@@ -67,89 +43,50 @@
     width: 100%;
     height: 100%;
     position: relative;
-    z-index: 10;
+    z-index: 1;
+    perspective: 1000px;
   }
-  .image {
-    width: 100%;
-    height: 100%;
-  }
-  .front, .back, .solid {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
+  .flip-card {
+    width: inherit;
+    height: inherit;
+    position: relative;
+    transform-style: preserve-3d;
     border-radius: 8px;
-    box-shadow: 0 0 10px 3px rgba(100,100,100,0.2);
-    backface-visibility: hidden;
+    box-shadow: 0 0 20px 5px rgba(100,100,100,0.2);
   }
-  .solid {
-    z-index: 5;
-    box-shadow: none;
+  .flip-card-main:hover .flip-card, .flip-card-main:focus .flip-card {
+    transform: rotateY(180deg);
   }
-  .front {
-    background-color: var(--contrast-color);
-    z-index: 4;
+  .card-front, .card-back {
+     width: 100%;
+     height: 100%;
+     border-radius: 8px;
+     position: absolute;
+     top: 0;
+     left: 0;
+     overflow: hidden;
+     background: var(--contrast-color);
+     backface-visibility: hidden;
+     display: flex;
+     justify-content: center;
+     align-items: center;
+   }
+  .card-front {
+    transform: rotateY(0deg) rotateX(0deg);
+    z-index: 2;
   }
-  .back {
-    background: var(--contrast-color);
-    transform: rotateX(90deg);
-    justify-content: center;
+  .card-back {
+    transform: rotateY(180deg);
+    z-index: 1;
     font-size: 1.5em;
+    text-align: center;
+  }
+  .card-back > span {
     color: var(--text-color);
   }
-  .showX{
-    -webkit-animation: showX;
-    -webkit-animation-timing-function: cubic-bezier(.175, .885, .32, 2);
-    -webkit-animation-fill-mode: forwards;
+  .image {
+    width: 90%;
+    height: 90%;
   }
-  .hideX{
-    -webkit-animation: hideX;
-    -webkit-animation-timing-function: cubic-bezier(.1,-0.41,.92,.47);
-    -webkit-animation-fill-mode: forwards;
-  }
-  .showY{
-    -webkit-animation: showY;
-    -webkit-animation-timing-function: cubic-bezier(.175, .885, .32, 2);
-    -webkit-animation-fill-mode: forwards;
-  }
-  .hideY{
-    -webkit-animation: hideY;
-    -webkit-animation-timing-function: cubic-bezier(.1,-0.41,.92,.47);
-    -webkit-animation-fill-mode: forwards;
-  }
-  @-webkit-keyframes showX {
-    from{
-      transform: rotateX(90deg) scaleX(1);
-    }
-    to{
-      transform: rotateX(0deg) scaleX(1);
-    }
-  }
-  @-webkit-keyframes hideX {
-    from{
-      transform: rotateX(0deg) scaleX(1);
-    }
-    to{
-      transform: rotateX(90deg) scaleX(1);
-    }
-  }
-  @-webkit-keyframes showY {
-    from{
-      transform: rotateY(90deg) scale(1);
-    }
-    to{
-      transform: rotateY(0deg) scale(1);
-    }
-  }
-  @-webkit-keyframes hideY {
-    from{
-      transform: rotateY(0deg) scale(1);
-    }
-    to{
-      transform: rotateY(90deg) scale(1);
-    }
-  }
-
 
 </style>

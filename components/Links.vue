@@ -43,7 +43,7 @@
 
 <style scoped>
   .main {
-    padding: 0 var(--base-padding-r-l);
+    padding: 1vh var(--base-padding-r-l);
     position: fixed;
     bottom: 0;
     height: 10vh;
@@ -70,7 +70,7 @@
     width: 20px;
     margin: auto;
   }
-  .icon .cls-1 {
+  .icon .cls-1, .icon .cls-2 {
     fill: var(--text-color);
   }
   @media screen and (max-width: 864px) {

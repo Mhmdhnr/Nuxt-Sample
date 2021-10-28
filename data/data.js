@@ -88,20 +88,20 @@ export const flipCardData = [
     },
     back: {
       title: {
-        fa: "نمودار خطی",
-        en: "Linear Chart"
+        fa: "یه نمودار خطی باحال اینجا گذاشتم",
+        en: "There is a nice Linear-Chart here"
       }
     }
   },
   {
     id: "flip2",
     front: {
-      imageURL: "_nuxt/assets/chart.svg"
+      imageURL: "_nuxt/assets/me.svg"
     },
     back: {
       title: {
-        fa: "نمودار خطی",
-        en: "Linear Chart"
+        fa: "یه نمودار خطی باحال اینجا گذاشتم",
+        en: "There is a nice Linear-Chart here"
       }
     }
   },
@@ -112,8 +112,8 @@ export const flipCardData = [
     },
     back: {
       title: {
-        fa: "نمودار خطی",
-        en: "Linear Chart"
+        fa: "یه نمودار خطی باحال اینجا گذاشتم",
+        en: "There is a nice Linear-Chart here"
       }
     }
   },
@@ -124,8 +124,8 @@ export const flipCardData = [
     },
     back: {
       title: {
-        fa: "نمودار خطی",
-        en: "Linear Chart"
+        fa: "یه نمودار خطی باحال اینجا گذاشتم",
+        en: "There is a nice Linear-Chart here"
       }
     }
   },
