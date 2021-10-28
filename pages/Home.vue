@@ -4,8 +4,9 @@
       <Slider class="slider" v-bind:slider="slider[0]"/>
       <AnimatedWaves class="animated-waves"/>
     </div>
-    <div class="m">
-
+    <div class="m flex flex-row">
+      <FlipCard  duration="1000" axis="X" id="flip1" flipCardId="flip1"/>
+      <FlipCard  duration="1000" axis="Y" id="flip2" flipCardId="flip2"/>
     </div>
     <Links class="links"/>
   </div>
@@ -16,9 +17,10 @@
     import Slider from "../components/Slider";
     import AnimatedWaves from "../components/AnimatedWaves";
     import Links from "../components/Links";
+    import FlipCard from "../components/FlipCard";
     export default {
         name: "Home",
-        components: {Links, AnimatedWaves, Slider},
+        components: {FlipCard, Links, AnimatedWaves, Slider},
         data () {
             return {
                 slider: slider,
@@ -48,10 +50,12 @@
     width: 100vw;
   }
   .m {
-    flex: 4;
+    flex: 6;
+    width: 100vw;
+    padding: 3vh var(--main-padding-r-l) var(--animated-waves-height);
+    justify-content: space-between;
   }
   .links {
-    max-height: 5vh;
     flex: 1;
     justify-content: flex-end;
   }

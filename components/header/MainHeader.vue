@@ -68,7 +68,7 @@
   .item {
     padding: 0 1vw;
     position: relative;
-    height: 100%;
+    height: var(--main-header-height);
     display: flex;
     cursor: pointer;
     border-radius: 4px 4px 0 0;

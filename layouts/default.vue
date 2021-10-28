@@ -6,13 +6,12 @@
   </div>
 </template>
 <script>
-    import Header from "~/components/header/Header";
     import Toggle from "../components/Toggle";
     import { mapState } from 'vuex';
     import MainHeader from "../components/header/MainHeader";
     import TopHeader from "../components/header/TopHeader";
     export default {
-        components: {TopHeader, MainHeader, Toggle, Header},
+        components: {TopHeader, MainHeader, Toggle},
         computed: mapState(['fa']),
         data(){
             return{

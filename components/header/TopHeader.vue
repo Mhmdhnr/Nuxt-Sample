@@ -36,9 +36,10 @@
   }
   .theme-toggle {
     position: relative;
-    height: 26px;
     width: 54px;
-    margin: auto 1vw auto 0;
+    height: 26px;
+    margin: auto 10px auto 0;
+    padding: 0;
   }
   .logo {
     width: 35px;

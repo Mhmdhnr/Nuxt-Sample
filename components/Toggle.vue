@@ -52,8 +52,8 @@
   label {
     position: absolute;
     right: 0;
-    width: 100%;
-    height: 100%;
+    height: 26px;
+    width: 54px;
     background-color: var(--toggle-dark);
     border-radius: 50px;
     cursor: pointer;
