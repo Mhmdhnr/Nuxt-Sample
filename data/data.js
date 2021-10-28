@@ -10,8 +10,8 @@ export const menu = [
     subItems : [
       {
         title : {
-          fa: "اولین از اولین",
-          en: "first"
+          fa: "نمودار خطی",
+          en: "Linear Chart"
         },
         link: "LinearChart",
       },
@@ -78,6 +78,56 @@ export const slider = [
       en: "Hi again... this website is implemented on Nuxt framework. In some parts data is fetching from a simple API coded whit python. back-end and front-end source code is available on git-hub and you can have a look at it if you wish. begin your explore. there may be something that you find it interesting... Even this Animated Waves just below!!!"
     },
     imageUrl: "_nuxt/assets/me.svg"
+  },
+];
+export const flipCardData = [
+  {
+    id: "flip1",
+    front: {
+      imageURL: "_nuxt/assets/me.svg"
+    },
+    back: {
+      title: {
+        fa: "نمودار خطی",
+        en: "Linear Chart"
+      }
+    }
+  },
+  {
+    id: "flip2",
+    front: {
+      imageURL: "_nuxt/assets/chart.svg"
+    },
+    back: {
+      title: {
+        fa: "نمودار خطی",
+        en: "Linear Chart"
+      }
+    }
+  },
+  {
+    id: "flip3",
+    front: {
+      imageURL: "_nuxt/assets/me.svg"
+    },
+    back: {
+      title: {
+        fa: "نمودار خطی",
+        en: "Linear Chart"
+      }
+    }
+  },
+  {
+    id: "flip4",
+    front: {
+      imageURL: "_nuxt/assets/me.svg"
+    },
+    back: {
+      title: {
+        fa: "نمودار خطی",
+        en: "Linear Chart"
+      }
+    }
   },
 ];
 

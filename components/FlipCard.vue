@@ -1,30 +1,35 @@
 <template>
-  <div class="flip-card">
+  <div class="flip-card-main">
     <div class="solid" @mouseover="flip" @mouseout="flipBack">
-
     </div>
-    <div class="front" :id="'front' + flipCardId">
-
+    <div class="front" :id="'front' + flipCardData.id">
+      <img class="image" :src="flipCardData.front.imageURL">
     </div>
-    <div class="back" :id="'back' + flipCardId">
-
+    <div class="back flex" :id="'back' + flipCardData.id">
+      <span v-show="this.$store.state.fa">
+        {{flipCardData.back.title.fa}}
+      </span>
+      <span v-show="!this.$store.state.fa">
+        {{flipCardData.back.title.en}}
+      </span>
     </div>
   </div>
 </template>
 
 <script>
+    import {flipCardData} from "../data/data";
+
     export default {
         name: "FlipCard",
-        props:['duration', 'axis', 'flipCardId'],
+        props:['duration', 'axis', 'flipCardData'],
         data() {
           return {
-              duration: this.duration,
           }
         },
         methods: {
           flip(){
               let axis = this.axis;
-              let id = this.flipCardId;
+              let id = this.flipCardData.id;
               let front = document.getElementById(`front${id}`);
               let back = document.getElementById(`back${id}`);
               back.classList.remove("show" + axis);
@@ -36,7 +41,7 @@
           },
           flipBack(){
               let axis = this.axis;
-              let id = this.flipCardId;
+              let id = this.flipCardData.id;
               let front = document.getElementById(`front${id}`);
               let back = document.getElementById(`back${id}`);
               back.classList.remove("show" + axis);
@@ -48,7 +53,7 @@
           }
         },
         mounted() {
-            let id = this.flipCardId;
+            let id = this.flipCardData.id;
             let front = document.getElementById(`front${id}`);
             let back = document.getElementById(`back${id}`);
             front.style.animationDuration = this.duration + "ms";
@@ -58,11 +63,15 @@
 </script>
 
 <style scoped>
-  .flip-card {
-    width: calc(100% / 3 - 2vw);
-    height: 250px;
+  .flip-card-main {
+    width: 100%;
+    height: 100%;
     position: relative;
     z-index: 10;
+  }
+  .image {
+    width: 100%;
+    height: 100%;
   }
   .front, .back, .solid {
     position: absolute;
@@ -79,14 +88,16 @@
     box-shadow: none;
   }
   .front {
-    background-color: #165ab4;
+    background-color: var(--contrast-color);
     z-index: 4;
   }
   .back {
-    background-color: #9856aa;
+    background: var(--contrast-color);
     transform: rotateX(90deg);
+    justify-content: center;
+    font-size: 1.5em;
+    color: var(--text-color);
   }
-
   .showX{
     -webkit-animation: showX;
     -webkit-animation-timing-function: cubic-bezier(.175, .885, .32, 2);

@@ -1,8 +1,8 @@
 <template xmlns:width="http://www.w3.org/1999/xhtml">
     <div class="all flex">
       <div class="gradient">
-<!--        <img class="image" :src="slider.imageUrl">-->
-        <img class="image" src="~/assets/me.svg">
+        <img class="image" :src="slider.imageUrl">
+<!--        <img class="image" src="~/assets/me.svg">-->
       </div>
       <div class="content flex flex-column">
         <div class="moving-area">

@@ -36,7 +36,7 @@
   :root {
     --primary-color: #444;
     --text-color: #444;
-    --contrast-color: rgb(200,200,200);
+    --contrast-color: rgba(200,200,200,0.8);
     --header-color: rgba(255,255,255,0.6);
     --bg-color: #fff;
     --main-shadow: 0 0 5px 5px rgba(0,0,0,0.1);

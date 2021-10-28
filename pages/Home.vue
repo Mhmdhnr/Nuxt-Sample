@@ -5,8 +5,18 @@
       <AnimatedWaves class="animated-waves"/>
     </div>
     <div class="m flex flex-row">
-      <FlipCard  duration="1000" axis="X" id="flip1" flipCardId="flip1"/>
-      <FlipCard  duration="1000" axis="Y" id="flip2" flipCardId="flip2"/>
+      <NuxtLink class="flip-card" to="LinearChart">
+        <FlipCard  duration=300 axis="X" :id="flipCard[0].id" v-bind:flipCardData=flipCard[0] />
+      </NuxtLink>
+      <NuxtLink class="flip-card" to="LinearChart">
+        <FlipCard duration=300 axis="Y" :id="flipCard[1].id" v-bind:flipCardData=flipCard[1] />
+      </NuxtLink>
+      <NuxtLink class="flip-card" to="LinearChart">
+        <FlipCard duration=300 axis="X" :id="flipCard[2].id" v-bind:flipCardData=flipCard[2] />
+      </NuxtLink>
+      <NuxtLink class="flip-card" to="LinearChart">
+        <FlipCard duration=300 axis="Y" :id="flipCard[3].id" v-bind:flipCardData=flipCard[3] />
+      </NuxtLink>
     </div>
     <Links class="links"/>
   </div>
@@ -14,6 +24,7 @@
 
 <script>
     import {slider} from '../data/data.js';
+    import {flipCardData} from '../data/data.js';
     import Slider from "../components/Slider";
     import AnimatedWaves from "../components/AnimatedWaves";
     import Links from "../components/Links";
@@ -24,10 +35,11 @@
         data () {
             return {
                 slider: slider,
+                flipCard: flipCardData,
             }
         },
         mounted() {
-            console.log("from Home")
+            console.log(flipCardData)
         }
     }
 </script>
@@ -54,6 +66,10 @@
     width: 100vw;
     padding: 3vh var(--main-padding-r-l) var(--animated-waves-height);
     justify-content: space-between;
+  }
+  .flip-card {
+    width: calc(100% / 4 - 2vw);
+    height: 250px;
   }
   .links {
     flex: 1;
