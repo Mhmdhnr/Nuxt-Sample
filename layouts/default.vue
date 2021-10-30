@@ -74,6 +74,7 @@
   .total-view {
     display: flex;
     flex-direction: column;
+    position: relative;
     align-items: center;
     width: 100vw;
   }
@@ -88,8 +89,12 @@
   .nuxt {
     width: 100vw;
     order: 3;
+    box-sizing: content-box;
   }
   .nuxt::-webkit-scrollbar {
+    display: none;
+  }
+  .total-view::-webkit-scrollbar {
     display: none;
   }
   .bg-animate {

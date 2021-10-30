@@ -22,7 +22,8 @@
 
 <style scoped>
   .main {
-    width: 100%;
+    width: 100vw;
+    max-width: 100vw;
     border-bottom: 1px solid var(--contrast-color);
     padding: 0 var(--base-padding-r-l);
   }

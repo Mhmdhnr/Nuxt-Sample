@@ -5,18 +5,16 @@
       <AnimatedWaves class="animated-waves"/>
     </div>
     <div class="m flex">
-      <NuxtLink class="flip-card" to="LinearChart">
-        <FlipCard  duration="500" axis="X" v-bind:flipCardData=flipCard[0] />
-      </NuxtLink>
-      <NuxtLink class="flip-card" to="LinearChart">
-        <FlipCard duration="500" axis="Y" v-bind:flipCardData=flipCard[1] />
-      </NuxtLink>
-      <NuxtLink class="flip-card" to="LinearChart">
-        <FlipCard duration="500" axis="X" v-bind:flipCardData=flipCard[2] />
-      </NuxtLink>
-      <NuxtLink class="flip-card" to="LinearChart">
-        <FlipCard duration="500" axis="Y" v-bind:flipCardData=flipCard[3] />
-      </NuxtLink>
+        <FlipCard class="flip-card" duration="500" v-bind:flipCardData=flipCard[0] />
+        <FlipCard class="flip-card" duration="500" v-bind:flipCardData=flipCard[1] />
+        <FlipCard class="flip-card" duration="500" v-bind:flipCardData=flipCard[2] />
+        <FlipCard class="flip-card" duration="500" v-bind:flipCardData=flipCard[3] />
+    </div>
+    <div class="m flex">
+        <ElevateCard class="elevate-card" v-bind:elevateCardData="elevateCardData[0]" />
+        <ElevateCard class="elevate-card" v-bind:elevateCardData="elevateCardData[1]" />
+        <ElevateCard class="elevate-card" v-bind:elevateCardData="elevateCardData[2]" />
+        <ElevateCard class="elevate-card" v-bind:elevateCardData="elevateCardData[3]" />
     </div>
     <Links class="links"/>
   </div>
@@ -25,17 +23,20 @@
 <script>
     import {slider} from '../data/data.js';
     import {flipCardData} from '../data/data.js';
+    import {elevateCardData} from '../data/data.js';
     import Slider from "../components/Slider";
     import AnimatedWaves from "../components/AnimatedWaves";
     import Links from "../components/Links";
     import FlipCard from "../components/FlipCard";
+    import ElevateCard from "../components/ElevateCard";
     export default {
         name: "Home",
-        components: {FlipCard, Links, AnimatedWaves, Slider},
+        components: {ElevateCard, FlipCard, Links, AnimatedWaves, Slider},
         data () {
             return {
                 slider: slider,
                 flipCard: flipCardData,
+                elevateCardData: elevateCardData,
             }
         },
         mounted() {
@@ -48,7 +49,6 @@
   .main {
     position: relative;
     width: 100vw;
-    height: 100%;
   }
   .slider-main {
     position: relative;
@@ -65,12 +65,16 @@
     flex: 6;
     flex-direction: row;
     width: 100vw;
-    padding: 3vh var(--main-padding-r-l) var(--animated-waves-height);
+    padding: 3vh var(--main-padding-r-l) ;
     justify-content: space-between;
   }
   .flip-card {
     width: calc(100% / 4 - 2vw);
-    height: 250px;
+    height: 200px;
+  }
+  .elevate-card {
+    width: calc(100% / 4 - 2vw);
+    height: 200px;
   }
   .links {
     flex: 1;
@@ -78,12 +82,19 @@
   }
   @media screen and (max-width: 864px) {
     .m {
-      flex-direction: column;
+      flex-direction: unset;
+      flex-wrap: wrap;
+      justify-content: space-evenly;
     }
     .flip-card {
-       width: 80%;
-       height: 250px;
+       width: 40%;
+       height: 150px;
        margin: 1vh;
+     }
+    .elevate-card {
+      width: 40%;
+      height: 150px;
+      margin: 1vh;
      }
   }
 </style>

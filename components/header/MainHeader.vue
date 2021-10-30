@@ -139,8 +139,6 @@
   }
   @media screen and (max-width: 864px) {
     .main {
-      position: relative;
-      width: 100%;
       padding: 0;
     }
     .item {

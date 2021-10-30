@@ -90,7 +90,8 @@ export const flipCardData = [
       title: {
         fa: "یه نمودار خطی باحال اینجا گذاشتم",
         en: "There is a nice Linear-Chart here"
-      }
+      },
+      pageLink: "/LinearChart",
     }
   },
   {
@@ -102,7 +103,8 @@ export const flipCardData = [
       title: {
         fa: "یه نمودار خطی باحال اینجا گذاشتم",
         en: "There is a nice Linear-Chart here"
-      }
+      },
+      pageLink: "/LinearChart",
     }
   },
   {
@@ -114,7 +116,8 @@ export const flipCardData = [
       title: {
         fa: "یه نمودار خطی باحال اینجا گذاشتم",
         en: "There is a nice Linear-Chart here"
-      }
+      },
+      pageLink: "/LinearChart",
     }
   },
   {
@@ -126,7 +129,62 @@ export const flipCardData = [
       title: {
         fa: "یه نمودار خطی باحال اینجا گذاشتم",
         en: "There is a nice Linear-Chart here"
-      }
+      },
+      pageLink: "/LinearChart",
+    }
+  },
+];
+export const elevateCardData = [
+  {
+    id: "elevate1",
+    front: {
+      imageURL: "_nuxt/assets/me.svg"
+    },
+    back: {
+      title: {
+        fa: "یه نمودار خطی باحال اینجا گذاشتم",
+        en: "There is a nice Linear-Chart here"
+      },
+      pageLink: "/LinearChart",
+    }
+  },
+  {
+    id: "elevate2",
+    front: {
+      imageURL: "_nuxt/assets/me.svg"
+    },
+    back: {
+      title: {
+        fa: "یه نمودار خطی باحال اینجا گذاشتم",
+        en: "There is a nice Linear-Chart here"
+      },
+      pageLink: "/LinearChart",
+    }
+  },
+  {
+    id: "elevate3",
+    front: {
+      imageURL: "_nuxt/assets/me.svg"
+    },
+    back: {
+      title: {
+        fa: "یه نمودار خطی باحال اینجا گذاشتم",
+        en: "There is a nice Linear-Chart here"
+      },
+      pageLink: "/LinearChart",
+    }
+  },
+  {
+    id: "elevate4",
+    front: {
+      imageURL: "_nuxt/assets/me.svg"
+    },
+    back: {
+      title: {
+        fa: "یه نمودار خطی باحال اینجا گذاشتم",
+        en: "There is a nice Linear-Chart here"
+      },
+      pageLink: "/LinearChart",
     }
   },
 ];
