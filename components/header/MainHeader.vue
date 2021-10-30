@@ -85,7 +85,7 @@
     margin: auto 0;
     cursor: pointer;
     border-radius: 0 0 4px 4px;
-    background-color: var(--header-color);
+    background-color: var(--bg-color);
     font-size: 0.8em;
     box-shadow: var(--main-shadow);
     z-index: 1;
@@ -94,7 +94,7 @@
     padding: 1vh 1vw;
     display: flex;
     cursor: pointer;
-    border-bottom: 1px solid rgba(255,255,255,0.5);
+    border-bottom: 1px solid var(--contrast-color);
     height: 100%;
     z-index: 1;
   }
@@ -102,7 +102,7 @@
     border-radius: 0 0 4px 4px;
   }
   .item:hover, .sub-item:hover {
-    background-color: var(--primary-color);
+    background-color: var(--text-color);
   }
   .item:hover > span, .sub-item:hover > span {
     color: var(--bg-color);

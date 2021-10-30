@@ -28,6 +28,7 @@
 
 <style scoped>
   .button {
+    cursor: pointer;
     background-color: var(--bg-color);
     border-radius: 4px;
     border: none;
@@ -66,7 +67,6 @@
     width: 100%;
     height: 100%;
     border-radius: 8px;
-    padding: 1vh 1vw;
     position: absolute;
     top: 0;
     left: 0;
@@ -79,21 +79,23 @@
   }
   .card-front {
     opacity: 1;
+    padding: 0;
     z-index: 2;
   }
   .card-back {
     opacity: 0;
-    z-index: 3;
-    font-size: 1.2em;
+    padding: 2vh 2vw;
+    font-size: 1em;
     text-align: center;
+    z-index: 1;
     justify-content: space-around;
   }
   .card-back > span {
     color: var(--text-color);
   }
   .image {
-    width: 90%;
-    height: 90%;
+    width: 100%;
+    height: 100%;
   }
   @media screen and (max-width: 864px) {
     .card-back {

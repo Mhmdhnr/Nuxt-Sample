@@ -67,7 +67,7 @@
           width: "100",
           height: "100",
           marginTop: 0.35,
-          marginBottom: 0.2,
+          marginBottom: 0.4,
           marginLeft: 0,
           marginRight: 0
         },

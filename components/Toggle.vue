@@ -113,7 +113,7 @@
   }
   .fa, .en {
     position: absolute;
-    top: 3px;
+    /*top: 3px;*/
     z-index: 1;
     font-size: 0.8em;
   }
@@ -124,6 +124,8 @@
   .en {
     right: 6px;
     color: var(--toggle-light);
+    font-family: Ubuntu, sans-serif;
+    font-weight: 500;
   }
 
   @media screen and (max-width: 864px) {

@@ -33,7 +33,7 @@
     justify-content: flex-end;
   }
   .logo .cls-1 {
-    fill: var(--primary-color)
+    fill: var(--text-color)
   }
   .theme-toggle {
     position: relative;

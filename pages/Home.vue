@@ -11,6 +11,12 @@
         <FlipCard class="flip-card" duration="500" v-bind:flipCardData=flipCard[3] />
     </div>
     <div class="m flex">
+        <Flip3DCard class="flip-card-3d-home" duration="900" v-bind:flip3DCardData="flip3DCard[0]" />
+        <Flip3DCard class="flip-card-3d-home" duration="900" v-bind:flip3DCardData="flip3DCard[1]" />
+        <Flip3DCard class="flip-card-3d-home" duration="900" v-bind:flip3DCardData="flip3DCard[2]" />
+        <Flip3DCard class="flip-card-3d-home" duration="900" v-bind:flip3DCardData="flip3DCard[3]" />
+    </div>
+    <div class="m flex">
         <ElevateCard class="elevate-card" v-bind:elevateCardData="elevateCardData[0]" />
         <ElevateCard class="elevate-card" v-bind:elevateCardData="elevateCardData[1]" />
         <ElevateCard class="elevate-card" v-bind:elevateCardData="elevateCardData[2]" />
@@ -24,18 +30,21 @@
     import {slider} from '../data/data.js';
     import {flipCardData} from '../data/data.js';
     import {elevateCardData} from '../data/data.js';
+    import {flip3DCardData} from '../data/data.js';
     import Slider from "../components/Slider";
     import AnimatedWaves from "../components/AnimatedWaves";
     import Links from "../components/Links";
     import FlipCard from "../components/FlipCard";
     import ElevateCard from "../components/ElevateCard";
+    import Flip3DCard from "../components/Flip3DCard";
     export default {
         name: "Home",
-        components: {ElevateCard, FlipCard, Links, AnimatedWaves, Slider},
+        components: {Flip3DCard, ElevateCard, FlipCard, Links, AnimatedWaves, Slider},
         data () {
             return {
                 slider: slider,
                 flipCard: flipCardData,
+                flip3DCard: flip3DCardData,
                 elevateCardData: elevateCardData,
             }
         },
@@ -69,12 +78,16 @@
     justify-content: space-between;
   }
   .flip-card {
-    width: calc(100% / 4 - 2vw);
-    height: 200px;
+    width: 250px;
+    height: 250px;
+  }
+  .flip-card-3d-home {
+    width: 250px;
+    height: 250px;
   }
   .elevate-card {
-    width: calc(100% / 4 - 2vw);
-    height: 200px;
+    width: 250px;
+    height: 250px;
   }
   .links {
     flex: 1;
@@ -87,12 +100,17 @@
       justify-content: space-evenly;
     }
     .flip-card {
-       width: 40%;
+       width: 150px;
        height: 150px;
        margin: 1vh;
      }
     .elevate-card {
-      width: 40%;
+      width: 150px;
+      height: 150px;
+      margin: 1vh;
+     }
+    .flip-card-3d-home {
+      width: 150px;
       height: 150px;
       margin: 1vh;
      }

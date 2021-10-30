@@ -108,7 +108,7 @@
   .moving-area {
     position: relative;
     width: 100%;
-    height: 18vh;
+    height: 20vh;
     margin-top: 3vh;
   }
   .short-content {
@@ -201,7 +201,7 @@
     }
     .content {
       width: 90%;
-      height: 25vh;
+      height: 28vh;
     }
     .all {
       padding-bottom: 15vh;

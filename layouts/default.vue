@@ -23,10 +23,14 @@
                 if (!newValue) {
                     document.body.style.direction = "ltr";
                     document.body.style.textAlign = "left";
+                    document.body.style.fontFamily = "Ubuntu, sans-serif";
+                    document.body.style.fontWeight = "500";
                 }
                 else {
                     document.body.style.direction = "rtl";
                     document.body.style.textAlign = "right";
+                    document.body.style.fontFamily = "vazir, sans-serif";
+                    document.body.style.fontWeight = "400";
                 }
             }
         },
@@ -34,17 +38,16 @@
 </script>
 <style>
   :root {
-    --primary-color: #444;
+    --primary-color: #4bb9ad;
     --text-color: #444;
-    --contrast-color: rgba(200,200,200,1);
-    --header-color: rgba(255,255,255,0.6);
+    --contrast-color: #ccc;
     --bg-color: #fff;
-    --main-shadow: 0 0 5px 5px rgba(0,0,0,0.1);
-    --toggle-light: #d8dbe0;
+    --toggle-light: #eef1f6;
     --toggle-dark: #28292c;
+    --main-shadow: 0 3px 10px 10px rgba(100,100,100,0.1);
 
     --main-header-height: 6vh;
-    --top-header-height: 4vh;
+    --top-header-height: 5vh;
 
     --base-padding-r-l: 2vw;
     --main-padding-r-l: calc((100vw - 1080px) / 2);
@@ -52,9 +55,8 @@
   }
   .dark-mode {
     --primary-color: #eee;
-    --text-color: #ccc;
+    --text-color: #eee;
     --contrast-color: rgb(100,100,100);
-    --header-color: rgba(100,100,100,0.5);
     --bg-color: #222;
     --main-shadow: 0 0 5px 5px rgba(255,255,255,0.05);
     --toggle-light: #28292c;
@@ -63,8 +65,27 @@
   span {
     color: var(--text-color);
   }
+  @font-face {
+    font-family: 'vazir';
+    src:  url("../assets/fonts/Vazir-Regular-UI.ttf") format('truetype');
+    font-weight: 300;
+    font-style: normal;
+  }
+  @font-face {
+    font-family: 'vazir';
+    src:  url("../assets/fonts/Vazir-Medium-UI.ttf") format('truetype');
+    font-weight: 400;
+    font-style: normal;
+  }
+  @font-face {
+    font-family: 'vazir';
+    src:  url("../assets/fonts/Vazir-Bold-UI.ttf") format('truetype');
+    font-weight: 500;
+    font-style: normal;
+  }
   body{
-    font-family: Lalezar,sans-serif;
+    font-family: vazir, sans-serif;
+    font-weight: 400;
     font-size: 1.2em;
     margin: 0;
     text-align: right;
@@ -81,10 +102,12 @@
   .top-header {
     order: 1;
     height: var(--top-header-height);
+    z-index: 10;
   }
   .main-header {
     order: 2;
     height: var(--main-header-height);
+    z-index: 9;
   }
   .nuxt {
     width: 100vw;

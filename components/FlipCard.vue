@@ -4,6 +4,10 @@
       <div class="card-front">
         <img class="image" :src="flipCardData.front.imageURL">
 <!--        <img class="image" src="~/assets/me.svg">-->
+<!--        <img class="image" src="~/assets/chart.svg">-->
+<!--        <img class="image" src="~/assets/1.svg">-->
+<!--        <img class="image" src="~/assets/2.svg">-->
+<!--        <img class="image" src="~/assets/3.svg">-->
       </div>
       <div class="card-back flex flex-column">
         <span v-show="this.$store.state.fa">
@@ -83,7 +87,6 @@
      width: 100%;
      height: 100%;
      border-radius: 8px;
-     padding: 1vh 1vw;
      position: absolute;
      top: 0;
      left: 0;
@@ -96,12 +99,14 @@
    }
   .card-front {
     transform: rotateY(0deg) rotateX(0deg);
+    padding: 0;
     z-index: 2;
   }
   .card-back {
     transform: rotateY(180deg);
+    padding: 2vh 2vw;
     z-index: 1;
-    font-size: 1.2em;
+    font-size: 1em;
     text-align: center;
     justify-content: space-around;
   }
@@ -109,8 +114,8 @@
     color: var(--text-color);
   }
   .image {
-    width: 90%;
-    height: 90%;
+    width: 100%;
+    height: 100%;
   }
   @media screen and (max-width: 864px) {
     .card-back {
