@@ -33,7 +33,7 @@
     import { mapState } from 'vuex';
     export default {
         name: "Slider",
-        props: ['slider'],
+        props: ['slider', 'height'],
         data() {
             return{
             }
@@ -42,6 +42,7 @@
         watch: {
             fa (newValue) {
                 let styleElem = document.head.appendChild(document.createElement("style"));
+                document.getElementsByClassName("all")[0].style.height = this.height.toString();
                 if (!newValue) {
                     styleElem.innerHTML = "#more::before {background: linear-gradient(90deg, rgba(255,255,255,0.3) 0%, rgba(255,255,255,0)  100%);}";
                     document.getElementsByClassName("moving-area")[0].style.textAlign = "left";
@@ -71,6 +72,9 @@
                 document.getElementsByClassName("more-text")[0].classList.remove("fade")
             }
         },
+        mounted() {
+            document.getElementsByClassName("all")[0].style.height = this.height.toString();
+        }
     }
 </script>
 
@@ -79,14 +83,15 @@
     background-color: var(--contrast-color);
     justify-content: space-around;
     flex-direction: row;
-    height: 100%;
+    /*height: 100%;*/
   }
   .gradient {
     width: 30%;
     position: relative;
   }
   .image {
-    width: 100%;
+    width: 30%;
+    /*height: 100%;*/
     z-index: 10;
   }
   .gradient:after {
@@ -109,7 +114,7 @@
     position: relative;
     width: 100%;
     height: 20vh;
-    margin-top: 3vh;
+    margin-top: 1vh;
   }
   .short-content {
     font-size: 1.5em;

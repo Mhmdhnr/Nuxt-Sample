@@ -1,13 +1,15 @@
 <template>
   <div class="main flex flex-row">
-    <div v-for="i in menu" @mouseover="showSubItems(i.id)" @mouseout="hideSubItems(i.id)" @click="navigate(i.link)" class="item">
-      <span  v-show="fa"> {{i.title.fa}} </span>
-      <span  v-show="!fa"> {{i.title.en}} </span>
+    <div v-for="i in menu" @mouseover="showSubItems(i.id)" @mouseout="hideSubItems(i.id)"  class="item flex">
+      <NuxtLink :to="i.link"  class="flex">
+        <span  v-show="fa"> {{i.title.fa}} </span>
+        <span  v-show="!fa"> {{i.title.en}} </span>
+      </NuxtLink>
       <div v-bind:id="i.id" class="sub-items">
-        <div v-for="s in i.subItems" class="sub-item" @click="navigate(i.link)">
+        <NuxtLink v-for="s in i.subItems" class="sub-item" :to="s.link">
          <span  v-show="fa"> {{s.title.fa}} </span>
          <span  v-show="!fa"> {{s.title.en}} </span>
-        </div>
+        </NuxtLink>
       </div>
     </div>
   </div>
@@ -53,7 +55,7 @@
                 document.getElementById(id).style.display = "none";
             },
             navigate(link) {
-                this.$router.push(link);
+                this.$router.push("/" + link);
             }
         }
     }
@@ -66,13 +68,12 @@
     padding: 0 var(--base-padding-r-l);
   }
   .item {
-    padding: 0 1vw;
     position: relative;
     height: var(--main-header-height);
-    display: flex;
     cursor: pointer;
-    border-radius: 4px 4px 0 0;
     font-size: 0.9em;
+    padding: 0 1vw;
+    border-radius: 4px 4px 0 0;
   }
   .sub-items {
     display: none;
@@ -104,7 +105,7 @@
   .item:hover, .sub-item:hover {
     background-color: var(--text-color);
   }
-  .item:hover > span, .sub-item:hover > span {
+  .item:hover > a > span, .sub-item:hover > span {
     color: var(--bg-color);
   }
 
@@ -142,11 +143,14 @@
       padding: 0;
     }
     .item {
-      padding: 0 4vw;
-      position: unset;
-      margin: auto;
-      display: flex;
       flex: 1;
+      display: flex;
+      position: unset;
+      padding: 0 4vw;
+      align-content: center;
+    }
+    a {
+      margin: auto;
     }
     .item, .sub-items, .sub-item:nth-last-child(1) {
       border-radius: 0;
@@ -166,15 +170,9 @@
       display: flex;
       flex: 1;
     }
-    .sub-item > span, .item > span {
+    .sub-item > span, .items > span {
       margin: auto;
     }
-    /*.item:hover, .sub-item:hover {*/
-    /*  background-color: unset;*/
-    /*}*/
-    /*.item:hover > span, .sub-item:hover > span {*/
-    /*  color: unset;*/
-    /*}*/
     @-webkit-keyframes come-in {
       from {
         opacity: 0;

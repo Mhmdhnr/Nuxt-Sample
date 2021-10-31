@@ -1,57 +1,50 @@
 
 export const menu = [
   {
-    id: 1,
+    id: "menu1",
     title : {
       fa: "نمونه کارها",
       en: "Work Samples"
     },
-    link: "LinearChart",
+    link: "/",
     subItems : [
       {
         title : {
           fa: "نمودار خطی",
           en: "Linear Chart"
         },
-        link: "LinearChart",
+        link: "LinearChartPage",
       },
       {
         title : {
-          fa: "دومین از اولین",
-          en: "second"
+          fa: "رده بندی",
+          en: "LeaderBoard"
         },
-        link: "LinearChart",
-      },
-      {
-        title : {
-          fa: "سومین از اولین",
-          en: "third"
-        },
-        link: "LinearChart",
+        link: "LeaderBoardPage",
       }
     ]
   },
   {
-    id: 2,
+    id: "menu2",
     title : {
       fa: "درباره من",
       en: "About me"
     },
-    link: "LinearChart",
+    link: "/",
     subItems : [
       {
         title : {
           fa: "اولین از دومین",
           en: "first"
         },
-        link: "LinearChart",
+        link: "/",
       },
       {
         title : {
           fa: "دومین از دومین",
           en: "second"
         },
-        link: "LinearChart",
+        link: "/",
       }
     ]
   }
@@ -74,8 +67,19 @@ export const slider = [
       en: "This is a linear chart"
     },
     detail: {
-      fa: "سلام دوباره..\ این وبسایت روی فریم ورک Nuxt اجرا شده. در برخی قسمت ها دیتا از API ساده نوشته شده با python گرفته میشه.سورس کد بک اند و فرانت اند روی git-hub هست و اگر مایل باشید میتونید یه نگاهی بهش بندازید. جستوجو روی وبسایت رو شروع کنید شاید چیزی پیدا کردید که براتون جالب بود... شاید همین موجهای متحرک که همین پایینه!!!",
-      en: "Hi again... this website is implemented on Nuxt framework. In some parts data is fetching from a simple API coded whit python. back-end and front-end source code is available on git-hub and you can have a look at it if you wish. begin your explore. there may be something that you find it interesting... Even this Animated Waves just below!!!"
+      fa: "سلام دوباره..\ این وبسایت روی فریم ورک Nuxt اجرا شده. در برخی قسمت ها دیتا از API ساده نوشته شده با python گرفته میشه.سورس کد بک اند و فرانت اند روی git-hub هست و اگر مایل باشید میتونید یه نگاهی بهش بندازید!!!",
+      en: "Hi again... this website is implemented on Nuxt framework. In some parts data is fetching from a simple API coded whit python. back-end and front-end source code is available on git-hub and you can have a look at it if you wish!!!"
+    },
+    imageUrl: "_nuxt/assets/me.svg"
+  },
+  {
+    summary: {
+      fa: "این یک جدول رده بندی است!!!",
+      en: "This is a LeaderBoard"
+    },
+    detail: {
+      fa: "سلام دوباره..\ این وبسایت روی فریم ورک Nuxt اجرا شده. در برخی قسمت ها دیتا از API ساده نوشته شده با python گرفته میشه.سورس کد بک اند و فرانت اند روی git-hub هست و اگر مایل باشید میتونید یه نگاهی بهش بندازید!!!",
+      en: "Hi again... this website is implemented on Nuxt framework. In some parts data is fetching from a simple API coded whit python. back-end and front-end source code is available on git-hub and you can have a look at it if you wish!!!"
     },
     imageUrl: "_nuxt/assets/me.svg"
   },
