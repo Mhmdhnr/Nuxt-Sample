@@ -35,6 +35,13 @@ export const menu = [
           en: "Neon"
         },
         link: "NeonPage",
+      },
+      {
+        title : {
+          fa: "نئون",
+          en: "Neon"
+        },
+        link: "NeonPage",
       }
     ]
   },

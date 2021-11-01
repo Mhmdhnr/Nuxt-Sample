@@ -53,9 +53,6 @@
                 document.getElementById(id).classList.remove("come-in");
                 document.getElementById(id).classList.add("get-out");
                 document.getElementById(id).style.display = "none";
-            },
-            navigate(link) {
-                this.$router.push("/" + link);
             }
         }
     }
@@ -64,7 +61,7 @@
 <style scoped>
   .main {
     width: 100%;
-    z-index: 2;
+    z-index: 50;
     padding: 0 var(--base-padding-r-l);
   }
   .item {
@@ -89,7 +86,6 @@
     background-color: var(--bg-color);
     font-size: 0.8em;
     box-shadow: var(--main-shadow);
-    z-index: 1;
   }
   .sub-item {
     padding: 1vh 1vw;
@@ -157,32 +153,36 @@
     }
     .sub-items {
       opacity: 0;
-      display: flex;
+      display: none;
+      flex-wrap: wrap;
       flex-direction: row;
       width: 100vw;
-      height: var(--main-header-height);
-      /*top: calc(-1 * var(--main-header-height));*/
-      bottom: var(--main-header-height);
-      transform: translateY(var(--main-header-height));
+      min-height: var(--main-header-height);
+      max-height: calc(var(--main-header-height) * 2);
+      bottom: calc(1 * var(--main-header-height));
+      /*transform: translateY(var(--main-header-height));*/
       transition: all 100ms;
       right: 0;
-      box-shadow: none;
+      box-shadow: 0 0 20px 5px rgba(100,100,100,0.2);
+      z-index: 51;
     }
     .sub-item {
       margin: auto;
       display: flex;
       flex: 1;
+      min-width: calc(100vw / 4);
+      background-color: var(--bg-color);
     }
     .sub-item > span, .items > span {
       margin: auto;
     }
     @-webkit-keyframes come-in {
       from {
-        transform: translateY(var(--main-header-height));
+        transform: translateY(calc(1 * var(--main-header-height)));
         opacity: 0;
       }
       to {
-        transform: translateY(0);
+        transform: translateY(calc(-1 * var(--main-header-height)));
         opacity: 1;
       }
     }
@@ -192,7 +192,7 @@
         opacity: 1;
       }
       to {
-        transform: translateY(var(--main-header-height));
+        transform: translateY(calc(1 * var(--main-header-height)));
         opacity: 0;
       }
     }

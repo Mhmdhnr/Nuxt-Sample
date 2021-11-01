@@ -1,7 +1,9 @@
 <template>
   <div class="total-view">
-    <TopHeader class="top-header" />
-    <MainHeader class="main-header"/>
+    <div class="header">
+      <TopHeader class="top-header" />
+      <MainHeader class="main-header"/>
+    </div>
     <nuxt class="nuxt"/>
   </div>
 </template>
@@ -103,6 +105,10 @@
     direction: rtl;
     background-color: var(--bg-color);
   }
+  .header {
+    box-shadow: 0 0 20px 5px rgba(100,100,100,0.2);
+    z-index: 20;
+  }
   .total-view {
     display: flex;
     flex-direction: column;
@@ -176,14 +182,18 @@
       max-height: calc(100vh - var(--main-header-height) - var(--top-header-height));
       overflow: scroll;
       order: 2;
+      z-index: 20;
+    }
+    .header {
+      z-index: 100;
     }
     .main-header {
       position: fixed;
       bottom: 0;
       order: 3;
-      z-index: 50;
       height: var(--main-header-height);
       max-height: var(--main-header-height);
+      box-shadow: 0 0 20px 5px rgba(100,100,100,0.2);
     }
   }
 </style>
