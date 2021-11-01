@@ -161,7 +161,10 @@
       flex-direction: row;
       width: 100vw;
       height: var(--main-header-height);
-      top: calc(-1 * var(--main-header-height));
+      /*top: calc(-1 * var(--main-header-height));*/
+      bottom: var(--main-header-height);
+      transform: translateY(var(--main-header-height));
+      transition: all 100ms;
       right: 0;
       box-shadow: none;
     }
@@ -175,17 +178,21 @@
     }
     @-webkit-keyframes come-in {
       from {
+        transform: translateY(var(--main-header-height));
         opacity: 0;
       }
       to {
+        transform: translateY(0);
         opacity: 1;
       }
     }
     @-webkit-keyframes get-out {
       from {
+        transform: translateY(0);
         opacity: 1;
       }
       to {
+        transform: translateY(var(--main-header-height));
         opacity: 0;
       }
     }

@@ -52,9 +52,20 @@
     --base-padding-r-l: 2vw;
     --main-padding-r-l: calc((100vw - 1080px) / 2);
     --animated-waves-height: 12vh;
+    --shadow:
+      0 10px 10px rgba(0,0,0,0.5),
+      0 0 2vw rgba(75,185,173,1),
+      0 0 4vw rgba(75,185,173,0.9),
+      0 0 6vw rgba(75,185,173,0.8),
+      0 0 8vw rgba(75,185,173,0.7),
+      0 0 10vw rgba(75,185,173,0.6),
+      0 0 12vw rgba(75,185,173,0.5),
+      0 0 15vw rgba(75,185,173,0.4),
+      0 0 18vw rgba(75,185,173,0.3),
+      0 0 22vw rgba(75,185,173,0.2);
   }
   .dark-mode {
-    --primary-color: #eee;
+    --primary-color: #4bb9ad;
     --text-color: #eee;
     --contrast-color: rgb(100,100,100);
     --bg-color: #222;
@@ -102,12 +113,11 @@
   .top-header {
     order: 1;
     height: var(--top-header-height);
-    z-index: 10;
   }
   .main-header {
     order: 2;
     height: var(--main-header-height);
-    z-index: 9;
+    z-index: 50;
   }
   .nuxt {
     width: 100vw;
@@ -171,6 +181,7 @@
       position: fixed;
       bottom: 0;
       order: 3;
+      z-index: 50;
       height: var(--main-header-height);
       max-height: var(--main-header-height);
     }

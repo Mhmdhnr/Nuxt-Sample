@@ -1,7 +1,7 @@
 <template>
   <div class="main flex flex-column">
     <div class="flex slider-main">
-      <slider class="slider" v-bind:slider="slider[2]"  height="40vh" />
+      <slider class="slider" v-bind:slider="slider[2]"  height="45vh" />
       <AnimatedWaves class="animated-waves"/>
     </div>
     <LeaderBoard />

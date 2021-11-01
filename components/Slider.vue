@@ -86,11 +86,11 @@
     /*height: 100%;*/
   }
   .gradient {
-    width: 30%;
+    width: 28%;
     position: relative;
   }
   .image {
-    width: 30%;
+    width: 100%;
     /*height: 100%;*/
     z-index: 10;
   }

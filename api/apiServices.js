@@ -57,5 +57,9 @@ export default {
       const url = `${API_URL}/get_random_x_y/${count}`;
       return await this.toPromise(url);
     },
+    async getRandomNames(count) {
+      const url = `${API_URL}/get_random_names/${count}`;
+      return await this.toPromise(url);
+    },
   }
 }

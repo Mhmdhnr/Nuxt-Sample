@@ -1,27 +1,31 @@
 <template>
   <div class="main flex flex-column">
     <div class="flex slider-main">
-      <Slider class="slider" v-bind:slider="slider[1]" height="45vh" />
+      <Slider class="slider" v-bind:slider="slider[3]"  height="45vh"/>
       <AnimatedWaves class="animated-waves"/>
     </div>
-    <LinearChart class="sample" chartId="sample"/>
+    <div class="my-buttons">
+      <BtnHoverCover />
+      <BtnHoverBorder />
+    </div>
+
   </div>
 </template>
 
 <script>
     import {slider} from '../data/data.js';
-    import LinearChart from "../components/works/LinearChart";
+    import BtnHoverCover from "../components/Buttons/BtnHoverCover";
+    import Slider from "../components/Slider";
     import AnimatedWaves from "../components/AnimatedWaves";
+    import BtnHoverBorder from "../components/Buttons/BtnHoverBorder";
     export default {
-        name: "LinearChartPage",
-        components: {AnimatedWaves, LinearChart},
-        data(){
+        name: "Buttons",
+        components: {BtnHoverBorder, AnimatedWaves, Slider, BtnHoverCover},
+        data () {
             return {
-              slider: slider,
-              chartId: "sample",
+                slider: slider,
             }
-        },
-
+        }
     }
 </script>
 
@@ -42,11 +46,7 @@
   .animated-waves {
     width: 100vw;
   }
-  .sample {
-    width: 100vw;
-    flex: 6;
-  }
-  @media screen and(max-width: 864px) {
-
+  .my-buttons {
+    flex: 5;
   }
 </style>

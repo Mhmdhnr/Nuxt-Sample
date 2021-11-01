@@ -10,7 +10,7 @@
           <use id="wave-1" xlink:href="#gentle-wave" x="48" y="0" fill="rgba(255,255,255,0.7" />
           <use id="wave-2" xlink:href="#gentle-wave" x="48" y="3" fill="rgba(255,255,255,0.5)" />
           <use id="wave-3" xlink:href="#gentle-wave" x="48" y="5" fill="rgba(255,255,255,0.3)" />
-          <use id="wave-4" xlink:href="#gentle-wave" x="48" y="7" fill="#fff" />
+          <use class="wave-4" id="wave-4" xlink:href="#gentle-wave" x="48" y="7" fill="#fff" />
         </g>
       </svg>
     </div>

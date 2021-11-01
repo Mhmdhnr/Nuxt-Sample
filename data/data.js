@@ -6,7 +6,7 @@ export const menu = [
       fa: "نمونه کارها",
       en: "Work Samples"
     },
-    link: "/",
+    link: "",
     subItems : [
       {
         title : {
@@ -21,6 +21,20 @@ export const menu = [
           en: "LeaderBoard"
         },
         link: "LeaderBoardPage",
+      },
+      {
+        title : {
+          fa: "دکمه ها",
+          en: "Buttons"
+        },
+        link: "Buttons",
+      },
+      {
+        title : {
+          fa: "نئون",
+          en: "Neon"
+        },
+        link: "NeonPage",
       }
     ]
   },
@@ -30,7 +44,7 @@ export const menu = [
       fa: "درباره من",
       en: "About me"
     },
-    link: "/",
+    link: "",
     subItems : [
       {
         title : {
@@ -76,6 +90,28 @@ export const slider = [
     summary: {
       fa: "این یک جدول رده بندی است!!!",
       en: "This is a LeaderBoard"
+    },
+    detail: {
+      fa: "سلام دوباره..\ این وبسایت روی فریم ورک Nuxt اجرا شده. در برخی قسمت ها دیتا از API ساده نوشته شده با python گرفته میشه.سورس کد بک اند و فرانت اند روی git-hub هست و اگر مایل باشید میتونید یه نگاهی بهش بندازید!!!",
+      en: "Hi again... this website is implemented on Nuxt framework. In some parts data is fetching from a simple API coded whit python. back-end and front-end source code is available on git-hub and you can have a look at it if you wish!!!"
+    },
+    imageUrl: "_nuxt/assets/me.svg"
+  },
+  {
+    summary: {
+      fa: "چند تا دکمه اصلی!!!",
+      en: "Some CTA Buttons"
+    },
+    detail: {
+      fa: "سلام دوباره..\ این وبسایت روی فریم ورک Nuxt اجرا شده. در برخی قسمت ها دیتا از API ساده نوشته شده با python گرفته میشه.سورس کد بک اند و فرانت اند روی git-hub هست و اگر مایل باشید میتونید یه نگاهی بهش بندازید!!!",
+      en: "Hi again... this website is implemented on Nuxt framework. In some parts data is fetching from a simple API coded whit python. back-end and front-end source code is available on git-hub and you can have a look at it if you wish!!!"
+    },
+    imageUrl: "_nuxt/assets/me.svg"
+  },
+  {
+    summary: {
+      fa: "متن نئونی!!!",
+      en: "Neon Text"
     },
     detail: {
       fa: "سلام دوباره..\ این وبسایت روی فریم ورک Nuxt اجرا شده. در برخی قسمت ها دیتا از API ساده نوشته شده با python گرفته میشه.سورس کد بک اند و فرانت اند روی git-hub هست و اگر مایل باشید میتونید یه نگاهی بهش بندازید!!!",

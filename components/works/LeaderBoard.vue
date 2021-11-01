@@ -17,12 +17,20 @@
     </div>
     <div class="leaderboard" id="base">
       <div class="rows" id="rows">
-        <div v-for="n in range" class="row" :id="n">
-          <span class="rank">
+        <div class="row flex flex-row">
+          <span v-show="this.$store.state.fa" class="rank flex">رتبه</span>
+          <span v-show="!this.$store.state.fa" class="rank flex">Rank</span>
+          <span v-show="this.$store.state.fa" class="name flex">اسم</span>
+          <span v-show="!this.$store.state.fa" class="name flex">Name</span>
+          <span v-show="this.$store.state.fa" class="points flex">امتیاز</span>
+          <span v-show="!this.$store.state.fa" class="points flex">Score</span>
+        </div>
+        <div v-for="n in range" class="row flex flex-row" :id="n">
+          <span class="rank flex">
             {{ n < 10 ? "0" + n.toString() : n.toString() }}
           </span>
-          <span>Someone Else!</span>
-          <span class="points">{{ Math.round(9000 / n) }}</span>
+          <span class="name flex">{{names[n - 1] ? names[n - 1].first_name + " " + names[n - 1].last_name : ""}}</span>
+          <span class="points flex">{{ Math.round(9000 / n) }}</span>
         </div>
       </div>
     </div>
@@ -30,6 +38,7 @@
 </template>
 
 <script>
+    import apiServices from "~/api/apiServices";
     export default {
         name: "LeaderBoard",
         data() {
@@ -38,7 +47,9 @@
                 isRowPassed: false,
                 isRowUpcoming: false,
                 rank: null,
-                range: 30,
+                range: 40,
+                names: [
+                ],
             };
         },
         watch:{
@@ -47,7 +58,7 @@
               for (let i = 1; i <= this.range; i++){
                   let row = document
                       .getElementById(i.toString());
-                  row.getElementsByTagName("span")[1].textContent = "Someone Else!";
+                  // row.getElementsByTagName("span")[1].textContent = "Someone Else!";
                   row.classList.remove("current-user-row");
                   row.classList.remove("stick-top");
                   row.classList.remove("stick-bottom");
@@ -83,12 +94,16 @@
         },
         mounted() {
             this.rank = 23;
+            apiServices.methods.getRandomNames(this.range).then(response => {
+                this.names = response;
+            });
+            console.log(this.names);
         },
         methods: {
             observe(observer){
-                document
-                    .getElementById(this.rank)
-                    .getElementsByTagName("span")[1].textContent = "YOU!";
+                // document
+                    // .getElementById(this.rank)
+                    // .getElementsByTagName("span")[1].textContent = "YOU!";
 
                 if (document.getElementById(this.rank)) {
                     observer.observe(document.getElementById(this.rank));
@@ -103,8 +118,6 @@
             }
         }
     }
-
-
 </script>
 
 <style scoped>
@@ -125,92 +138,71 @@
     text-align: center;
     width: 100%;
     padding: 2vh 0 0;
-    /*height: 100vh;*/
-    /*background: linear-gradient(270deg, #17eab4, #9478ec);*/
-    /*background-size: 400% 400%;*/
-    /*-webkit-animation: bg-animation 10s ease infinite;*/
-  }
-  .title {
-    font-size: 1.5rem;
-    font-weight: 400;
-    margin: 3vh auto 0;
-    color: white;
   }
   .leaderboard {
     display: flex;
     flex-direction: column;
     width: 70%;
-    height: 35vh;
+    height: 32vh;
     overflow-y: scroll;
-    margin: 3vh auto;
+    margin: 2vh auto;
   }
   .leaderboard::-webkit-scrollbar {
     display: none;
   }
   .rows {
-    width: 60%;
+    width: 500px;
     margin: 0 auto;
   }
   .row {
     display: flex;
     flex-direction: row;
-    height: 7vh;
+    height: 5vh;
     text-align: right;
-    margin: 0 auto 0.5vh;
-    background-color: rgba(0, 0, 0, 0.5);
+    margin: 0 auto 2px;
+    background-color: var(--text-color);
     position: relative;
+    justify-content: space-evenly;
+    font-size: 1em;
   }
-  .row:after {
-    content: "";
-    width: 12%;
+  .rank, .name, .points {
+    justify-content: center;
     height: 100%;
-    position: absolute;
-    top: 0;
-    left: 0;
-    background-color: rgba(0, 0, 0, 0.5);
-    z-index: 1;
   }
   .rank {
     z-index: 10;
+    flex: 1;
+    background-color: rgba(100,100,100,0.5);
+  }
+  .name {
+    flex: 4;
+  }
+  .points {
+    flex: 2;
   }
   span {
-    margin: auto 2vw;
+    margin: auto;
     color: var(--text-color);
   }
   .row > span {
     color: var(--bg-color);
   }
   .row > .points {
-    margin: auto 2vw auto auto;
   }
   .stick-top {
     position: sticky;
-    top: 0.7vh;
+    top: 0.5vh;
   }
   .stick-bottom {
     position: sticky;
-    bottom: 0.7vh;
+    bottom: 0.5vh;
   }
   .current-user-row {
-    background-color: #452b5a;
-    color: white;
+    background-color: var(--primary-color);
+    color: var(--bg-color);
     animation: you 300ms ease-in-out forwards;
     box-shadow: 0 2px 10px 10px rgba(20, 20, 20, 0.1);
     z-index: 20;
-  }
-  .current-user-row:after {
-    width: 12%;
-  }
-  @-webkit-keyframes bg-animation {
-    0% {
-      background-position: 0% 50%;
-    }
-    50% {
-      background-position: 100% 50%;
-    }
-    100% {
-      background-position: 0% 50%;
-    }
   }
   @keyframes you {
     from {
@@ -220,6 +212,21 @@
     to {
       transform-origin: center;
       transform: scale(1.2);
+    }
+  }
+  @media screen and (max-width: 864px) {
+    .input {
+      width: 70vw;
+    }
+    .leaderboard {
+      width: 100vw;
+      height: 35vh;
+    }
+    .rows {
+      width: 70%
+    }
+    .row {
+      font-size: 0.8em;
     }
   }
 </style>
