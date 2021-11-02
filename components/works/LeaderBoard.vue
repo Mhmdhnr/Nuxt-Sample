@@ -71,20 +71,25 @@
 
               const observer = new IntersectionObserver((entries, observer) => {
                   // observer.root.style.border = "8px solid #44aa44";
-                  console.log(entries[0].boundingClientRect.y);
+                  // console.log(entries[0].boundingClientRect.y);
                   if (entries[0].isIntersecting) {
                       console.log("entered");
                       // this.isRowIntersecting = !this.isRowIntersecting;
                   } else {
-                      if (entries[0].boundingClientRect.y < 500) {
+                      if (entries[0].boundingClientRect.y < 520) {
+                          console.log(entries[0].boundingClientRect.y);
+                          console.log(entries[0].boundingClientRect.x);
                           this.isRowPassed = true;
                           this.isRowUpcoming = false;
                           console.log("isRowPassed: " + this.isRowPassed);
+                          // document.getElementById(this.rank).classList.remove("stick-bottom");
                           document.getElementById(this.rank).classList.add("stick-top");
                       } else {
+                          console.log(entries[0].boundingClientRect.y);
                           this.isRowPassed = false;
                           this.isRowUpcoming = true;
                           console.log("isRowUpcoming: " + this.isRowUpcoming);
+                          // document.getElementById(this.rank).classList.remove("stick-top");
                           document.getElementById(this.rank).classList.add("stick-bottom");
                       }
                   }

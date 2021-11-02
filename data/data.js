@@ -10,15 +10,15 @@ export const menu = [
     subItems : [
       {
         title : {
-          fa: "نمودار خطی",
-          en: "Linear Chart"
+          fa: "نمودار",
+          en: "Chart"
         },
         link: "LinearChartPage",
       },
       {
         title : {
           fa: "رده بندی",
-          en: "LeaderBoard"
+          en: "Board"
         },
         link: "LeaderBoardPage",
       },
@@ -38,10 +38,10 @@ export const menu = [
       },
       {
         title : {
-          fa: "نئون",
-          en: "Neon"
+          fa: "سوایپ",
+          en: "Swipe"
         },
-        link: "NeonPage",
+        link: "SwipePage",
       }
     ]
   },
@@ -119,6 +119,17 @@ export const slider = [
     summary: {
       fa: "متن نئونی!!!",
       en: "Neon Text"
+    },
+    detail: {
+      fa: "سلام دوباره..\ این وبسایت روی فریم ورک Nuxt اجرا شده. در برخی قسمت ها دیتا از API ساده نوشته شده با python گرفته میشه.سورس کد بک اند و فرانت اند روی git-hub هست و اگر مایل باشید میتونید یه نگاهی بهش بندازید!!!",
+      en: "Hi again... this website is implemented on Nuxt framework. In some parts data is fetching from a simple API coded whit python. back-end and front-end source code is available on git-hub and you can have a look at it if you wish!!!"
+    },
+    imageUrl: "_nuxt/assets/me.svg"
+  },
+  {
+    summary: {
+      fa: "سوایپ در بروزر!!!",
+      en: "Swipe in browser"
     },
     detail: {
       fa: "سلام دوباره..\ این وبسایت روی فریم ورک Nuxt اجرا شده. در برخی قسمت ها دیتا از API ساده نوشته شده با python گرفته میشه.سورس کد بک اند و فرانت اند روی git-hub هست و اگر مایل باشید میتونید یه نگاهی بهش بندازید!!!",

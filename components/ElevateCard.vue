@@ -87,7 +87,7 @@
     padding: 2vh 2vw;
     font-size: 1em;
     text-align: center;
-    z-index: 1;
+    z-index: 3;
     justify-content: space-around;
   }
   .card-back > span {

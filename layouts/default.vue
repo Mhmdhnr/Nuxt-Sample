@@ -80,6 +80,7 @@
   }
   @font-face {
     font-family: 'vazir';
+    font-display: block;
     src:  url("../assets/fonts/Vazir-Regular-UI.ttf") format('truetype');
     font-weight: 300;
     font-style: normal;
