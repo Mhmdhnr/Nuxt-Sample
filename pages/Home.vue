@@ -49,7 +49,7 @@
             }
         },
         mounted() {
-            console.log(flipCardData)
+            console.log(slider)
         }
     }
 </script>

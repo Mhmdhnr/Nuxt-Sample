@@ -80,7 +80,7 @@ export const slider = [
       fa: "سلام دوباره..\ این وبسایت روی فریم ورک Nuxt اجرا شده. در برخی قسمت ها دیتا از API ساده نوشته شده با python گرفته میشه.سورس کد بک اند و فرانت اند روی git-hub هست و اگر مایل باشید میتونید یه نگاهی بهش بندازید. جستوجو روی وبسایت رو شروع کنید شاید چیزی پیدا کردید که براتون جالب بود... شاید همین موجهای متحرک که همین پایینه!!!",
       en: "Hi again... this website is implemented on Nuxt framework. In some parts data is fetching from a simple API coded whit python. back-end and front-end source code is available on git-hub and you can have a look at it if you wish. begin your explore. there may be something that you find it interesting... Even this Animated Waves just below!!!"
     },
-    imageUrl: "_nuxt/assets/me.svg"
+    imageUrl: "me.svg"
   },
   {
     summary: {
@@ -91,7 +91,7 @@ export const slider = [
       fa: "سلام دوباره..\ این وبسایت روی فریم ورک Nuxt اجرا شده. در برخی قسمت ها دیتا از API ساده نوشته شده با python گرفته میشه.سورس کد بک اند و فرانت اند روی git-hub هست و اگر مایل باشید میتونید یه نگاهی بهش بندازید!!!",
       en: "Hi again... this website is implemented on Nuxt framework. In some parts data is fetching from a simple API coded whit python. back-end and front-end source code is available on git-hub and you can have a look at it if you wish!!!"
     },
-    imageUrl: "_nuxt/assets/me.svg"
+    imageUrl: "me.svg"
   },
   {
     summary: {
@@ -102,7 +102,7 @@ export const slider = [
       fa: "سلام دوباره..\ این وبسایت روی فریم ورک Nuxt اجرا شده. در برخی قسمت ها دیتا از API ساده نوشته شده با python گرفته میشه.سورس کد بک اند و فرانت اند روی git-hub هست و اگر مایل باشید میتونید یه نگاهی بهش بندازید!!!",
       en: "Hi again... this website is implemented on Nuxt framework. In some parts data is fetching from a simple API coded whit python. back-end and front-end source code is available on git-hub and you can have a look at it if you wish!!!"
     },
-    imageUrl: "_nuxt/assets/me.svg"
+    imageUrl: "me.svg"
   },
   {
     summary: {
@@ -113,7 +113,7 @@ export const slider = [
       fa: "سلام دوباره..\ این وبسایت روی فریم ورک Nuxt اجرا شده. در برخی قسمت ها دیتا از API ساده نوشته شده با python گرفته میشه.سورس کد بک اند و فرانت اند روی git-hub هست و اگر مایل باشید میتونید یه نگاهی بهش بندازید!!!",
       en: "Hi again... this website is implemented on Nuxt framework. In some parts data is fetching from a simple API coded whit python. back-end and front-end source code is available on git-hub and you can have a look at it if you wish!!!"
     },
-    imageUrl: "_nuxt/assets/me.svg"
+    imageUrl: "me.svg"
   },
   {
     summary: {
@@ -124,7 +124,7 @@ export const slider = [
       fa: "سلام دوباره..\ این وبسایت روی فریم ورک Nuxt اجرا شده. در برخی قسمت ها دیتا از API ساده نوشته شده با python گرفته میشه.سورس کد بک اند و فرانت اند روی git-hub هست و اگر مایل باشید میتونید یه نگاهی بهش بندازید!!!",
       en: "Hi again... this website is implemented on Nuxt framework. In some parts data is fetching from a simple API coded whit python. back-end and front-end source code is available on git-hub and you can have a look at it if you wish!!!"
     },
-    imageUrl: "_nuxt/assets/me.svg"
+    imageUrl: "me.svg"
   },
   {
     summary: {
@@ -135,60 +135,60 @@ export const slider = [
       fa: "سلام دوباره..\ این وبسایت روی فریم ورک Nuxt اجرا شده. در برخی قسمت ها دیتا از API ساده نوشته شده با python گرفته میشه.سورس کد بک اند و فرانت اند روی git-hub هست و اگر مایل باشید میتونید یه نگاهی بهش بندازید!!!",
       en: "Hi again... this website is implemented on Nuxt framework. In some parts data is fetching from a simple API coded whit python. back-end and front-end source code is available on git-hub and you can have a look at it if you wish!!!"
     },
-    imageUrl: "_nuxt/assets/me.svg"
+    imageUrl: "me.svg"
   },
 ];
 export const flipCardData = [
   {
     id: "flip1",
     front: {
-      imageURL: "_nuxt/assets/chart.svg"
+      imageUrl: "chart.svg"
     },
     back: {
       title: {
         fa: "یه نمودار خطی باحال اینجا گذاشتم",
         en: "There is a nice Linear-Chart here"
       },
-      pageLink: "/LinearChart",
+      pageLink: "/LinearChartPage",
     }
   },
   {
     id: "flip2",
     front: {
-      imageURL: "_nuxt/assets/2.svg"
+      imageUrl: "2.svg"
     },
     back: {
       title: {
         fa: "یه نمودار خطی باحال اینجا گذاشتم",
         en: "There is a nice Linear-Chart here"
       },
-      pageLink: "/LinearChart",
+      pageLink: "/LinearChartPage",
     }
   },
   {
     id: "flip3",
     front: {
-      imageURL: "_nuxt/assets/1.svg"
+      imageUrl: "1.svg"
     },
     back: {
       title: {
         fa: "یه نمودار خطی باحال اینجا گذاشتم",
         en: "There is a nice Linear-Chart here"
       },
-      pageLink: "/LinearChart",
+      pageLink: "/LinearChartPage",
     }
   },
   {
     id: "flip4",
     front: {
-      imageURL: "_nuxt/assets/3.svg"
+      imageUrl: "3.svg"
     },
     back: {
       title: {
         fa: "یه نمودار خطی باحال اینجا گذاشتم",
         en: "There is a nice Linear-Chart here"
       },
-      pageLink: "/LinearChart",
+      pageLink: "/LinearChartPage",
     }
   },
 ];
@@ -196,53 +196,53 @@ export const flip3DCardData = [
   {
     id: "flip3D1",
     front: {
-      imageURL: "_nuxt/assets/2.svg"
+      imageUrl: "2.svg"
     },
     back: {
       title: {
         fa: "یه نمودار خطی باحال اینجا گذاشتم",
         en: "There is a nice Linear-Chart here"
       },
-      pageLink: "/LinearChart",
+      pageLink: "/LinearChartPage",
     }
   },
   {
     id: "flip3D2",
     front: {
-      imageURL: "_nuxt/assets/chart.svg"
+      imageUrl: "chart.svg"
     },
     back: {
       title: {
         fa: "یه نمودار خطی باحال اینجا گذاشتم",
         en: "There is a nice Linear-Chart here"
       },
-      pageLink: "/LinearChart",
+      pageLink: "/LinearChartPage",
     }
   },
   {
     id: "flip3D3",
     front: {
-      imageURL: "_nuxt/assets/1.svg"
+      imageUrl: "1.svg"
     },
     back: {
       title: {
         fa: "یه نمودار خطی باحال اینجا گذاشتم",
         en: "There is a nice Linear-Chart here"
       },
-      pageLink: "/LinearChart",
+      pageLink: "/LinearChartPage",
     }
   },
   {
     id: "flip3D4",
     front: {
-      imageURL: "_nuxt/assets/3.svg"
+      imageUrl: "3.svg"
     },
     back: {
       title: {
         fa: "یه نمودار خطی باحال اینجا گذاشتم",
         en: "There is a nice Linear-Chart here"
       },
-      pageLink: "/LinearChart",
+      pageLink: "/LinearChartPage",
     }
   }
 ];
@@ -250,53 +250,53 @@ export const elevateCardData = [
   {
     id: "elevate1",
     front: {
-      imageURL: "_nuxt/assets/3.svg"
+      imageUrl: "3.svg"
     },
     back: {
       title: {
         fa: "یه نمودار خطی باحال اینجا گذاشتم",
         en: "There is a nice Linear-Chart here"
       },
-      pageLink: "/LinearChart",
+      pageLink: "/LinearChartPage",
     }
   },
   {
     id: "elevate2",
     front: {
-      imageURL: "_nuxt/assets/1.svg"
+      imageUrl: "1.svg"
     },
     back: {
       title: {
         fa: "یه نمودار خطی باحال اینجا گذاشتم",
         en: "There is a nice Linear-Chart here"
       },
-      pageLink: "/LinearChart",
+      pageLink: "/LinearChartPage",
     }
   },
   {
     id: "elevate3",
     front: {
-      imageURL: "_nuxt/assets/2.svg"
+      imageUrl: "2.svg"
     },
     back: {
       title: {
         fa: "یه نمودار خطی باحال اینجا گذاشتم",
         en: "There is a nice Linear-Chart here"
       },
-      pageLink: "/LinearChart",
+      pageLink: "/LinearChartPage",
     }
   },
   {
     id: "elevate4",
     front: {
-      imageURL: "_nuxt/assets/chart.svg"
+      imageUrl: "chart.svg"
     },
     back: {
       title: {
         fa: "یه نمودار خطی باحال اینجا گذاشتم",
         en: "There is a nice Linear-Chart here"
       },
-      pageLink: "/LinearChart",
+      pageLink: "/LinearChartPage",
     }
   },
 ];

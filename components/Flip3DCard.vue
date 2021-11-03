@@ -2,7 +2,7 @@
   <div class="flip-card-3d-main">
     <div class="flip-card-3d"  :id="flip3DCardData.id">
       <div class="card-3d-front">
-        <img class="image" :src="flip3DCardData.front.imageURL">
+        <img class="image" :src="require(`@/assets/images/${flip3DCardData.front.imageUrl}`)">
         <!--        <img class="image" src="~/assets/me.svg">-->
       </div>
       <div class="card-3d-back flex flex-column">

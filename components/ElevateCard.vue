@@ -1,7 +1,7 @@
 <template>
     <div class="elevate-card"  :id="elevateCardData.id">
       <div class="card-front">
-        <img class="image" :src="elevateCardData.front.imageURL">
+        <img class="image" :src="require(`@/assets/images/${elevateCardData.front.imageUrl}`)">
 <!--        <img class="image" src="~/assets/me.svg">-->
       </div>
       <div class="card-back flex flex-column">
