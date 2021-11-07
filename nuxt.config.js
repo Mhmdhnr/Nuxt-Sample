@@ -1,7 +1,7 @@
 export default {
   server: {
-    host: "mhmdhnr-nuxt.herokuapp.com",
-    port: 80
+    // host: "mhmdhnr-nuxt.herokuapp.com",
+    // port: 80
   },
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
