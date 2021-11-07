@@ -2,7 +2,7 @@
   <div class="flip-card-main">
     <div class="flip-card"  :id="flipCardData.id">
       <div class="card-front">
-        <img class="image" :src="require(`~/assets/images/${flipCardData.front.imageUrl}`)">
+        <img class="image" :src="require(`~/static/${flipCardData.front.imageUrl}`)">
 <!--        <img class="image" src="~/assets/me.svg">-->
 <!--        <img class="image" src="~/assets/chart.svg">-->
 <!--        <img class="image" src="~/assets/1.svg">-->
