@@ -5,23 +5,26 @@
       <AnimatedWaves class="animated-waves"/>
     </div>
     <div class="m flex">
-        <FlipCard class="flip-card" duration="500" v-bind:flipCardData=flipCard[0] />
-        <FlipCard class="flip-card" duration="500" v-bind:flipCardData=flipCard[1] />
-        <FlipCard class="flip-card" duration="500" v-bind:flipCardData=flipCard[2] />
-        <FlipCard class="flip-card" duration="500" v-bind:flipCardData=flipCard[3] />
+        <FlipCard class="flip-card-home bounce" duration="500" v-bind:flipCardData=flipCard[0] />
+        <FlipCard class="flip-card-home bounce" duration="500" v-bind:flipCardData=flipCard[1] />
+        <FlipCard class="flip-card-home bounce" duration="500" v-bind:flipCardData=flipCard[2] />
+        <FlipCard class="flip-card-home bounce" duration="500" v-bind:flipCardData=flipCard[3] />
+        <FlipCard class="flip-card-home bounce" duration="500" v-bind:flipCardData=flipCard[4] />
     </div>
-    <div class="m flex">
-        <Flip3DCard class="flip-card-3d-home" duration="900" v-bind:flip3DCardData="flip3DCard[0]" />
-        <Flip3DCard class="flip-card-3d-home" duration="900" v-bind:flip3DCardData="flip3DCard[1]" />
-        <Flip3DCard class="flip-card-3d-home" duration="900" v-bind:flip3DCardData="flip3DCard[2]" />
-        <Flip3DCard class="flip-card-3d-home" duration="900" v-bind:flip3DCardData="flip3DCard[3]" />
-    </div>
-    <div class="m flex">
-        <ElevateCard class="elevate-card" v-bind:elevateCardData="elevateCardData[0]" />
-        <ElevateCard class="elevate-card" v-bind:elevateCardData="elevateCardData[1]" />
-        <ElevateCard class="elevate-card" v-bind:elevateCardData="elevateCardData[2]" />
-        <ElevateCard class="elevate-card" v-bind:elevateCardData="elevateCardData[3]" />
-    </div>
+<!--    <div class="m flex">-->
+<!--        <Flip3DCard class="flip-card-home bounce" duration="900" v-bind:flip3DCardData="flipCard[0]" />-->
+<!--        <Flip3DCard class="flip-card-home bounce" duration="900" v-bind:flip3DCardData="flipCard[1]" />-->
+<!--        <Flip3DCard class="flip-card-home bounce" duration="900" v-bind:flip3DCardData="flipCard[2]" />-->
+<!--        <Flip3DCard class="flip-card-home bounce" duration="900" v-bind:flip3DCardData="flipCard[3]" />-->
+<!--        <Flip3DCard class="flip-card-home bounce" duration="900" v-bind:flip3DCardData="flipCard[4]" />-->
+<!--    </div>-->
+<!--    <div class="m flex">-->
+<!--        <ElevateCard class="flip-card-home bounce" v-bind:elevateCardData="flipCard[0]" />-->
+<!--        <ElevateCard class="flip-card-home bounce" v-bind:elevateCardData="flipCard[1]" />-->
+<!--        <ElevateCard class="flip-card-home bounce" v-bind:elevateCardData="flipCard[2]" />-->
+<!--        <ElevateCard class="flip-card-home bounce" v-bind:elevateCardData="flipCard[3]" />-->
+<!--        <ElevateCard class="flip-card-home bounce" v-bind:elevateCardData="flipCard[4]" />-->
+<!--    </div>-->
     <Links class="links"/>
   </div>
 </template>
@@ -49,7 +52,12 @@
             }
         },
         mounted() {
-            console.log(slider)
+            let count = document.querySelectorAll('.bounce').length;
+            for(let i = 0; i < count; i++){
+              setTimeout(function () {
+                document.getElementsByClassName("bounce")[i].classList.add("bounce-in");
+              }, i * 100)
+            }
         }
     }
 </script>
@@ -71,23 +79,17 @@
     width: 100vw;
   }
   .m {
-    flex: 6;
     flex-direction: row;
     width: 100vw;
     padding: 3vh var(--main-padding-r-l) ;
-    justify-content: space-between;
+    justify-content: center;
+    flex-wrap: wrap;
   }
-  .flip-card {
+  .flip-card-home {
     width: 250px;
     height: 250px;
-  }
-  .flip-card-3d-home {
-    width: 250px;
-    height: 250px;
-  }
-  .elevate-card {
-    width: 250px;
-    height: 250px;
+    opacity: 0;
+    margin: 2vw;
   }
   .links {
     flex: 1;

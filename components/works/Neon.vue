@@ -13,7 +13,7 @@
     </div>
     <div id="neon" class=" flex flex-column">
       <span class="" >{{text ? text : "NEON"}}</span>
-      <span class="" >♥  ♦  ♣  ♠</span>
+<!--      <span class="" >♥  ♦  ♣  ♠</span>-->
     </div>
   </div>
 </template>

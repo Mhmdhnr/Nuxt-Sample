@@ -68,7 +68,7 @@
     position: relative;
     height: var(--main-header-height);
     cursor: pointer;
-    font-size: 0.9em;
+    font-size: 0.8em;
     padding: 0 1vw;
     border-radius: 4px 4px 0 0;
   }
@@ -84,7 +84,6 @@
     cursor: pointer;
     border-radius: 0 0 4px 4px;
     background-color: var(--bg-color);
-    font-size: 0.8em;
     box-shadow: var(--main-shadow);
   }
   .sub-item {

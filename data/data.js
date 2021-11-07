@@ -53,20 +53,6 @@ export const menu = [
     },
     link: "",
     subItems : [
-      {
-        title : {
-          fa: "اولین از دومین",
-          en: "first"
-        },
-        link: "/",
-      },
-      {
-        title : {
-          fa: "دومین از دومین",
-          en: "second"
-        },
-        link: "/",
-      }
     ]
   }
 ];
@@ -146,8 +132,8 @@ export const flipCardData = [
     },
     back: {
       title: {
-        fa: "یه نمودار خطی باحال اینجا گذاشتم",
-        en: "There is a nice Linear-Chart here"
+        fa: "نمودار خطی",
+        en: "Linear-Chart"
       },
       pageLink: "/LinearChartPage",
     }
@@ -159,10 +145,10 @@ export const flipCardData = [
     },
     back: {
       title: {
-        fa: "یه نمودار خطی باحال اینجا گذاشتم",
-        en: "There is a nice Linear-Chart here"
+        fa: "جدول رده بندی",
+        en: "Leader Board"
       },
-      pageLink: "/LinearChartPage",
+      pageLink: "/LeaderBoardPage",
     }
   },
   {
@@ -172,10 +158,10 @@ export const flipCardData = [
     },
     back: {
       title: {
-        fa: "یه نمودار خطی باحال اینجا گذاشتم",
-        en: "There is a nice Linear-Chart here"
+        fa: "دکمه",
+        en: "Button"
       },
-      pageLink: "/LinearChartPage",
+      pageLink: "/Buttons",
     }
   },
   {
@@ -185,10 +171,23 @@ export const flipCardData = [
     },
     back: {
       title: {
-        fa: "یه نمودار خطی باحال اینجا گذاشتم",
-        en: "There is a nice Linear-Chart here"
+        fa: "متن نئونی",
+        en: "Neon Text"
       },
-      pageLink: "/LinearChartPage",
+      pageLink: "/NeonPage",
+    }
+  },
+  {
+    id: "flip5",
+    front: {
+      imageUrl: "3.svg"
+    },
+    back: {
+      title: {
+        fa: "سوایپ در بروزر",
+        en: "Swipe in browser"
+      },
+      pageLink: "/SwipePage",
     }
   },
 ];

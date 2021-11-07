@@ -48,8 +48,8 @@
     --toggle-dark: #28292c;
     --main-shadow: 0 3px 10px 10px rgba(100,100,100,0.1);
 
-    --main-header-height: 6vh;
-    --top-header-height: 5vh;
+    --main-header-height: 4vh;
+    --top-header-height: 4vh;
 
     --base-padding-r-l: 2vw;
     --main-padding-r-l: calc((100vw - 1080px) / 2);
@@ -152,6 +152,25 @@
      50%{background-position:100% 50%}
      100%{background-position:0% 50%}
    }
+  .bounce-in {
+    -webkit-animation: 300ms bounce-in forwards 300ms;
+  }
+  @-webkit-keyframes bounce-in {
+    0% {
+      transform: translateY(30vh);
+      opacity: 0;
+    }
+    60% {
+      transform: translateY(-2vh);
+    }
+    80% {
+      transform: translateY(1vh);
+    }
+    100% {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
   @keyframes grow {
     from{
       width: 0;
@@ -169,6 +188,10 @@
     }
   }
   @media screen and (max-width: 864px) {
+    :root {
+      --main-header-height: 6vh;
+      --top-header-height: 5vh;
+    }
     .total-view {
       height: 100vh;
       overflow: hidden;
