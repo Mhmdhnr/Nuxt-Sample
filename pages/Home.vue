@@ -90,7 +90,7 @@
   .flip-card-home {
     width: 250px;
     height: 250px;
-    opacity: 0;
+    /*opacity: 0;*/
     margin: 2vw;
   }
   .links {
