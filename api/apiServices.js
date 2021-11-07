@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const API_URL = 'http://flask-restful-nuxt.herokuapp.com';
+const API_URL = 'https://flask-restful-nuxt.herokuapp.com';
 let axi = axios.create({
   headers: {
     'Content-Type' : 'application/json',
