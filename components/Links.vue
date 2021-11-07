@@ -1,5 +1,5 @@
 <template>
-    <div class="main flex flex-row">
+    <div class="links-main flex flex-row">
       <div class="social flex flex-row">
         <a  href="https://instagram.com/mhmd_honari" target="_blank">
           <div class="link instagram">
@@ -42,7 +42,7 @@
 </script>
 
 <style scoped>
-  .main {
+  .links-main {
     padding: 1vh var(--base-padding-r-l);
     position: fixed;
     bottom: 0;
