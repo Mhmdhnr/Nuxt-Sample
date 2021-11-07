@@ -5,11 +5,11 @@
       <AnimatedWaves class="animated-waves"/>
     </div>
     <div class="m flex">
-        <FlipCard class="flip-card-home bounce" duration="500" v-bind:flipCardData=flipCard[0] />
-        <FlipCard class="flip-card-home bounce" duration="500" v-bind:flipCardData=flipCard[1] />
-        <FlipCard class="flip-card-home bounce" duration="500" v-bind:flipCardData=flipCard[2] />
-        <FlipCard class="flip-card-home bounce" duration="500" v-bind:flipCardData=flipCard[3] />
-        <FlipCard class="flip-card-home bounce" duration="500" v-bind:flipCardData=flipCard[4] />
+        <FlipCard class="flip-card-home " duration="500" v-bind:flipCardData=flipCard[0] />
+        <FlipCard class="flip-card-home " duration="500" v-bind:flipCardData=flipCard[1] />
+        <FlipCard class="flip-card-home " duration="500" v-bind:flipCardData=flipCard[2] />
+        <FlipCard class="flip-card-home " duration="500" v-bind:flipCardData=flipCard[3] />
+        <FlipCard class="flip-card-home " duration="500" v-bind:flipCardData=flipCard[4] />
     </div>
 <!--    <div class="m flex">-->
 <!--        <Flip3DCard class="flip-card-home bounce" duration="900" v-bind:flip3DCardData="flipCard[0]" />-->
@@ -55,7 +55,9 @@
             let count = document.querySelectorAll('.bounce').length;
             for(let i = 0; i < count; i++){
               setTimeout(function () {
-                document.getElementsByClassName("bounce")[i].classList.add("bounce-in");
+                if(document.getElementsByClassName("bounce")[0]){
+                  document.getElementsByClassName("bounce")[i].classList.add("bounce-in");
+                }
               }, i * 100)
             }
         }

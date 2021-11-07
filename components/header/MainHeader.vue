@@ -5,7 +5,7 @@
         <span  v-show="fa"> {{i.title.fa}} </span>
         <span  v-show="!fa"> {{i.title.en}} </span>
       </NuxtLink>
-      <div v-bind:id="i.id" class="sub-items">
+      <div v-show="i.subItems.length !== 0" v-bind:id="i.id" class="sub-items">
         <NuxtLink v-for="s in i.subItems" class="sub-item" :to="s.link">
          <span  v-show="fa"> {{s.title.fa}} </span>
          <span  v-show="!fa"> {{s.title.en}} </span>
