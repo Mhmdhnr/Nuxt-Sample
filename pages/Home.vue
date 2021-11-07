@@ -102,20 +102,9 @@
       flex-wrap: wrap;
       justify-content: space-evenly;
     }
-    .flip-card {
+    .flip-card-home {
        width: 150px;
        height: 150px;
-       margin: 1vh;
-     }
-    .elevate-card {
-      width: 150px;
-      height: 150px;
-      margin: 1vh;
-     }
-    .flip-card-3d-home {
-      width: 150px;
-      height: 150px;
-      margin: 1vh;
      }
   }
 </style>
