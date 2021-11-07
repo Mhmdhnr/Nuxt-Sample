@@ -94,7 +94,6 @@
     margin: 16px;
   }
   .links {
-    flex: 1;
     justify-content: flex-end;
   }
   @media screen and (max-width: 864px) {

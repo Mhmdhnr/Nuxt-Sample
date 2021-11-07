@@ -43,10 +43,10 @@
 
 <style scoped>
   .links-main {
+    width: 100vw;
     padding: 1vh var(--base-padding-r-l);
-    position: fixed;
-    bottom: 0;
-    height: 10vh;
+    position: relative;
+    height: 5vh;
     background-color: var(--contrast-color);
   }
   .social {
