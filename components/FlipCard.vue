@@ -1,8 +1,8 @@
 <template>
   <div class="flip-card-main">
-    <div class="flip-card"  :id="flipCardData.id">
+    <div class="flip-card"  :id="cardData.id">
       <div class="card-front">
-        <img class="image" :src="require(`~/static/${flipCardData.front.imageUrl}`)">
+        <img class="image" :src="require(`~/static/${cardData.front.imageUrl}`)">
 <!--        <img class="image" src="~/assets/me.svg">-->
 <!--        <img class="image" src="~/assets/chart.svg">-->
 <!--        <img class="image" src="~/assets/1.svg">-->
@@ -11,12 +11,12 @@
       </div>
       <div class="card-back flex flex-column">
         <span v-show="this.$store.state.fa">
-          {{flipCardData.back.title.fa}}
+          {{cardData.back.title.fa}}
         </span>
         <span v-show="!this.$store.state.fa">
-          {{flipCardData.back.title.en}}
+          {{cardData.back.title.en}}
         </span>
-        <b-btn class="button" :to="flipCardData.back.pageLink">
+        <b-btn class="button" :to="cardData.back.pageLink">
           <span v-show="this.$store.state.fa"> ببینم </span>
           <span v-show="!this.$store.state.fa"> Let's see </span>
         </b-btn>
@@ -26,11 +26,9 @@
 </template>
 
 <script>
-    import {flipCardData} from "../data/data";
-
     export default {
         name: "FlipCard",
-        props:['duration', 'flipCardData'],
+        props:['duration', 'cardData'],
         data() {
           return {
           }
@@ -38,7 +36,7 @@
         methods: {
         },
         mounted() {
-            let id = this.flipCardData.id;
+            let id = this.cardData.id;
             let flipCard = document.getElementById(id);
             console.log(flipCard);
             flipCard.style.transition = this.duration + "ms ";

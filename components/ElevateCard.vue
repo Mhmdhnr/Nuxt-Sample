@@ -1,17 +1,17 @@
 <template>
-    <div class="elevate-card"  :id="elevateCardData.id">
+    <div class="elevate-card"  :id="cardData.id">
       <div class="card-front">
-        <img class="image" :src="require(`@/assets/images/${elevateCardData.front.imageUrl}`)">
+        <img class="image" :src="require(`@/assets/images/${cardData.front.imageUrl}`)">
 <!--        <img class="image" src="~/assets/me.svg">-->
       </div>
       <div class="card-back flex flex-column">
         <span v-show="this.$store.state.fa">
-          {{elevateCardData.back.title.fa}}
+          {{cardData.back.title.fa}}
         </span>
         <span v-show="!this.$store.state.fa">
-          {{elevateCardData.back.title.en}}
+          {{cardData.back.title.en}}
         </span>
-        <b-btn class="button" :to="elevateCardData.back.pageLink">
+        <b-btn class="button" :to="cardData.back.pageLink">
           <span v-show="this.$store.state.fa"> ببینم </span>
           <span v-show="!this.$store.state.fa"> Let's see </span>
         </b-btn>
@@ -22,7 +22,7 @@
 <script>
     export default {
         name: "ElevateCard",
-        props: ['elevateCardData'],
+        props: ['cardData'],
     }
 </script>
 

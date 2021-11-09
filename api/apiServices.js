@@ -1,6 +1,7 @@
 import axios from 'axios';
 
 const API_URL = 'https://flask-restful-nuxt.herokuapp.com';
+// const API_URL = 'https://localhost:5000';
 let axi = axios.create({
   headers: {
     'Content-Type' : 'application/json',
@@ -59,6 +60,10 @@ export default {
     },
     async getRandomNames(count) {
       const url = `${API_URL}/get_random_names/${count}`;
+      return await this.toPromise(url);
+    },
+    async getTest(id) {
+      const url = `${API_URL}/get_test/${id}`;
       return await this.toPromise(url);
     },
   }

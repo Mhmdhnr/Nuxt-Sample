@@ -9,6 +9,7 @@ export const menu = [
     link: "",
     subItems : [
       {
+        id:"sub11",
         title : {
           fa: "نمودار",
           en: "Chart"
@@ -16,6 +17,7 @@ export const menu = [
         link: "LinearChartPage",
       },
       {
+        id:"sub11",
         title : {
           fa: "رده بندی",
           en: "Board"
@@ -23,6 +25,7 @@ export const menu = [
         link: "LeaderBoardPage",
       },
       {
+        id:"sub11",
         title : {
           fa: "دکمه ها",
           en: "Buttons"
@@ -30,6 +33,7 @@ export const menu = [
         link: "Buttons",
       },
       {
+        id:"sub11",
         title : {
           fa: "نئون",
           en: "Neon"
@@ -37,6 +41,7 @@ export const menu = [
         link: "NeonPage",
       },
       {
+        id:"sub11",
         title : {
           fa: "سوایپ",
           en: "Swipe"
@@ -48,11 +53,19 @@ export const menu = [
   {
     id: "menu2",
     title : {
-      fa: "درباره من",
-      en: "About me"
+      fa: "آزمون ها",
+      en: "Tests"
     },
     link: "",
     subItems : [
+      {
+        id:"sub21",
+        title : {
+          fa: "MBTI",
+          en: "MBTI"
+        },
+        link: "MBTI",
+      }
     ]
   }
 ];
@@ -124,9 +137,9 @@ export const slider = [
     imageUrl: "me.svg"
   },
 ];
-export const flipCardData = [
+export const workCards = [
   {
-    id: "flip1",
+    id: "work1",
     front: {
       imageUrl: "chart.svg"
     },
@@ -139,7 +152,7 @@ export const flipCardData = [
     }
   },
   {
-    id: "flip2",
+    id: "work2",
     front: {
       imageUrl: "2.svg"
     },
@@ -152,7 +165,7 @@ export const flipCardData = [
     }
   },
   {
-    id: "flip3",
+    id: "work3",
     front: {
       imageUrl: "1.svg"
     },
@@ -165,7 +178,7 @@ export const flipCardData = [
     }
   },
   {
-    id: "flip4",
+    id: "work4",
     front: {
       imageUrl: "3.svg"
     },
@@ -178,7 +191,7 @@ export const flipCardData = [
     }
   },
   {
-    id: "flip5",
+    id: "work5",
     front: {
       imageUrl: "3.svg"
     },

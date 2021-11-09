@@ -1,18 +1,18 @@
 <template>
   <div class="flip-card-3d-main">
-    <div class="flip-card-3d"  :id="flip3DCardData.id">
+    <div class="flip-card-3d"  :id="cardData.id">
       <div class="card-3d-front">
-        <img class="image" :src="require(`@/assets/images/${flip3DCardData.front.imageUrl}`)">
+        <img class="image" :src="require(`@/assets/images/${cardData.front.imageUrl}`)">
         <!--        <img class="image" src="~/assets/me.svg">-->
       </div>
       <div class="card-3d-back flex flex-column">
         <span v-show="this.$store.state.fa">
-          {{flip3DCardData.back.title.fa}}
+          {{cardData.back.title.fa}}
         </span>
         <span v-show="!this.$store.state.fa">
-          {{flip3DCardData.back.title.en}}
+          {{cardData.back.title.en}}
         </span>
-        <b-btn class="button" :to="flip3DCardData.back.pageLink">
+        <b-btn class="button" :to="cardData.back.pageLink">
           <span v-show="this.$store.state.fa"> ببینم </span>
           <span v-show="!this.$store.state.fa"> Let's see </span>
         </b-btn>
@@ -24,7 +24,7 @@
 <script>
     export default {
         name: "Flip3DCard",
-        props:['duration', 'flip3DCardData'],
+        props:['duration', 'cardData'],
         data() {
             return {
             }
@@ -32,7 +32,7 @@
         methods: {
         },
         mounted() {
-            let id = this.flip3DCardData.id;
+            let id = this.cardData.id;
             let flipCard = document.getElementById(id);
             console.log(flipCard);
             flipCard.style.transition = this.duration + "ms ";
