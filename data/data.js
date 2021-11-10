@@ -17,7 +17,7 @@ export const menu = [
         link: "LinearChartPage",
       },
       {
-        id:"sub11",
+        id:"sub12",
         title : {
           fa: "رده بندی",
           en: "Board"
@@ -25,7 +25,7 @@ export const menu = [
         link: "LeaderBoardPage",
       },
       {
-        id:"sub11",
+        id:"sub13",
         title : {
           fa: "دکمه ها",
           en: "Buttons"
@@ -33,7 +33,7 @@ export const menu = [
         link: "Buttons",
       },
       {
-        id:"sub11",
+        id:"sub14",
         title : {
           fa: "نئون",
           en: "Neon"
@@ -41,12 +41,20 @@ export const menu = [
         link: "NeonPage",
       },
       {
-        id:"sub11",
+        id:"sub15",
         title : {
           fa: "سوایپ",
           en: "Swipe"
         },
         link: "SwipePage",
+      },
+      {
+        id:"sub16",
+        title : {
+          fa: "گالری",
+          en: "Gallery"
+        },
+        link: "Shop",
       }
     ]
   },
@@ -65,9 +73,98 @@ export const menu = [
           en: "MBTI"
         },
         link: "MBTI",
+      },
+      {
+        id:"sub22",
+        title : {
+          fa: "Raven",
+          en: "Raven"
+        },
+        link: "Raven",
       }
     ]
   }
+];
+
+export const workCards = [
+  {
+    id: "work1",
+    front: {
+      imageUrl: "chart.svg"
+    },
+    back: {
+      title: {
+        fa: "نمودار خطی",
+        en: "Linear-Chart"
+      },
+      pageLink: "/LinearChartPage",
+    }
+  },
+  {
+    id: "work2",
+    front: {
+      imageUrl: "2.svg"
+    },
+    back: {
+      title: {
+        fa: "جدول رده بندی",
+        en: "Leader Board"
+      },
+      pageLink: "/LeaderBoardPage",
+    }
+  },
+  {
+    id: "work3",
+    front: {
+      imageUrl: "1.svg"
+    },
+    back: {
+      title: {
+        fa: "دکمه",
+        en: "Button"
+      },
+      pageLink: "/Buttons",
+    }
+  },
+  {
+    id: "work4",
+    front: {
+      imageUrl: "3.svg"
+    },
+    back: {
+      title: {
+        fa: "متن نئونی",
+        en: "Neon Text"
+      },
+      pageLink: "/NeonPage",
+    }
+  },
+  {
+    id: "work5",
+    front: {
+      imageUrl: "1.svg"
+    },
+    back: {
+      title: {
+        fa: "سوایپ در بروزر",
+        en: "Swipe in browser"
+      },
+      pageLink: "/SwipePage",
+    }
+  },
+  {
+    id: "work6",
+    front: {
+      imageUrl: "2.svg"
+    },
+    back: {
+      title: {
+        fa: "گالری کفش!",
+        en: "Show Gallery"
+      },
+      pageLink: "/Shop",
+    }
+  },
 ];
 export const slider = [
   {
@@ -137,180 +234,3 @@ export const slider = [
     imageUrl: "me.svg"
   },
 ];
-export const workCards = [
-  {
-    id: "work1",
-    front: {
-      imageUrl: "chart.svg"
-    },
-    back: {
-      title: {
-        fa: "نمودار خطی",
-        en: "Linear-Chart"
-      },
-      pageLink: "/LinearChartPage",
-    }
-  },
-  {
-    id: "work2",
-    front: {
-      imageUrl: "2.svg"
-    },
-    back: {
-      title: {
-        fa: "جدول رده بندی",
-        en: "Leader Board"
-      },
-      pageLink: "/LeaderBoardPage",
-    }
-  },
-  {
-    id: "work3",
-    front: {
-      imageUrl: "1.svg"
-    },
-    back: {
-      title: {
-        fa: "دکمه",
-        en: "Button"
-      },
-      pageLink: "/Buttons",
-    }
-  },
-  {
-    id: "work4",
-    front: {
-      imageUrl: "3.svg"
-    },
-    back: {
-      title: {
-        fa: "متن نئونی",
-        en: "Neon Text"
-      },
-      pageLink: "/NeonPage",
-    }
-  },
-  {
-    id: "work5",
-    front: {
-      imageUrl: "3.svg"
-    },
-    back: {
-      title: {
-        fa: "سوایپ در بروزر",
-        en: "Swipe in browser"
-      },
-      pageLink: "/SwipePage",
-    }
-  },
-];
-export const flip3DCardData = [
-  {
-    id: "flip3D1",
-    front: {
-      imageUrl: "2.svg"
-    },
-    back: {
-      title: {
-        fa: "یه نمودار خطی باحال اینجا گذاشتم",
-        en: "There is a nice Linear-Chart here"
-      },
-      pageLink: "/LinearChartPage",
-    }
-  },
-  {
-    id: "flip3D2",
-    front: {
-      imageUrl: "chart.svg"
-    },
-    back: {
-      title: {
-        fa: "یه نمودار خطی باحال اینجا گذاشتم",
-        en: "There is a nice Linear-Chart here"
-      },
-      pageLink: "/LinearChartPage",
-    }
-  },
-  {
-    id: "flip3D3",
-    front: {
-      imageUrl: "1.svg"
-    },
-    back: {
-      title: {
-        fa: "یه نمودار خطی باحال اینجا گذاشتم",
-        en: "There is a nice Linear-Chart here"
-      },
-      pageLink: "/LinearChartPage",
-    }
-  },
-  {
-    id: "flip3D4",
-    front: {
-      imageUrl: "3.svg"
-    },
-    back: {
-      title: {
-        fa: "یه نمودار خطی باحال اینجا گذاشتم",
-        en: "There is a nice Linear-Chart here"
-      },
-      pageLink: "/LinearChartPage",
-    }
-  }
-];
-export const elevateCardData = [
-  {
-    id: "elevate1",
-    front: {
-      imageUrl: "3.svg"
-    },
-    back: {
-      title: {
-        fa: "یه نمودار خطی باحال اینجا گذاشتم",
-        en: "There is a nice Linear-Chart here"
-      },
-      pageLink: "/LinearChartPage",
-    }
-  },
-  {
-    id: "elevate2",
-    front: {
-      imageUrl: "1.svg"
-    },
-    back: {
-      title: {
-        fa: "یه نمودار خطی باحال اینجا گذاشتم",
-        en: "There is a nice Linear-Chart here"
-      },
-      pageLink: "/LinearChartPage",
-    }
-  },
-  {
-    id: "elevate3",
-    front: {
-      imageUrl: "2.svg"
-    },
-    back: {
-      title: {
-        fa: "یه نمودار خطی باحال اینجا گذاشتم",
-        en: "There is a nice Linear-Chart here"
-      },
-      pageLink: "/LinearChartPage",
-    }
-  },
-  {
-    id: "elevate4",
-    front: {
-      imageUrl: "chart.svg"
-    },
-    back: {
-      title: {
-        fa: "یه نمودار خطی باحال اینجا گذاشتم",
-        en: "There is a nice Linear-Chart here"
-      },
-      pageLink: "/LinearChartPage",
-    }
-  },
-];
-
-

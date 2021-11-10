@@ -3,11 +3,6 @@
     <div class="flip-card"  :id="cardData.id">
       <div class="card-front">
         <img class="image" :src="require(`~/static/${cardData.front.imageUrl}`)">
-<!--        <img class="image" src="~/assets/me.svg">-->
-<!--        <img class="image" src="~/assets/chart.svg">-->
-<!--        <img class="image" src="~/assets/1.svg">-->
-<!--        <img class="image" src="~/assets/2.svg">-->
-<!--        <img class="image" src="~/assets/3.svg">-->
       </div>
       <div class="card-back flex flex-column">
         <span v-show="this.$store.state.fa">

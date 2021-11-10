@@ -4,7 +4,7 @@
       <Slider class="slider" v-bind:slider="slider[0]" height="45vh"/>
       <AnimatedWaves class="animated-waves"/>
     </div>
-    <Test v-on:submit="submit" class="test" testId="1"/>
+    <Test v-on:submit="submit" testId="1"/>
   </div>
 </template>
 
