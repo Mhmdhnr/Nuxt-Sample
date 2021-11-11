@@ -35,7 +35,7 @@
     perspective: 1000px;
   }
   .gallery {
-    width: 300px;
+    width: 800px;
   }
   @media screen and(max-width: 864px) {
     .gallery {

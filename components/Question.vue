@@ -1,17 +1,24 @@
 <template>
     <div class="question flex">
-      <div class="flex question-head">
-        <div v-show="question.question_fa" class="question-text flex">
+      <div v-show="question.question_fa" class="question-main question-main-text">
+        <div  class="question-text flex">
           {{question.question_fa}}
         </div>
+      </div>
+      <div v-if="question.question_image" class="flex question-main question-main-image">
         <img v-if="question.question_image" class="question-image" :src="require(`~/assets/images/raven/${question.question_image}.jpg`)">
       </div>
-      <div class="choices">
-        <div v-for="choice in question.choices" class="choice flex">
+      <div class="choices choices-text">
+        <div v-if="choice.choice_fa" v-for="choice in question.choices" class="choice choice-text flex">
           <input class="test-input" :id="choice.id" type="radio" v-bind:value="choice.index" v-model="selected">
-          <label v-show="choice.choice_fa" class="choice-label" @click="check(question, choice)">{{choice.choice_fa}}</label>
-          <label v-show="choice.choice_image" class="choice-label-image" @click="check(question, choice)">
-            <img v-if="choice.choice_image" class="choice-image" :src="require(`~/assets/images/raven/${choice.choice_image}.jpg`)">
+          <label  class="choice-label" @click="check(question, choice)">{{choice.choice_fa}}</label>
+        </div>
+      </div>
+      <div class="choices choices-image">
+        <div v-if="choice.choice_image" v-for="choice in question.choices" class="choice choice-image flex">
+          <input class="test-input" :id="choice.id" type="radio" v-bind:value="choice.index" v-model="selected">
+          <label class="choice-label-image" @click="check(question, choice)">
+            <img class="image" :src="require(`~/assets/images/raven/${choice.choice_image}.jpg`)">
           </label>
         </div>
       </div>
@@ -28,17 +35,17 @@
             }
         },
         mounted() {
-            if(this.question.choices[0].choice_image){
-                for (let d of document.querySelectorAll(".choice")){
-                    d.style.width = "200px"
-                    d.style.height = "100px"
-                }
-            }
-            else {
-                for (let d of document.querySelectorAll("choice")){
-                    d.style.height = "6vh"
-                }
-            }
+            // if(this.question.choices[0].choice_image){
+            //     for (let d of document.querySelectorAll(".choice")){
+            //         d.style.width = "200px"
+            //         d.style.height = "100px"
+            //     }
+            // }
+            // else {
+            //     for (let d of document.querySelectorAll("choice")){
+            //         d.style.height = "6vh"
+            //     }
+            // }
 
         },
         methods: {
@@ -73,8 +80,14 @@
     height: 100%;
     padding: 0;
   }
-  .question-head{
+  .question-main{
     padding: 0 0 3vh;
+  }
+  .question-main-text {
+    width: 100%;
+  }
+  .question-main-image {
+    width: 100%;
   }
   .question-text {
     padding: 2vh 2vw 2vh;
@@ -86,28 +99,36 @@
   }
   .question-image {
     margin: auto;
-    width: 300px;
   }
   .choices {
-    display: flex;
+    /*display: flex;*/
     flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: space-evenly;
+    justify-content: center;
     width: 100%;
     height: auto;
     padding: 0 2vw 1vh;
   }
+  .choices-image {
+    display: flex;
+    flex-wrap: wrap;
+  }
   .choice {
-    width: 100%;
-    height: 6vh;
-    margin: 0 4vw;
+    margin: 2vw;
     position: relative;
+  }
+  .choice-text {
+    margin: 1vw;
+    height: 6vh;
+  }
+  .choice-image {
+    height: 125px;
+    width: 125px;
   }
   .choice-label {
     margin: 0 0 1vh;
     position: absolute;
     width: 100%;
-    height: auto;
+    height: 100%;
     top: 0;
     right: 0;
     border-radius: 4px;
@@ -120,10 +141,11 @@
   }
   .choice-label-image {
     display: flex;
+    justify-content: center;
     margin: 0 0 1vh;
     position: absolute;
     width: 100%;
-    height: auto;
+    height: 100%;
     top: 0;
     right: 0;
     border-radius: 4px;
@@ -133,7 +155,7 @@
     box-shadow: 0 0 4px 1px rgba(100,100,100,0.2);
     color: var(--text-color);
   }
-  .choice-image {
+  .image {
     margin: auto;
     width: 100px;
   }

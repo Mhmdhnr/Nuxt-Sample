@@ -50,7 +50,7 @@
     transform-style: preserve-3d;
     transform-origin: bottom;
     /*transform: rotateX(5deg);*/
-    transition: all 200ms;
+    /*transition: all 200ms;*/
     box-shadow: 0 0 10px 5px rgba(100,100,100,0.2);
   }
   .base {
