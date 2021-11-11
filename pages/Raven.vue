@@ -9,6 +9,7 @@
 </template>
 
 <script>
+    import apiServices from "../api/apiServices";
     import {slider} from "../data/data";
     import Test from "../components/Test";
     import Slider from "../components/Slider";
@@ -23,7 +24,9 @@
         },
         methods: {
             submit({choices}) {
-                console.log(choices)
+                apiServices.methods.postRavenResponse(choices).then(response => {
+                    console.log(response)
+                })
             }
         }
     }

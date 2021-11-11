@@ -23,18 +23,20 @@
             return {
                 test: {},
                 slider: slider,
-                choices_array: Array(),
+                choices_array: {
+                    responses: []
+                },
             }
         },
         beforeMount() {
             apiServices.methods.getTest(this.testId).then(response => {
               this.test = response;
-              this.choices_array = Array(this.test.questions.length);
+              this.choices_array.responses = Array(this.test.questions.length);
             })
         },
         methods:{
             select({choiceIndex, questionIndex}){
-                this.choices_array[questionIndex - 1] = choiceIndex;
+                this.choices_array.responses[questionIndex - 1] = choiceIndex;
             },
             submit(){
                 this.$emit('submit', {choices: this.choices_array})

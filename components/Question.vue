@@ -2,10 +2,11 @@
     <div class="question flex">
       <div v-show="question.question_fa" class="question-main question-main-text">
         <div  class="question-text flex">
-          {{question.question_fa}}
+          <span>{{question.index}}) {{question.question_fa}}</span>
         </div>
       </div>
       <div v-if="question.question_image" class="flex question-main question-main-image">
+        <span>({{question.index}})</span>
         <img v-if="question.question_image" class="question-image" :src="require(`~/assets/images/raven/${question.question_image}.jpg`)">
       </div>
       <div class="choices choices-text">
@@ -35,18 +36,16 @@
             }
         },
         mounted() {
-            // if(this.question.choices[0].choice_image){
-            //     for (let d of document.querySelectorAll(".choice")){
-            //         d.style.width = "200px"
-            //         d.style.height = "100px"
+            // let questions = document.getElementsByClassName('question');
+            // let i = 1;
+            // for(let question of questions) {
+            //     if(i%2 === 0) {
+            //       question.style.backgroundColor = "#eee"
+            //     } else {
+            //       question.style.backgroundColor = "#ddd"
             //     }
+            //     i ++
             // }
-            // else {
-            //     for (let d of document.querySelectorAll("choice")){
-            //         d.style.height = "6vh"
-            //     }
-            // }
-
         },
         methods: {
             check(question, choice) {
@@ -74,20 +73,27 @@
   .question {
     flex-direction: column;
     justify-content: flex-start;
-    margin: 0 auto 2vh;
-    /*border: 1px solid var(--primary-color);*/
+    margin: 0 auto;
+    border-bottom: 2px solid var(--primary-color);
     width: 100%;
     height: 100%;
     padding: 0;
   }
   .question-main{
-    padding: 0 0 3vh;
+
+    padding: 2vh 0;
   }
   .question-main-text {
     width: 100%;
   }
   .question-main-image {
     width: 100%;
+    position: relative;
+  }
+  .question-main-image > span {
+    position: absolute;
+    right: 2vw;
+    top: 2vh;
   }
   .question-text {
     padding: 2vh 2vw 2vh;
@@ -109,8 +115,8 @@
     padding: 0 2vw 1vh;
   }
   .choices-image {
-    display: flex;
-    flex-wrap: wrap;
+    display: grid;
+    grid-template-columns: auto auto auto auto;
   }
   .choice {
     margin: 2vw;

@@ -1,12 +1,13 @@
 import axios from 'axios';
 
 const API_URL = 'https://flask-restful-nuxt.herokuapp.com';
-// const API_URL = 'https://localhost:5000';
+// const API_URL = 'http://127.0.0.1:5000';
 let axi = axios.create({
   headers: {
     'Content-Type' : 'application/json',
     // 'Access-Control-Allow-Origin' : '*',
     // 'Access-Control-Allow-Credentials' : 'true',
+    // 'Access-Control-Allow-Methods': 'GET,POST,OPTIONS,DELETE,PUT'
   },
   // xsrfCookieName: 'XSRF-TOKEN',
   // xsrfHeaderName: 'X-XSRF-TOKEN',
@@ -27,7 +28,8 @@ export default {
         return await new Promise((resolve1, reject1) =>
           axi.post(url, data)
             .then(response => {
-              if (!response || response.data.type === 'error') {
+              // if (!response || response.data.type === 'error') {
+              if (!response) {
                 reject1(response);
               } else {
                 resolve1(response.data)
@@ -65,6 +67,12 @@ export default {
     async getTest(id) {
       const url = `${API_URL}/get_test/${id}`;
       return await this.toPromise(url);
+    },
+    async postRavenResponse(clientAnswers) {
+      let jsonString = JSON.stringify(clientAnswers);
+      console.log(jsonString);
+      const url = `${API_URL}/post_raven_response?clientAnswers=${jsonString}`;
+      return await this.toPromise(url, 'post', clientAnswers);
     },
   }
 }
