@@ -2,8 +2,11 @@
   <div class="test">
     <Loading v-show="this.api === 'pending'" :message="this.loading_message"/>
     <div v-show="this.api === 'done'" class="test flex">
-      <div v-show="this.test.time !== 0" class="timer">
-        <div>
+<!--    <div class="test flex">-->
+      <div class="test-head flex flex-row">
+        <span v-if="this.fa" class="title">{{this.test.name_fa}}</span>
+        <span v-if="!this.fa" class="title">{{this.test.name_en}}</span>
+        <div v-show="this.test.time !== 0" class="timer">
           <span id="time">
             <span v-if="this.fa">زمان آزمون</span>
             <span v-if="!this.fa">Test time </span>
@@ -15,8 +18,15 @@
       </div>
       <Question :id="`q${question.id}`" v-on:selected="select" v-for="question in test.questions" v-bind:question="question" />
       <div class="hint" v-on:click="unAnswered()">
-        <span v-if="!this.allAnswered"> به تمام سوالات پاسخ نداده اید </span>
-        <span v-if="this.allAnswered"> به تمام سوالات پاسخ داده اید </span>
+        <div v-if="!this.allAnswered">
+          <span v-if="this.fa"> به تمام سوالات پاسخ نداده اید </span>
+          <span v-if="!this.fa"> You have not answered all questions </span>
+
+        </div>
+        <div v-if="this.allAnswered">
+          <span v-if="this.allAnswered"> به تمام سوالات پاسخ داده اید </span>
+          <span v-if="!this.fa"> You have answered all questions </span>
+        </div>
       </div>
       <button id="submit" v-on:click="submit()" class="btn-border-hover submit">
         <span v-show="this.$store.state.fa" class="btn-border-hover-text"> ارسال آزمون </span>
@@ -112,6 +122,21 @@
   .submit {
     margin: 3vh auto;
   }
+  .test-head {
+    padding: 2vh 10vw;
+    width: 100vw;
+    justify-content: space-between;
+    background-color: var(--primary-color);
+  }
+  #time > span {
+    color: var(--bg-color);
+  }
+  #time {
+    color: var(--bg-color);
+  }
+  .title {
+    color: var(--bg-color)
+  }
   .hint {
     cursor: pointer;
     padding: 4vh 0 0;
@@ -129,7 +154,7 @@
   .test {
     width: 1080px;
     height: 100%;
-    padding: 2vh 0;
+    padding: 0;
     flex-direction: column;
     justify-content: center;
   }

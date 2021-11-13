@@ -80,22 +80,24 @@
   }
   @font-face {
     font-family: 'vazir';
-    font-display: block;
     src:  url("../assets/fonts/Vazir-Regular-UI.ttf") format('truetype');
     font-weight: 300;
     font-style: normal;
+    font-display: block;
   }
   @font-face {
     font-family: 'vazir';
     src:  url("../assets/fonts/Vazir-Medium-UI.ttf") format('truetype');
     font-weight: 400;
     font-style: normal;
+    font-display: block;
   }
   @font-face {
     font-family: 'vazir';
     src:  url("../assets/fonts/Vazir-Bold-UI.ttf") format('truetype');
     font-weight: 500;
     font-style: normal;
+    font-display: block;
   }
   body{
     font-family: vazir, sans-serif;
