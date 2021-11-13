@@ -5,15 +5,6 @@
     <span class="iq-span" v-if="!this.fa">Your IQ </span>
     <span class="iq" v-if="!this.fa">{{this.$route.params.iq}}</span>
     <div class="ranges flex flex-row">
-<!--      <div class="arrow">-->
-<!--        <div class="genius"></div>-->
-<!--        <div class="super-excellent"></div>-->
-<!--        <div class="excellent"></div>-->
-<!--        <div class="average"></div>-->
-<!--        <div class="below-average"></div>-->
-<!--        <div class="borderline-retarded"></div>-->
-<!--        <div class="retarded"></div>-->
-<!--      </div>-->
       <div>
         <div class="range genius">
           <span v-if="this.fa">نابغه</span>
@@ -107,38 +98,6 @@
                   }
                 }, Math.pow(i, 1.9))
             }
-            // setTimeout(function () {
-            //     switch (true) {
-            //         case iq <= 64:
-            //             range = 'retarded';
-            //             break;
-            //         case iq > 64 && iq <= 76:
-            //             range = 'borderline-retarded';
-            //             arrow.classList.add('to-borderline-retarded');
-            //             break;
-            //         case iq > 76 && iq <= 88:
-            //             range = 'below-average';
-            //             arrow.classList.add('to-below-average');
-            //             break;
-            //         case iq > 88 && iq <= 112:
-            //             range = 'average';
-            //             arrow.classList.add('to-average');
-            //             break;
-            //         case iq > 112 && iq <= 124:
-            //             range = 'excellent';
-            //             arrow.classList.add('to-excellent');
-            //             break;
-            //         case iq > 124 && iq <= 148:
-            //             range = 'super-excellent';
-            //             arrow.classList.add('to-super-excellent');
-            //             break;
-            //         case iq > 148:
-            //             range = 'genius';
-            //             arrow.classList.add('to-genius');
-            //             break;
-            //     }
-            //     // document.getElementsByClassName(range)[0].classList.add('client-range');
-            // }, 1000);
         }
     }
 </script>
@@ -158,13 +117,6 @@
   .ranges {
     position: relative;
   }
-  /*.arrow {*/
-  /*  background: linear-gradient(0deg, tomato 0%, orange 16%, yellow 33%, greenyellow 50%, lightgreen 66%, aqua 82%, lightskyblue 100%);*/
-  /*  clip-path: polygon(40% 93%, 60% 91%, 60% 95%);*/
-  /*  width: 10vh;*/
-  /*  margin: auto 1vw;*/
-  /*  height: 56vh;*/
-  /*}*/
   .range {
     display: flex;
     position: relative;
@@ -219,107 +171,5 @@
   /*}*/
   /*.genius {*/
   /*  background-color: lightskyblue;*/
-  /*}*/
-  /*.to-borderline-retarded {*/
-  /*  animation: to-borderline-retarded 2s forwards cubic-bezier(.42,.5,0,1.06);*/
-  /*}*/
-  /*@keyframes to-borderline-retarded {*/
-  /*  0% {*/
-  /*    clip-path: polygon(40% 93%, 60% 91%, 60% 95%);*/
-  /*  }*/
-  /*  30% {*/
-  /*    clip-path: polygon( 50% 91%, 40% 95%, 60% 95%);*/
-  /*  }*/
-  /*  80% {*/
-  /*    clip-path: polygon( 50% 77%, 40% 81%, 60% 81%);*/
-  /*  }*/
-  /*  100% {*/
-  /*    clip-path: polygon(40% 79%, 60% 77%, 60% 81%);*/
-  /*  }*/
-  /*}*/
-  /*.to-below-average {*/
-  /*  animation: to-below-average 2.2s forwards cubic-bezier(.42,.5,0,1.06);*/
-  /*}*/
-  /*@keyframes to-below-average {*/
-  /*  0% {*/
-  /*    clip-path: polygon(40% 93%, 60% 91%, 60% 95%);*/
-  /*  }*/
-  /*  30% {*/
-  /*    clip-path: polygon( 50% 91%, 40% 95%, 60% 95%);*/
-  /*  }*/
-  /*  80% {*/
-  /*    clip-path: polygon( 50% 62%, 40% 66%, 60% 66%);*/
-  /*  }*/
-  /*  100% {*/
-  /*    clip-path: polygon(40% 64%, 60% 62%, 60% 66%);*/
-  /*  }*/
-  /*}*/
-  /*.to-average {*/
-  /*  animation: to-average 2.4s forwards cubic-bezier(.42,.5,0,1.06);*/
-  /*}*/
-  /*@keyframes to-average {*/
-  /*  0% {*/
-  /*    clip-path: polygon(40% 93%, 60% 91%, 60% 95%);*/
-  /*  }*/
-  /*  30% {*/
-  /*    clip-path: polygon( 50% 91%, 40% 95%, 60% 95%);*/
-  /*  }*/
-  /*  80% {*/
-  /*    clip-path: polygon( 50% 48%, 40% 52%, 60% 52%);*/
-  /*  }*/
-  /*  100% {*/
-  /*    clip-path: polygon(40% 50%, 60% 48%, 60% 52%);*/
-  /*  }*/
-  /*}*/
-  /*.to-excellent {*/
-  /*  animation: to-excellent 2.6s forwards cubic-bezier(.42,.5,0,1.06);*/
-  /*}*/
-  /*@keyframes to-excellent {*/
-  /*  0% {*/
-  /*    clip-path: polygon(40% 93%, 60% 91%, 60% 95%);*/
-  /*  }*/
-  /*  30% {*/
-  /*    clip-path: polygon( 50% 91%, 40% 95%, 60% 95%);*/
-  /*  }*/
-  /*  80% {*/
-  /*    clip-path: polygon( 50% 33%, 40% 37%, 60% 37%);*/
-  /*  }*/
-  /*  100% {*/
-  /*    clip-path: polygon(40% 35%, 60% 33%, 60% 37%);*/
-  /*  }*/
-  /*}*/
-  /*.to-super-excellent {*/
-  /*  animation: to-super-excellent 2.8s forwards cubic-bezier(.42,.5,0,1.06);*/
-  /*}*/
-  /*@keyframes to-super-excellent {*/
-  /*  0% {*/
-  /*    clip-path: polygon(40% 93%, 60% 91%, 60% 95%);*/
-  /*  }*/
-  /*  30% {*/
-  /*    clip-path: polygon( 50% 91%, 40% 95%, 60% 95%);*/
-  /*  }*/
-  /*  80% {*/
-  /*    clip-path: polygon( 50% 19%, 40% 23%, 60% 23%);*/
-  /*  }*/
-  /*  100% {*/
-  /*    clip-path: polygon(40% 21%, 60% 19%, 60% 23%);*/
-  /*  }*/
-  /*}*/
-  /*.to-genius {*/
-  /*  animation: to-genius 3s forwards cubic-bezier(.42,.5,0,1.06);*/
-  /*}*/
-  /*@keyframes to-genius {*/
-  /*  0% {*/
-  /*    clip-path: polygon(40% 93%, 60% 91%, 60% 95%);*/
-  /*  }*/
-  /*  30% {*/
-  /*    clip-path: polygon( 50% 91%, 40% 95%, 60% 95%);*/
-  /*  }*/
-  /*  80% {*/
-  /*    clip-path: polygon( 50% 5%, 40% 9%, 60% 9%);*/
-  /*  }*/
-  /*  100% {*/
-  /*    clip-path: polygon(40% 7%, 60% 5%, 60% 9%);*/
-  /*  }*/
   /*}*/
 </style>
