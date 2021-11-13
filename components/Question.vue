@@ -50,10 +50,10 @@
         methods: {
             check(question, choice) {
                 if (document.getElementById(choice.id).checked === true) {
-                    document.getElementById(choice.id).checked = false
+                    document.getElementById(choice.id).checked = false;
+                    this.$emit('selected', {choiceIndex: 0, questionIndex: question.index})
                 }
                 else {
-                console.log("click")
                   for (const choice of question.choices) {
                       document.getElementById(choice.id).checked = false
                   }

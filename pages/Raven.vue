@@ -1,9 +1,9 @@
 <template>
   <div class="page flex flex-column">
-    <div class="flex slider-main">
-      <Slider class="slider" v-bind:slider="slider[0]" height="45vh"/>
-      <AnimatedWaves class="animated-waves"/>
-    </div>
+<!--    <div class="flex slider-main">-->
+<!--      <Slider class="slider" v-bind:slider="slider[0]" height="45vh"/>-->
+<!--      <AnimatedWaves class="animated-waves"/>-->
+<!--    </div>-->
     <Test v-on:submit="submit" testId="2"/>
   </div>
 </template>
@@ -25,7 +25,8 @@
         methods: {
             submit({choices}) {
                 apiServices.methods.postRavenResponse(choices).then(response => {
-                    console.log(response)
+                    console.log(response);
+                    this.$router.push({name:'RavenResult', params:{iq: response.iq}});
                 })
             }
         }

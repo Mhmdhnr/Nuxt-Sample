@@ -1,7 +1,8 @@
 import axios from 'axios';
 
-const API_URL = 'https://flask-restful-nuxt.herokuapp.com';
-// const API_URL = 'http://127.0.0.1:5000';
+
+// const API_URL = 'https://flask-restful-nuxt.herokuapp.com';
+const API_URL = 'http://127.0.0.1:5000';
 let axi = axios.create({
   headers: {
     'Content-Type' : 'application/json',
@@ -24,6 +25,8 @@ export default {
   },
   methods: {
     async toPromise(url, method, data) {
+      // console.log(store)
+      // store.commit('api', 'pending');
       if (method === 'post') {
         return await new Promise((resolve1, reject1) =>
           axi.post(url, data)
@@ -32,7 +35,7 @@ export default {
               if (!response) {
                 reject1(response);
               } else {
-                resolve1(response.data)
+                resolve1(response.data);
               }
             }).then(response => {
             return response;
