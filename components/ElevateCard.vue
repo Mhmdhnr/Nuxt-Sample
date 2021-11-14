@@ -2,7 +2,6 @@
     <div class="elevate-card"  :id="cardData.id">
       <div class="card-front">
         <img class="image" :src="require(`@/assets/images/${cardData.front.imageUrl}`)">
-<!--        <img class="image" src="~/assets/me.svg">-->
       </div>
       <div class="card-back flex flex-column">
         <span v-show="this.$store.state.fa">
