@@ -2,7 +2,7 @@
   <div class="flip-card-main">
     <div class="flip-card"  :id="cardData.id">
       <div class="card-front">
-        <img class="image" :src="require(`~/static/${cardData.front.imageUrl}`)">
+        <img class="image" :src="require(`~/assets/images/${cardData.front.imageUrl}`)">
       </div>
       <div class="card-back flex flex-column">
         <span v-show="this.$store.state.fa">

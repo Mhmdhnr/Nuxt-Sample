@@ -1,9 +1,13 @@
 <template>
   <div class="main flex flex-column">
     <div class="flex slider-main">
-      <Slider class="slider" v-bind:slider="slider[0]" height="50vh"/>
+      <Slider class="slider" v-bind:slider="slider[0]" height="35vh"/>
       <AnimatedWaves class="animated-waves"/>
     </div>
+<!--    <div id="neon" class=" flex flex-column">-->
+<!--      <span class="blink" >بعضی چیزایی که شاید جالب باشه</span>-->
+<!--      &lt;!&ndash;      <span class="" >♥  ♦  ♣  ♠</span>&ndash;&gt;-->
+<!--    </div>-->
     <WorksCard />
     <Links class="links"/>
   </div>
@@ -40,7 +44,6 @@
   }
   .slider {
     width: 100vw;
-    padding: 3vh var(--main-padding-r-l) var(--animated-waves-height);
   }
   .animated-waves {
     width: 100vw;

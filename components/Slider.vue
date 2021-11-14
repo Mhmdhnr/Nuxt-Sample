@@ -14,7 +14,7 @@
             <span v-show="this.$store.state.fa"> {{slider.detail.fa}} </span>
             <span v-show="!this.$store.state.fa"> {{slider.detail.en}} </span>
           </div>
-         </div>
+        </div>
         <div id="more" class="more flex flex-row" @mouseover="detail()" @mouseout="summary()">
           <div  class="more-text">
             <span v-show="this.$store.state.fa"> بیشتر </span>
@@ -83,10 +83,11 @@
     background-color: var(--contrast-color);
     justify-content: space-around;
     flex-direction: row;
+    padding: 2vh var(--main-padding-r-l) calc(var(--animated-waves-height));
     /*height: 100%;*/
   }
   .gradient {
-    width: 28%;
+    width: 20%;
     position: relative;
   }
   .image {
@@ -107,20 +108,36 @@
   .content {
     width: 50%;
     height: 100%;
+    padding: 0 0 1vh;
     overflow: hidden;
     justify-content: space-between;
   }
   .moving-area {
+    display: flex;
+    /*flex-direction: column;*/
     position: relative;
     width: 100%;
     height: 20vh;
     margin-top: 1vh;
+    /*justify-content: space-around;*/
   }
   .short-content {
-    font-size: 1.5em;
+    /*padding: 0 2vw;*/
+    font-size: 1.2em;
+    margin:  0;
+    height: 100%;
   }
   .long-content {
-    font-size: 1em;
+    /*padding: 2vh 2vw;*/
+    font-size: 0.9em;
+    height: 100%;
+    margin: auto;
+  }
+  .long-content {
+    position: absolute;
+    right: 100%;
+    bottom: 0;
+    width: 100%;
   }
   .more {
     justify-content: flex-end;
@@ -128,8 +145,8 @@
     width: 100%;
     font-size: 1em;
     cursor: pointer;
-    margin: 3vh auto 0;
-    padding: 1vh 0;
+    margin: 1vh auto 0;
+    padding: 0.5vh 0;
   }
   .more::before{
     content: "";
@@ -143,10 +160,12 @@
     z-index: 1;
   }
   .more-text{
+    font-size: .9em;
     margin: auto 1vw;
     transition: all 300ms;
   }
   .arrow {
+    font-size: .7em;
     transform: rotateY(0deg);
     transition: all 300ms;
   }
@@ -184,12 +203,6 @@
       transform: translateX(0);
     }
   }
-  .long-content {
-    position: absolute;
-    right: 100%;
-    top: 0;
-    width: 100%;
-  }
   @media screen and (max-width: 864px) {
     .all {
       flex-direction: column;
@@ -199,7 +212,7 @@
       display:none;
     }
     .short-content {
-      font-size: 1em;
+      font-size: 0.9em;
     }
     .long-content {
       font-size: 0.75em;
@@ -209,7 +222,7 @@
       height: 28vh;
     }
     .all {
-      padding-bottom: 15vh;
+      padding-bottom: var(--animated-waves-height);
     }
   }
 

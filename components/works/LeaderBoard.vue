@@ -2,8 +2,8 @@
   <div class="Leaderboard-main flex flex-column">
     <div class="input flex flex-row">
       <div>
-        <span v-show="this.$store.state.fa">رتبه</span>
-        <span v-show="!this.$store.state.fa">Rank</span>
+        <span v-if="this.fa">رتبه</span>
+        <span v-if="!this.fa">Rank</span>
         <span>{{rank}}</span>
       </div>
       <input
@@ -18,19 +18,30 @@
     <div class="leaderboard" id="base">
       <div class="rows" id="rows">
         <div class="row flex flex-row">
-          <span v-show="this.$store.state.fa" class="rank flex">رتبه</span>
-          <span v-show="!this.$store.state.fa" class="rank flex">Rank</span>
-          <span v-show="this.$store.state.fa" class="name flex">اسم</span>
-          <span v-show="!this.$store.state.fa" class="name flex">Name</span>
-          <span v-show="this.$store.state.fa" class="points flex">امتیاز</span>
-          <span v-show="!this.$store.state.fa" class="points flex">Score</span>
+          <span v-if="this.fa" class="rank flex">رتبه</span>
+          <span v-if="!this.fa" class="rank flex">Rank</span>
+          <span v-if="this.fa" class="name flex">اسم</span>
+          <span v-if="!this.fa" class="name flex">Name</span>
+          <span v-if="this.fa" class="points flex">امتیاز</span>
+          <span v-if="!this.fa" class="points flex">Score</span>
         </div>
-        <div v-for="n in range" class="row flex flex-row" :id="n">
-          <span class="rank flex">
-            {{ n < 10 ? "0" + n.toString() : n.toString() }}
-          </span>
-          <span class="name flex">{{names[n - 1] ? names[n - 1].first_name + " " + names[n - 1].last_name : ""}}</span>
-          <span class="points flex">{{ Math.round(9000 / n) }}</span>
+        <div v-if="this.fa">
+          <div v-for="n in range" class="row flex flex-row" :id="n">
+            <span class="rank flex">
+              {{ n < 10 ? "0" + n.toString() : n.toString() }}
+            </span>
+            <span  class="name flex">{{names.persian[n - 1] ? names.persian[n - 1].first_name + " " + names.persian[n - 1].last_name : ""}}</span>
+            <span class="points flex">{{ Math.round(9000 / n) }}</span>
+          </div>
+        </div>
+        <div v-if="!this.fa">
+          <div v-for="n in range" class="row flex flex-row" :id="n">
+            <span class="rank flex">
+              {{ n < 10 ? "0" + n.toString() : n.toString() }}
+            </span>
+            <span  class="name flex">{{names.english[n - 1] ? names.english[n - 1].first_name + " " + names.english[n - 1].last_name : ""}}</span>
+            <span class="points flex">{{ Math.round(9000 / n) }}</span>
+          </div>
         </div>
       </div>
     </div>
@@ -38,6 +49,7 @@
 </template>
 
 <script>
+    import {mapState} from 'vuex'
     import apiServices from "~/api/apiServices";
     export default {
         name: "LeaderBoard",
@@ -48,61 +60,67 @@
                 isRowUpcoming: false,
                 rank: null,
                 range: 40,
-                names: [
-                ],
+                names: {
+                    persian:[],
+                    english:[]
+                },
             };
         },
+        computed: mapState(['fa']),
         watch:{
-          rank(newRank){
-              this.rank = newRank;
-              for (let i = 1; i <= this.range; i++){
-                  let row = document
-                      .getElementById(i.toString());
-                  // row.getElementsByTagName("span")[1].textContent = "Someone Else!";
-                  row.classList.remove("current-user-row");
-                  row.classList.remove("stick-top");
-                  row.classList.remove("stick-bottom");
-              }
-              let options = {
-                  root: document.getElementById("base"),
-                  rootMargin: "0px",
-                  thresholds: 1
-              };
+            fa(newValue){
 
-              const observer = new IntersectionObserver((entries, observer) => {
-                  // observer.root.style.border = "8px solid #44aa44";
-                  // console.log(entries[0].boundingClientRect.y);
-                  if (entries[0].isIntersecting) {
-                      console.log("entered");
-                      // this.isRowIntersecting = !this.isRowIntersecting;
-                  } else {
-                      if (entries[0].boundingClientRect.y < 520) {
-                          console.log(entries[0].boundingClientRect.y);
-                          console.log(entries[0].boundingClientRect.x);
-                          this.isRowPassed = true;
-                          this.isRowUpcoming = false;
-                          console.log("isRowPassed: " + this.isRowPassed);
-                          // document.getElementById(this.rank).classList.remove("stick-bottom");
-                          document.getElementById(this.rank).classList.add("stick-top");
-                      } else {
-                          console.log(entries[0].boundingClientRect.y);
-                          this.isRowPassed = false;
-                          this.isRowUpcoming = true;
-                          console.log("isRowUpcoming: " + this.isRowUpcoming);
-                          // document.getElementById(this.rank).classList.remove("stick-top");
-                          document.getElementById(this.rank).classList.add("stick-bottom");
-                      }
-                  }
-              }, options);
-              this.observe(observer);
-          }
+            },
+            rank(newRank){
+                this.rank = newRank;
+                for (let i = 1; i <= this.range; i++){
+                    let row = document
+                        .getElementById(i.toString());
+                    // row.getElementsByTagName("span")[1].textContent = "Someone Else!";
+                    row.classList.remove("current-user-row");
+                    row.classList.remove("stick-top");
+                    row.classList.remove("stick-bottom");
+                }
+                let options = {
+                    root: document.getElementById("base"),
+                    rootMargin: "0px",
+                    thresholds: 1
+                };
+
+                const observer = new IntersectionObserver((entries, observer) => {
+                    // observer.root.style.border = "8px solid #44aa44";
+                    // console.log(entries[0].boundingClientRect.y);
+                    if (entries[0].isIntersecting) {
+                        console.log("entered");
+                        // this.isRowIntersecting = !this.isRowIntersecting;
+                    } else {
+                        if (entries[0].boundingClientRect.y < 520) {
+                            console.log(entries[0].boundingClientRect.y);
+                            console.log(entries[0].boundingClientRect.x);
+                            this.isRowPassed = true;
+                            this.isRowUpcoming = false;
+                            console.log("isRowPassed: " + this.isRowPassed);
+                            // document.getElementById(this.rank).classList.remove("stick-bottom");
+                            document.getElementById(this.rank).classList.add("stick-top");
+                        } else {
+                            console.log(entries[0].boundingClientRect.y);
+                            this.isRowPassed = false;
+                            this.isRowUpcoming = true;
+                            console.log("isRowUpcoming: " + this.isRowUpcoming);
+                            // document.getElementById(this.rank).classList.remove("stick-top");
+                            document.getElementById(this.rank).classList.add("stick-bottom");
+                        }
+                    }
+                }, options);
+                this.observe(observer);
+            }
         },
         mounted() {
             this.rank = 23;
             apiServices.methods.getRandomNames(this.range).then(response => {
                 this.names = response;
+                console.log(this.names);
             });
-            console.log(this.names);
         },
         methods: {
             observe(observer){
@@ -148,7 +166,7 @@
     display: flex;
     flex-direction: column;
     width: 70%;
-    height: 32vh;
+    height: 43vh;
     overflow-y: scroll;
     margin: 2vh auto;
   }

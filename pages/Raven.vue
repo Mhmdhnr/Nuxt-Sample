@@ -1,9 +1,9 @@
 <template>
   <div class="page flex flex-column">
-<!--    <div class="flex slider-main">-->
-<!--      <Slider class="slider" v-bind:slider="slider[0]" height="45vh"/>-->
-<!--      <AnimatedWaves class="animated-waves"/>-->
-<!--    </div>-->
+    <div class="flex slider-main">
+      <Slider class="slider" v-bind:slider="slider[4]" height="35vh"/>
+      <AnimatedWaves class="animated-waves"/>
+    </div>
     <Test v-on:submit="submit" testId="2"/>
   </div>
 </template>
@@ -36,7 +36,7 @@
 <style scoped>
   .slider-main {
     position: relative;
-    flex: 3;
+    align-items: unset;
   }
   .slider {
     width: 100vw;
@@ -44,7 +44,5 @@
   }
   .animated-waves {
     width: 100vw;
-  }
-  .test {
   }
 </style>

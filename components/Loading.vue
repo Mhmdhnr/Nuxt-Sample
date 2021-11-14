@@ -170,4 +170,19 @@
     right: 140px;
     animation-delay: 0s;
   }
+  @media screen and (max-width: 864px){
+    .message {
+      font-size: 1.5em;
+    }
+    .loading-message {
+      margin: 3vh;
+    }
+    .loading {
+      padding: 2vh 2vw;
+    }
+    .loader {
+      width: 300px;
+      height: 300px;
+    }
+  }
 </style>

@@ -112,7 +112,7 @@
     font-size: 1em;
   }
   .iq {
-    font-size: 2em;
+    font-size: 3em;
   }
   .ranges {
     position: relative;
@@ -172,4 +172,14 @@
   /*.genius {*/
   /*  background-color: lightskyblue;*/
   /*}*/
+  @media screen and (max-width: 864px) {
+    .raven-result {
+      padding: 2vh 3vw;
+      width: 100vw;
+    }
+    .range {
+      box-shadow: 0 4px 12px 0 rgba(100, 100, 100, 0.6);
+      width: 80vw;
+    }
+  }
 </style>

@@ -1,7 +1,7 @@
 <template>
   <div class="main flex flex-column">
     <div class="flex slider-main">
-      <Slider class="slider" v-bind:slider="slider[1]" height="45vh" />
+      <Slider class="slider" v-bind:slider="slider[1]" height="35vh" />
       <AnimatedWaves class="animated-waves"/>
     </div>
     <LinearChart class="sample" chartId="sample"/>

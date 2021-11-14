@@ -1,7 +1,7 @@
 <template>
   <div class="main flex flex-column">
     <div class="flex slider-main">
-      <slider class="slider" v-bind:slider="slider[2]"  height="45vh" />
+      <Slider class="slider" v-bind:slider="slider[2]" height="35vh" />
       <AnimatedWaves class="animated-waves"/>
     </div>
     <LeaderBoard />
@@ -26,12 +26,12 @@
 
 <style scoped>
   .main {
-    position: relative;
+    /*position: relative;*/
     width: 100vw;
   }
   .slider-main {
     position: relative;
-    flex: 3;
+    align-items: unset;
   }
   .slider {
     width: 100vw;

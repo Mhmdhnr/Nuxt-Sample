@@ -1,12 +1,17 @@
 <template>
     <div class="shop flex flex-column">
+      <div class="flex slider-main">
+        <Slider class="slider" v-bind:slider="slider[5]" height="35vh"/>
+        <AnimatedWaves class="animated-waves"/>
+      </div>
       <ImageSlider class="gallery" :spec="this.specs[0]"/>
-      <ImageSlider class="gallery" :spec="this.specs[1]"/>
     </div>
 </template>
 
 <script>
     import ImageSlider from "../components/ImageSlider";
+    import {slider} from "../data/data";
+
     export default {
         name: "Shop",
         data() {
@@ -20,7 +25,8 @@
                         productName: "shoeCollection2",
                         imageNames : ["shoe4", "shoe3"]
                     },
-                ]
+                ],
+                slider: slider
             }
         },
         mounted() {
@@ -31,11 +37,21 @@
 <style scoped>
   .shop {
     width: 1080px;
-    justify-content: space-evenly;
     perspective: 1000px;
   }
   .gallery {
     width: 800px;
+  }
+  .slider-main {
+    position: relative;
+    align-items: unset;
+  }
+  .slider {
+    width: 100vw;
+    padding: 3vh var(--main-padding-r-l) var(--animated-waves-height);
+  }
+  .animated-waves {
+    width: 100vw;
   }
   @media screen and(max-width: 864px) {
     .gallery {

@@ -53,18 +53,18 @@
 
     --base-padding-r-l: 2vw;
     --main-padding-r-l: calc((100vw - 1080px) / 2);
-    --animated-waves-height: 12vh;
+    --animated-waves-height: 10vh;
     --shadow:
       0 10px 10px rgba(0,0,0,0.5),
-      0 0 2vw rgba(75,185,173,1),
-      0 0 4vw rgba(75,185,173,0.9),
-      0 0 6vw rgba(75,185,173,0.8),
-      0 0 8vw rgba(75,185,173,0.7),
-      0 0 10vw rgba(75,185,173,0.6),
-      0 0 12vw rgba(75,185,173,0.5),
-      0 0 15vw rgba(75,185,173,0.4),
-      0 0 18vw rgba(75,185,173,0.3),
-      0 0 22vw rgba(75,185,173,0.2);
+      0 0 1vw rgba(0,240,190,1),
+      0 0 3vw rgba(0,210,255,0.9),
+      0 0 5vw rgba(0,210,255,0.8),
+      0 0 7vw rgba(0,210,255,0.7),
+      0 0 9vw rgba(0,210,255,0.6),
+      0 0 11vw rgba(0,210,255,0.5),
+      0 0 13vw rgba(0,210,255,0.4),
+      0 0 15vw rgba(0,210,255,0.3),
+      0 0 17vw rgba(0,210,255,0.2);
   }
   .dark-mode {
     --primary-color: #4bb9ad;
@@ -150,6 +150,69 @@
     align-content: center;
   }
 
+  /*Neon*/
+  #neon {
+    padding: 3vh 0;
+    background-color: var(--text-color);
+    width: 100vw;
+  }
+  #neon > span {
+    color: var(--bg-color);
+    font-weight: 700;
+  }
+  .blink {
+    -webkit-animation: 2500ms blink 1000ms forwards;
+  }
+  #neon > span {
+    z-index: 1;
+    font-size: 1.5em;
+    margin: 0 auto;
+    white-space: pre;
+  }
+  @-webkit-keyframes blink {
+    0% {
+      text-shadow: none;
+    }
+    1% {
+      text-shadow: var(--shadow);
+    }
+    7% {
+      text-shadow: none;
+    }
+    29% {
+      text-shadow: none;
+    }
+    30% {
+      text-shadow: var(--shadow);
+    }
+    36% {
+      text-shadow: none;
+    }
+    59% {
+      text-shadow: none;
+    }
+    60% {
+      text-shadow: var(--shadow);
+    }
+    66% {
+      text-shadow: none;
+    }
+    92% {
+      text-shadow: none;
+    }
+    93% {
+      text-shadow: var(--shadow);
+    }
+    95% {
+      text-shadow: none;
+    }
+    99% {
+      text-shadow: none;
+    }
+    100% {
+      text-shadow: var(--shadow);
+    }
+  }
   /*Buttons*/
 
   .btn-border-hover {
@@ -332,6 +395,7 @@
     :root {
       --main-header-height: 6vh;
       --top-header-height: 5vh;
+      --animated-waves-height: 8vh;
     }
     .total-view {
       height: 100vh;

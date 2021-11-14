@@ -169,4 +169,17 @@
     background-color: var(--primary-color);
     color: var(--bg-color);
   }
+  @media screen and (max-width: 864px) {
+    .choices-image {
+      display: grid;
+      grid-template-columns: auto auto;
+    }
+    .choice-image {
+      height: 100px;
+      width: 125px;
+    }
+    .question-main {
+      padding: 1vh 0;
+    }
+  }
 </style>

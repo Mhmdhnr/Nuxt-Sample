@@ -1,5 +1,5 @@
 <template>
-    <div class="links-main flex flex-row">
+    <div class="links-main flex">
       <div class="social flex flex-row">
         <a  href="https://instagram.com/mhmd_honari" target="_blank">
           <div class="link instagram">
@@ -44,9 +44,9 @@
 <style scoped>
   .links-main {
     width: 100vw;
+    flex-direction: row;
     padding: 1vh var(--base-padding-r-l);
     position: relative;
-    height: 5vh;
     background-color: var(--contrast-color);
   }
   .social {
@@ -64,8 +64,6 @@
     font-size: 0.8em;
     margin: auto 1vw;
   }
-  .front-end > span, .back-end > span {
-  }
   .icon {
     width: 20px;
     margin: auto;
@@ -75,7 +73,17 @@
   }
   @media screen and (max-width: 864px) {
     .social {
-      display: none;
+      width: 90vw;
+      justify-content: flex-start;
+      margin-bottom: 2vh;
+    }
+    .github {
+      width: 90vw;
+      justify-content: flex-end;
+    }
+    .links-main {
+      flex-direction: column;
+      justify-content: center;
     }
   }
 </style>

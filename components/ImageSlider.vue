@@ -21,20 +21,35 @@
             images.style.transform = `rotateY(0deg)`;
             let base = document.getElementById(this.spec.productName.toString() + "controller");
             let baseRect = base.getBoundingClientRect();
-            let imageWidth = baseRect.width;
-            images.style.width = imageWidth + "px";
-            let clip = document.getElementById(this.spec.productName.toString() + "clip");
-            clip.style.clipPath = `inset(0 ${imageWidth / 2}px 0 0)`;
+            if(window.screen.width >= 864){
+                let imageWidth = baseRect.width;
+                images.style.width = imageWidth + "px";
+                let clip = document.getElementById(this.spec.productName.toString() + "clip");
+                clip.style.clipPath = `inset(0 ${imageWidth / 2}px 0 0)`;
 
-            base.onmousemove = function (e) {
-                console.log(imageWidth);
-                clip.style.clipPath = `inset(0 ${ baseRect.right - e.clientX}px 0 0)`;
-                console.log(rotate + (baseRect.right - e.clientX) / imageWidth * -2 * rotate);
-                images.style.transform = `rotateY(${rotate + (baseRect.right - e.clientX) / imageWidth * -2 * rotate}deg)`;
-            };
-            // base.onmouseleave = function (e) {
-            //     images.style.transform = `rotateX(5deg)`;
-            // }
+                base.onmousemove = function (e) {
+                    console.log(imageWidth);
+                    clip.style.clipPath = `inset(0 ${ baseRect.right - e.clientX}px 0 0)`;
+                    console.log(rotate + (baseRect.right - e.clientX) / imageWidth * -2 * rotate);
+                    images.style.transform = `rotateY(${rotate + (baseRect.right - e.clientX) / imageWidth * -2 * rotate}deg)`;
+                };
+            } else {
+                let imageWidth = 350;
+                images.style.width = imageWidth + "px";
+                let clip = document.getElementById(this.spec.productName.toString() + "clip");
+                clip.style.clipPath = `inset(0 ${imageWidth / 2}px 0 0)`;
+                let baseRect = base.getBoundingClientRect();
+                console.log(baseRect)
+
+                base.ontouchstart = function (e) {
+                    base.ontouchmove = function (f) {
+                        let touch = f.touches[0];
+                        console.log(touch.clientX);
+                        clip.style.clipPath = `inset(0 ${ baseRect.right - touch.clientX}px 0 0)`;
+                        images.style.transform = `rotateY(${rotate + (baseRect.right - touch.clientX) / imageWidth * -2 * rotate}deg)`;
+                    }
+                };
+            }
 
         }
     }

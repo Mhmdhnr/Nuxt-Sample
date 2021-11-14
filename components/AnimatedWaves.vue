@@ -80,7 +80,7 @@
   }
   @media screen and (max-width: 864px) {
     .waves {
-      height: 10vh;
+      height: var(--animated-waves-height);
     }
   }
 </style>

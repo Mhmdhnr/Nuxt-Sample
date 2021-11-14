@@ -24,7 +24,7 @@
 
         </div>
         <div v-if="this.allAnswered">
-          <span v-if="this.allAnswered"> به تمام سوالات پاسخ داده اید </span>
+          <span v-if="this.fa"> به تمام سوالات پاسخ داده اید </span>
           <span v-if="!this.fa"> You have answered all questions </span>
         </div>
       </div>
@@ -128,14 +128,8 @@
     justify-content: space-between;
     background-color: var(--primary-color);
   }
-  #time > span {
+  #time > span, #time, .title {
     color: var(--bg-color);
-  }
-  #time {
-    color: var(--bg-color);
-  }
-  .title {
-    color: var(--bg-color)
   }
   .hint {
     cursor: pointer;
@@ -153,9 +147,24 @@
   }
   .test {
     width: 1080px;
-    height: 100%;
+    /*height: 100%;*/
     padding: 0;
     flex-direction: column;
     justify-content: center;
+  }
+  @media screen and (max-width: 864px) {
+    .test {
+      width: 100vw;
+    }
+    .submit {
+      margin: 3vh auto;
+    }
+    .test-head {
+      padding: 2vh 3vw;
+    }
+    #time > span, #time, .title {
+      color: var(--bg-color);
+      font-size: 0.8em;
+    }
   }
 </style>
