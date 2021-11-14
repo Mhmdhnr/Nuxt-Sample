@@ -10,8 +10,8 @@
 <script>
     import Toggle from "../components/Toggle";
     import { mapState } from 'vuex';
-    import MainHeader from "../components/header/MainHeader";
-    import TopHeader from "../components/header/TopHeader";
+    import MainHeader from "../components/MainHeader";
+    import TopHeader from "../components/TopHeader";
     export default {
         components: {TopHeader, MainHeader, Toggle},
         computed: mapState(['fa']),
@@ -119,6 +119,9 @@
     align-items: center;
     width: 100vw;
   }
+  .total-view::-webkit-scrollbar {
+    display: none;
+  }
   .top-header {
     order: 1;
     height: var(--top-header-height);
@@ -138,11 +141,6 @@
   }
   .total-view::-webkit-scrollbar {
     display: none;
-  }
-  .bg-animate {
-    background: linear-gradient(270deg, #165ab4, #9856aa);
-    background-size: 400% 400%;
-    -webkit-animation: bg-animation 10s ease  infinite;
   }
   .flex {
     display: flex;
@@ -411,10 +409,10 @@
       max-height: calc(100vh - var(--main-header-height) - var(--top-header-height));
       overflow: scroll;
       order: 2;
-      z-index: 20;
+      /*z-index: 20;*/
     }
     .header {
-      z-index: 100;
+      /*z-index: 100;*/
     }
     .main-header {
       position: fixed;
