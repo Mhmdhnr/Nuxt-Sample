@@ -13,7 +13,7 @@
 </template>
 
 <script>
-    import Toggle from "../Toggle";
+    import Toggle from "./Toggle";
     export default {
         name: "TopHeader",
         components: {Toggle},

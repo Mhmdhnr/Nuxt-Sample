@@ -1,5 +1,5 @@
 <template>
-  <div class="m flex">
+  <div class="all-work-cards flex">
     <FlipCard v-for="workCard in workCards" class="work-Cards bounce" duration="500" v-bind:cardData=workCard />
 <!--    <Flip3DCard v-for="workCard in workCards" class="work-Cards bounce" duration="500" v-bind:cardData=workCard />-->
 <!--    <ElevateCard v-for="workCard in workCards" class="work-Cards bounce" duration="500" v-bind:cardData=workCard />-->
@@ -34,7 +34,7 @@
 </script>
 
 <style scoped>
-  .m {
+  .all-work-cards {
     flex-direction: row;
     width: 100vw;
     padding: 3vh var(--main-padding-r-l) ;

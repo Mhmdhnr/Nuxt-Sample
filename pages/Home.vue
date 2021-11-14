@@ -1,13 +1,6 @@
 <template>
-  <div class="main flex flex-column">
-    <div class="flex slider-main">
-      <Slider class="slider" v-bind:slider="slider[0]" height="35vh"/>
-      <AnimatedWaves class="animated-waves"/>
-    </div>
-<!--    <div id="neon" class=" flex flex-column">-->
-<!--      <span class="blink" >بعضی چیزایی که شاید جالب باشه</span>-->
-<!--      &lt;!&ndash;      <span class="" >♥  ♦  ♣  ♠</span>&ndash;&gt;-->
-<!--    </div>-->
+  <div class="flex flex-column">
+    <Slider v-bind:slider="slider[0]" />
     <WorksCard />
     <Links class="links"/>
   </div>
@@ -16,12 +9,11 @@
 <script>
     import {slider} from '../data/data.js';
     import Slider from "../components/Slider";
-    import AnimatedWaves from "../components/AnimatedWaves";
     import Links from "../components/Links";
     import WorksCard from "../components/WorksCard";
     export default {
         name: "Home",
-        components: {WorksCard, Links, AnimatedWaves, Slider},
+        components: {WorksCard, Links, Slider},
         data () {
             return {
                 slider: slider,
@@ -34,32 +26,9 @@
 </script>
 
 <style scoped>
-  .main {
-    position: relative;
-    width: 100vw;
-  }
-  .slider-main {
-    position: relative;
-    flex: 3;
-  }
-  .slider {
-    width: 100vw;
-  }
-  .animated-waves {
-    width: 100vw;
-  }
   .links {
     justify-content: flex-end;
   }
   @media screen and (max-width: 864px) {
-    .m {
-      flex-direction: unset;
-      flex-wrap: wrap;
-      justify-content: space-evenly;
-    }
-    .flip-card-home {
-       width: 150px;
-       height: 150px;
-     }
   }
 </style>

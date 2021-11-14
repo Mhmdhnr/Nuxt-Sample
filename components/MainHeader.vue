@@ -16,7 +16,7 @@
 </template>
 
 <script>
-    import {menu} from '../../data/data.js';
+    import {menu} from '../data/data.js';
     import { mapState } from 'vuex';
     export default {
         name: "MainHeader",
@@ -52,7 +52,7 @@
             hideSubItems(id) {
                 document.getElementById(id).classList.remove("come-in");
                 document.getElementById(id).classList.add("get-out");
-                document.getElementById(id).style.display = "none";
+                // document.getElementById(id).style.display = "none";
             }
         }
     }
@@ -111,7 +111,7 @@
     -webkit-animation: 200ms come-in forwards;
   }
   .get-out {
-    -webkit-animation: 200ms get-out forwards;
+    -webkit-animation: 50ms get-out forwards;
   }
   @-webkit-keyframes come-in {
     from {
@@ -187,7 +187,7 @@
     }
     @-webkit-keyframes get-out {
       from {
-        transform: translateY(0);
+        transform: translateY(calc(-1 * var(--main-header-height)));
         opacity: 1;
       }
       to {

@@ -56,7 +56,7 @@
 <script>
   import { mapState } from "vuex";
   import apiServices from "~/api/apiServices";
-  import Slider from "../Slider";
+  import Slider from "./Slider";
   export default {
     name: "LinearChart",
       components: {Slider},

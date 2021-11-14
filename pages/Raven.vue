@@ -1,9 +1,6 @@
 <template>
-  <div class="page flex flex-column">
-    <div class="flex slider-main">
-      <Slider class="slider" v-bind:slider="slider[4]" height="35vh"/>
-      <AnimatedWaves class="animated-waves"/>
-    </div>
+  <div class="flex flex-column">
+    <Slider v-bind:slider="slider[4]" />
     <Test v-on:submit="submit" testId="2"/>
   </div>
 </template>
@@ -13,10 +10,9 @@
     import {slider} from "../data/data";
     import Test from "../components/Test";
     import Slider from "../components/Slider";
-    import AnimatedWaves from "../components/AnimatedWaves";
     export default {
         name: "Raven",
-        components: {AnimatedWaves, Slider, Test},
+        components: {Slider, Test},
         data() {
             return {
                 slider: slider,
@@ -34,15 +30,4 @@
 </script>
 
 <style scoped>
-  .slider-main {
-    position: relative;
-    align-items: unset;
-  }
-  .slider {
-    width: 100vw;
-    padding: 3vh var(--main-padding-r-l) var(--animated-waves-height);
-  }
-  .animated-waves {
-    width: 100vw;
-  }
 </style>

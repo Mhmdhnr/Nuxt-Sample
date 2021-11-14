@@ -43,11 +43,10 @@
     import Question from "./Question";
     import Slider from "./Slider";
     import AnimatedWaves from "./AnimatedWaves";
-    import BtnHoverBorder from "./Buttons/BtnHoverBorder";
     import Loading from "./Loading";
     export default {
         name: "Test",
-        components: {Loading, BtnHoverBorder, AnimatedWaves, Slider, Question},
+        components: {Loading, AnimatedWaves, Slider, Question},
         props:['testId'],
         data() {
             return {

@@ -1,6 +1,5 @@
 <template>
   <div class="main flex flex-column">
-<!--      <img class="wall" src="https://i.pinimg.com/originals/01/84/82/01848284003dddae20b94a570e29bbbf.jpg"/>-->
     <div class="input-main flex flex-row">
       <span v-show="this.$store.state.fa">یه چیزی بنویس!</span>
       <span v-show="!this.$store.state.fa">Write Something Here!</span>

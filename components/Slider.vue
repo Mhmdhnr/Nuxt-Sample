@@ -1,8 +1,8 @@
 <template xmlns:width="http://www.w3.org/1999/xhtml">
-    <div class="all flex">
+  <div class="slider-main">
+    <div class="slider flex">
       <div class="gradient">
         <img class="image" :src="require(`@/assets/images/${slider.imageUrl}`)">
-<!--        <img class="image" src="@/assets/me.svg">-->
       </div>
       <div class="content flex flex-column">
         <div class="moving-area">
@@ -27,13 +27,17 @@
         </div>
       </div>
     </div>
+    <AnimatedWaves class="animated-waves"/>
+  </div>
 </template>
 
 <script>
     import { mapState } from 'vuex';
+    import AnimatedWaves from "./AnimatedWaves";
     export default {
         name: "Slider",
-        props: ['slider', 'height'],
+        components: {AnimatedWaves},
+        props: ['slider'],
         data() {
             return{
             }
@@ -42,7 +46,7 @@
         watch: {
             fa (newValue) {
                 let styleElem = document.head.appendChild(document.createElement("style"));
-                document.getElementsByClassName("all")[0].style.height = this.height.toString();
+                // document.getElementsByClassName("slider")[0].style.height = this.height.toString();
                 if (!newValue) {
                     styleElem.innerHTML = "#more::before {background: linear-gradient(90deg, rgba(255,255,255,0.3) 0%, rgba(255,255,255,0)  100%);}";
                     document.getElementsByClassName("moving-area")[0].style.textAlign = "left";
@@ -73,18 +77,25 @@
             }
         },
         mounted() {
-            document.getElementsByClassName("all")[0].style.height = this.height.toString();
+            // document.getElementsByClassName("slider")[0].style.height = this.height.toString();
         }
     }
 </script>
 
 <style scoped>
-  .all {
+  .slider-main {
+    position: relative;
+    align-items: unset;
+  }
+  .slider {
     background-color: var(--contrast-color);
     justify-content: space-around;
     flex-direction: row;
-    padding: 2vh var(--main-padding-r-l) calc(var(--animated-waves-height));
-    /*height: 100%;*/
+    width: 100vw;
+    padding: 1vh var(--main-padding-r-l) calc(var(--animated-waves-height) - 1vh);
+  }
+  .animated-waves {
+    width: 100vw;
   }
   .gradient {
     width: 20%;
@@ -92,7 +103,6 @@
   }
   .image {
     width: 100%;
-    /*height: 100%;*/
     z-index: 10;
   }
   .gradient:after {

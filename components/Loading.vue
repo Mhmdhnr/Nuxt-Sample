@@ -1,7 +1,5 @@
 <template>
   <div class="loading flex flex-column">
-<!--    <span v-if="this.fa">در حال بارگزاری</span>-->
-<!--    <span v-if="!this.fa">Loading</span>-->
     <div class="loader">
       <span v-for="n in 15"></span>
     </div>
@@ -28,10 +26,10 @@
 
 <style scoped>
   .loading {
-    padding: 8vh 2vw;
+    padding: 3vh 2vw;
   }
   .loading-message {
-    margin: 10vh auto;
+    margin: 3vh auto;
   }
   .message {
     font-size: 2em;

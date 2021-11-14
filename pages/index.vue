@@ -1,6 +1,5 @@
 <template>
   <div>
-
   </div>
 </template>
 
@@ -13,7 +12,6 @@
             }
         },
         mounted() {
-            console.log("from Index")
           this.$router.push("Home")
         }
     }

@@ -1,9 +1,6 @@
 <template>
     <div class="shop flex flex-column">
-      <div class="flex slider-main">
-        <Slider class="slider" v-bind:slider="slider[5]" height="35vh"/>
-        <AnimatedWaves class="animated-waves"/>
-      </div>
+      <Slider v-bind:slider="slider[5]" />
       <ImageSlider class="gallery" :spec="this.specs[0]"/>
     </div>
 </template>
@@ -11,9 +8,11 @@
 <script>
     import ImageSlider from "../components/ImageSlider";
     import {slider} from "../data/data";
+    import Slider from "../components/Slider";
 
     export default {
         name: "Shop",
+        components: {ImageSlider, Slider},
         data() {
             return{
                 specs: [
@@ -41,17 +40,6 @@
   }
   .gallery {
     width: 800px;
-  }
-  .slider-main {
-    position: relative;
-    align-items: unset;
-  }
-  .slider {
-    width: 100vw;
-    padding: 3vh var(--main-padding-r-l) var(--animated-waves-height);
-  }
-  .animated-waves {
-    width: 100vw;
   }
   @media screen and(max-width: 864px) {
     .gallery {
