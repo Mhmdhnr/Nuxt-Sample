@@ -88,7 +88,7 @@
     align-items: unset;
   }
   .slider {
-    background-color: var(--contrast-color);
+    background-color: var(--primary-color);
     justify-content: space-around;
     flex-direction: row;
     width: 100vw;
@@ -112,7 +112,7 @@
     right: 0;
     width: 100%;
     height: 100%;
-    background-image: linear-gradient(180deg, rgba(255,255,255,0) 0%, rgba(255,255,255,0) 80%, var(--contrast-color)  100%);
+    background-image: linear-gradient(180deg, rgba(255,255,255,0) 0%, rgba(255,255,255,0) 80%, var(--primary-color)  100%);
     z-index: 1000;
   }
   .content {
@@ -136,6 +136,9 @@
     font-size: 1.2em;
     margin:  0;
     height: 100%;
+  }
+  .short-content > span, .long-content > span, .more-text > span, .arrow > span {
+    color: var(--text-color);
   }
   .long-content {
     /*padding: 2vh 2vw;*/

@@ -2,10 +2,28 @@
     <div class="main flex flex-row">
       <NuxtLink to="/">
         <div class="brand flex">
+<!--          <img class="logo" src="~/assets/images/logo.svg" alt="">-->
           <svg class="logo" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 328.66 230.73"><defs><style>.cls-1{fill:#555454;}</style></defs><g id="Layer_2" ><g id="Layer_1-2" ><polygon class="cls-1" points="164.33 0 131.46 0 98.6 0 82.16 28.46 65.73 56.92 98.6 56.92 131.46 56.92 147.9 85.39 164.33 113.85 180.76 85.39 197.19 56.92 180.76 28.46 164.33 0"/><polygon class="cls-1" points="312.22 28.46 295.79 0 262.93 0 230.06 0 213.63 28.46 197.19 56.92 230.06 56.92 262.93 56.92 279.36 85.39 295.79 113.85 312.22 85.39 328.66 56.92 312.22 28.46"/><polygon class="cls-1" points="98.6 116.89 82.16 145.35 65.73 173.81 32.87 173.81 0 173.81 16.43 202.27 32.87 230.73 65.73 230.73 98.6 230.73 115.03 202.27 131.46 173.81 115.03 145.35 98.6 116.89"/><polygon class="cls-1" points="230.06 116.89 213.63 145.35 197.19 173.81 164.33 173.81 131.46 173.81 147.9 202.27 164.33 230.73 197.19 230.73 230.06 230.73 246.49 202.27 262.93 173.81 246.49 145.35 230.06 116.89"/></g></g></svg>
         </div>
       </NuxtLink>
       <div class="toggles flex">
+        <div class="color-panel" >
+          <div class="primary-color" v-on:click="showColorPicker('primary-color-picker')">
+            <ColorPicker id="primary-color-picker" class="primary-color-picker" subject="--primary-color" :colors="colorPicker.light.primary"/>
+<!--            <ColorPicker v-if="this.$colorMode.preference === 'light'" class="primary-color-picker" subject="&#45;&#45;primary-color" :colors="colorPicker.light.primary"/>-->
+<!--            <ColorPicker v-if="this.$colorMode.preference === 'dark'" class="primary-color-picker" subject="&#45;&#45;primary-color" :colors="colorPicker.dark.primary"/>-->
+          </div>
+          <div class="text-color" v-on:click="showColorPicker('text-color-picker')">
+            <ColorPicker id="text-color-picker" class="text-color-picker" subject="--text-color" :colors="colorPicker.light.text"/>
+<!--            <ColorPicker v-if="this.$colorMode.preference === 'light'" class="text-color-picker" subject="&#45;&#45;text-color" :colors="colorPicker.light.text"/>-->
+<!--            <ColorPicker v-if="this.$colorMode.preference === 'dark'" class="text-color-picker" subject="&#45;&#45;text-color" :colors="colorPicker.dark.text"/>-->
+          </div>
+          <div class="background-color" v-on:click="showColorPicker('bg-color-picker')">
+            <ColorPicker id="bg-color-picker"  class="bg-color-picker" subject="--bg-color" :colors="colorPicker.light.bg"/>
+<!--            <ColorPicker v-if="this.$colorMode.preference === 'light'" class="bg-color-picker" subject="&#45;&#45;bg-color" :colors="colorPicker.light.bg"/>-->
+<!--            <ColorPicker v-if="this.$colorMode.preference === 'dark'" class="bg-color-picker" subject="&#45;&#45;bg-color" :colors="colorPicker.dark.bg"/>-->
+          </div>
+        </div>
         <Toggle id="theme" subject="theme" class="theme-toggle"/>
         <Toggle id="language" subject="language" class="theme-toggle"/>
       </div>
@@ -13,14 +31,80 @@
 </template>
 
 <script>
+    import {colorPicker} from "../data/data";
     import Toggle from "./Toggle";
+    import ColorPicker from "./ColorPicker";
+
     export default {
         name: "TopHeader",
-        components: {Toggle},
+        components: {ColorPicker, Toggle},
+        data() {
+            return {
+                colorPicker: colorPicker
+            }
+        },
+        mounted() {
+            let primaryElement = document.getElementsByClassName('primary-color')[0];
+            let textElement = document.getElementsByClassName('text-color')[0];
+            let bgElement = document.getElementsByClassName('background-color')[0];
+            let primaryColorPickers = document.getElementsByClassName("primary-color-picker");
+            let bgColorPickers = document.getElementsByClassName("bg-color-picker");
+            let textColorPickers = document.getElementsByClassName("text-color-picker");
+            document.onclick = function (e) {
+                if(e.target !== primaryElement){
+                    for (let colorPicker of primaryColorPickers) {
+                        colorPicker.style.display = 'none';
+                    }
+                }
+                if(e.target !== textElement){
+                    for (let colorPicker of textColorPickers) {
+                        colorPicker.style.display = 'none';
+                    }
+                }
+                if(e.target !== bgElement){
+                    for (let colorPicker of bgColorPickers) {
+                        colorPicker.style.display = 'none';
+                    }
+                }
+            }
+        },
+        methods: {
+            showColorPicker(colorPicker) {
+                let colorPickers = document.getElementsByClassName(colorPicker);
+                for (let colorPicker of colorPickers) {
+                    colorPicker.style.display = 'flex';
+                }
+            }
+        },
     }
 </script>
 
 <style scoped>
+  .color-panel {
+    display: flex;
+    margin: 2vw;
+  }
+  .primary-color, .text-color, .background-color {
+    width: 22px;
+    height: 22px;
+    border-radius: 50%;
+    position: relative;
+    border: 1px solid var(--contrast-color);
+    margin: 0 5px;
+    box-shadow: 0 0 5px 1px rgba(100,100,100,0.2);
+  }
+  .primary-color {
+    background-color: var(--primary-color);
+  }
+  .text-color {
+    background-color: var(--text-color);
+  }
+  .background-color {
+    background-color: var(--bg-color);
+  }
+  .bg-color-picker, .text-color-picker, .primary-color-picker {
+    display: none;
+  }
   .main {
     width: 100vw;
     max-width: 100vw;

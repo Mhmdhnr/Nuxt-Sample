@@ -63,6 +63,7 @@
     width: 100%;
     z-index: 50;
     padding: 0 var(--base-padding-r-l);
+    background-color: var(--bg-color);
   }
   .item {
     position: relative;

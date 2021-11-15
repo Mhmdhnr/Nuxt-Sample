@@ -1,4 +1,41 @@
-
+export const links = {
+  social: [
+    {
+      title: {
+        fa: 'اینستاگرام',
+        en: 'Instagram'
+      },
+      link: 'https://instagram.com/mhmd_honari',
+      icon: 'instagram.svg'
+    },
+    {
+      title: {
+        fa: 'واتساپ',
+        en: 'Whatsapp'
+      },
+      link: 'https://wa.me/+989354162124',
+      icon: 'whatsapp.svg'
+    }
+  ],
+  github: [
+    {
+      title: {
+        fa: 'کد فرانت اند',
+        en: 'Front-end code'
+      },
+      link: 'https://github.com/Mhmdhnr/Nuxt-Sample',
+      icon: 'github.svg'
+    },
+    {
+      title: {
+        fa: 'کد بک اند',
+        en: 'Back-end code'
+      },
+      link: 'https://github.com/Mhmdhnr/Python-Nuxt',
+      icon: 'github.svg'
+    },
+  ]
+};
 export const menu = [
   {
     id: "menu1",
@@ -24,22 +61,6 @@ export const menu = [
         },
         link: "LeaderBoardPage",
       },
-      // {
-      //       //   id:"sub13",
-      //       //   title : {
-      //       //     fa: "دکمه ها",
-      //       //     en: "Buttons"
-      //       //   },
-      //       //   link: "Buttons",
-      //       // },
-      //       // {
-      //       //   id:"sub14",
-      //       //   title : {
-      //       //     fa: "نئون",
-      //       //     en: "Neon"
-      //       //   },
-      //       //   link: "NeonPage",
-      //       // },
       {
         id:"sub15",
         title : {
@@ -113,32 +134,6 @@ export const workCards = [
       pageLink: "/LeaderBoardPage",
     }
   },
-  // {
-  //   id: "work3",
-  //   front: {
-  //     imageUrl: "1.svg"
-  //   },
-  //   back: {
-  //     title: {
-  //       fa: "دکمه",
-  //       en: "Button"
-  //     },
-  //     pageLink: "/Buttons",
-  //   }
-  // },
-  // {
-  //   id: "work4",
-  //   front: {
-  //     imageUrl: "3.svg"
-  //   },
-  //   back: {
-  //     title: {
-  //       fa: "متن نئونی",
-  //       en: "Neon Text"
-  //     },
-  //     pageLink: "/NeonPage",
-  //   }
-  // },
   {
     id: "work5",
     front: {
@@ -213,28 +208,6 @@ export const slider = [
     },
     imageUrl: "LB.svg"
   },
-  // {
-  //   summary: {
-  //     fa: "چند تا دکمه اصلی!!!",
-  //     en: "Some CTA Buttons"
-  //   },
-  //   detail: {
-  //     fa: "سلام دوباره..\ این وبسایت روی فریم ورک Nuxt اجرا شده. در برخی قسمت ها دیتا از API ساده نوشته شده با python گرفته میشه.سورس کد بک اند و فرانت اند روی git-hub هست و اگر مایل باشید میتونید یه نگاهی بهش بندازید!!!",
-  //     en: "Hi again... this website is implemented on Nuxt framework. In some parts data is fetching from a simple API coded whit python. back-end and front-end source code is available on git-hub and you can have a look at it if you wish!!!"
-  //   },
-  //   imageUrl: "me.svg"
-  // },
-  // {
-  //   summary: {
-  //     fa: "متن نئونی!!!",
-  //     en: "Neon Text"
-  //   },
-  //   detail: {
-  //     fa: "سلام دوباره..\ این وبسایت روی فریم ورک Nuxt اجرا شده. در برخی قسمت ها دیتا از API ساده نوشته شده با python گرفته میشه.سورس کد بک اند و فرانت اند روی git-hub هست و اگر مایل باشید میتونید یه نگاهی بهش بندازید!!!",
-  //     en: "Hi again... this website is implemented on Nuxt framework. In some parts data is fetching from a simple API coded whit python. back-end and front-end source code is available on git-hub and you can have a look at it if you wish!!!"
-  //   },
-  //   imageUrl: "me.svg"
-  // },
   {
     summary: {
       fa: "سوایپ در بروزر!!!",
@@ -269,3 +242,220 @@ export const slider = [
     imageUrl: "shoe.svg"
   },
 ];
+export const colorPicker = {
+  light: {
+    primary: [
+      '#e68393',
+      '#94505d',
+      '#e683b4',
+      '#995778',
+      '#e683d5',
+      '#99578e',
+      '#d583e6',
+      '#8d5799',
+      '#b483e6',
+      '#775799',
+      '#8393e6',
+      '#576299',
+      '#83b4e6',
+      '#577899',
+      '#82d7e8',
+      '#578f99',
+      '#82e8d7',
+      '#57998e',
+      '#82e8b5',
+      '#579978',
+      '#82e893',
+      '#579962',
+      '#b5e882',
+      '#789957',
+      '#998d57',
+      '#e8d782',
+      '#e8b582',
+      '#997857',
+      '#e88282',
+      '#995757',
+    ],
+    text: [
+      '#000',
+      '#111',
+      '#222',
+      '#333',
+      '#444',
+      '#555',
+      '#666',
+      '#777',
+      '#888',
+      '#999',
+      '#aaa',
+      '#bbb',
+      '#ccc',
+      '#ddd',
+      '#eee',
+      '#fff',
+      '#002',
+      '#113',
+      '#224',
+      '#335',
+      '#446',
+      '#557',
+      '#668',
+      '#779',
+      '#88a',
+      '#99b',
+      '#aac',
+      '#bbd',
+      '#cce',
+      '#ddf',
+      '#eef',
+      '#020',
+      '#131',
+      '#242',
+      '#353',
+      '#464',
+      '#575',
+      '#686',
+      '#797',
+      '#8a8',
+      '#9b9',
+      '#aca',
+      '#bdb',
+      '#cec',
+      '#dfd',
+      '#efe',
+      '#200',
+      '#311',
+      '#422',
+      '#533',
+      '#644',
+      '#755',
+      '#866',
+      '#977',
+      '#a88',
+      '#b99',
+      '#caa',
+      '#dbb',
+      '#ecc',
+      '#fdd',
+      '#fee',
+    ],
+    bg: [
+      '#000',
+      '#111',
+      '#222',
+      '#333',
+      '#444',
+      '#555',
+      '#666',
+      '#777',
+      '#888',
+      '#999',
+      '#aaa',
+      '#bbb',
+      '#ccc',
+      '#ddd',
+      '#eee',
+      '#fff',
+      '#002',
+      '#113',
+      '#224',
+      '#335',
+      '#446',
+      '#557',
+      '#668',
+      '#779',
+      '#88a',
+      '#99b',
+      '#aac',
+      '#bbd',
+      '#cce',
+      '#ddf',
+      '#eef',
+      '#020',
+      '#131',
+      '#242',
+      '#353',
+      '#464',
+      '#575',
+      '#686',
+      '#797',
+      '#8a8',
+      '#9b9',
+      '#aca',
+      '#bdb',
+      '#cec',
+      '#dfd',
+      '#efe',
+      '#200',
+      '#311',
+      '#422',
+      '#533',
+      '#644',
+      '#755',
+      '#866',
+      '#977',
+      '#a88',
+      '#b99',
+      '#caa',
+      '#dbb',
+      '#ecc',
+      '#fdd',
+      '#fee',
+    ],
+  },
+  dark: {
+    primary: [
+      '#e68393',
+      '#e683b4',
+      '#e683d5',
+      '#d583e6',
+      '#b483e6',
+      '#8393e6',
+      '#83b4e6',
+      '#82d7e8',
+      '#82e8d7',
+      '#82e8b5',
+      '#82e893',
+      '#b5e882',
+      '#e8d782',
+      '#e8b582',
+      '#e88282',
+    ],
+    text: [
+      '#000',
+      '#111',
+      '#222',
+      '#333',
+      '#444',
+      '#555',
+      '#666',
+      '#777',
+      '#888',
+      '#999',
+      '#aaa',
+      '#bbb',
+      '#ccc',
+      '#ddd',
+      '#eee',
+      '#fff',
+    ],
+    bg: [
+      '#000',
+      '#111',
+      '#222',
+      '#333',
+      '#444',
+      '#555',
+      '#666',
+      '#777',
+      '#888',
+      '#999',
+      '#aaa',
+      '#bbb',
+      '#ccc',
+      '#ddd',
+      '#eee',
+      '#fff',
+    ]
+  }
+};
