@@ -1,6 +1,7 @@
 export const state = () => ({
   fa: true,
   api: '',
+  theme: 'light',
 });
 
 export const mutations = {
@@ -9,6 +10,9 @@ export const mutations = {
   },
   api(state, el) {
     state.api = el;
+  },
+  theme(state, el) {
+    state.theme = el;
   },
 };
 export const getters = {

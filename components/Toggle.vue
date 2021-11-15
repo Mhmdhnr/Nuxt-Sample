@@ -26,10 +26,18 @@
             checked (newChecked) {
                 if (this.subject === "theme") {
                   if (newChecked){
-                      this.$colorMode.preference = "dark"
+                      this.$colorMode.preference = "dark";
+                      this.$store.commit('theme', "dark");
+                      document.documentElement.style.setProperty("--primary-color", '#e68393');
+                      document.documentElement.style.setProperty("--text-color", '#eee');
+                      document.documentElement.style.setProperty("--bg-color", '#222');
                   }
                   else {
-                      this.$colorMode.preference = "light"
+                      this.$colorMode.preference = "light";
+                      this.$store.commit('theme', "light");
+                      document.documentElement.style.setProperty("--primary-color", '#e68393');
+                      document.documentElement.style.setProperty("--text-color", '#444');
+                      document.documentElement.style.setProperty("--bg-color", '#fff');
                   }
                 }
                 else if (this.subject === "language") {

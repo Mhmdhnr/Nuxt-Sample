@@ -8,20 +8,20 @@
       </NuxtLink>
       <div class="toggles flex">
         <div class="color-panel" >
-          <div class="primary-color" v-on:click="showColorPicker('primary-color-picker')">
-            <ColorPicker id="primary-color-picker" class="primary-color-picker" subject="--primary-color" :colors="colorPicker.light.primary"/>
-<!--            <ColorPicker v-if="this.$colorMode.preference === 'light'" class="primary-color-picker" subject="&#45;&#45;primary-color" :colors="colorPicker.light.primary"/>-->
-<!--            <ColorPicker v-if="this.$colorMode.preference === 'dark'" class="primary-color-picker" subject="&#45;&#45;primary-color" :colors="colorPicker.dark.primary"/>-->
+          <div class="background-color" v-on:click="showColorPicker('bg-color-picker')">
+            <ColorPicker id="bg-color-picker" class="bg-color-picker" subject="--bg-color"
+                         :lightColors="colorPicker.light.bg"
+                         :darkColors="colorPicker.dark.bg"/>
           </div>
           <div class="text-color" v-on:click="showColorPicker('text-color-picker')">
-            <ColorPicker id="text-color-picker" class="text-color-picker" subject="--text-color" :colors="colorPicker.light.text"/>
-<!--            <ColorPicker v-if="this.$colorMode.preference === 'light'" class="text-color-picker" subject="&#45;&#45;text-color" :colors="colorPicker.light.text"/>-->
-<!--            <ColorPicker v-if="this.$colorMode.preference === 'dark'" class="text-color-picker" subject="&#45;&#45;text-color" :colors="colorPicker.dark.text"/>-->
+            <ColorPicker id="text-color-picker" class="text-color-picker" subject="--text-color"
+                         :lightColors="colorPicker.light.text"
+                         :darkColors="colorPicker.dark.text"/>
           </div>
-          <div class="background-color" v-on:click="showColorPicker('bg-color-picker')">
-            <ColorPicker id="bg-color-picker"  class="bg-color-picker" subject="--bg-color" :colors="colorPicker.light.bg"/>
-<!--            <ColorPicker v-if="this.$colorMode.preference === 'light'" class="bg-color-picker" subject="&#45;&#45;bg-color" :colors="colorPicker.light.bg"/>-->
-<!--            <ColorPicker v-if="this.$colorMode.preference === 'dark'" class="bg-color-picker" subject="&#45;&#45;bg-color" :colors="colorPicker.dark.bg"/>-->
+          <div class="primary-color" v-on:click="showColorPicker('primary-color-picker')">
+            <ColorPicker id="primary-color-picker" class="primary-color-picker" subject="--primary-color"
+                         :lightColors="colorPicker.light.primary"
+                         :darkColors="colorPicker.dark.primary"/>
           </div>
         </div>
         <Toggle id="theme" subject="theme" class="theme-toggle"/>
@@ -31,6 +31,7 @@
 </template>
 
 <script>
+    import {mapState} from 'vuex'
     import {colorPicker} from "../data/data";
     import Toggle from "./Toggle";
     import ColorPicker from "./ColorPicker";
@@ -43,37 +44,31 @@
                 colorPicker: colorPicker
             }
         },
+        computed: mapState(['theme']),
         mounted() {
-            let primaryElement = document.getElementsByClassName('primary-color')[0];
-            let textElement = document.getElementsByClassName('text-color')[0];
-            let bgElement = document.getElementsByClassName('background-color')[0];
-            let primaryColorPickers = document.getElementsByClassName("primary-color-picker");
-            let bgColorPickers = document.getElementsByClassName("bg-color-picker");
-            let textColorPickers = document.getElementsByClassName("text-color-picker");
+            let primaryPicker = document.getElementById('primary-color-picker');
+            let textPicker = document.getElementById('text-color-picker');
+            let bgPicker = document.getElementById('bg-color-picker');
+            let primary = document.getElementsByClassName('primary-color')[0];
+            let text = document.getElementsByClassName('text-color')[0];
+            let bg = document.getElementsByClassName('background-color')[0];
             document.onclick = function (e) {
-                if(e.target !== primaryElement){
-                    for (let colorPicker of primaryColorPickers) {
-                        colorPicker.style.display = 'none';
-                    }
+                if(e.target !== primary){
+                    primaryPicker.style.display = 'none';
                 }
-                if(e.target !== textElement){
-                    for (let colorPicker of textColorPickers) {
-                        colorPicker.style.display = 'none';
-                    }
+                if(e.target !== text){
+                    textPicker.style.display = 'none';
                 }
-                if(e.target !== bgElement){
-                    for (let colorPicker of bgColorPickers) {
-                        colorPicker.style.display = 'none';
-                    }
+                if(e.target !== bg){
+                    bgPicker.style.display = 'none';
                 }
             }
         },
         methods: {
             showColorPicker(colorPicker) {
-                let colorPickers = document.getElementsByClassName(colorPicker);
-                for (let colorPicker of colorPickers) {
-                    colorPicker.style.display = 'flex';
-                }
+                let colorPickerEl = document.getElementsByClassName(colorPicker)[0];
+                console.log(colorPickerEl)
+                colorPickerEl.style.display = 'flex';
             }
         },
     }

@@ -1,12 +1,19 @@
 <template>
     <div class="color-picker flex flex-column">
-      <div class="colors">
-        <div v-for="color in colors" class="color">
-          <input class="color-input" :id="`${subject}${color}`" type="radio" v-model="selectedColor">
+      <div v-show="this.theme === 'light'" class="colors">
+        <div v-for="color in lightColors" class="color">
+          <input class="color-input" :id="`${subject}light${color}`" type="radio" v-model="selectedColor">
           <label class="color-label" @click="check(color)">
           </label>
-      </div>
         </div>
+      </div>
+      <div v-show="this.theme === 'dark'" class="colors">
+        <div v-for="color in darkColors" class="color">
+          <input class="color-input" :id="`${subject}dark${color}`" type="radio" v-model="selectedColor">
+          <label class="color-label" @click="check(color)">
+          </label>
+        </div>
+      </div>
         <button class="random" v-on:click="random">
           random
         </button>
@@ -14,41 +21,71 @@
 </template>
 
 <script>
+    import {mapState} from 'vuex'
     export default {
         name: "ColorPicker",
-        props:['colors', 'subject'],
+        props:['darkColors','lightColors', 'subject'],
         data() {
             return {
                 selectedColor: ''
             }
         },
+        computed: mapState(['theme']),
+        watch: {
+          theme(newValue){
+              if(newValue === 'light'){
+                  for(let color of this.lightColors) {
+                      document.getElementById(this.subject.toString() + "light" + color).parentElement.style.backgroundColor = color;
+                  }
+              } else {
+                  for(let color of this.darkColors) {
+                      document.getElementById(this.subject.toString() + "dark" + color).parentElement.style.backgroundColor = color;
+                  }
+              }
+          }
+        },
         mounted:function() {
-            for(let color of this.colors) {
-                document.getElementById(this.subject.toString() + color).parentElement.style.backgroundColor = color;
+            if(this.theme === 'light'){
+                for(let color of this.lightColors) {
+                    document.getElementById(this.subject.toString() + "light" + color).parentElement.style.backgroundColor = color;
+                }
+            } else {
+                for(let color of this.darkColors) {
+                    document.getElementById(this.subject.toString() + "dark" + color).parentElement.style.backgroundColor = color;
+                }
             }
         },
         methods: {
             check(color) {
-                for (const color of this.colors) {
-                    document.getElementById(this.subject.toString() + color).checked = false
-                }
-                document.getElementById(this.subject.toString() + color).checked = true;
-                if(this.$colorMode.preference === 'light'){
+                if(this.theme === 'light'){
+                    for (const color of this.lightColors) {
+                        document.getElementById(this.subject.toString() + "light" + color).checked = false
+                    }
+                    document.getElementById(this.subject.toString() + "light" + color).checked = true;
                     document.documentElement.style.setProperty(this.subject, color);
                 } else {
+                    for (const color of this.darkColors) {
+                        document.getElementById(this.subject.toString() + "dark" + color).checked = false
+                    }
+                    document.getElementById(this.subject.toString() + "dark" + color).checked = true;
                     document.documentElement.style.setProperty(this.subject, color);
                     // document.getElementsByClassName('dark-mode')[0].style.setProperty(this.subject, color);
                 }
             },
             random(){
-                for (const color of this.colors) {
-                    document.getElementById(this.subject.toString() + color).checked = false
-                }
-                let randomColor = this.colors[Math.floor(Math.random()*this.colors.length)];
-                document.getElementById(this.subject.toString() + randomColor).checked = true;
-                if(this.$colorMode.preference === 'light'){
+                if(this.theme === 'light'){
+                    for (const color of this.lightColors) {
+                        document.getElementById(this.subject.toString() + "light" + color).checked = false
+                    }
+                    let randomColor = this.lightColors[Math.floor(Math.random()*this.lightColors.length)];
                     document.documentElement.style.setProperty(this.subject, randomColor);
+                    document.getElementById(this.subject.toString() + "light" + randomColor).checked = true;
                 } else {
+                    for (const color of this.darkColors) {
+                        document.getElementById(this.subject.toString() + "dark" + color).checked = false
+                    }
+                    let randomColor = this.darkColors[Math.floor(Math.random()*this.darkColors.length)];
+                    document.getElementById(this.subject.toString() + "dark" + randomColor).checked = true;
                     document.documentElement.style.setProperty(this.subject, randomColor);
                     // document.getElementsByClassName('dark-mode')[0].style.setProperty(this.subject, color);
                 }
@@ -97,7 +134,7 @@
     border-radius: 4px;
   }
   .color-input:checked ~ .color-label {
-    border: 3px solid var(--text-color);
+    border: 3px solid var(--contrast-color);
   }
   /*.color-input:checked .color {*/
   /*  border: 3px solid black;*/
