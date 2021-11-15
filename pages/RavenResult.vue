@@ -85,12 +85,12 @@
                           document.getElementsByClassName('average')[0].classList.remove('current');
                           document.getElementsByClassName(range)[0].classList.add('current');
                           break;
-                      case i > 124 && i <= 148:
+                      case i > 124 && i <= 135:
                           range = 'super-excellent';
                           document.getElementsByClassName('excellent')[0].classList.remove('current');
                           document.getElementsByClassName(range)[0].classList.add('current');
                           break;
-                      case i > 148:
+                      case i > 135:
                           range = 'genius';
                           document.getElementsByClassName('super-excellent')[0].classList.remove('current');
                           document.getElementsByClassName(range)[0].classList.add('current');
