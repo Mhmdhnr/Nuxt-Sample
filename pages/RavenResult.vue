@@ -1,9 +1,8 @@
 <template>
   <div class="raven-result flex flex-column">
     <span class="iq-span" v-if="this.fa">ضریب هوشی شما</span>
-    <span class="iq" v-if="this.fa">-</span>
     <span class="iq-span" v-if="!this.fa">Your IQ </span>
-    <span class="iq" v-if="!this.fa">{{this.$route.params.iq}}</span>
+    <span class="iq">-</span>
     <div class="ranges flex flex-row">
       <div>
         <div class="range genius">
@@ -36,6 +35,10 @@
         </div>
       </div>
     </div>
+    <div class="con">
+      <span class="iq-span-con" v-if="this.fa & this.$route.params.correct.toString() === '60'">تبریک!!! ضریب هوشی محاسبه شده، ماکزیمم مقدار قابل محاسبه توسط این آزمون برای سن شما میباشد.</span>
+      <span class="iq-span-con" v-if="!this.fa & this.$route.params.correct.toString() === '60'">Congratulations!!! The calculate IQ is the maximum value which can be calculate by this test for your age.</span>
+    </div>
   </div>
 </template>
 
@@ -46,20 +49,21 @@
         computed: mapState(['fa']),
         watch: {
             fa (newValue) {
-                if (!newValue) {
-                }
-                else {
-                }
             }
         },
         mounted() {
             let range;
-            // let iq = 150;
+            // let iq = 51;
             let iqElement = document.getElementsByClassName('iq')[0];
             let iq = this.$route.params.iq;
-            for(let i = 1 ; i <= iq; i++){
+            for(let i = 51 ; i <= iq; i++){
                 setTimeout(function () {
                   iqElement.innerText = i.toString();
+                  if (i === 51) {
+                    iqElement.innerText =  i.toString() + "- " ;
+                  } else if (i === 149) {
+                    iqElement.innerText = i.toString() + "+ ";
+                  }
                   switch (true) {
                       case i <= 64:
                           range = 'retarded';
@@ -85,12 +89,12 @@
                           document.getElementsByClassName('average')[0].classList.remove('current');
                           document.getElementsByClassName(range)[0].classList.add('current');
                           break;
-                      case i > 124 && i <= 135:
+                      case i > 124 && i <= 148:
                           range = 'super-excellent';
                           document.getElementsByClassName('excellent')[0].classList.remove('current');
                           document.getElementsByClassName(range)[0].classList.add('current');
                           break;
-                      case i > 135:
+                      case i > 148:
                           range = 'genius';
                           document.getElementsByClassName('super-excellent')[0].classList.remove('current');
                           document.getElementsByClassName(range)[0].classList.add('current');
@@ -104,12 +108,15 @@
 
 <style scoped>
   .raven-result {
-    padding: 5vh 3vw;
+    padding: 2vh 3vw;
     width: 1080px;
   }
   .iq-span {
-    padding: 2vh 0;
+    padding: 1vh 0;
     font-size: 1em;
+  }
+  .con {
+    padding: 2vh;
   }
   .iq {
     font-size: 3em;
@@ -180,6 +187,13 @@
     .range {
       box-shadow: 0 4px 12px 0 rgba(100, 100, 100, 0.6);
       width: 80vw;
+      height: 7vh;
+    }
+    .con {
+      text-align: center;
+    }
+    .iq-span-con {
+      font-size: 0.75em;
     }
   }
 </style>

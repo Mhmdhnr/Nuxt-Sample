@@ -1,6 +1,6 @@
 <template>
   <div class="test">
-    <Loading v-show="this.api === 'pending'" :message="this.loading_message"/>
+    <Loading v-show="this.api === 'pending'" />
     <div v-show="this.api === 'done'" class="test flex">
 <!--    <div class="test flex">-->
       <div class="test-head flex flex-row">
@@ -54,23 +54,18 @@
                 timerStarted: false,
                 test: {},
                 slider: slider,
-                choices_array: {
-                    responses: []
-                },
-                loading_message: {
-                    fa: 'در حال بارگزاری آزمون شما ...',
-                    en: 'Loading your test ...'
-                }
+                choices_array: [],
             }
         },
         computed: mapState(['api','fa']),
         mounted() {
+            this.$store.commit('loadingMessage' , {fa: 'در حال بارگزاری آزمون شما ...', en: 'Loading your test ...'});
             this.$store.commit('api', 'pending');
             apiServices.methods.getTest(this.testId).then(response => {
               this.test = response;
               console.log(this.test);
               this.$store.commit('api', 'done');
-              this.choices_array.responses = Array(this.test.questions.length).fill(0);
+              this.choices_array = Array(this.test.questions.length).fill(0);
             })
         },
         methods:{
@@ -82,14 +77,14 @@
                     // this.countdownTimer(3, display);
                     this.timerStarted = true;
                 }
-                this.choices_array.responses[questionIndex - 1] = choiceIndex;
-                this.allAnswered = this.choices_array.responses.filter(no => no !== 0).length === this.test.questions.length;
+                this.choices_array[questionIndex - 1] = choiceIndex;
+                this.allAnswered = this.choices_array.filter(no => no !== 0).length === this.test.questions.length;
             },
             submit(){
                 this.$emit('submit', {choices: this.choices_array})
             },
             unAnswered() {
-                let index = this.choices_array.responses.findIndex(x => x === 0);
+                let index = this.choices_array.findIndex(x => x === 0);
                 let unAnsweredQuestionId = this.test.questions[index].id;
                 console.log(document.getElementById(unAnsweredQuestionId.toString()));
 
@@ -125,10 +120,11 @@
     padding: 2vh 10vw;
     width: 100vw;
     justify-content: space-between;
-    background-color: var(--primary-color);
+    background-color: var(--bg-color);
+    border-bottom: 1px solid var(--text-color);
   }
   #time > span, #time, .title {
-    color: var(--bg-color);
+    color: var(--text-color);
   }
   .hint {
     cursor: pointer;

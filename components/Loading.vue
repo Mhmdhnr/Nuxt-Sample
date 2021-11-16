@@ -4,8 +4,8 @@
       <span v-for="n in 15"></span>
     </div>
     <div class="loading-message">
-      <span class="message" v-if="this.fa">{{this.message.fa}}</span>
-      <span class="message" v-if="!this.fa">{{this.message.en}}</span>
+      <span class="message" v-if="this.fa">{{this.loadingMessage.fa}}</span>
+      <span class="message" v-if="!this.fa">{{this.loadingMessage.en}}</span>
     </div>
   </div>
 </template>
@@ -14,12 +14,9 @@
     import { mapState } from 'vuex';
     export default {
         name: "Loading",
-        props:['message'],
-        computed: mapState(['fa']),
+        props:[],
+        computed: mapState(['fa','loadingMessage']),
         watch:{
-            fa(newValue) {
-
-            }
         }
     }
 </script>

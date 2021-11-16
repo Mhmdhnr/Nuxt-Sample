@@ -2,6 +2,12 @@ export const state = () => ({
   fa: true,
   api: '',
   theme: 'light',
+  loadingMessage: {
+    fa: '',
+    en: '',
+  },
+  loadingMessageEn: '',
+
 });
 
 export const mutations = {
@@ -10,6 +16,9 @@ export const mutations = {
   },
   api(state, el) {
     state.api = el;
+  },
+  loadingMessage(state, el) {
+    state.loadingMessage = el;
   },
   theme(state, el) {
     state.theme = el;
