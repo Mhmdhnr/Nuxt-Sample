@@ -36,8 +36,10 @@
       </div>
     </div>
     <div class="con">
-      <span class="iq-span-con" v-if="this.fa & this.$route.params.correct.toString() === '60'">تبریک!!! ضریب هوشی محاسبه شده، ماکزیمم مقدار قابل محاسبه توسط این آزمون برای سن شما میباشد.</span>
-      <span class="iq-span-con" v-if="!this.fa & this.$route.params.correct.toString() === '60'">Congratulations!!! The calculate IQ is the maximum value which can be calculate by this test for your age.</span>
+      <span v-if="this.fa">شما به {{this.$route.params.correct}} سوال از 60 سوال پاسخ درست دادید.</span>
+      <span v-if="!this.fa">You have answered correctly to {{this.$route.params.correct}} questions from 60 questions.</span>
+<!--      <span class="iq-span-con" v-if="this.fa & this.$route.params.correct.toString() === '60'">تبریک!!! ضریب هوشی محاسبه شده، ماکزیمم مقدار قابل محاسبه توسط این آزمون برای سن شما میباشد.</span>-->
+<!--      <span class="iq-span-con" v-if="!this.fa & this.$route.params.correct.toString() === '60'">Congratulations!!! The calculate IQ is the maximum value which can be calculate by this test for your age.</span>-->
     </div>
   </div>
 </template>
@@ -53,9 +55,9 @@
         },
         mounted() {
             let range;
-            // let iq = 51;
+            let iq = 149;
+            // let iq = this.$route.params.iq;
             let iqElement = document.getElementsByClassName('iq')[0];
-            let iq = this.$route.params.iq;
             for(let i = 51 ; i <= iq; i++){
                 setTimeout(function () {
                   iqElement.innerText = i.toString();
@@ -100,7 +102,7 @@
                           document.getElementsByClassName(range)[0].classList.add('current');
                           break;
                   }
-                }, Math.pow(i, 1.9))
+                }, (Math.pow(i, 4) / (iq * 200)))
             }
         }
     }

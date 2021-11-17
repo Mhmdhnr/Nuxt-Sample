@@ -17,7 +17,6 @@
         mounted() {
             let rotate = -6;
             let images = document.getElementById(this.spec.productName.toString() + "images");
-            console.log(images);
             images.style.transform = `rotateY(0deg)`;
             let base = document.getElementById(this.spec.productName.toString() + "controller");
             let baseRect = base.getBoundingClientRect();
@@ -28,9 +27,9 @@
                 clip.style.clipPath = `inset(0 ${imageWidth / 2}px 0 0)`;
 
                 base.onmousemove = function (e) {
-                    console.log(imageWidth);
+                    // console.log(imageWidth);
                     clip.style.clipPath = `inset(0 ${ baseRect.right - e.clientX}px 0 0)`;
-                    console.log(rotate + (baseRect.right - e.clientX) / imageWidth * -2 * rotate);
+                    // console.log(rotate + (baseRect.right - e.clientX) / imageWidth * -2 * rotate);
                     images.style.transform = `rotateY(${rotate + (baseRect.right - e.clientX) / imageWidth * -2 * rotate}deg)`;
                 };
             } else {
@@ -39,12 +38,12 @@
                 let clip = document.getElementById(this.spec.productName.toString() + "clip");
                 clip.style.clipPath = `inset(0 ${imageWidth / 2}px 0 0)`;
                 let baseRect = base.getBoundingClientRect();
-                console.log(baseRect)
+                // console.log(baseRect);
 
                 base.ontouchstart = function (e) {
                     base.ontouchmove = function (f) {
                         let touch = f.touches[0];
-                        console.log(touch.clientX);
+                        // console.log(touch.clientX);
                         clip.style.clipPath = `inset(0 ${ baseRect.right - touch.clientX}px 0 0)`;
                         images.style.transform = `rotateY(${rotate + (baseRect.right - touch.clientX) / imageWidth * -2 * rotate}deg)`;
                     }

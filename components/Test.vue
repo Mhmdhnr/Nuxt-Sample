@@ -158,7 +158,6 @@
       padding: 2vh 3vw;
     }
     #time > span, #time, .title {
-      color: var(--bg-color);
       font-size: 0.8em;
     }
   }

@@ -40,7 +40,7 @@
 </script>
 <style>
   :root {
-    --primary-color: #e68393;
+    --primary-color: hsl(0, 100%, 70%);
     --text-color: #444;
     --contrast-color: #ccc;
     --bg-color: #fff;
@@ -67,10 +67,10 @@
       0 0 17vw rgba(0,210,255,0.2);
   }
   .dark-mode {
-    --primary-color: #bf6b7b;
-    --text-color: #eee;
+    --primary-color: hsl(0, 80%, 40%);
+    --text-color: #fff;
     --contrast-color: rgb(100,100,100);
-    --bg-color: #222;
+    --bg-color: #111;
     --main-shadow: 0 0 5px 5px rgba(255,255,255,0.05);
     --toggle-light: #28292c;
     --toggle-dark: #d8dbe0;

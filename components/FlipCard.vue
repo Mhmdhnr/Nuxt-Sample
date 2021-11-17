@@ -33,7 +33,6 @@
         mounted() {
             let id = this.cardData.id;
             let flipCard = document.getElementById(id);
-            console.log(flipCard);
             flipCard.style.transition = this.duration + "ms ";
             flipCard.style.transitionTimingFunction = "cubic-bezier(.175, .885, .32, 1.4)";
         }
@@ -100,6 +99,7 @@
     font-size: 1em;
     text-align: center;
     justify-content: space-around;
+    background-color: var(--primary-color);
   }
   .card-back > span {
     color: var(--text-color);

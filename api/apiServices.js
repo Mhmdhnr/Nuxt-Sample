@@ -72,7 +72,7 @@ export default {
       return await this.toPromise(url);
     },
     async postRavenResponse(clientAnswers) {
-      console.log(clientAnswers)
+      console.log(clientAnswers);
       let jsonString = JSON.stringify(clientAnswers);
       console.log(jsonString);
       const url = `${API_URL}/post_raven_response?clientAnswers=${jsonString}`;
