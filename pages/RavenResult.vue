@@ -55,8 +55,8 @@
         },
         mounted() {
             let range;
-            let iq = 149;
-            // let iq = this.$route.params.iq;
+            // let iq = 149;
+            let iq = this.$route.params.iq;
             let iqElement = document.getElementsByClassName('iq')[0];
             for(let i = 51 ; i <= iq; i++){
                 setTimeout(function () {
