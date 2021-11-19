@@ -28,16 +28,16 @@
                   if (newChecked){
                       this.$colorMode.preference = "dark";
                       this.$store.commit('theme', "dark");
-                      document.documentElement.style.setProperty("--primary-color", 'hsl(0, 80%, 40%)');
-                      document.documentElement.style.setProperty("--text-color", '#eee');
-                      document.documentElement.style.setProperty("--bg-color", '#222');
+                      document.documentElement.style.setProperty("--primary-color", 'hsl(0, 100%, 70%)');
+                      document.documentElement.style.setProperty("--text-color", '#444');
+                      document.documentElement.style.setProperty("--bg-color", '#fff');
                   }
                   else {
                       this.$colorMode.preference = "light";
                       this.$store.commit('theme', "light");
-                      document.documentElement.style.setProperty("--primary-color", 'hsl(0, 100%, 70%)');
-                      document.documentElement.style.setProperty("--text-color", '#444');
-                      document.documentElement.style.setProperty("--bg-color", '#fff');
+                      document.documentElement.style.setProperty("--primary-color", 'hsl(0, 80%, 40%)');
+                      document.documentElement.style.setProperty("--text-color", '#eee');
+                      document.documentElement.style.setProperty("--bg-color", '#222');
                   }
                 }
                 else if (this.subject === "language") {
