@@ -12,8 +12,8 @@
           {{cardData.back.title.en}}
         </span>
         <b-btn class="button" :to="cardData.back.pageLink">
-          <span v-show="this.$store.state.fa"> ببینم </span>
-          <span v-show="!this.$store.state.fa"> Let's see </span>
+          <span v-show="this.$store.state.fa"> کلیک کنید </span>
+          <span v-show="!this.$store.state.fa"> Click Here </span>
         </b-btn>
       </div>
     </div>
@@ -44,15 +44,15 @@
     background-color: var(--bg-color);
     border-radius: 4px;
     border: none;
-    padding: 1vh 2vw;
+    padding: 1vh 1vw;
     box-shadow: 0 0 5px 2px rgba(100,100,100,0.2);
   }
   .button > span {
-    font-size: 1.2em;
+    font-size: 1em;
 
   }
   .button:hover, .button:focus {
-    background-color: var(--primary-color);
+    background-color: var(--text-color);
   }
   .button:hover > span, .button:focus > span {
     color: var(--bg-color);
