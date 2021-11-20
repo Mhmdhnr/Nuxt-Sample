@@ -54,13 +54,10 @@
             },
             next() {
                 this.selectedIndex ++;
-                this.selectedIndex = this.selectedIndex === this.elementsCount? 0:this.selectedIndex;
-                console.log("_______________________")
                 this.rotateCarousel();
             },
             previous() {
                 this.selectedIndex --;
-                this.selectedIndex = this.selectedIndex === -1? this.elementsCount - 1:this.selectedIndex;
                 this.rotateCarousel();
             },
         }
