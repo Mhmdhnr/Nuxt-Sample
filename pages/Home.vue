@@ -1,22 +1,22 @@
 <template>
   <div class="flex flex-column">
     <Slider v-bind:slider="slider[0]" />
-    <Carousel3D class="carousel-3d-main">
-      <div >1</div>
-      <div >2</div>
-      <div >3</div>
-      <div >4</div>
-      <div >5</div>
-      <div >6</div>
-    </Carousel3D>
-    <Carousel3dFlat class="carousel-3d-flat-main">
-      <div >1</div>
-      <div >2</div>
-      <div >3</div>
-      <div >4</div>
-      <div >5</div>
-      <div >6</div>
-    </Carousel3dFlat>
+<!--    <Carousel3D class="carousel-3d-main">-->
+<!--      <div >1</div>-->
+<!--      <div >2</div>-->
+<!--      <div >3</div>-->
+<!--      <div >4</div>-->
+<!--      <div >5</div>-->
+<!--      <div >6</div>-->
+<!--    </Carousel3D>-->
+<!--    <Carousel3dFlat class="carousel-3d-flat-main">-->
+<!--      <div >1</div>-->
+<!--      <div >2</div>-->
+<!--      <div >3</div>-->
+<!--      <div >4</div>-->
+<!--      <div >5</div>-->
+<!--      <div >6</div>-->
+<!--    </Carousel3dFlat>-->
     <WorksCard />
     <Links class="links"/>
   </div>
