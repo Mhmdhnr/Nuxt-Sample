@@ -20,7 +20,6 @@
             }
         },
         mounted() {
-            console.log(workCards);
             let count = document.querySelectorAll('.bounce').length;
             for(let i = 0; i < count; i++){
                 setTimeout(function () {

@@ -1,0 +1,123 @@
+<template>
+  <div class="flex flex-column">
+    <div class="scene">
+      <div class="carousel-3d-flat">
+        <slot />
+      </div>
+    </div>
+    <div style="margin: 0">
+      <button class="next" v-on:click="next()">
+        ►
+      </button>
+      <button class="previous" v-on:click="previous()">
+        ◄
+      </button>
+    </div>
+  </div>
+</template>
+
+<script>
+    export default {
+        name: "Carousel3dFlat",
+        props:[],
+        data(){
+            return {
+                selectedIndex: 0,
+                elementsCount: 0,
+                zSteps: [],
+                xSteps: [],
+                translateZ: 0,
+            }
+        },
+        mounted() {
+            let carousel3d = document.getElementsByClassName('carousel-3d-flat')[0];
+            let carouselElements = carousel3d.querySelectorAll("*");
+            this.elementsCount = carouselElements.length;
+            let width = carouselElements[0].offsetWidth;
+            let z = width;
+            let x = width / 2;
+            this.translateZ = Math.round((width / 2) / Math.tan(Math.PI / this.elementsCount));
+            console.log(this.translateZ);
+            console.log(this.elementsCount);
+            // carousel3d.style.transform = `translateZ(${-1 * this.translateZ}px)`;
+            for (let i = 1 ; i <= this.elementsCount; i++) {
+                let elementAngel = (i - 1) * (360 / this.elementsCount);
+                let transZ = Math.floor(-1 * z * (1 - Math.cos(Math.PI * elementAngel / 180)));
+                console.log(i)
+                console.log(elementAngel + " deg")
+                console.log("Z " + transZ)
+                let transX = Math.floor(x * Math.sin(Math.PI * elementAngel / 180));
+                console.log("X " + transX)
+                let element = carouselElements[i - 1];
+                this.zSteps.push(transZ);
+                this.xSteps.push(transX);
+                element.classList.add('carousel-element');
+                element.style.transform = `translateZ(${Math.floor(transZ)}px) translateX(${Math.floor(transX)}px)`
+            }
+        },
+        methods: {
+            rotateCarousel(){
+                let carousel3d = document.getElementsByClassName('carousel-3d-flat')[0];
+                let carouselElements = carousel3d.querySelectorAll("*");
+                console.log(this.zSteps);
+                for (let i = 0 ; i < this.elementsCount; i++) {
+                    let counter = (Math.abs((this.selectedIndex + i)%this.elementsCount));
+                    console.log(counter);
+                    let tranZ = this.zSteps[(counter)];
+                    console.log(tranZ);
+                    let tranX = this.xSteps[(counter)];
+                    console.log(this.selectedIndex)
+                    let element = carouselElements[(i)%this.elementsCount];
+                    console.log(element);
+                    element.style.transform = `translateZ(${tranZ}px) translateX(${tranX}px)`
+                }
+                console.log("_______________________")
+            },
+            next() {
+                this.selectedIndex ++;
+                this.selectedIndex = this.selectedIndex === this.elementsCount? 0:this.selectedIndex;
+                console.log("_______________________")
+                this.rotateCarousel();
+            },
+            previous() {
+                this.selectedIndex --;
+                this.selectedIndex = this.selectedIndex === -1? this.elementsCount - 1:this.selectedIndex;
+                this.rotateCarousel();
+            },
+        }
+    }
+</script>
+
+<style scoped>
+
+  .scene {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    perspective: 1000px;
+    margin: 3vh 0;
+  }
+  .carousel-3d-flat {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    transform-style: preserve-3d;
+    transition: all 0.8s;
+    transition-timing-function: cubic-bezier(.175, .885, .32, 1.4);
+  }
+  .carousel-element {
+    position: absolute;
+    width: 80%;
+    height: 80%;
+    left: 10%;
+    top: 10%;
+    background-color: #28292c;
+    line-height: 116px;
+    font-size: 80px;
+    font-weight: bold;
+    color: white;
+    text-align: center;
+    transition: all 0.8s;
+    transition-timing-function: cubic-bezier(.175, .885, .32, 1.4);
+  }
+</style>
