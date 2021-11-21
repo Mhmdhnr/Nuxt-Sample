@@ -58,7 +58,7 @@
     color: var(--bg-color);
   }
   .flip-card-main {
-    position: relative;
+    /*position: relative;*/
     z-index: 1;
     perspective: 1000px;
   }
@@ -73,7 +73,7 @@
     transform: rotateY(180deg);
   }
   .card-front, .card-back {
-    box-shadow: 0 0 20px 5px rgba(100,100,100,0.2);
+     box-shadow: 0 0 20px 5px rgba(100,100,100,0.2);
      width: 100%;
      height: 100%;
      border-radius: 8px;

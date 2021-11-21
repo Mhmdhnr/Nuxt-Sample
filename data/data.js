@@ -135,7 +135,7 @@ export const workCards = [
     }
   },
   {
-    id: "work5",
+    id: "work3",
     front: {
       imageUrl: "swipe.svg"
     },
@@ -148,7 +148,7 @@ export const workCards = [
     }
   },
   {
-    id: "work6",
+    id: "work4",
     front: {
       imageUrl: "shoe.svg"
     },
@@ -161,7 +161,7 @@ export const workCards = [
     }
   },
   {
-    id: "work7",
+    id: "work5",
     front: {
       imageUrl: "raven.svg"
     },

@@ -2,22 +2,20 @@
   <div class="flex flex-column">
     <Slider v-bind:slider="slider[0]" />
 <!--    <Carousel3D class="carousel-3d-main">-->
-<!--      <div >1</div>-->
-<!--      <div >2</div>-->
-<!--      <div >3</div>-->
-<!--      <div >4</div>-->
-<!--      <div >5</div>-->
-<!--      <div >6</div>-->
+<!--      <FlipCard duration="500" v-bind:cardData="workCards[0]"/>-->
+<!--      <FlipCard duration="500" v-bind:cardData="workCards[1]"/>-->
+<!--      <FlipCard duration="500" v-bind:cardData="workCards[2]"/>-->
+<!--      <FlipCard duration="500" v-bind:cardData="workCards[3]"/>-->
+<!--      <FlipCard duration="500" v-bind:cardData="workCards[4]"/>-->
 <!--    </Carousel3D>-->
-<!--    <Carousel3dFlat class="carousel-3d-flat-main">-->
-<!--      <div >1</div>-->
-<!--      <div >2</div>-->
-<!--      <div >3</div>-->
-<!--      <div >4</div>-->
-<!--      <div >5</div>-->
-<!--      <div >6</div>-->
-<!--    </Carousel3dFlat>-->
-    <WorksCard />
+    <Carousel3dFlat class="carousel-3d-flat-main">
+      <FlipCard duration="500"  v-bind:cardData="workCards[0]"/>
+      <FlipCard duration="500" v-bind:cardData="workCards[1]"/>
+      <FlipCard duration="500" v-bind:cardData="workCards[2]"/>
+      <FlipCard duration="500" v-bind:cardData="workCards[3]"/>
+      <FlipCard duration="500" v-bind:cardData="workCards[4]"/>
+    </Carousel3dFlat>
+<!--    <WorksCard />-->
     <Links class="links"/>
   </div>
 </template>
@@ -48,16 +46,26 @@
 
 <style scoped>
   .carousel-3d-flat-main {
-    width: 500px;
-    height: 350px;
+    margin: 9vh;
+    width: 300px;
+    height: 300px;
   }
   .carousel-3d-main {
-    width: 250px;
-    height: 250px;
+    margin: 9vh;
+    width: 300px;
+    height: 300px;
   }
   .links {
     justify-content: flex-end;
   }
   @media screen and (max-width: 864px) {
+    .carousel-3d-flat-main {
+      width: 200px;
+      height: 300px;
+    }
+    .carousel-3d-main {
+      width: 200px;
+      height: 300px;
+    }
   }
 </style>

@@ -1,5 +1,5 @@
 <template>
-  <div class="swipe-main flex flex-column" id="swipe-root">
+  <div class="swipe-main flex flex-column"  id="swipe-root">
     <span v-show="this.$store.state.fa">شما صفحه را به این سمت کشیدید</span>
     <span v-show="!this.$store.state.fa">You have swiped to ...</span>
     <br>
