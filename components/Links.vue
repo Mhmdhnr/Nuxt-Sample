@@ -61,7 +61,7 @@
   }
   .github {
     justify-content: flex-end;
-    flex: 1;
+    flex: 2;
   }
   .link {
     margin: auto 1vw;
@@ -80,16 +80,18 @@
   @media screen and (max-width: 864px) {
     .social {
       width: 90vw;
-      justify-content: flex-start;
-      margin-bottom: 2vh;
+    }
+    .social span {
+      display: none;
     }
     .github {
       width: 90vw;
-      justify-content: flex-end;
     }
     .links-main {
-      flex-direction: column;
       justify-content: center;
+    }
+    .icon {
+      margin: 5px;
     }
   }
 </style>
