@@ -28,7 +28,7 @@
           <span v-if="!this.fa"> You have answered all questions </span>
         </div>
       </div>
-      <button id="submit" v-on:click="submit()" class="btn-border-hover submit">
+      <button disabled id="submit" v-on:click="submit()" class="btn-border-hover submit">
         <span v-show="this.$store.state.fa" class="btn-border-hover-text"> ارسال آزمون </span>
         <span v-show="!this.$store.state.fa" class="btn-border-hover-text"> Submit </span>
       </button>
@@ -47,7 +47,7 @@
     export default {
         name: "Test",
         components: {Loading, AnimatedWaves, Slider, Question},
-        props:['testId'],
+        props:['testId', 'mustAnsweredAll'],
         data() {
             return {
                 allAnswered: false,
@@ -59,6 +59,12 @@
         },
         computed: mapState(['api','fa']),
         mounted() {
+            let submit = document.getElementById('submit');
+            console.log(this.mustAnsweredAll);
+            if(!this.mustAnsweredAll) {
+                submit.disabled = false;
+                submit.enabled = true;
+            }
             this.$store.commit('loadingMessage' , {fa: 'در حال بارگزاری آزمون شما ...', en: 'Loading your test ...'});
             this.$store.commit('api', 'pending');
             apiServices.methods.getTest(this.testId).then(response => {
@@ -79,16 +85,20 @@
                 }
                 this.choices_array[questionIndex - 1] = choiceIndex;
                 this.allAnswered = this.choices_array.filter(no => no !== 0).length === this.test.questions.length;
+                this.unAnswered();
             },
             submit(){
                 this.$emit('submit', {choices: this.choices_array})
             },
             unAnswered() {
                 let index = this.choices_array.findIndex(x => x === 0);
+                let submit = document.getElementById('submit');
+                if(!index && this.mustAnsweredAll) {
+                    submit.disabled = false;
+                    submit.enabled = true;
+                }
                 let unAnsweredQuestionId = this.test.questions[index].id;
-                console.log(document.getElementById(unAnsweredQuestionId.toString()));
-
-                document.getElementById("q" + unAnsweredQuestionId.toString()).scrollIntoView();
+                document.getElementById("q" + unAnsweredQuestionId.toString()).scrollIntoView({ behavior: 'smooth', block: 'center' });
             },
             countdownTimer(duration, display) {
               let timer = duration, minutes, seconds;
@@ -115,6 +125,9 @@
 <style scoped>
   .submit {
     margin: 3vh auto;
+  }
+  .submit:disabled {
+    background-color: var(--contrast-color);
   }
   .test-head {
     padding: 2vh 10vw;

@@ -21,7 +21,7 @@
           <span class="age-submit-text" v-if="!this.fa">Confirm</span>
         </button>
       </div>
-      <Test v-show="ageSubmitted" v-on:submit="submit" testId="2"/>
+      <Test v-show="ageSubmitted" :mustAnsweredAll="false" v-on:submit="submit" testId="2"/>
     </div>
   </div>
 </template>
