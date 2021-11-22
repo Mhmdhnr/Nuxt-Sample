@@ -15,6 +15,13 @@
       <FlipCard duration="500" v-bind:cardData="workCards[3]"/>
       <FlipCard duration="500" v-bind:cardData="workCards[4]"/>
     </Carousel3dFlat>
+<!--    <Carousel3dFlat class="carousel-3d-flat-main">-->
+<!--      <Flip3DCard duration="500"  v-bind:cardData="workCards[0]"/>-->
+<!--      <Flip3DCard duration="500" v-bind:cardData="workCards[1]"/>-->
+<!--      <Flip3DCard duration="500" v-bind:cardData="workCards[2]"/>-->
+<!--      <Flip3DCard duration="500" v-bind:cardData="workCards[3]"/>-->
+<!--      <Flip3DCard duration="500" v-bind:cardData="workCards[4]"/>-->
+<!--    </Carousel3dFlat>-->
 <!--    <WorksCard />-->
     <Links class="links"/>
   </div>
@@ -29,9 +36,10 @@
     import Carousel3D from "../components/carousel3D";
     import FlipCard from "../components/FlipCard";
     import Carousel3dFlat from "../components/Carousel3dFlat";
+    import Flip3DCard from "../components/Flip3DCard";
     export default {
         name: "Home",
-        components: {Carousel3dFlat, FlipCard, Carousel3D, WorksCard, Links, Slider},
+        components: {Flip3DCard, Carousel3dFlat, FlipCard, Carousel3D, WorksCard, Links, Slider},
         data () {
             return {
                 slider: slider,

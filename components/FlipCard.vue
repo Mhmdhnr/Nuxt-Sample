@@ -1,5 +1,5 @@
 <template>
-  <div class="flip-card-main">
+  <div class="flip-card-main" :id="`flip-main${cardData.id}`">
     <div class="flip-card"  :id="cardData.id">
       <div class="card-front">
         <img class="image" :src="require(`~/assets/images/${cardData.front.imageUrl}`)">
@@ -35,6 +35,12 @@
             let flipCard = document.getElementById(id);
             flipCard.style.transition = this.duration + "ms ";
             flipCard.style.transitionTimingFunction = "cubic-bezier(.175, .885, .32, 1.4)";
+            // flipCard.parentElement.onmouseover = function () {
+            //     flipCard.classList.add('flip')
+            // };
+            // flipCard.parentElement.onmouseleave = function () {
+            //     flipCard.classList.remove('flip')
+            // };
         }
     }
 </script>
@@ -72,6 +78,9 @@
   .flip-card-main:hover .flip-card, .flip-card-main:focus .flip-card {
     transform: rotateY(180deg);
   }
+  /*.flip {*/
+  /*  transform: rotateY(180deg);*/
+  /*}*/
   .card-front, .card-back {
      box-shadow: 0 0 20px 5px rgba(100,100,100,0.2);
      width: 100%;

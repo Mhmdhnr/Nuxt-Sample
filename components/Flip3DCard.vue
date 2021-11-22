@@ -12,7 +12,7 @@
           {{cardData.back.title.en}}
         </span>
         <b-btn class="button" :to="cardData.back.pageLink">
-          <span v-show="this.$store.state.fa"> ببینم </span>
+          <span v-show="this.$store.state.fa"> کلیک کنید </span>
           <span v-show="!this.$store.state.fa"> Let's see </span>
         </b-btn>
       </div>
@@ -33,7 +33,6 @@
         mounted() {
             let id = this.cardData.id;
             let flipCard = document.getElementById(id);
-            console.log(flipCard);
             flipCard.style.transition = this.duration + "ms ";
             flipCard.style.transitionTimingFunction = "cubic-bezier(.175, .885, .32, 1.1)";
         }
@@ -61,7 +60,7 @@
     .flip-card-3d-main {
       width: 100%;
       height: 100%;
-      position: relative;
+      /*position: relative;*/
       z-index: 1;
       perspective: 1000px;
       transition: 300ms ease;

@@ -41,8 +41,8 @@
             this.elementsCount = elements.length;
             let width = elements[0].offsetWidth;
             let height = elements[0].offsetHeight;
-            let z = width;
-            let x = width;
+            let z = width * 1.5;
+            let x = width * 1.2;
             if(window.screen.width <= 864){
                 x = width / 2;
             }
