@@ -87,14 +87,14 @@ export const menu = [
     },
     link: "",
     subItems : [
-      // {
-      //   id:"sub21",
-      //   title : {
-      //     fa: "MBTI",
-      //     en: "MBTI"
-      //   },
-      //   link: "MBTI",
-      // },
+      {
+        id:"sub21",
+        title : {
+          fa: "MBTI",
+          en: "MBTI"
+        },
+        link: "MBTI",
+      },
       {
         id:"sub22",
         title : {

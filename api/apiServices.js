@@ -78,5 +78,12 @@ export default {
       const url = `${API_URL}/post_raven_response?clientAnswers=${jsonString}`;
       return await this.toPromise(url, 'post', clientAnswers);
     },
+    async postMBTIResponse(clientAnswers) {
+      console.log(clientAnswers);
+      let jsonString = JSON.stringify(clientAnswers);
+      console.log(jsonString);
+      const url = `${API_URL}/post_mbti_response?clientAnswers=${jsonString}`;
+      return await this.toPromise(url, 'post', clientAnswers);
+    },
   }
 }

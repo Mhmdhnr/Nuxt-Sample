@@ -217,7 +217,7 @@
     height: 100%;
     left: 0;
     top: 0;
-    transition: all 0.8s;
-    transition-timing-function: cubic-bezier(.175, .885, .32, 1.4);
+    transition: all 0.5s;
+    transition-timing-function: cubic-bezier(.175, .885, .32, 1.2);
   }
 </style>
