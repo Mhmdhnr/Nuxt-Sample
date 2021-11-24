@@ -378,7 +378,7 @@
   }
   @media screen and (max-width: 864px) {
     .types {
-      padding-top: 3vh;
+      padding-top: 1vh;
     }
     .type {
       margin: 5px;
@@ -395,6 +395,39 @@
     }
     .abr {
       font-size: 0.6em;
+    }
+    .bars {
+      width: 100vw;
+      padding: 4vh 1vw;
+    }
+    .bars > div {
+      padding: 5px;
+      font-size: 0.7em;
+    }
+    .bars > div > span {
+      width: 15vw;
+    }
+    .bar {
+      width: 60vw;
+      height: 16px;
+      border-radius: 8px;
+    }
+    .indicator {
+      font-size: 0.8em;
+    }
+    .start {
+      justify-content: flex-start;
+      border-radius: 0 8px 8px 0;
+    }
+    .end {
+      justify-content: flex-end;
+      border-radius: 8px 0 0 8px;
+    }
+    .e > span, .s > span, .t > span, .j > span {
+      margin: auto auto auto 3px;
+    }
+    .i > span, .n > span, .f > span, .p > span {
+      margin: auto 3px auto auto;
     }
   }
 </style>
