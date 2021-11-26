@@ -181,5 +181,11 @@
     .question-main {
       padding: 1vh 0;
     }
+    .question-text {
+      font-size: 0.8em;
+    }
+    .choice-text {
+      font-size: 0.8em;
+    }
   }
 </style>

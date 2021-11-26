@@ -265,9 +265,7 @@
           let interval = time / Math.abs(difference);
           if (difference > 0) {
             let c = 1;
-            // counter.style.color = "#06d6a0";
-            // title.style.color = "#06d6a0";
-            let counterInterval = setInterval(function(f) {
+            let counterInterval = setInterval(() => {
               if (c > difference) {
                 clearInterval(counterInterval);
               }
@@ -276,9 +274,7 @@
             }, interval);
           } else if (difference < 0) {
             let c = -1;
-            // counter.style.color = "#f94144";
-            // title.style.color = "#f94144";
-            let counterInterval = setInterval(function(f) {
+            let counterInterval = setInterval(() => {
               if (c < difference) {
                 clearInterval(counterInterval);
               }

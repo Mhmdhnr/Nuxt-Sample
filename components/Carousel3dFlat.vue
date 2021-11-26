@@ -176,7 +176,7 @@
     position: absolute;
     width: 100%;
     top: 120px;
-    height: 5vh;
+    /*height: 5vh;*/
   }
   .btn {
     background-color: var(--primary-color);
