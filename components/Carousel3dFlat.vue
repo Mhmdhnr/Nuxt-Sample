@@ -67,7 +67,6 @@
                 for(let i = 0; i < carousel3d.children.length; i++) {
                     elements.push(carousel3d.children[i]);
                 }
-                // let carouselElements = carousel3d.querySelectorAll("*");
                 for (let i = 0 ; i < this.elementsCount; i++) {
                     let counter = (Math.abs((this.selectedIndex + i)%this.elementsCount));
                     let tranZ = this.zSteps[(counter)];

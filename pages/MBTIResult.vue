@@ -16,53 +16,36 @@
         </div>
       </div>
     </div>
-<!--    <INTP />-->
     <div v-if="this.fa" class="bars flex flex-column">
       <div class="ei flex duo">
         <span>برون گرا</span>
         <div class="bar">
-          <div class="e indicator start">
-            <span></span>
-          </div>
-          <div class="i indicator end">
-            <span></span>
-          </div>
+          <div class="e indicator start"><span></span></div>
+          <div class="i indicator end"><span></span></div>
         </div>
         <span>درون گرا</span>
       </div>
       <div class="sn flex duo">
         <span>حسی</span>
         <div class="bar">
-          <div class="s indicator start">
-            <span></span>
-          </div>
-          <div class="n indicator end">
-            <span></span>
-          </div>
+          <div class="s indicator start"><span></span></div>
+          <div class="n indicator end"><span></span> </div>
         </div>
         <span>شهودی</span>
       </div>
       <div class="tf flex duo">
         <span>منطقی</span>
         <div class="bar">
-          <div class="t indicator start">
-            <span></span>
-          </div>
-          <div class="f indicator end">
-            <span></span>
-          </div>
+          <div class="t indicator start"><span></span></div>
+          <div class="f indicator end"><span></span></div>
         </div>
         <span>احساسی</span>
       </div>
       <div class="jp flex duo">
         <span>قضاوت گر</span>
         <div class="bar">
-          <div class="j indicator start">
-            <span></span>
-          </div>
-          <div class="p indicator end">
-            <span></span>
-          </div>
+          <div class="j indicator start"><span></span></div>
+          <div class="p indicator end"><span></span></div>
         </div>
         <span>ادراکی</span>
       </div>
@@ -71,48 +54,32 @@
       <div class="ei flex duo">
         <span>Extraverts</span>
         <div class="bar">
-          <div class="e indicator start">
-            <span></span>
-          </div>
-          <div class="i indicator end">
-            <span></span>
-          </div>
+          <div class="e indicator start"><span></span></div>
+          <div class="i indicator end"><span></span></div>
         </div>
         <span>Introverts</span>
       </div>
       <div class="sn flex duo">
         <span>Sensing</span>
         <div class="bar">
-          <div class="s indicator start">
-            <span></span>
-          </div>
-          <div class="n indicator end">
-            <span></span>
-          </div>
+          <div class="s indicator start"><span></span></div>
+          <div class="n indicator end"><span></span></div>
         </div>
         <span>Intuition</span>
       </div>
       <div class="tf flex duo">
         <span>Thinking</span>
         <div class="bar">
-          <div class="t indicator start">
-            <span></span>
-          </div>
-          <div class="f indicator end">
-            <span></span>
-          </div>
+          <div class="t indicator start"><span></span></div>
+          <div class="f indicator end"><span></span></div>
         </div>
         <span>Feeling</span>
       </div>
       <div class="jp flex duo">
         <span>Judging</span>
         <div class="bar">
-          <div class="j indicator start">
-            <span></span>
-          </div>
-          <div class="p indicator end">
-            <span></span>
-          </div>
+          <div class="j indicator start"><span></span></div>
+          <div class="p indicator end"><span></span></div>
         </div>
         <span>Perceiving</span>
       </div>
@@ -122,10 +89,9 @@
 
 <script>
     import {mapState} from 'vuex'
-    import INTP from "../components/mbti/INTP";
     export default {
         name: "MBTIResult",
-        components: {INTP},
+        components: {},
         data() {
             return {
                 types:[
@@ -186,9 +152,9 @@
                 for (let type of types) {
                     type.classList.remove('client-type')
                 }
-                document.getElementById(clientType).classList.add('client-type')
+                document.getElementById(clientType).classList.add('client-type');
                 setTimeout(() => {
-                    document.getElementsByClassName('bars')[0].scrollIntoView({behavior: 'smooth', block: 'center'})
+                    document.getElementsByClassName('bars')[0].scrollIntoView({behavior: 'smooth', block: 'center'});
                     _this.handleBars();
                 }, 2000)
             }, (suspension) * delay)
@@ -205,29 +171,29 @@
                     i.getElementsByTagName('span')[0].innerText = this.$route.params.EI.value.toString()
                 }
                 if (this.$route.params.SN.result === 'S') {
-                    document.getElementsByClassName('s')[0].style.width = this.$route.params.SN.value.toString() + "%"
+                    document.getElementsByClassName('s')[0].style.width = this.$route.params.SN.value.toString() + "%";
                     let s = document.getElementsByClassName('s')[0];
                     s.getElementsByTagName('span')[0].innerText = this.$route.params.SN.value.toString()
                 } else {
-                    document.getElementsByClassName('n')[0].style.width = this.$route.params.SN.value.toString() + "%"
+                    document.getElementsByClassName('n')[0].style.width = this.$route.params.SN.value.toString() + "%";
                     let n = document.getElementsByClassName('n')[0];
                     n.getElementsByTagName('span')[0].innerText = this.$route.params.SN.value.toString()
                 }
                 if (this.$route.params.TF.result === 'T') {
-                    document.getElementsByClassName('t')[0].style.width = this.$route.params.TF.value.toString() + "%"
+                    document.getElementsByClassName('t')[0].style.width = this.$route.params.TF.value.toString() + "%";
                     let t = document.getElementsByClassName('t')[0];
                     t.getElementsByTagName('span')[0].innerText = this.$route.params.TF.value.toString()
                 } else {
-                    document.getElementsByClassName('f')[0].style.width = this.$route.params.TF.value.toString() + "%"
+                    document.getElementsByClassName('f')[0].style.width = this.$route.params.TF.value.toString() + "%";
                     let f = document.getElementsByClassName('f')[0];
                     f.getElementsByTagName('span')[0].innerText = this.$route.params.TF.value.toString()
                 }
                 if (this.$route.params.JP.result === 'J') {
-                    document.getElementsByClassName('j')[0].style.width = this.$route.params.JP.value.toString() + "%"
+                    document.getElementsByClassName('j')[0].style.width = this.$route.params.JP.value.toString() + "%";
                     let j = document.getElementsByClassName('j')[0];
                     j.getElementsByTagName('span')[0].innerText = this.$route.params.JP.value.toString()
                 } else {
-                    document.getElementsByClassName('p')[0].style.width = this.$route.params.JP.value.toString() + "%"
+                    document.getElementsByClassName('p')[0].style.width = this.$route.params.JP.value.toString() + "%";
                     let p = document.getElementsByClassName('p')[0];
                     p.getElementsByTagName('span')[0].innerText = this.$route.params.JP.value.toString()
                 }
@@ -302,7 +268,7 @@
     position: absolute;
     display: flex;
     top: 0;
-    width: 0%;
+    width: 0;
     height: 100%;
     font-size: 0.8em;
     background-color: var(--primary-color);
@@ -364,18 +330,10 @@
       font-size: 0.8em;
     }
     .start {
-      justify-content: flex-start;
       border-radius: 0 8px 8px 0;
     }
     .end {
-      justify-content: flex-end;
       border-radius: 8px 0 0 8px;
-    }
-    .e > span, .s > span, .t > span, .j > span {
-      margin: auto auto auto 3px;
-    }
-    .i > span, .n > span, .f > span, .p > span {
-      margin: auto 3px auto auto;
     }
   }
 </style>
