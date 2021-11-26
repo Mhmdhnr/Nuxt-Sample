@@ -18,7 +18,7 @@
     </div>
 <!--    <INTP />-->
     <div v-if="this.fa" class="bars flex flex-column">
-      <div class="ei flex">
+      <div class="ei flex duo">
         <span>برون گرا</span>
         <div class="bar">
           <div class="e indicator start">
@@ -30,7 +30,7 @@
         </div>
         <span>درون گرا</span>
       </div>
-      <div class="sn flex">
+      <div class="sn flex duo">
         <span>حسی</span>
         <div class="bar">
           <div class="s indicator start">
@@ -42,7 +42,7 @@
         </div>
         <span>شهودی</span>
       </div>
-      <div class="tf flex">
+      <div class="tf flex duo">
         <span>منطقی</span>
         <div class="bar">
           <div class="t indicator start">
@@ -54,7 +54,7 @@
         </div>
         <span>احساسی</span>
       </div>
-      <div class="jp flex">
+      <div class="jp flex duo">
         <span>قضاوت گر</span>
         <div class="bar">
           <div class="j indicator start">
@@ -68,7 +68,7 @@
       </div>
     </div>
     <div v-if="!this.fa" class="bars flex flex-column">
-      <div class="ei flex">
+      <div class="ei flex duo">
         <span>Extraverts</span>
         <div class="bar">
           <div class="e indicator start">
@@ -80,7 +80,7 @@
         </div>
         <span>Introverts</span>
       </div>
-      <div class="sn flex">
+      <div class="sn flex duo">
         <span>Sensing</span>
         <div class="bar">
           <div class="s indicator start">
@@ -92,7 +92,7 @@
         </div>
         <span>Intuition</span>
       </div>
-      <div class="tf flex">
+      <div class="tf flex duo">
         <span>Thinking</span>
         <div class="bar">
           <div class="t indicator start">
@@ -104,7 +104,7 @@
         </div>
         <span>Feeling</span>
       </div>
-      <div class="jp flex">
+      <div class="jp flex duo">
         <span>Judging</span>
         <div class="bar">
           <div class="j indicator start">
@@ -145,30 +145,9 @@
         watch:{
             fa (newValue) {
                 if (!newValue) {
-                    let start = document.getElementsByClassName('start');
-                    for (let i = 0; i < start.length; i++) {
-                        start[i].style.left = "unset";
-                        start[i].style.right = "50%";
-                        start[i].style.borderRadius = "10px 0 0 10px"
-                    }
-                    let end = document.getElementsByClassName('end');
-                    for (let i = 0; i < end.length; i++) {
-                        end[i].style.right = "unset";
-                        end[i].style.left = "50%";
-                        end[i].style.borderRadius = "0 10px 10px 0";
-                    }
-                } else {
-                    let start = document.getElementsByClassName('start');
-                    for (let i = 0; i < start.length; i++) {
-                        start[i].style.right = "unset";
-                        start[i].style.left = "50%";
-                        start[i].style.borderRadius = "0 10px 10px 0";
-                    }
-                    let end = document.getElementsByClassName('end');
-                    for (let i = 0; i < end.length; i++) {
-                        end[i].style.left = "unset";
-                        end[i].style.right = "50%";
-                        end[i].style.borderRadius = "10px 0 0 10px"
+                    let duo = document.getElementsByClassName('duo');
+                    for (let i = 0; i < duo.length; i++) {
+                        duo[i].style.flexDirection = 'row-reverse'
                     }
                 }
             }
@@ -176,43 +155,12 @@
         mounted() {
             let _this = this;
             let suspension = 30;
-            // this.$route.params.type = 'INTJ';
-            // this.$route.params.EI.result = 'I';
-            // this.$route.params.EI.value = '26';
-            // this.$route.params.SN.result = 'N';
-            // this.$route.params.SN.value = '10';
-            // this.$route.params.TF.result = 'T';
-            // this.$route.params.TF.value = '39';
-            // this.$route.params.JP.result = 'J';
-            // this.$route.params.JP.value = '7';
             if (!this.fa) {
-                let start = document.getElementsByClassName('start');
-                for (let i = 0; i < start.length; i++) {
-                    start[i].style.left = "unset";
-                    start[i].style.right = "50%";
-                    start[i].style.borderRadius = "10px 0 0 10px"
-                }
-                let end = document.getElementsByClassName('end');
-                for (let i = 0; i < end.length; i++) {
-                    end[i].style.right = "unset";
-                    end[i].style.left = "50%";
-                    end[i].style.borderRadius = "0 10px 10px 0";
-                }
-            } else {
-                let start = document.getElementsByClassName('start');
-                for (let i = 0; i < start.length; i++) {
-                    start[i].style.right = "unset";
-                    start[i].style.left = "50%";
-                    start[i].style.borderRadius = "0 10px 10px 0";
-                }
-                let end = document.getElementsByClassName('end');
-                for (let i = 0; i < end.length; i++) {
-                    end[i].style.left = "unset";
-                    end[i].style.right = "50%";
-                    end[i].style.borderRadius = "10px 0 0 10px"
+                let duo = document.getElementsByClassName('duo');
+                for (let i = 0; i < duo.length; i++) {
+                    duo[i].style.flexDirection = 'row-reverse'
                 }
             }
-
             let clientType = this.$route.params.type;
             let delay = 0;
             let types = document.getElementsByClassName('type');
@@ -370,11 +318,11 @@
     right: 50%;
     border-radius: 10px 0 0 10px;
   }
-  .e > span, .s > span, .t > span, .j > span {
-    margin: auto auto auto 10px;
-  }
-  .i > span, .n > span, .f > span, .p > span {
+  .start > span {
     margin: auto 10px auto auto;
+  }
+  .end > span {
+    margin: auto auto auto 10px;
   }
   @media screen and (max-width: 864px) {
     .types {
