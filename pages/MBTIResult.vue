@@ -2,21 +2,22 @@
   <div class="mbti-result flex flex-column">
     <div class="types">
       <div class="types" v-if="this.fa">
-        <div class="type" v-for="type in this.types" :id="type.abr">
-          <img class="image" :src="require(`@/assets/images/mbti/${type.abr}.png`)" :alt="type.abr">
-          <span class="title">{{type.titleFa}}</span>
-          <span class="abr">{{type.abr}}</span>
+        <div class="type" v-for="mbtiType in this.mbtiTypes" :id="mbtiType.abr" @click="showType(mbtiType.id)">
+          <img class="image" :src="require(`@/assets/images/mbti/${mbtiType.abr}.png`)" :alt="mbtiType.abr">
+          <span class="title">{{mbtiType.title.fa}}</span>
+          <span class="abr">{{mbtiType.abr}}</span>
         </div>
       </div>
       <div class="types" v-if="!this.fa">
-        <div class="type" v-for="type in this.types" :id="type.abr">
-          <img class="image" :src="require(`@/assets/images/mbti/${type.abr}.png`)" :alt="type.abr">
-          <span class="title">{{type.titleEn}}</span>
-          <span class="abr">{{type.abr}}</span>
+        <div class="type" v-for="mbtiType in this.mbtiTypes" :id="mbtiType.abr" @click="showType(mbtiType.id)">
+          <img class="image" :src="require(`@/assets/images/mbti/${mbtiType.abr}.png`)" :alt="mbtiType.abr">
+          <span class="title">{{mbtiType.title.en}}</span>
+          <span class="abr">{{mbtiType.abr}}</span>
         </div>
       </div>
     </div>
     <div v-if="this.fa" class="bars flex flex-column">
+      <span>جزئیات شخصیت شما</span>
       <div class="ei flex duo">
         <span>برون گرا</span>
         <div class="bar">
@@ -84,27 +85,24 @@
         <span>Perceiving</span>
       </div>
     </div>
+    <MBTIType :key="`main${mbtiTypes.filter(x => x.abr === this.typeToWatch)[0].id}`"
+              :id="`main${mbtiTypes.filter(x => x.abr === this.typeToWatch)[0].id}`"
+              :typeData="mbtiTypes.filter(x => x.abr === this.typeToWatch)[0]" />
   </div>
 </template>
 
 <script>
+    import {mbtiTypes} from "../data/MBTI";
     import {mapState} from 'vuex'
+    import MBTIType from "../components/MBTIType";
     export default {
         name: "MBTIResult",
-        components: {},
+        components: {MBTIType},
         data() {
             return {
-                types:[
-                    {abr: 'INTJ', titleFa: 'معمار', titleEn: 'Architect'}, {abr: 'INTP', titleFa: 'منطق گرا', titleEn: 'Logician'},
-                    {abr: 'ENTJ', titleFa: 'فرمانده', titleEn: 'Commander'}, {abr: 'ENTP', titleFa: 'مناظره کننده', titleEn: 'Debater'},
-                    {abr: 'INFJ', titleFa: 'وکیل', titleEn: 'Advocate'}, {abr: 'INFP', titleFa: 'تسهیل گر', titleEn: 'Mediator'},
-                    {abr: 'ENFJ', titleFa: 'قهرمان', titleEn: 'Protagonist'}, {abr: 'ENFP', titleFa: 'مبارز', titleEn: 'campaigner'},
-                    {abr: 'ISTJ', titleFa: 'بازرس', titleEn: 'Logistician'}, {abr: 'ISFJ', titleFa: 'مدافع', titleEn: 'Defender'},
-                    {abr: 'ESTJ', titleFa: 'اجرایی', titleEn: 'Executive'}, {abr: 'ESFJ', titleFa: 'سفیر', titleEn: 'Consul'},
-                    {abr: 'ISTP', titleFa: 'ماهر', titleEn: 'Virtuoso'}, {abr: 'ISFP', titleFa: 'ماجراجو', titleEn: 'Adventure'},
-                    {abr: 'ESTP', titleFa: 'کارآفرین', titleEn: 'Entrepreneur'}, {abr: 'ESFP', titleFa: 'سرگرم کننده', titleEn: 'Entertainer'},
-                ],
+                mbtiTypes: mbtiTypes,
                 random: 0,
+                typeToWatch: 'INTP',
             }
         },
         computed: mapState(['fa']),
@@ -119,6 +117,7 @@
             }
         },
         mounted() {
+            this.typeToWatch = this.$route.params.type;
             let _this = this;
             let suspension = 30;
             if (!this.fa) {
@@ -139,7 +138,7 @@
                     this.random = random
                 }
                 console.log(random);
-                let elem = document.getElementById(this.types[random].abr);
+                let elem = document.getElementById(this.mbtiTypes[random].abr);
                 setTimeout(function () {
                     for (let type of types) {
                         type.classList.remove('client-type')
@@ -197,6 +196,12 @@
                     let p = document.getElementsByClassName('p')[0];
                     p.getElementsByTagName('span')[0].innerText = this.$route.params.JP.value.toString()
                 }
+            },
+            showType(id){
+                this.typeToWatch = this.mbtiTypes.filter(x => x.id === id)[0].abr;
+                setTimeout(function () {
+                    document.getElementById("main" + id.toString()).scrollIntoView({ behavior: 'smooth', block: 'center' });
+                }, 500)
             }
         }
     }
@@ -211,7 +216,12 @@
     display: grid;
     grid-template-columns: auto auto auto auto;
   }
+  .type:hover {
+    transform: scale(1.05);
+    transition: all 200ms;
+  }
   .type {
+    cursor: pointer;
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;

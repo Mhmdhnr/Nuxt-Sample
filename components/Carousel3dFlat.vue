@@ -59,6 +59,10 @@
                 element.classList.add('carousel-element');
                 element.style.transform = `translateZ(${Math.floor(transZ)}px) translateX(${Math.floor(transX)}px)`
             }
+            // let base = document.getElementById('swipe-root');
+            // setInterval(() => {
+            //     this.next();
+            // }, 10000)
         },
         methods: {
             rotateCarousel(){
