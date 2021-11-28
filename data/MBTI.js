@@ -19,7 +19,35 @@ export const mbtiTypes = [
       fa: 'اندیشمندان استراتژیک با قوه تخیل زیاد که برای هر موضوعی برنامه دارند.',
       en: ''
     },
-
+    suitableJobs: [
+      { fa: 'نوازنده موسیقی', en: '' },{ fa: 'سردبیر', en: '' },{ fa: 'عکاس', en: '' },{ fa: 'مشاور مالی', en: '' },{ fa: 'مدیر بازاریابی', en: '' },{ fa: 'معلم', en: '' },{ fa: 'فیزیوتراپیست', en: '' },
+    ],
+    suitableMates: [
+      {
+        id: 'mbti7',
+        abr: 'ENFJ',
+        title: {
+          fa: 'قهرمان',
+          en: 'Protagonist'
+        },
+      },
+      {
+        id: 'mbti6',
+        abr: 'INFP',
+        title: {
+          fa: 'تسهیل گر',
+          en: 'Mediator'
+        },
+      },
+      {
+        id: 'mbti9',
+        abr: 'ISTJ',
+        title: {
+          fa: 'بازرس',
+          en: 'Logistician'
+        },
+      },
+    ]
   },
   {
     id: 'mbti2',
@@ -40,6 +68,35 @@ export const mbtiTypes = [
       fa: 'مخترعین نوآوری که هیچ وقت از دانش سیر نمیشوند.',
       en: ''
     },
+    suitableJobs: [
+      { fa: 'آهنگساز', en: '' },{ fa: 'استاد دانشگاه', en: '' },{ fa: 'نویسنده', en: '' },{ fa: 'تهیه کننده', en: '' },{ fa: 'مهندس پزشکی', en: '' },{ fa: 'توسعه دهنده وب', en: '' },{ fa: 'مشاور بازاریابی', en: '' },
+    ],
+    suitableMates: [
+      {
+        id: 'mbti7',
+        abr: 'ENFJ',
+        title: {
+          fa: 'قهرمان',
+          en: 'Protagonist'
+        },
+      },
+      {
+        id: 'mbti6',
+        abr: 'INFP',
+        title: {
+          fa: 'تسهیل گر',
+          en: 'Mediator'
+        },
+      },
+      {
+        id: 'mbti9',
+        abr: 'ISTJ',
+        title: {
+          fa: 'بازرس',
+          en: 'Logistician'
+        },
+      },
+    ]
   },
   {
     id: 'mbti3',
@@ -60,6 +117,35 @@ export const mbtiTypes = [
       fa: 'رهبران با شهامت، با قوه تخیل و بسیار با اراده که همیشه یا راهی پیدا میکنند یا راهی میسازند.',
       en: ''
     },
+    suitableJobs: [
+      { fa: 'مدیر تجاری', en: '' },{ fa: 'متخصص روابط عمومی', en: '' },{ fa: 'مهندس مکانیک', en: '' },{ fa: 'قاضی', en: '' },{ fa: 'مدیر ساخت و ساز', en: '' },{ fa: 'اخترشناس', en: '' },
+    ],
+    suitableMates: [
+      {
+        id: 'mbti7',
+        abr: 'ENFJ',
+        title: {
+          fa: 'قهرمان',
+          en: 'Protagonist'
+        },
+      },
+      {
+        id: 'mbti6',
+        abr: 'INFP',
+        title: {
+          fa: 'تسهیل گر',
+          en: 'Mediator'
+        },
+      },
+      {
+        id: 'mbti9',
+        abr: 'ISTJ',
+        title: {
+          fa: 'بازرس',
+          en: 'Logistician'
+        },
+      },
+    ]
   },
   {
     id: 'mbti4',
@@ -69,7 +155,7 @@ export const mbtiTypes = [
       en: 'Debater'
     },
     shortDes: {
-      fa: 'تیپ ENTPفردی پر انرژی، با پشتکار و مطمئن است. به کار کردن علاقه زیاد دارد. نوآور بوده و می‌تواند راه‌های جدیدی برای انجام دادن کارها پیدا کند. این تیپ از توانمندی تحلیلی فراوانی برخوردار است و می‌تواند مسائل مختلف را حل و فصل کند. او به تنوع و تغییر بها می‌دهد و در برابر آنچه او را کسل کند مقاومت می‌کند. در محل کار او از نبوغ و فکر خود برای حل مسائل بوجود آمده بهره می‌گیرد. او به انجام کارها به روش سنتی بی‌علاقه است. تیپENTP شخصی الهام‌بخش بوده و به خاطر سریع الانتقال بودن، اعتماد به نفس و اطمینانی که دارد هواداران زیادی دارد. او دوست چند کار را با هم انجام دهد و با آدم‌های متعددی در ارتباط باشد.',
+      fa: 'تیپ ENTP فردی پر انرژی، با پشتکار و مطمئن است. به کار کردن علاقه زیاد دارد. نوآور بوده و می‌تواند راه‌های جدیدی برای انجام دادن کارها پیدا کند. این تیپ از توانمندی تحلیلی فراوانی برخوردار است و می‌تواند مسائل مختلف را حل و فصل کند. او به تنوع و تغییر بها می‌دهد و در برابر آنچه او را کسل کند مقاومت می‌کند. در محل کار او از نبوغ و فکر خود برای حل مسائل بوجود آمده بهره می‌گیرد. او به انجام کارها به روش سنتی بی‌علاقه است. تیپENTP شخصی الهام‌بخش بوده و به خاطر سریع الانتقال بودن، اعتماد به نفس و اطمینانی که دارد هواداران زیادی دارد. او دوست چند کار را با هم انجام دهد و با آدم‌های متعددی در ارتباط باشد.',
       en: ''
     },
     sentence: {
@@ -80,6 +166,35 @@ export const mbtiTypes = [
       fa: 'ایده پردازان باهوش و کنجکاوی که نمیتوانند در مقابل چالش های فکری مقاومت کنند.',
       en: ''
     },
+    suitableJobs: [
+      { fa: 'وکیل', en: '' },{ fa: 'کپی رایتر', en: '' },{ fa: 'برنامه ریز مالی', en: '' },{ fa: 'روانشناس', en: '' },{ fa: 'تحلیلگر سیستم‌ها', en: '' },{ fa: 'کارگردان خلاق', en: '' },{ fa: 'متخصص عملیات', en: '' },
+    ],
+    suitableMates: [
+      {
+        id: 'mbti7',
+        abr: 'ENFJ',
+        title: {
+          fa: 'قهرمان',
+          en: 'Protagonist'
+        },
+      },
+      {
+        id: 'mbti6',
+        abr: 'INFP',
+        title: {
+          fa: 'تسهیل گر',
+          en: 'Mediator'
+        },
+      },
+      {
+        id: 'mbti9',
+        abr: 'ISTJ',
+        title: {
+          fa: 'بازرس',
+          en: 'Logistician'
+        },
+      },
+    ]
   },
   {
     id: 'mbti5',
@@ -100,6 +215,35 @@ export const mbtiTypes = [
       fa: 'شخصیتی آرام و عرفانی، ایده آل گراهای خستگی ناپذیر و الهام بخش اند.',
       en: ''
     },
+    suitableJobs: [
+      { fa: 'مشاور', en: '' },{ fa: 'نویسنده', en: '' },{ fa: 'دانشمند', en: '' },{ fa: 'کتابدار', en: '' },{ fa: 'روانشناس', en: '' },
+    ],
+    suitableMates: [
+      {
+        id: 'mbti7',
+        abr: 'ENFJ',
+        title: {
+          fa: 'قهرمان',
+          en: 'Protagonist'
+        },
+      },
+      {
+        id: 'mbti6',
+        abr: 'INFP',
+        title: {
+          fa: 'تسهیل گر',
+          en: 'Mediator'
+        },
+      },
+      {
+        id: 'mbti9',
+        abr: 'ISTJ',
+        title: {
+          fa: 'بازرس',
+          en: 'Logistician'
+        },
+      },
+    ]
   },
   {
     id: 'mbti6',
@@ -120,6 +264,35 @@ export const mbtiTypes = [
       fa: 'حس شاعرانه، مهربان و نوع دوستی دارند که همیشه مشتاق ایجاد اتفاق مثبتی هستند.',
       en: ''
     },
+    suitableJobs: [
+      { fa: 'مدیر منابع انسانی', en: '' },{ fa: 'کپی رایتر', en: '' },{ fa: 'فیزیوتراپیست', en: '' },{ fa: 'متخصص بهداشت روان', en: '' },{ fa: 'هنرمند', en: '' },{ fa: 'عکاس', en: '' },
+    ],
+    suitableMates: [
+      {
+        id: 'mbti7',
+        abr: 'ENFJ',
+        title: {
+          fa: 'قهرمان',
+          en: 'Protagonist'
+        },
+      },
+      {
+        id: 'mbti6',
+        abr: 'INFP',
+        title: {
+          fa: 'تسهیل گر',
+          en: 'Mediator'
+        },
+      },
+      {
+        id: 'mbti9',
+        abr: 'ISTJ',
+        title: {
+          fa: 'بازرس',
+          en: 'Logistician'
+        },
+      },
+    ]
   },
   {
     id: 'mbti7',
@@ -140,6 +313,35 @@ export const mbtiTypes = [
       fa: 'رهبران کاریزما و الهام بخشی که میتوانند با صحبت ها شنونگان خود را هیپنوتیزم کنند.',
       en: ''
     },
+    suitableJobs: [
+      { fa: 'مشاور تحصیلی', en: '' },{ fa: 'مشاور تحصیلی', en: '' },{ fa: 'مدیر منابع انسانی', en: '' },{ fa: 'کارگردان هنری', en: '' },{ fa: 'مدیر روابط عمومی', en: '' },
+    ],
+    suitableMates: [
+      {
+        id: 'mbti7',
+        abr: 'ENFJ',
+        title: {
+          fa: 'قهرمان',
+          en: 'Protagonist'
+        },
+      },
+      {
+        id: 'mbti6',
+        abr: 'INFP',
+        title: {
+          fa: 'تسهیل گر',
+          en: 'Mediator'
+        },
+      },
+      {
+        id: 'mbti9',
+        abr: 'ISTJ',
+        title: {
+          fa: 'بازرس',
+          en: 'Logistician'
+        },
+      },
+    ]
   },
   {
     id: 'mbti8',
@@ -160,6 +362,35 @@ export const mbtiTypes = [
       fa: 'شور و شوق، روحیه خلاق و اجتماعی داشته و همیشه دلیلی برای خندیدن پیدا میکنند.',
       en: ''
     },
+    suitableJobs: [
+      { fa: 'خبرنگار یا مجری خبر', en: '' },{ fa: 'ویراستار', en: '' },{ fa: 'نوازنده', en: '' },{ fa: 'مدیر تولید', en: '' },{ fa: 'معلم دبستان', en: '' },{ fa: 'مربی شخصی', en: '' },{ fa: 'مددکار اجتماعی', en: '' },
+    ],
+    suitableMates: [
+      {
+        id: 'mbti7',
+        abr: 'ENFJ',
+        title: {
+          fa: 'قهرمان',
+          en: 'Protagonist'
+        },
+      },
+      {
+        id: 'mbti6',
+        abr: 'INFP',
+        title: {
+          fa: 'تسهیل گر',
+          en: 'Mediator'
+        },
+      },
+      {
+        id: 'mbti9',
+        abr: 'ISTJ',
+        title: {
+          fa: 'بازرس',
+          en: 'Logistician'
+        },
+      },
+    ]
   },
   {
     id: 'mbti9',
@@ -180,6 +411,35 @@ export const mbtiTypes = [
       fa: 'افراد عمل گرایی که ذهنیتشان بر اساس واقعیت بوده و در قابل اعتماد بودن آنها شکی نیست.',
       en: ''
     },
+    suitableJobs: [
+      { fa: 'دندانپزشک', en: '' },{ fa: 'حسابدار خبره', en: '' },{ fa: 'مدیر زنجیره تامین', en: '' },{ fa: 'تحلیلگر کسب و کار', en: '' }
+    ],
+    suitableMates: [
+      {
+        id: 'mbti7',
+        abr: 'ENFJ',
+        title: {
+          fa: 'قهرمان',
+          en: 'Protagonist'
+        },
+      },
+      {
+        id: 'mbti6',
+        abr: 'INFP',
+        title: {
+          fa: 'تسهیل گر',
+          en: 'Mediator'
+        },
+      },
+      {
+        id: 'mbti9',
+        abr: 'ISTJ',
+        title: {
+          fa: 'بازرس',
+          en: 'Logistician'
+        },
+      },
+    ]
   },
   {
     id: 'mbti10',
@@ -200,12 +460,41 @@ export const mbtiTypes = [
       fa: 'افراد بسیار گرم و فداکار که از دیگران حمایت میکنند و همیشه آماده محافظت از افراد مورد علاقه شان هستند.',
       en: ''
     },
+    suitableJobs: [
+      { fa: 'حسابدار', en: '' },{ fa: 'دفتردار مالی', en: '' },{ fa: 'تحویلدار بانک', en: '' },{ fa: 'تحلیلگر تحقیق', en: '' },{ fa: 'مدیر اداری', en: '' },{ fa: 'عکاس', en: '' },{ fa: 'معلم ابتدایی', en: '' },
+    ],
+    suitableMates: [
+      {
+        id: 'mbti7',
+        abr: 'ENFJ',
+        title: {
+          fa: 'قهرمان',
+          en: 'Protagonist'
+        },
+      },
+      {
+        id: 'mbti6',
+        abr: 'INFP',
+        title: {
+          fa: 'تسهیل گر',
+          en: 'Mediator'
+        },
+      },
+      {
+        id: 'mbti9',
+        abr: 'ISTJ',
+        title: {
+          fa: 'بازرس',
+          en: 'Logistician'
+        },
+      },
+    ]
   },
   {
     id: 'mbti11',
     abr: 'ESTJ',
     title: {
-      fa: 'اجرایی',
+      fa: 'اجرا کننده',
       en: 'Executive'
     },
     shortDes: {
@@ -220,6 +509,35 @@ export const mbtiTypes = [
       fa: 'مدیران عالی که در مدیریت افراد و موضوعات بی نظیرند.',
       en: ''
     },
+    suitableJobs: [
+      { fa: 'قاضی', en: '' },{ fa: 'مربی ورزش', en: '' },{ fa: 'مسئول امور مالی', en: '' },{ fa: 'مدیر هتل', en: '' },{ fa: 'نماینده بنگاه املاک و مستغلات', en: '' },
+    ],
+    suitableMates: [
+      {
+        id: 'mbti7',
+        abr: 'ENFJ',
+        title: {
+          fa: 'قهرمان',
+          en: 'Protagonist'
+        },
+      },
+      {
+        id: 'mbti6',
+        abr: 'INFP',
+        title: {
+          fa: 'تسهیل گر',
+          en: 'Mediator'
+        },
+      },
+      {
+        id: 'mbti9',
+        abr: 'ISTJ',
+        title: {
+          fa: 'بازرس',
+          en: 'Logistician'
+        },
+      },
+    ]
   },
   {
     id: 'mbti12',
@@ -240,6 +558,35 @@ export const mbtiTypes = [
       fa: 'افراد مراقب، اجتماعی و محبوب که همیشه مشتاق کمک کردن به دیگران هستند.',
       en: ''
     },
+    suitableJobs: [
+      { fa: 'مدیر دفتر', en: '' },{ fa: 'متخصص پشتیبانی فنی', en: '' },{ fa: 'موزه‌دار', en: '' },{ fa: 'روانشناس', en: '' },{ fa: 'محقق پزشکی', en: '' },
+    ],
+    suitableMates: [
+      {
+        id: 'mbti7',
+        abr: 'ENFJ',
+        title: {
+          fa: 'قهرمان',
+          en: 'Protagonist'
+        },
+      },
+      {
+        id: 'mbti6',
+        abr: 'INFP',
+        title: {
+          fa: 'تسهیل گر',
+          en: 'Mediator'
+        },
+      },
+      {
+        id: 'mbti9',
+        abr: 'ISTJ',
+        title: {
+          fa: 'بازرس',
+          en: 'Logistician'
+        },
+      },
+    ]
   },
   {
     id: 'mbti13',
@@ -260,6 +607,35 @@ export const mbtiTypes = [
       fa: 'آزمایش کنندگان شجاع و عمل گرایی که در بسیاری از ابزارها مهارت دارند.',
       en: ''
     },
+    suitableJobs: [
+      { fa: 'تکنسین و متخصص فنی', en: '' },{ fa: 'کارگر ساختمانی ماهر', en: '' },{ fa: 'مهندس', en: '' },{ fa: 'دانشمند پزشکی قانونی', en: '' },{ fa: 'بازرس', en: '' },
+    ],
+    suitableMates: [
+      {
+        id: 'mbti7',
+        abr: 'ENFJ',
+        title: {
+          fa: 'قهرمان',
+          en: 'Protagonist'
+        },
+      },
+      {
+        id: 'mbti6',
+        abr: 'INFP',
+        title: {
+          fa: 'تسهیل گر',
+          en: 'Mediator'
+        },
+      },
+      {
+        id: 'mbti9',
+        abr: 'ISTJ',
+        title: {
+          fa: 'بازرس',
+          en: 'Logistician'
+        },
+      },
+    ]
   },
   {
     id: 'mbti14',
@@ -280,6 +656,35 @@ export const mbtiTypes = [
       fa: 'هنرمندان منعطف و دوست داشتنی که همیشه آماده اکتشاف و تجربه موضوع جدیدی هستند.',
       en: ''
     },
+    suitableJobs: [
+      { fa: 'مدیر شبکه‌های اجتماعی', en: '' },{ fa: 'عینک‌ساز', en: '' },{ fa: 'کتابدار', en: '' },{ fa: 'دامپزشک', en: '' },{ fa: 'باستان شناس', en: '' },{ fa: 'مددکار اجتماعی', en: '' },{ fa: 'کاردرمانگر', en: '' },
+    ],
+    suitableMates: [
+      {
+        id: 'mbti7',
+        abr: 'ENFJ',
+        title: {
+          fa: 'قهرمان',
+          en: 'Protagonist'
+        },
+      },
+      {
+        id: 'mbti6',
+        abr: 'INFP',
+        title: {
+          fa: 'تسهیل گر',
+          en: 'Mediator'
+        },
+      },
+      {
+        id: 'mbti9',
+        abr: 'ISTJ',
+        title: {
+          fa: 'بازرس',
+          en: 'Logistician'
+        },
+      },
+    ]
   },
   {
     id: 'mbti15',
@@ -300,6 +705,35 @@ export const mbtiTypes = [
       fa: 'افراد باهوش، با انرژی و نکته سنجی که زندگی روی لبه تیغ را واقعا دوست دارند.',
       en: ''
     },
+    suitableJobs: [
+      { fa: 'آتش نشان', en: '' },{ fa: 'پیراپزشک', en: '' },{ fa: 'کارگردان خلاق', en: '' },{ fa: 'هماهنگ کننده پروژه', en: '' },{ fa: 'مدیر ساخت و ساز', en: '' },
+    ],
+    suitableMates: [
+      {
+        id: 'mbti7',
+        abr: 'ENFJ',
+        title: {
+          fa: 'قهرمان',
+          en: 'Protagonist'
+        },
+      },
+      {
+        id: 'mbti6',
+        abr: 'INFP',
+        title: {
+          fa: 'تسهیل گر',
+          en: 'Mediator'
+        },
+      },
+      {
+        id: 'mbti9',
+        abr: 'ISTJ',
+        title: {
+          fa: 'بازرس',
+          en: 'Logistician'
+        },
+      },
+    ]
   },
   {
     id: 'mbti16',
@@ -320,5 +754,34 @@ export const mbtiTypes = [
       fa: 'افراد خود انگیخته، با انرژی و پر اشتیاق که زندگی برایشان خسته کننده نمیشود.',
       en: ''
     },
+    suitableJobs: [
+      { fa: 'برنامه‌ریز رویداد', en: '' },{ fa: 'سرگرم‌کننده حرفه‌‌ای', en: '' },{ fa: 'نماینده فروش', en: '' },{ fa: 'متخصص زیبایی', en: '' },{ fa: 'مهماندار هواپیما', en: '' },{ fa: 'راهنمای تور', en: '' },
+    ],
+    suitableMates: [
+      {
+        id: 'mbti7',
+        abr: 'ENFJ',
+        title: {
+          fa: 'قهرمان',
+          en: 'Protagonist'
+        },
+      },
+      {
+        id: 'mbti6',
+        abr: 'INFP',
+        title: {
+          fa: 'تسهیل گر',
+          en: 'Mediator'
+        },
+      },
+      {
+        id: 'mbti9',
+        abr: 'ISTJ',
+        title: {
+          fa: 'بازرس',
+          en: 'Logistician'
+        },
+      },
+    ]
   }
 ];

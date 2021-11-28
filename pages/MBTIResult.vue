@@ -19,36 +19,36 @@
     <div v-if="this.fa" class="bars flex flex-column">
       <span>جزئیات شخصیت شما</span>
       <div class="ei flex duo">
-        <span>برون گرا</span>
+        <span>برون گرا (E)</span>
         <div class="bar">
           <div class="e indicator start"><span></span></div>
           <div class="i indicator end"><span></span></div>
         </div>
-        <span>درون گرا</span>
+        <span>(I) درون گرا</span>
       </div>
       <div class="sn flex duo">
-        <span>حسی</span>
+        <span>حسی (S)</span>
         <div class="bar">
           <div class="s indicator start"><span></span></div>
           <div class="n indicator end"><span></span> </div>
         </div>
-        <span>شهودی</span>
+        <span>(N) شهودی</span>
       </div>
       <div class="tf flex duo">
-        <span>منطقی</span>
+        <span>منطقی (T)</span>
         <div class="bar">
           <div class="t indicator start"><span></span></div>
           <div class="f indicator end"><span></span></div>
         </div>
-        <span>احساسی</span>
+        <span>(F) احساسی</span>
       </div>
       <div class="jp flex duo">
-        <span>قضاوت گر</span>
+        <span>قضاوت گر (J)</span>
         <div class="bar">
           <div class="j indicator start"><span></span></div>
           <div class="p indicator end"><span></span></div>
         </div>
-        <span>ادراکی</span>
+        <span>(P) ادراکی</span>
       </div>
     </div>
     <div v-if="!this.fa" class="bars flex flex-column">
@@ -85,7 +85,7 @@
         <span>Perceiving</span>
       </div>
     </div>
-    <MBTIType :key="`main${mbtiTypes.filter(x => x.abr === this.typeToWatch)[0].id}`"
+    <MBTIType  v-on:selectedType="showType" class="types-box" :key="`main${mbtiTypes.filter(x => x.abr === this.typeToWatch)[0].id}`"
               :id="`main${mbtiTypes.filter(x => x.abr === this.typeToWatch)[0].id}`"
               :typeData="mbtiTypes.filter(x => x.abr === this.typeToWatch)[0]" />
   </div>
@@ -102,7 +102,7 @@
             return {
                 mbtiTypes: mbtiTypes,
                 random: 0,
-                typeToWatch: 'INTP',
+                typeToWatch: 'ESFP',
             }
         },
         computed: mapState(['fa']),
@@ -153,7 +153,7 @@
                 }
                 document.getElementById(clientType).classList.add('client-type');
                 setTimeout(() => {
-                    document.getElementsByClassName('bars')[0].scrollIntoView({behavior: 'smooth', block: 'center'});
+                    document.getElementsByClassName('types-box')[0].scrollIntoView({behavior: 'smooth', block: 'center'});
                     _this.handleBars();
                 }, 2000)
             }, (suspension) * delay)
@@ -198,9 +198,10 @@
                 }
             },
             showType(id){
+                console.log(id)
                 this.typeToWatch = this.mbtiTypes.filter(x => x.id === id)[0].abr;
                 setTimeout(function () {
-                    document.getElementById("main" + id.toString()).scrollIntoView({ behavior: 'smooth', block: 'center' });
+                    document.getElementById("main" + id.toString()).scrollIntoView({ behavior: 'smooth'});
                 }, 500)
             }
         }
@@ -211,6 +212,9 @@
   .mbti-result {
     padding: 2vh 3vw;
     width: 1080px;
+  }
+  .types-box {
+    scroll-margin: 20px;
   }
   .types {
     display: grid;
@@ -255,7 +259,7 @@
     color: var(--bg-color);
   }
   .bars {
-    width: 60vw;
+    width: 1080PX;
     padding: 4vh 2vw;
   }
   .bars > div {
@@ -329,7 +333,7 @@
       font-size: 0.7em;
     }
     .bars > div > span {
-      width: 15vw;
+      width: 25vw;
     }
     .bar {
       width: 60vw;
