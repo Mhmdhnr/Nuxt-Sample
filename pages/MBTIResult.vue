@@ -102,7 +102,7 @@
             return {
                 mbtiTypes: mbtiTypes,
                 random: 0,
-                typeToWatch: 'ESFP',
+                typeToWatch: this.$route.params.type,
             }
         },
         computed: mapState(['fa']),
@@ -153,7 +153,7 @@
                 }
                 document.getElementById(clientType).classList.add('client-type');
                 setTimeout(() => {
-                    document.getElementsByClassName('types-box')[0].scrollIntoView({behavior: 'smooth', block: 'center'});
+                    document.getElementsByClassName('types-box')[0].scrollIntoView({behavior: 'smooth'});
                     _this.handleBars();
                 }, 2000)
             }, (suspension) * delay)
@@ -198,7 +198,6 @@
                 }
             },
             showType(id){
-                console.log(id)
                 this.typeToWatch = this.mbtiTypes.filter(x => x.id === id)[0].abr;
                 setTimeout(function () {
                     document.getElementById("main" + id.toString()).scrollIntoView({ behavior: 'smooth'});
