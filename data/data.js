@@ -173,6 +173,19 @@ export const workCards = [
       pageLink: "/Raven",
     }
   },
+  {
+    id: "work6",
+    front: {
+      imageUrl: "ISFJ.png"
+    },
+    back: {
+      title: {
+        fa: "تست شخصیت شناسی MBTI",
+        en: "MBTI type test"
+      },
+      pageLink: "/MBTI",
+    }
+  },
 ];
 export const slider = [
   {

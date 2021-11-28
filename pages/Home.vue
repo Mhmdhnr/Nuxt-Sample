@@ -14,6 +14,7 @@
       <FlipCard duration="500" v-bind:cardData="workCards[2]"/>
       <FlipCard duration="500" v-bind:cardData="workCards[3]"/>
       <FlipCard duration="500" v-bind:cardData="workCards[4]"/>
+      <FlipCard duration="500" v-bind:cardData="workCards[5]"/>
     </Carousel3dFlat>
 <!--    <Carousel3dFlat class="carousel-3d-flat-main">-->
 <!--      <Flip3DCard duration="500"  v-bind:cardData="workCards[0]"/>-->
