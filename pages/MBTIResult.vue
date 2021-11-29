@@ -102,6 +102,7 @@
             return {
                 mbtiTypes: mbtiTypes,
                 random: 0,
+                // typeToWatch: 'INTP',
                 typeToWatch: this.$route.params.type,
             }
         },
@@ -117,6 +118,7 @@
             }
         },
         mounted() {
+            // this.typeToWatch = 'INTP';
             this.typeToWatch = this.$route.params.type;
             let _this = this;
             let suspension = 30;

@@ -5,40 +5,50 @@
         <span class="abr">{{typeData.abr}}</span>
         <br>
         <div class="title">
-          <span>{{typeData.title.fa}}</span>
-          <span>({{typeData.title.en}})</span>
+          <span v-if="this.fa">{{typeData.title.fa}}</span>
+          <span v-if="!this.fa">{{typeData.title.en}}</span>
+          <span v-if="this.fa">({{typeData.title.en}})</span>
         </div>
 <!--        <span>{{typeData.whoTheyAre.fa}}</span>-->
       </div>
       <div class="image-box">
         <img class="image" :src="require(`@/assets/images/mbti/${typeData.abr}.png`)" :alt="typeData.abr">
         <div class="sentence">
-          <span>{{typeData.sentence.fa}}</span>
+          <span v-if="this.fa">{{typeData.sentence.fa}}</span>
+          <span v-if="!this.fa">{{typeData.sentence.en}}</span>
         </div>
       </div>
     </div>
     <div class="short-des">
       <hr>
       <div class="section-title">
-        <span>ویژگی ها</span>
+        <span v-if="this.fa">ویژگی ها</span>
+        <span v-if="!this.fa">Features</span>
       </div>
       <TypingMachine :subject="typeData.id" delay="800" speed="1500" :forwards="true">
         <span v-if="this.fa" class="typing-span">{{typeData.shortDes.fa}}</span>
-        <span v-if="!this.fa" class="typing-span">{{typeData.shortDes.fa}}</span>
+        <span v-if="!this.fa" class="typing-span">{{typeData.shortDes.en}}</span>
       </TypingMachine>
     </div>
     <hr>
     <div class="section-title">
-      <span>شغل های مناسب این تیپ</span>
+      <span v-if="this.fa">شغل های مناسب این تیپ</span>
+      <span v-if="!this.fa">Suitable Jobs</span>
     </div>
-    <div class="jobs">
+    <div v-if="this.fa" class="jobs">
       <div v-for="job in typeData.suitableJobs" class="job">
-        <span>{{job.fa}}</span>
+        <span >{{job.fa}}</span>
+      </div>
+    </div>
+    <div v-if="!this.fa" class="jobs">
+      <div v-for="job in typeData.suitableJobs" class="job">
+        <span>{{job.en}}</span>
       </div>
     </div>
     <hr>
     <div class="section-title">
-      <span>زوج مناسب این تیپ</span>
+      <span v-if="this.fa">زوج مناسب این تیپ</span>
+      <span v-if="!this.fa">Suitable Mate</span>
     </div>
     <div class="types">
       <div class="types" v-if="this.fa">
@@ -67,12 +77,47 @@
         components: {TypingMachine},
         props:['typeData'],
         computed: mapState(['fa']),
+        watch: {
+          fa(newValue) {
+              let sentence = document.getElementsByClassName('sentence')[0];
+              let image = document.getElementsByClassName('image')[16];
+              if (newValue) {
+                  sentence.style.right = 'unset';
+                  sentence.style.left = '150px';
+                  sentence.style.clipPath = 'polygon(100% 0%,100% 100%,10% 100%,10% 50%,0% 70%,10% 70%,10% 0%)';
+                  sentence.style.padding = '1vh 1vw 1vh calc(1vw + 5%)';
+                  image.style.transform = 'scaleX(1)'
+              } else {
+                  sentence.style.left = 'unset';
+                  sentence.style.right = '150px';
+                  sentence.style.clipPath = 'polygon(0% 0%,0% 100%,90% 100%,90% 50%,100% 70%,90% 70%,90% 0%)';
+                  sentence.style.padding = '1vh calc(1vw + 5%) 1vh 1vw';
+                  image.style.transform = 'scaleX(-1)'
+              }
+          }
+        },
         mounted() {
             let jobs = document.getElementsByClassName('job');
             for(let i = 0; i < jobs.length; i++){
                 setTimeout(function () {
                     jobs[i].classList.add('bounce-in')
                 }, 1000 + i * 100)
+            }
+            let sentence = document.getElementsByClassName('sentence')[0];
+            let image = document.getElementsByClassName('image')[16];
+            if (this.fa) {
+                sentence.style.right = 'unset';
+                sentence.style.left = '150px';
+                sentence.style.clipPath = 'polygon(100% 0%,100% 100%,10% 100%,10% 50%,0% 70%,10% 70%,10% 0%)';
+                sentence.style.padding = '1vh 1vw 1vh calc(1vw + 5%)';
+                image.style.transform = 'scaleX(1)'
+            } else {
+                sentence.style.left = 'unset';
+                sentence.style.right = '150px';
+                sentence.style.clipPath = 'polygon(0% 0%,0% 100%,90% 100%,90% 50%,100% 70%,90% 70%,90% 0%)';
+                sentence.style.padding = '1vh calc(1vw + 5%) 1vh 1vw';
+                console.log(image)
+                image.style.transform = 'scaleX(-1)'
             }
         },
         methods: {
@@ -120,12 +165,12 @@
     width: 50%;
   }
   .sentence {
-    padding: 1vh 1vw 1vh calc(1vw + 5%);
+    /*padding: 1vh 1vw 1vh calc(1vw + 5%);*/
     position: absolute;
-    left:150px;
+    /*left:150px;*/
     top: 10px;
     background-color: var(--primary-color);
-    clip-path: polygon(100% 0%,100% 100%,10% 100%,10% 50%,0% 70%,10% 70%,10% 0%);
+    /*clip-path: polygon(100% 0%,100% 100%,10% 100%,10% 50%,0% 70%,10% 70%,10% 0%);*/
     font-size: 0.7em;
     text-align: center;
   }

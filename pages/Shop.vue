@@ -18,11 +18,11 @@
                 specs: [
                     {
                         productName: "shoeCollection1",
-                        imageNames : ["shoe1", "shoe2"]
+                        imageNames : ["shoe1", "shoe3"]
                     },
                     {
                         productName: "shoeCollection2",
-                        imageNames : ["shoe4", "shoe3"]
+                        imageNames : ["shoe4", "shoe2"]
                     },
                 ],
                 slider: slider

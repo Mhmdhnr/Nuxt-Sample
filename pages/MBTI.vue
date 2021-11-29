@@ -1,6 +1,6 @@
 <template>
   <div class="flex flex-column">
-    <Slider v-bind:slider="slider[0]" />
+    <Slider v-bind:slider="slider[6]" />
     <Test :mustAnsweredAll="false"  v-on:submit="submit" testId="1"/>
   </div>
 </template>

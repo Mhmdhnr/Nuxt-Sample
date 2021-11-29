@@ -9,18 +9,18 @@ export const mbtiTypes = [
     },
     shortDes: {
       fa: 'تیپ INTJ دارای الگوی ذهنی است که تعیین می‌کند در شرایط گوناگون چگونه باید باشد. او پیوسته برای بهبود خود، دیگران و هر چیزی که در پیرامون آنها قرار دارد تلاش می‌کند. نیاز فراوانی به استقلال دارد و فردی به شدت مستقل می‌باشد. او دوست دارد کارها را به روش خود انجام دهد. به شکلی منطقی و منظم کار می‌کند تا راه‌حل‌هایی نوآورانه و مبتکرانه برای مسائل ایجاد کند. او برای رسیدن به مقصود همان اندازه که به خود فشار می‌آورد به دیگران هم فشار می‌آورد.',
-      en: ''
+      en: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged'
     },
     sentence: {
       fa: 'توجه به راهكارها از دردسرها میكاهد. كنار هم قرار دادن جزئيات و مشاهده موثر آنها.',
-      en: ''
+      en: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry.'
     },
     whoTheyAre: {
       fa: 'اندیشمندان استراتژیک با قوه تخیل زیاد که برای هر موضوعی برنامه دارند.',
-      en: ''
+      en: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry.'
     },
     suitableJobs: [
-      { fa: 'نوازنده موسیقی', en: '' },{ fa: 'سردبیر', en: '' },{ fa: 'عکاس', en: '' },{ fa: 'مشاور مالی', en: '' },{ fa: 'مدیر بازاریابی', en: '' },{ fa: 'معلم', en: '' },{ fa: 'فیزیوتراپیست', en: '' },
+      { fa: 'نوازنده موسیقی', en: 'Sample Job' },{ fa: 'سردبیر', en: 'Sample Job' },{ fa: 'عکاس', en: 'Sample Job' },{ fa: 'مشاور مالی', en: 'Sample Job' },{ fa: 'مدیر بازاریابی', en: 'Sample Job' },{ fa: 'معلم', en: 'Sample Job' },{ fa: 'فیزیوتراپیست', en: 'Sample Job' },
     ],
     suitableMates: [
       {
@@ -58,18 +58,18 @@ export const mbtiTypes = [
     },
     shortDes: {
       fa: ' تیپ INTP ساکت، محتاط، متکی به خود و به شدت مستقل است. برای او دقیق بودن، مهم است. این تیپ شخصیتی از کنجکاوی فراوانی بهره مند است.',
-      en: ''
+      en: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged'
     },
     sentence: {
       fa: 'مسايل رضايت بخش زيادي در ادراه‌ي يك شغل وجود دارد كه كاملا بي نياز از حمايت است.',
-      en: ''
+      en: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry.'
     },
     whoTheyAre: {
       fa: 'مخترعین نوآوری که هیچ وقت از دانش سیر نمیشوند.',
-      en: ''
+      en: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry.'
     },
     suitableJobs: [
-      { fa: 'آهنگساز', en: '' },{ fa: 'استاد دانشگاه', en: '' },{ fa: 'نویسنده', en: '' },{ fa: 'تهیه کننده', en: '' },{ fa: 'مهندس پزشکی', en: '' },{ fa: 'توسعه دهنده وب', en: '' },{ fa: 'مشاور بازاریابی', en: '' },
+      { fa: 'آهنگساز', en: 'Sample Job' },{ fa: 'استاد دانشگاه', en: 'Sample Job' },{ fa: 'نویسنده', en: 'Sample Job' },{ fa: 'تهیه کننده', en: 'Sample Job' },{ fa: 'مهندس پزشکی', en: 'Sample Job' },{ fa: 'توسعه دهنده وب', en: 'Sample Job' },{ fa: 'مشاور بازاریابی', en: 'Sample Job' },
     ],
     suitableMates: [
       {
@@ -107,18 +107,18 @@ export const mbtiTypes = [
     },
     shortDes: {
       fa: ' تیپ ENTJشخصی فعال، پر انرژی، مطمئن و با صلاحیت است. او طبیعتاً به جاهایی می‌رود که بتواند در آن مسئولیت داشته باشد و با استفاده از منابع به هدف‌های بلند مدت خود برسد. او شخصی با علم و اطلاع است. از مواجهه استقبال می‌کند. دوست دارد در بحث‌های روشنفکرانه شرکت کنند. این تیپ از اشخاصی که آنها را به مبارزه می‌طلبد استقبال می‌کند و برای کسانی که این کار را نمی‌کنند احترامی قائل نیست. در محل کار او دوست دارد مسئول باشد، و می‌تواند رهبر موفقی باشد. او می‌تواند مشکلات سازمان را شناسایی کند و راه‌حل‌های ابتکاری برای کوتاه مدت و بلند مدت ارائه نماید. تیپENTJ دوست دارد با افراد قوی، مستقل و نتیجه‌گرا کار کند و بدون اینکه دلیل منطقی وجود داشته باشد تسلیم نمی‌شود.',
-      en: ''
+      en: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged'
     },
     sentence: {
       fa: 'توسعه ي توانمندیهاي بالقوه سازمان هاي موجود.',
-      en: ''
+      en: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry.'
     },
     whoTheyAre: {
       fa: 'رهبران با شهامت، با قوه تخیل و بسیار با اراده که همیشه یا راهی پیدا میکنند یا راهی میسازند.',
-      en: ''
+      en: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry.'
     },
     suitableJobs: [
-      { fa: 'مدیر تجاری', en: '' },{ fa: 'متخصص روابط عمومی', en: '' },{ fa: 'مهندس مکانیک', en: '' },{ fa: 'قاضی', en: '' },{ fa: 'مدیر ساخت و ساز', en: '' },{ fa: 'اخترشناس', en: '' },
+      { fa: 'مدیر تجاری', en: 'Sample Job' },{ fa: 'متخصص روابط عمومی', en: 'Sample Job' },{ fa: 'مهندس مکانیک', en: 'Sample Job' },{ fa: 'قاضی', en: 'Sample Job' },{ fa: 'مدیر ساخت و ساز', en: 'Sample Job' },{ fa: 'اخترشناس', en: 'Sample Job' },
     ],
     suitableMates: [
       {
@@ -156,18 +156,18 @@ export const mbtiTypes = [
     },
     shortDes: {
       fa: 'تیپ ENTP فردی پر انرژی، با پشتکار و مطمئن است. به کار کردن علاقه زیاد دارد. نوآور بوده و می‌تواند راه‌های جدیدی برای انجام دادن کارها پیدا کند. این تیپ از توانمندی تحلیلی فراوانی برخوردار است و می‌تواند مسائل مختلف را حل و فصل کند. او به تنوع و تغییر بها می‌دهد و در برابر آنچه او را کسل کند مقاومت می‌کند. در محل کار او از نبوغ و فکر خود برای حل مسائل بوجود آمده بهره می‌گیرد. او به انجام کارها به روش سنتی بی‌علاقه است. تیپENTP شخصی الهام‌بخش بوده و به خاطر سریع الانتقال بودن، اعتماد به نفس و اطمینانی که دارد هواداران زیادی دارد. او دوست چند کار را با هم انجام دهد و با آدم‌های متعددی در ارتباط باشد.',
-      en: ''
+      en: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged'
     },
     sentence: {
       fa: 'از بين بردن موانع خلاقيت مشتری',
-      en: ''
+      en: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry.'
     },
     whoTheyAre: {
       fa: 'ایده پردازان باهوش و کنجکاوی که نمیتوانند در مقابل چالش های فکری مقاومت کنند.',
-      en: ''
+      en: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry.'
     },
     suitableJobs: [
-      { fa: 'وکیل', en: '' },{ fa: 'کپی رایتر', en: '' },{ fa: 'برنامه ریز مالی', en: '' },{ fa: 'روانشناس', en: '' },{ fa: 'تحلیلگر سیستم‌ها', en: '' },{ fa: 'کارگردان خلاق', en: '' },{ fa: 'متخصص عملیات', en: '' },
+      { fa: 'وکیل', en: 'Sample Job' },{ fa: 'کپی رایتر', en: 'Sample Job' },{ fa: 'برنامه ریز مالی', en: 'Sample Job' },{ fa: 'روانشناس', en: 'Sample Job' },{ fa: 'تحلیلگر سیستم‌ها', en: 'Sample Job' },{ fa: 'کارگردان خلاق', en: 'Sample Job' },{ fa: 'متخصص عملیات', en: 'Sample Job' },
     ],
     suitableMates: [
       {
@@ -205,18 +205,18 @@ export const mbtiTypes = [
     },
     shortDes: {
       fa: 'تیپ INFJ ساکت، مهربان، متوجه است و قلبی رقیق دارد. شخصیت پیچیده او اغلب اسباب حیرت دیگران را فراهم می‌سازد. این تیپ شخصیتی از تصور و تخیل غنی برخوردار است و به احساسات و انگیزه‌های دیگران بها می دهد. او به الهامات و ایده‌آل‌های خود وابسته است و به دیگران نیز رشد و فراست می‌بخشد. این تیپ به شدت بکر و خلاق است و کمال طلب است. او همچنین در محل کار از ایده‌آل‌ها و اهداف خود حمایت می‌کند و ترجیح می‌دهد در مکان‌هایی بی‌سروصدا کار کند. او می‌تواند رهبری مجاب‌کننده و الهام بخش باشد. او خواهان تحسین و احترام است ولی دوست ندارد توجه دیگران را به خود جلب نماید.',
-      en: ''
+      en: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged'
     },
     sentence: {
       fa: 'انجام دادن کاری که به واقع ارزشمند است.',
-      en: ''
+      en: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry.'
     },
     whoTheyAre: {
       fa: 'شخصیتی آرام و عرفانی، ایده آل گراهای خستگی ناپذیر و الهام بخش اند.',
-      en: ''
+      en: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry.'
     },
     suitableJobs: [
-      { fa: 'مشاور', en: '' },{ fa: 'نویسنده', en: '' },{ fa: 'دانشمند', en: '' },{ fa: 'کتابدار', en: '' },{ fa: 'روانشناس', en: '' },
+      { fa: 'مشاور', en: 'Sample Job' },{ fa: 'نویسنده', en: 'Sample Job' },{ fa: 'دانشمند', en: 'Sample Job' },{ fa: 'کتابدار', en: 'Sample Job' },{ fa: 'روانشناس', en: 'Sample Job' },
     ],
     suitableMates: [
       {
@@ -254,18 +254,18 @@ export const mbtiTypes = [
     },
     shortDes: {
       fa: 'تیپ INFP آرام، راحت و تأییدکننده است. او مطابق ارزش‌های درونی خود کار می‌کند، به روی ایده‌های نو گشوده است اما اگر یکی از ارزش‌های اصلی او رعایت نشود ناراحت می‌شود. داشتن تعصب و تعهد نسبت به آنچه به آن اعتقاد دارد بسیار ضروری است. او زندگی درونی قدرتمند و احساسات پیچیده‌ای دارد. گاه درک کردن این تیپ دشوار است زیرا احساساتش اغلب درونی است از این رو نکات مهم خود را با افراد کمی در میان می‌گذارد. در محل کار، از مقررات، نظم، رویه، برنامه و سر وقت بودن خوشش نمی‌آید. او نیازی به این ندارد که ارزش‌های خود را به دیگران تحمیل کند. او ترجیح می‌دهد که با آرامی نظرات خود را با دیگران در میان بگذارد و آنها را متقاعد سازد.',
-      en: ''
+      en: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged'
     },
     sentence: {
       fa: 'بهترين كار من اين است كه شخصا از آن راضي باشم. كاري كه بيان كننده شفاف نظر من باشد.',
-      en: ''
+      en: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry.'
     },
     whoTheyAre: {
       fa: 'حس شاعرانه، مهربان و نوع دوستی دارند که همیشه مشتاق ایجاد اتفاق مثبتی هستند.',
-      en: ''
+      en: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry.'
     },
     suitableJobs: [
-      { fa: 'مدیر منابع انسانی', en: '' },{ fa: 'کپی رایتر', en: '' },{ fa: 'فیزیوتراپیست', en: '' },{ fa: 'متخصص بهداشت روان', en: '' },{ fa: 'هنرمند', en: '' },{ fa: 'عکاس', en: '' },
+      { fa: 'مدیر منابع انسانی', en: 'Sample Job' },{ fa: 'کپی رایتر', en: 'Sample Job' },{ fa: 'فیزیوتراپیست', en: 'Sample Job' },{ fa: 'متخصص بهداشت روان', en: 'Sample Job' },{ fa: 'هنرمند', en: 'Sample Job' },{ fa: 'عکاس', en: 'Sample Job' },
     ],
     suitableMates: [
       {
@@ -303,18 +303,18 @@ export const mbtiTypes = [
     },
     shortDes: {
       fa: 'تیپ ENFJانسانی علاقمند و مهربان است و به کیفیات تحسین برانگیز دیگران توجه می‌کند. او می‌تواند با اشخاص مختلفی در ارتباط باشد.تیپ ENFJ ارتباط برقرار کننده‌ای عالی، رهبری طبیعی و در انگیزه دادن و متقاعده کردن دیگران از مهارت فراوان برخوردار است. در محل کار او احتمالاً تمایل زیادی به موفقیت داشته و دوست دارد به خواسته‌هایش برسد. این تیپ آگاه، منظم، هدف‌گرا و قاطع است و از دیگران هم همین انتظار را دارد.',
-      en: ''
+      en: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged'
     },
     sentence: {
       fa: 'من به‌شدت تحت تاثير شادی‌ها و ناراحتی‌هایی هستم كه روح و روان انسان میتواند آن را تجربه كند.',
-      en: ''
+      en: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry.'
     },
     whoTheyAre: {
       fa: 'رهبران کاریزما و الهام بخشی که میتوانند با صحبت ها شنونگان خود را هیپنوتیزم کنند.',
-      en: ''
+      en: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry.'
     },
     suitableJobs: [
-      { fa: 'مشاور تحصیلی', en: '' },{ fa: 'مشاور تحصیلی', en: '' },{ fa: 'مدیر منابع انسانی', en: '' },{ fa: 'کارگردان هنری', en: '' },{ fa: 'مدیر روابط عمومی', en: '' },
+      { fa: 'مشاور تحصیلی', en: 'Sample Job' },{ fa: 'مشاور تحصیلی', en: 'Sample Job' },{ fa: 'مدیر منابع انسانی', en: 'Sample Job' },{ fa: 'کارگردان هنری', en: 'Sample Job' },{ fa: 'مدیر روابط عمومی', en: 'Sample Job' },
     ],
     suitableMates: [
       {
@@ -352,18 +352,18 @@ export const mbtiTypes = [
     },
     shortDes: {
       fa: 'تیپ ENFPمعاشرتی، پویا و شاداب است و اغلب از خلق و خوی خوبی بر خوردار است. اشتیاق او به زندگی می‌تواند مسری باشد. این تیپ از قوه تصور و تخیل فراوان برخوردار بوده و ذهنی فعال دارد. روحیه‌اش پیوسته در حال تغییر است. در رسیدگی به جزئیات حتی در زمینه‌های مالی بی‌علاقه است. او می‌تواند رهبری باجذبه و الهام بخش باشد و با انرژی و پشتکار خود به دیگران انگیزه بدهد. تیپ ENFP می‌تواند روی پای خود بایستد و فکر کند.',
-      en: ''
+      en: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged'
     },
     sentence: {
       fa: 'خلاق بودن و باخود صادق بودن.',
-      en: ''
+      en: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry.'
     },
     whoTheyAre: {
       fa: 'شور و شوق، روحیه خلاق و اجتماعی داشته و همیشه دلیلی برای خندیدن پیدا میکنند.',
-      en: ''
+      en: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry.'
     },
     suitableJobs: [
-      { fa: 'خبرنگار یا مجری خبر', en: '' },{ fa: 'ویراستار', en: '' },{ fa: 'نوازنده', en: '' },{ fa: 'مدیر تولید', en: '' },{ fa: 'معلم دبستان', en: '' },{ fa: 'مربی شخصی', en: '' },{ fa: 'مددکار اجتماعی', en: '' },
+      { fa: 'خبرنگار یا مجری خبر', en: 'Sample Job' },{ fa: 'ویراستار', en: 'Sample Job' },{ fa: 'نوازنده', en: 'Sample Job' },{ fa: 'مدیر تولید', en: 'Sample Job' },{ fa: 'معلم دبستان', en: 'Sample Job' },{ fa: 'مربی شخصی', en: 'Sample Job' },{ fa: 'مددکار اجتماعی', en: 'Sample Job' },
     ],
     suitableMates: [
       {
@@ -401,18 +401,18 @@ export const mbtiTypes = [
     },
     shortDes: {
       fa: ' تیپ ISTJ به شدت با ثبات، مسئول و قابل اتکا است. و به واقعیت‌ها و حقایق بهاء زیاد می‌دهد. این تیپ کم‌حرف بوده و بیشتر در خودش است. وقت‌شناس، دقیق و منظم است. می‌تواند به خوبی تمرکز کند و پرت کردن حواس این تیپ دشوار است.',
-      en: ''
+      en: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged'
     },
     sentence: {
       fa: 'كارها را درست انجام دهيد و به آنچه كه برای خود و سازمان‌تان میخواهيد نايل شوید.',
-      en: ''
+      en: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry.'
     },
     whoTheyAre: {
       fa: 'افراد عمل گرایی که ذهنیتشان بر اساس واقعیت بوده و در قابل اعتماد بودن آنها شکی نیست.',
-      en: ''
+      en: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry.'
     },
     suitableJobs: [
-      { fa: 'دندانپزشک', en: '' },{ fa: 'حسابدار خبره', en: '' },{ fa: 'مدیر زنجیره تامین', en: '' },{ fa: 'تحلیلگر کسب و کار', en: '' }
+      { fa: 'دندانپزشک', en: 'Sample Job' },{ fa: 'حسابدار خبره', en: 'Sample Job' },{ fa: 'مدیر زنجیره تامین', en: 'Sample Job' },{ fa: 'تحلیلگر کسب و کار', en: 'Sample Job' }
     ],
     suitableMates: [
       {
@@ -450,18 +450,18 @@ export const mbtiTypes = [
     },
     shortDes: {
       fa: ' تیپ ISFJ شخصی متعهد، قابل اتکاء و صمیمی است. او معمولاً ساکت، محتاط و فروتن می‌باشد. این تیپ دوست دارد که به دیگران خدمت کند. سعی می‌کند که مفید واقع شود. او به شکلی که قرار است رفتار می‌کند و روال‌ها و رویه‌های کاری را مورد سؤال قرار نمی‌دهد. تیپ ISFJ واقع‌گرا، علمیاتی و آگاه می‌باشد.',
-      en: ''
+      en: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged'
     },
     sentence: {
       fa: 'اثر مثبت در دنيای خودمان باقی بگذاريم.',
-      en: ''
+      en: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry.'
     },
     whoTheyAre: {
       fa: 'افراد بسیار گرم و فداکار که از دیگران حمایت میکنند و همیشه آماده محافظت از افراد مورد علاقه شان هستند.',
-      en: ''
+      en: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry.'
     },
     suitableJobs: [
-      { fa: 'حسابدار', en: '' },{ fa: 'دفتردار مالی', en: '' },{ fa: 'تحویلدار بانک', en: '' },{ fa: 'تحلیلگر تحقیق', en: '' },{ fa: 'مدیر اداری', en: '' },{ fa: 'عکاس', en: '' },{ fa: 'معلم ابتدایی', en: '' },
+      { fa: 'حسابدار', en: 'Sample Job' },{ fa: 'دفتردار مالی', en: 'Sample Job' },{ fa: 'تحویلدار بانک', en: 'Sample Job' },{ fa: 'تحلیلگر تحقیق', en: 'Sample Job' },{ fa: 'مدیر اداری', en: 'Sample Job' },{ fa: 'عکاس', en: 'Sample Job' },{ fa: 'معلم ابتدایی', en: 'Sample Job' },
     ],
     suitableMates: [
       {
@@ -499,18 +499,18 @@ export const mbtiTypes = [
     },
     shortDes: {
       fa: 'تیپ ESTJ از اینکه مسئولیتی داشته باشد و همه چیز را در کنترل خود داشته باشد لذت می‌برد. او دوست دارد که مسئول باشد و در گرفتن تصمیمات عینی خوب عمل می‌کند. این تیپ می‌داند که چگونه کارها را انجام دهد. او درباره هر موضوعی عقیده‌ای دارد و همیشه از کلمات مناسب استفاده می‌کند. او در محل کار خود، در سازمان دادن به روش‌ها، سیاست‌ها و فعالیت‌ها عالی عمل می‌کند. او از زمان و منابع به شکل مؤثر استفاده می‌کند تا نتایج ملموس و فوری بگیرد. تیپ ESTJ دوست دارد حساب شده ریسک کند و به محیط‌های با ثبات و قابل پیش بینی علاقه دارد.',
-      en: ''
+      en: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged'
     },
     sentence: {
       fa: ' من انرژي فراواني دارم، بنابراين مي توانم هر كاري را كه بخواهم انجام دهم.',
-      en: ''
+      en: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry.'
     },
     whoTheyAre: {
       fa: 'مدیران عالی که در مدیریت افراد و موضوعات بی نظیرند.',
-      en: ''
+      en: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry.'
     },
     suitableJobs: [
-      { fa: 'قاضی', en: '' },{ fa: 'مربی ورزش', en: '' },{ fa: 'مسئول امور مالی', en: '' },{ fa: 'مدیر هتل', en: '' },{ fa: 'نماینده بنگاه املاک و مستغلات', en: '' },
+      { fa: 'قاضی', en: 'Sample Job' },{ fa: 'مربی ورزش', en: 'Sample Job' },{ fa: 'مسئول امور مالی', en: 'Sample Job' },{ fa: 'مدیر هتل', en: 'Sample Job' },{ fa: 'نماینده بنگاه املاک و مستغلات', en: 'Sample Job' },
     ],
     suitableMates: [
       {
@@ -548,18 +548,18 @@ export const mbtiTypes = [
     },
     shortDes: {
       fa: 'تیپ ESFJ شخصی خون گرم، معاشرتی و دوستانه است. به شدت اجتماعی بوده و وقتی از دیگران فاصله می‌گیرد بی‌قرار می‌شود. دوست دارد که مورد نیاز باشد و از کارش تشکر و قدردانی شود. او به نیازهای دیگران بیش از نیازهای خود بها می دهد. این تیپ به معیارهای اجتماعی توجه دارد و نگران جایگاه خود در جامعه است. تیپ ESFJ برای خود و دیگران بایدها و نبایدهای فراوانی دارد. او در محل کار آگاه و هوشیار است، سازمان یافته عمل می‌کند و کارش را انجام می‌دهد. او دوست دارد کارش برنامه‌ریزی شده و به حالت روزمره درآید و به جزئیات اهمیت می‌دهد و دقت می‌کند کارها با دقت کافی انجام گیرند. این تیپ همچنین اهل تعاون است و دوست دارد به دیگران کمک کند. او خواهان مشاغل مدیریتی نیست اما وقتی این مسئولیت به او داده شود اهتمام فراوان به خرج می‌دهد.',
-      en: ''
+      en: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged'
     },
     sentence: {
       fa: 'کمک به اطرافيان برای اينکه در شرايط دشوار آرام باشند.',
-      en: ''
+      en: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry.'
     },
     whoTheyAre: {
       fa: 'افراد مراقب، اجتماعی و محبوب که همیشه مشتاق کمک کردن به دیگران هستند.',
-      en: ''
+      en: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry.'
     },
     suitableJobs: [
-      { fa: 'مدیر دفتر', en: '' },{ fa: 'متخصص پشتیبانی فنی', en: '' },{ fa: 'موزه‌دار', en: '' },{ fa: 'روانشناس', en: '' },{ fa: 'محقق پزشکی', en: '' },
+      { fa: 'مدیر دفتر', en: 'Sample Job' },{ fa: 'متخصص پشتیبانی فنی', en: 'Sample Job' },{ fa: 'موزه‌دار', en: 'Sample Job' },{ fa: 'روانشناس', en: 'Sample Job' },{ fa: 'محقق پزشکی', en: 'Sample Job' },
     ],
     suitableMates: [
       {
@@ -597,18 +597,18 @@ export const mbtiTypes = [
     },
     shortDes: {
       fa: 'تیپ ISTP فردی ساکت و کنجکاو است که عقب می‌ایستد و تماشا می‌کند. این شخص برای همه اسرارآمیز است. او فردی مستقل است که بر اساس انتظارات دیگران رفتار نمی‌کند. این تیپ شخصی عمل‌گراست که دست به ریسک می‌زند و از اینکه به استقبال چالش‌ها می‌رود به خود می‌بالد.',
-      en: ''
+      en: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged'
     },
     sentence: {
       fa: 'من دوست دارم که بتوانم در حوزه‌ی خودم تفاوت‌های عينی و قابل لمس ايجاد می‌کنم.',
-      en: ''
+      en: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry.'
     },
     whoTheyAre: {
       fa: 'آزمایش کنندگان شجاع و عمل گرایی که در بسیاری از ابزارها مهارت دارند.',
-      en: ''
+      en: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry.'
     },
     suitableJobs: [
-      { fa: 'تکنسین و متخصص فنی', en: '' },{ fa: 'کارگر ساختمانی ماهر', en: '' },{ fa: 'مهندس', en: '' },{ fa: 'دانشمند پزشکی قانونی', en: '' },{ fa: 'بازرس', en: '' },
+      { fa: 'تکنسین و متخصص فنی', en: 'Sample Job' },{ fa: 'کارگر ساختمانی ماهر', en: 'Sample Job' },{ fa: 'مهندس', en: 'Sample Job' },{ fa: 'دانشمند پزشکی قانونی', en: 'Sample Job' },{ fa: 'بازرس', en: 'Sample Job' },
     ],
     suitableMates: [
       {
@@ -646,18 +646,18 @@ export const mbtiTypes = [
     },
     shortDes: {
       fa: 'تیپ ISFP فردی راحت و دوست داشتنی است. او معتقد است که زندگی کن بگذار که دیگران هم زندگی کنند. او اغلب ساکت، محطاط، محافظه کار و فروتن است. این تیپ در لحظه اکنون زندگی می کند و زندگی را به صورت ساده دوست دارد. برای تیپ ISFP روابط هماهنگ از درجه اهمیت فراوان بر خوردار است. این شخص، صمیمی، آرام و مهربان است و اغلب نیازهای دیگران را مقدم بر نیاز های خود محسوب می کند.',
-      en: ''
+      en: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged'
     },
     sentence: {
       fa: 'برای من مرزی بين کار و تفريح وجود ندارد.',
-      en: ''
+      en: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry.'
     },
     whoTheyAre: {
       fa: 'هنرمندان منعطف و دوست داشتنی که همیشه آماده اکتشاف و تجربه موضوع جدیدی هستند.',
-      en: ''
+      en: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry.'
     },
     suitableJobs: [
-      { fa: 'مدیر شبکه‌های اجتماعی', en: '' },{ fa: 'عینک‌ساز', en: '' },{ fa: 'کتابدار', en: '' },{ fa: 'دامپزشک', en: '' },{ fa: 'باستان شناس', en: '' },{ fa: 'مددکار اجتماعی', en: '' },{ fa: 'کاردرمانگر', en: '' },
+      { fa: 'مدیر شبکه‌های اجتماعی', en: 'Sample Job' },{ fa: 'عینک‌ساز', en: 'Sample Job' },{ fa: 'کتابدار', en: 'Sample Job' },{ fa: 'دامپزشک', en: 'Sample Job' },{ fa: 'باستان شناس', en: 'Sample Job' },{ fa: 'مددکار اجتماعی', en: 'Sample Job' },{ fa: 'کاردرمانگر', en: 'Sample Job' },
     ],
     suitableMates: [
       {
@@ -695,18 +695,18 @@ export const mbtiTypes = [
     },
     shortDes: {
       fa: 'تیپESTP شخصی مطمئن و جالب است. دوست دارد با کسانی باشد که علایق و ماجراهای لذت‌بخش خود را با او در میان بگذارند. رفتاری جذاب و همه‌گیر دارد اما در ضمن می‌تواند صریح، مستقیم و قاطع باشد. انرژی بیش از اندازه دارد. پیوسته در تب و تاب و تلاش است. این تیپ در محل کار مبتکر، پرمایه و عمل‌گراست. دوست دارد با حقایق روبه‌رو شود و به شدت نتیجه‌گراست. او در برخورد با مسائل از منطق استفاده می‌نماید و زیر فشار بسیار خونسرد عمل می‌کند. او از مشاغل پرانرژی و پر استرس لذت می‌برد و می‌تواند چند پروژه را با هم انجام دهد.',
-      en: ''
+      en: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged'
     },
     sentence: {
       fa: 'فرد کنجکاوی هستم و می‌توانم به ايده‌ها توجه کنم و سريعا تصميم بگيرم.',
-      en: ''
+      en: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry.'
     },
     whoTheyAre: {
       fa: 'افراد باهوش، با انرژی و نکته سنجی که زندگی روی لبه تیغ را واقعا دوست دارند.',
-      en: ''
+      en: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry.'
     },
     suitableJobs: [
-      { fa: 'آتش نشان', en: '' },{ fa: 'پیراپزشک', en: '' },{ fa: 'کارگردان خلاق', en: '' },{ fa: 'هماهنگ کننده پروژه', en: '' },{ fa: 'مدیر ساخت و ساز', en: '' },
+      { fa: 'آتش نشان', en: 'Sample Job' },{ fa: 'پیراپزشک', en: 'Sample Job' },{ fa: 'کارگردان خلاق', en: 'Sample Job' },{ fa: 'هماهنگ کننده پروژه', en: 'Sample Job' },{ fa: 'مدیر ساخت و ساز', en: 'Sample Job' },
     ],
     suitableMates: [
       {
@@ -744,18 +744,18 @@ export const mbtiTypes = [
     },
     shortDes: {
       fa: 'تیپ ESFP دوستانه، با نمک، جذاب و اهل صحبت است و به روابط خود بها و اهمیت می‌دهد. دست و دلباز است بدون اینکه انتظار متقابل داشته باشد. با نشاط است و از هر کاری که می‌کند و از هرچه می بیند لذت می‌برد. این تیپ در محل کار به فضاهای مهیج علاقه داشته و دوست دارد با افرادی دوستانه و پرانرژی کار کند. او می‌تواند روابط حسنه‌ای با مردم برقرار نماید. او در بسیاری از مواقع تا آخرین لحظه صبر می‌کند تا کاری را به انجام برساند.',
-      en: ''
+      en: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged'
     },
     sentence: {
       fa: 'اگر آسمان محدود بود و من می‌توانستم هرکاری را انجام دهم، صرفا کار فعلی را انجام می‌دادم.',
-      en: ''
+      en: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry.'
     },
     whoTheyAre: {
       fa: 'افراد خود انگیخته، با انرژی و پر اشتیاق که زندگی برایشان خسته کننده نمیشود.',
-      en: ''
+      en: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry.'
     },
     suitableJobs: [
-      { fa: 'برنامه‌ریز رویداد', en: '' },{ fa: 'سرگرم‌کننده حرفه‌‌ای', en: '' },{ fa: 'نماینده فروش', en: '' },{ fa: 'متخصص زیبایی', en: '' },{ fa: 'مهماندار هواپیما', en: '' },{ fa: 'راهنمای تور', en: '' },
+      { fa: 'برنامه‌ریز رویداد', en: 'Sample Job' },{ fa: 'سرگرم‌کننده حرفه‌‌ای', en: 'Sample Job' },{ fa: 'نماینده فروش', en: 'Sample Job' },{ fa: 'متخصص زیبایی', en: 'Sample Job' },{ fa: 'مهماندار هواپیما', en: 'Sample Job' },{ fa: 'راهنمای تور', en: 'Sample Job' },
     ],
     suitableMates: [
       {

@@ -36,6 +36,19 @@
                 }
             }
         },
+        mounted() {
+            if(this.fa) {
+                document.body.style.direction = "rtl";
+                document.body.style.textAlign = "right";
+                document.body.style.fontFamily = "vazir, sans-serif";
+                document.body.style.fontWeight = "400";
+            } else {
+                document.body.style.direction = "ltr";
+                document.body.style.textAlign = "left";
+                document.body.style.fontFamily = "Ubuntu, sans-serif";
+                document.body.style.fontWeight = "500";
+            }
+        }
     }
 </script>
 <style>
