@@ -1,14 +1,14 @@
 <template>
     <div class="typing-machine" :id="subject">
       <slot />
-      <span class="cursor">|</span>
+      <span :id="subject+'cursor'" class="cursor">|</span>
     </div>
 </template>
 
 <script>
     export default {
         name: "TypingMachine",
-        props: ['subject', 'delay', 'speed', 'forwards'],
+        props: ['subject', 'delay', 'speed', 'forwards', 'hideCursor'],
         data(){
             return {
                 typeStarted: false,
@@ -16,6 +16,10 @@
         },
         mounted() {
             let main = document.getElementById(this.subject);
+            console.log(this.hideCursor)
+            if (this.hideCursor) {
+                document.getElementById(this.subject + 'cursor').innerText = ''
+            }
             let span = main.children[0];
             let text = span.innerHTML;
             main.appendChild(document.createElement('span'));
@@ -27,6 +31,7 @@
             span.innerText = '';
             let interval = 60000 / this.speed;
             let i = 0;
+            let sub = this.subject;
             const observer = new IntersectionObserver((entries) => {
                 if (entries[0].isIntersecting && !this.typeStarted) {
                     this.typeStarted = true;
@@ -37,6 +42,7 @@
                             i++;
                             if (i === text.length) {
                                 clearInterval(typingInterval);
+                                // document.getElementById(sub + 'cursor').innerText = ''
                             }
                         }, interval);
                     }, parseInt(this.delay));

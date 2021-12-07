@@ -1,7 +1,7 @@
 <template>
   <div class="flex flex-column">
     <Slider v-bind:slider="slider[6]" />
-    <Test :mustAnsweredAll="false"  v-on:submit="submit" testId="1"/>
+    <Test :mustAnsweredAll="true"  v-on:submit="submit" testId="1"/>
   </div>
 </template>
 
@@ -23,7 +23,7 @@
                 this.$store.commit('loadingMessage' , {fa: 'در حال محاسبه نتایج آزمون ...', en: 'Calculating test result ...'});
                 this.$store.commit('api', 'pending');
                 apiServices.methods.postMBTIResponse({choices}).then(response => {
-                    this.$store.commit('api', 'done');
+                    // this.$store.commit('api', 'done');
                     console.log(response);
                     this.$router.push({name:'MBTIResult', params:{type: response.type, EI: response.EI, SN: response.SN, TF: response.TF, JP: response.JP}});
                 })

@@ -17,11 +17,10 @@
         </div>
       </div>
       <Question :id="`q${question.id}`" v-on:selected="select" v-for="question in test.questions" v-bind:question="question" />
-      <div class="hint" v-on:click="unAnswered()">
-        <div v-if="!this.allAnswered">
-          <span v-if="this.fa"> به تمام سوالات پاسخ نداده اید </span>
+      <div class="hint">
+        <div v-if="!this.allAnswered"  v-on:click="unAnswered()">
+          <span v-if="this.fa"> به تمام سوالات پاسخ نداده اید (کلیک کنید) </span>
           <span v-if="!this.fa"> You have not answered all questions </span>
-
         </div>
         <div v-if="this.allAnswered">
           <span v-if="this.fa"> به تمام سوالات پاسخ داده اید </span>
@@ -85,18 +84,20 @@
                 }
                 this.choices_array[questionIndex - 1] = choiceIndex;
                 this.allAnswered = this.choices_array.filter(no => no !== 0).length === this.test.questions.length;
-                this.unAnswered();
+                if (!this.allAnswered) {
+                    this.unAnswered();
+                } else {
+                    let submit = document.getElementById('submit');
+                    submit.disabled = false;
+                    submit.enabled = true;
+                    submit.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                }
             },
             submit(){
                 this.$emit('submit', {choices: this.choices_array})
             },
             unAnswered() {
                 let index = this.choices_array.findIndex(x => x === 0);
-                let submit = document.getElementById('submit');
-                if(!index && this.mustAnsweredAll) {
-                    submit.disabled = false;
-                    submit.enabled = true;
-                }
                 let unAnsweredQuestionId = this.test.questions[index].id;
                 document.getElementById("q" + unAnsweredQuestionId.toString()).scrollIntoView({ behavior: 'smooth', block: 'center' });
             },

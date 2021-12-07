@@ -29,6 +29,30 @@
         <span v-if="this.fa" class="typing-span">{{typeData.shortDes.fa}}</span>
         <span v-if="!this.fa" class="typing-span">{{typeData.shortDes.en}}</span>
       </TypingMachine>
+      <div v-if="this.fa">
+        <hr>
+        <span style="color: seagreen">نقاط مثبت</span>
+        <TypingMachine v-for="(p, index) in typeData.pros" :subject="p.fa" :delay="1000" speed="1500" :forwards="true" :hideCursor="true">
+          <span class="typing-span">☺{{p.fa}}</span>
+        </TypingMachine>
+        <hr>
+        <span style="color: red">نقاط منفی</span>
+        <TypingMachine v-for="(c, index) in typeData.cons" :subject="c.fa" :delay="1000" speed="1500" :forwards="true" :hideCursor="true">
+          <span class="typing-span">☻{{c.fa}}</span>
+        </TypingMachine>
+      </div>
+      <div v-if="!this.fa">
+        <hr>
+        <span style="color: seagreen">Pros</span>
+        <TypingMachine v-for="(p, index) in typeData.pros" :subject="p.fa" :delay="1000" speed="1500" :forwards="true" :hideCursor="true">
+          <span class="typing-span">☺{{p.en}}</span>
+        </TypingMachine>
+        <hr>
+        <span style="color: red">Cons</span>
+        <TypingMachine v-for="(c, index) in typeData.cons" :subject="c.fa" :delay="1000" speed="1500" :forwards="true" :hideCursor="true">
+          <span class="typing-span">☻{{c.en}}</span>
+        </TypingMachine>
+      </div>
     </div>
     <hr>
     <div class="section-title">
@@ -43,6 +67,21 @@
     <div v-if="!this.fa" class="jobs">
       <div v-for="job in typeData.suitableJobs" class="job">
         <span>{{job.en}}</span>
+      </div>
+    </div>
+    <hr>
+    <div class="section-title">
+      <span v-if="this.fa">مشهورترین افراد این تیپ</span>
+      <span v-if="!this.fa">Most famous people of this type</span>
+    </div>
+    <div v-if="this.fa" class="famousPeople">
+      <div v-for="famous in typeData.famousPeople" class="job">
+        <span >{{famous.fa}}</span>
+      </div>
+    </div>
+    <div v-if="!this.fa" class="famousPeople">
+      <div v-for="famous in typeData.famousPeople" class="job">
+        <span>{{famous.en}}</span>
       </div>
     </div>
     <hr>
@@ -98,7 +137,13 @@
         },
         mounted() {
             let jobs = document.getElementsByClassName('job');
+            let famousPeople = document.getElementsByClassName('famousPeople');
             for(let i = 0; i < jobs.length; i++){
+                setTimeout(function () {
+                    jobs[i].classList.add('bounce-in')
+                }, 1000 + i * 100)
+            }
+            for(let i = 0; i < famousPeople.length; i++){
                 setTimeout(function () {
                     jobs[i].classList.add('bounce-in')
                 }, 1000 + i * 100)
@@ -197,7 +242,7 @@
   .section-title > span {
     color: var(--bg-color);
   }
-  .jobs {
+  .jobs, .famousPeople {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
@@ -209,7 +254,7 @@
     border-radius: 4px;
     font-size: 0.8em;
     width: 200px;
-    margin: 1vw;
+    margin: 10px;
     opacity: 0;
   }
   .job > span {

@@ -23,30 +23,18 @@ export const mbtiTypes = [
       { fa: 'نوازنده موسیقی', en: 'Sample Job' },{ fa: 'سردبیر', en: 'Sample Job' },{ fa: 'عکاس', en: 'Sample Job' },{ fa: 'مشاور مالی', en: 'Sample Job' },{ fa: 'مدیر بازاریابی', en: 'Sample Job' },{ fa: 'معلم', en: 'Sample Job' },{ fa: 'فیزیوتراپیست', en: 'Sample Job' },
     ],
     suitableMates: [
-      {
-        id: 'mbti7',
-        abr: 'ENFJ',
-        title: {
-          fa: 'قهرمان',
-          en: 'Protagonist'
-        },
-      },
-      {
-        id: 'mbti6',
-        abr: 'INFP',
-        title: {
-          fa: 'تسهیل گر',
-          en: 'Mediator'
-        },
-      },
-      {
-        id: 'mbti9',
-        abr: 'ISTJ',
-        title: {
-          fa: 'بازرس',
-          en: 'Logistician'
-        },
-      },
+      {id: 'mbti1', abr: 'INTJ', title: { fa: 'معمار', en: 'Architect'} },
+      {id: 'mbti3', abr: 'ENTJ', title: { fa: 'فرمانده', en: 'Commander'} },
+      {id: 'mbti7', abr: 'ENFJ', title: { fa: 'قهرمان', en: 'Protagonist'} },
+    ],
+    famousPeople: [
+      {en: "استیفن هاوکینگ", fa: "استیفن هاوکینگ"}, {en: "اسحاق نیوتن", fa: "اسحاق نیوتن"}, {en: "بیل گیتس", fa: "بیل گیتس"}, {en: "ایلان ماسک", fa: "ایلان ماسک"}, {en: "هیلاری کلینتون", fa: "هیلاری کلینتون"},
+    ],
+    pros: [
+      {en: "something positive", fa: "مطمئن"}, {en: "something positive", fa: "گوینده‌ی خوب"}, {en: "something positive", fa: "خوش مشرب"}, {en: "something positive", fa: "باهوش"}
+    ],
+    cons: [
+      {en: "something negative", fa: "سرشار از مشغله‌های فکری"}, {en: "something negative", fa: "بی احساس"}, {en: "something negative", fa: "کم عاطفه"}
     ]
   },
   {
@@ -72,30 +60,18 @@ export const mbtiTypes = [
       { fa: 'آهنگساز', en: 'Sample Job' },{ fa: 'استاد دانشگاه', en: 'Sample Job' },{ fa: 'نویسنده', en: 'Sample Job' },{ fa: 'تهیه کننده', en: 'Sample Job' },{ fa: 'مهندس پزشکی', en: 'Sample Job' },{ fa: 'توسعه دهنده وب', en: 'Sample Job' },{ fa: 'مشاور بازاریابی', en: 'Sample Job' },
     ],
     suitableMates: [
-      {
-        id: 'mbti7',
-        abr: 'ENFJ',
-        title: {
-          fa: 'قهرمان',
-          en: 'Protagonist'
-        },
-      },
-      {
-        id: 'mbti6',
-        abr: 'INFP',
-        title: {
-          fa: 'تسهیل گر',
-          en: 'Mediator'
-        },
-      },
-      {
-        id: 'mbti9',
-        abr: 'ISTJ',
-        title: {
-          fa: 'بازرس',
-          en: 'Logistician'
-        },
-      },
+      {id: 'mbti7', abr: 'ENFJ', title: { fa: 'قهرمان', en: 'Protagonist'} },
+      {id: 'mbti7', abr: 'ENFJ', title: { fa: 'قهرمان', en: 'Protagonist'} },
+      {id: 'mbti7', abr: 'ENFJ', title: { fa: 'قهرمان', en: 'Protagonist'} },
+    ],
+    famousPeople: [
+      {en: "آلبرت اینشتین", fa: "آلبرت اینشتین"}, {en: "چارلز داروین", fa: "چارلز داروین"}, {en: "ماری کوری", fa: "ماری کوری"}, {en: "آبراهام لینکلن", fa: "آبراهام لینکلن"}
+    ],
+    pros: [
+      {en: "something positive", fa: "با اطمینان"}, {en: "something positive", fa: "خلاق"}, {en: "something positive", fa: "مشتاق"}, {en: "something positive", fa: "آرام"}, {en: "something positive", fa: "دوست‌داشتنی"}
+    ],
+    cons: [
+      {en: "something negative", fa: "ذهنیت بسته"}, {en: "something negative", fa: "بی‌احساس"}, {en: "something negative", fa: "تعارضات درونی"}, {en: "something negative", fa: "مشکوک"}
     ]
   },
   {
@@ -121,30 +97,18 @@ export const mbtiTypes = [
       { fa: 'مدیر تجاری', en: 'Sample Job' },{ fa: 'متخصص روابط عمومی', en: 'Sample Job' },{ fa: 'مهندس مکانیک', en: 'Sample Job' },{ fa: 'قاضی', en: 'Sample Job' },{ fa: 'مدیر ساخت و ساز', en: 'Sample Job' },{ fa: 'اخترشناس', en: 'Sample Job' },
     ],
     suitableMates: [
-      {
-        id: 'mbti7',
-        abr: 'ENFJ',
-        title: {
-          fa: 'قهرمان',
-          en: 'Protagonist'
-        },
-      },
-      {
-        id: 'mbti6',
-        abr: 'INFP',
-        title: {
-          fa: 'تسهیل گر',
-          en: 'Mediator'
-        },
-      },
-      {
-        id: 'mbti9',
-        abr: 'ISTJ',
-        title: {
-          fa: 'بازرس',
-          en: 'Logistician'
-        },
-      },
+      {id: 'mbti7', abr: 'ENFJ', title: { fa: 'قهرمان', en: 'Protagonist'} },
+      {id: 'mbti7', abr: 'ENFJ', title: { fa: 'قهرمان', en: 'Protagonist'} },
+      {id: 'mbti7', abr: 'ENFJ', title: { fa: 'قهرمان', en: 'Protagonist'} },
+    ],
+    famousPeople: [
+      {en: "استیو جابز", fa: "استیو جابز"}, {en: "مارگارت تاچر", fa: "مارگارت تاچر"}, {en: "گوردون رمزی", fa: "گوردون رمزی"}, {en: "مالکوم ایکس", fa: "مالکوم ایکس"}, {en: "وپی گلدبرگ", fa: "وپی گلدبرگ"}
+    ],
+    pros: [
+      {en: "something positive", fa: "دقیق"}, {en: "something positive", fa: "کنجکاو"}, {en: "something positive", fa: "صریح"}, {en: "something positive", fa: "مشتاق"}, {en: "something positive", fa: "واقع‌گرا"}, {en: "something positive", fa: "قابل اعتماد"}
+    ],
+    cons: [
+      {en: "something negative", fa: "تهدیدگر"}, {en: "something negative", fa: "بی‌احساس"}, {en: "something negative", fa: "بیش از حد انتقادی"}, {en: "something negative", fa: "کنترل‌گر"}, {en: "something negative", fa: "بداخلاق"}, {en: "something negative", fa: "جدال‌برانگیز"}
     ]
   },
   {
@@ -170,30 +134,18 @@ export const mbtiTypes = [
       { fa: 'وکیل', en: 'Sample Job' },{ fa: 'کپی رایتر', en: 'Sample Job' },{ fa: 'برنامه ریز مالی', en: 'Sample Job' },{ fa: 'روانشناس', en: 'Sample Job' },{ fa: 'تحلیلگر سیستم‌ها', en: 'Sample Job' },{ fa: 'کارگردان خلاق', en: 'Sample Job' },{ fa: 'متخصص عملیات', en: 'Sample Job' },
     ],
     suitableMates: [
-      {
-        id: 'mbti7',
-        abr: 'ENFJ',
-        title: {
-          fa: 'قهرمان',
-          en: 'Protagonist'
-        },
-      },
-      {
-        id: 'mbti6',
-        abr: 'INFP',
-        title: {
-          fa: 'تسهیل گر',
-          en: 'Mediator'
-        },
-      },
-      {
-        id: 'mbti9',
-        abr: 'ISTJ',
-        title: {
-          fa: 'بازرس',
-          en: 'Logistician'
-        },
-      },
+      {id: 'mbti7', abr: 'ENFJ', title: { fa: 'قهرمان', en: 'Protagonist'} },
+      {id: 'mbti7', abr: 'ENFJ', title: { fa: 'قهرمان', en: 'Protagonist'} },
+      {id: 'mbti7', abr: 'ENFJ', title: { fa: 'قهرمان', en: 'Protagonist'} },
+    ],
+    famousPeople: [
+      {en: "توماس ادیسون", fa: "توماس ادیسون"}, {en: "لئوناردو داوینچی", fa: "لئوناردو داوینچی"}, {en: "مارک تواین", fa: "مارک تواین"}, {en: "سارا سیلورمن", fa: "سارا سیلورمن"}, {en: "تیریون لنیستر", fa: "تیریون لنیستر"}
+    ],
+    pros: [
+      {en: "something positive", fa: "دقت بالا"}, {en: "something positive", fa: "جذاب"}, {en: "something positive", fa: "با اطمینان"}, {en: "something positive", fa: "مشتاق "}, {en: "something positive", fa: "تخیل قوی"}, {en: "something positive", fa: "انعطاف‌پذیر"}
+    ],
+    cons: [
+      {en: "something negative", fa: "عاشق بحث کردن"}, {en: "something negative", fa: "بی تعهد"}, {en: "something negative", fa: "خطرناک"}, {en: "something negative", fa: "غیرقابل اعتماد"}
     ]
   },
   {
@@ -219,30 +171,18 @@ export const mbtiTypes = [
       { fa: 'مشاور', en: 'Sample Job' },{ fa: 'نویسنده', en: 'Sample Job' },{ fa: 'دانشمند', en: 'Sample Job' },{ fa: 'کتابدار', en: 'Sample Job' },{ fa: 'روانشناس', en: 'Sample Job' },
     ],
     suitableMates: [
-      {
-        id: 'mbti7',
-        abr: 'ENFJ',
-        title: {
-          fa: 'قهرمان',
-          en: 'Protagonist'
-        },
-      },
-      {
-        id: 'mbti6',
-        abr: 'INFP',
-        title: {
-          fa: 'تسهیل گر',
-          en: 'Mediator'
-        },
-      },
-      {
-        id: 'mbti9',
-        abr: 'ISTJ',
-        title: {
-          fa: 'بازرس',
-          en: 'Logistician'
-        },
-      },
+      {id: 'mbti7', abr: 'ENFJ', title: { fa: 'قهرمان', en: 'Protagonist'} },
+      {id: 'mbti7', abr: 'ENFJ', title: { fa: 'قهرمان', en: 'Protagonist'} },
+      {id: 'mbti7', abr: 'ENFJ', title: { fa: 'قهرمان', en: 'Protagonist'} },
+    ],
+    famousPeople: [
+      {en: "مارتین لوتر کینگ", fa: "مارتین لوتر کینگ"}, {en: "مادر ترزا", fa: "مادر ترزا"}, {en: "نلسون ماندلا", fa: "نلسون ماندلا"}, {en: "دانیل دی لوئیس", fa: "دانیل دی لوئیس"}
+    ],
+    pros: [
+      {en: "something positive", fa: "دقیق"}, {en: "something positive", fa: "قاطع"}, {en: "something positive", fa: "متمرکز"}, {en: "something positive", fa: "حساس"}, {en: "something positive", fa: "خوش برخورد"}
+    ],
+    cons: [
+      {en: "something negative", fa: "ولخرج"}, {en: "something negative", fa: "تفکر و تخیل بیش از حد"}, {en: "something negative", fa: "درگیری‌های درونی"}
     ]
   },
   {
@@ -268,30 +208,18 @@ export const mbtiTypes = [
       { fa: 'مدیر منابع انسانی', en: 'Sample Job' },{ fa: 'کپی رایتر', en: 'Sample Job' },{ fa: 'فیزیوتراپیست', en: 'Sample Job' },{ fa: 'متخصص بهداشت روان', en: 'Sample Job' },{ fa: 'هنرمند', en: 'Sample Job' },{ fa: 'عکاس', en: 'Sample Job' },
     ],
     suitableMates: [
-      {
-        id: 'mbti7',
-        abr: 'ENFJ',
-        title: {
-          fa: 'قهرمان',
-          en: 'Protagonist'
-        },
-      },
-      {
-        id: 'mbti6',
-        abr: 'INFP',
-        title: {
-          fa: 'تسهیل گر',
-          en: 'Mediator'
-        },
-      },
-      {
-        id: 'mbti9',
-        abr: 'ISTJ',
-        title: {
-          fa: 'بازرس',
-          en: 'Logistician'
-        },
-      },
+      {id: 'mbti7', abr: 'ENFJ', title: { fa: 'قهرمان', en: 'Protagonist'} },
+      {id: 'mbti7', abr: 'ENFJ', title: { fa: 'قهرمان', en: 'Protagonist'} },
+      {id: 'mbti7', abr: 'ENFJ', title: { fa: 'قهرمان', en: 'Protagonist'} },
+    ],
+    famousPeople: [
+      {en: "پرنسس دایانا", fa: "پرنسس دایانا"}, {en: "جان لنون", fa: "جان لنون"}, {en: "کورت کوبین", fa: "کورت کوبین"}, {en: "ویلیام شکسپیر", fa: "ویلیام شکسپیر"}
+    ],
+    pros: [
+      {en: "something positive", fa: "باانگیزه"}, {en: "something positive", fa: "انعطاف‌پذیر"}, {en: "something positive", fa: "وفادار"}, {en: "something positive", fa: "درک بالا"}, {en: "something positive", fa: "خوش مشرب"}
+    ],
+    cons: [
+      {en: "something negative", fa: "احساسی"}, {en: "something negative", fa: "بیش از حد انتقادی"}, {en: "something negative", fa: "خجالتی"}, {en: "something negative", fa: "تعارضات درونی بی‌پایان"}
     ]
   },
   {
@@ -317,30 +245,18 @@ export const mbtiTypes = [
       { fa: 'مشاور تحصیلی', en: 'Sample Job' },{ fa: 'مشاور تحصیلی', en: 'Sample Job' },{ fa: 'مدیر منابع انسانی', en: 'Sample Job' },{ fa: 'کارگردان هنری', en: 'Sample Job' },{ fa: 'مدیر روابط عمومی', en: 'Sample Job' },
     ],
     suitableMates: [
-      {
-        id: 'mbti7',
-        abr: 'ENFJ',
-        title: {
-          fa: 'قهرمان',
-          en: 'Protagonist'
-        },
-      },
-      {
-        id: 'mbti6',
-        abr: 'INFP',
-        title: {
-          fa: 'تسهیل گر',
-          en: 'Mediator'
-        },
-      },
-      {
-        id: 'mbti9',
-        abr: 'ISTJ',
-        title: {
-          fa: 'بازرس',
-          en: 'Logistician'
-        },
-      },
+      {id: 'mbti7', abr: 'ENFJ', title: { fa: 'قهرمان', en: 'Protagonist'} },
+      {id: 'mbti7', abr: 'ENFJ', title: { fa: 'قهرمان', en: 'Protagonist'} },
+      {id: 'mbti7', abr: 'ENFJ', title: { fa: 'قهرمان', en: 'Protagonist'} },
+    ],
+    famousPeople: [
+      {en: "باراک اوباما", fa: "باراک اوباما"}, {en: "اپرا وینفری", fa: "اپرا وینفری"}, {en: "جنیفر لارنس", fa: "جنیفر لارنس"}, {en: "مایا آنجلو", fa: "مایا آنجلو"}
+    ],
+    pros: [
+      {en: "something positive", fa: "با محبت"}, {en: "something positive", fa: "صمیمی"}, {en: "something positive", fa: "دلسوز"}, {en: "something positive", fa: "شوخ‌طبع"}, {en: "something positive", fa: "الهام‌بخش"}, {en: "something positive", fa: "وفادار"}, {en: "something positive", fa: "درک بالا"}
+    ],
+    cons: [
+      {en: "something negative", fa: "دارای ذهنیتی بسته"}, {en: "something negative", fa: "کنترل‌کننده"}, {en: "something negative", fa: "انتقادگر"}, {en: "something negative", fa: "حساس"}, {en: "something negative", fa: "درگیری‌های درونی بسیار"}
     ]
   },
   {
@@ -366,30 +282,18 @@ export const mbtiTypes = [
       { fa: 'خبرنگار یا مجری خبر', en: 'Sample Job' },{ fa: 'ویراستار', en: 'Sample Job' },{ fa: 'نوازنده', en: 'Sample Job' },{ fa: 'مدیر تولید', en: 'Sample Job' },{ fa: 'معلم دبستان', en: 'Sample Job' },{ fa: 'مربی شخصی', en: 'Sample Job' },{ fa: 'مددکار اجتماعی', en: 'Sample Job' },
     ],
     suitableMates: [
-      {
-        id: 'mbti7',
-        abr: 'ENFJ',
-        title: {
-          fa: 'قهرمان',
-          en: 'Protagonist'
-        },
-      },
-      {
-        id: 'mbti6',
-        abr: 'INFP',
-        title: {
-          fa: 'تسهیل گر',
-          en: 'Mediator'
-        },
-      },
-      {
-        id: 'mbti9',
-        abr: 'ISTJ',
-        title: {
-          fa: 'بازرس',
-          en: 'Logistician'
-        },
-      },
+      {id: 'mbti7', abr: 'ENFJ', title: { fa: 'قهرمان', en: 'Protagonist'} },
+      {id: 'mbti7', abr: 'ENFJ', title: { fa: 'قهرمان', en: 'Protagonist'} },
+      {id: 'mbti7', abr: 'ENFJ', title: { fa: 'قهرمان', en: 'Protagonist'} },
+    ],
+    famousPeople: [
+      {en: "کوئنتین تارانتینو", fa: "کوئنتین تارانتینو"}, {en: "رابین ویلیامز", fa: "رابین ویلیامز"}, {en: "ساندرا بولاک", fa: "ساندرا بولاک"}, {en: "آلن دجنرس", fa: "آلن دجنرس"}, {en: "ویل اسمیت", fa: "ویل اسمیت"}
+    ],
+    pros: [
+      {en: "something positive", fa: "با محبت"}, {en: "something positive", fa: "صریح"}, {en: "something positive", fa: "سرگرم‌کننده"}, {en: "something positive", fa: "الهام‌بخش"}, {en: "something positive", fa: "وفادار"}, {en: "something positive", fa: "درک بالا"}
+    ],
+    cons: [
+      {en: "something negative", fa: "به راحتی خسته می‌شوند"}, {en: "something negative", fa: "حساس"}, {en: "something negative", fa: "تعارضات درونی"}, {en: "something negative", fa: "غیرواقع‌گرا"}
     ]
   },
   {
@@ -415,30 +319,18 @@ export const mbtiTypes = [
       { fa: 'دندانپزشک', en: 'Sample Job' },{ fa: 'حسابدار خبره', en: 'Sample Job' },{ fa: 'مدیر زنجیره تامین', en: 'Sample Job' },{ fa: 'تحلیلگر کسب و کار', en: 'Sample Job' }
     ],
     suitableMates: [
-      {
-        id: 'mbti7',
-        abr: 'ENFJ',
-        title: {
-          fa: 'قهرمان',
-          en: 'Protagonist'
-        },
-      },
-      {
-        id: 'mbti6',
-        abr: 'INFP',
-        title: {
-          fa: 'تسهیل گر',
-          en: 'Mediator'
-        },
-      },
-      {
-        id: 'mbti9',
-        abr: 'ISTJ',
-        title: {
-          fa: 'بازرس',
-          en: 'Logistician'
-        },
-      },
+      {id: 'mbti7', abr: 'ENFJ', title: { fa: 'قهرمان', en: 'Protagonist'} },
+      {id: 'mbti7', abr: 'ENFJ', title: { fa: 'قهرمان', en: 'Protagonist'} },
+      {id: 'mbti7', abr: 'ENFJ', title: { fa: 'قهرمان', en: 'Protagonist'} },
+    ],
+    famousPeople: [
+      {en: "ملکه الیزابت دوم", fa: "ملکه الیزابت دوم"}, {en: "وارن بافت", fa: "وارن بافت"}, {en: "جورج واشنگتن", fa: "جورج واشنگتن"}, {en: "هری ترومن", fa: "هری ترومن"}
+    ],
+    pros: [
+      {en: "something positive", fa: "متعهد"}, {en: "something positive", fa: "رفتار محافظه‌کارانه"}, {en: "something positive", fa: "انتقادپذیر"}
+    ],
+    cons: [
+      {en: "something negative", fa: "مشغله‌ی فکری زیاد"}, {en: "something negative", fa: "بی‌احساس"}, {en: "something negative", fa: "بیش از حد ساختاریافته"}
     ]
   },
   {
@@ -464,30 +356,18 @@ export const mbtiTypes = [
       { fa: 'حسابدار', en: 'Sample Job' },{ fa: 'دفتردار مالی', en: 'Sample Job' },{ fa: 'تحویلدار بانک', en: 'Sample Job' },{ fa: 'تحلیلگر تحقیق', en: 'Sample Job' },{ fa: 'مدیر اداری', en: 'Sample Job' },{ fa: 'عکاس', en: 'Sample Job' },{ fa: 'معلم ابتدایی', en: 'Sample Job' },
     ],
     suitableMates: [
-      {
-        id: 'mbti7',
-        abr: 'ENFJ',
-        title: {
-          fa: 'قهرمان',
-          en: 'Protagonist'
-        },
-      },
-      {
-        id: 'mbti6',
-        abr: 'INFP',
-        title: {
-          fa: 'تسهیل گر',
-          en: 'Mediator'
-        },
-      },
-      {
-        id: 'mbti9',
-        abr: 'ISTJ',
-        title: {
-          fa: 'بازرس',
-          en: 'Logistician'
-        },
-      },
+      {id: 'mbti7', abr: 'ENFJ', title: { fa: 'قهرمان', en: 'Protagonist'} },
+      {id: 'mbti7', abr: 'ENFJ', title: { fa: 'قهرمان', en: 'Protagonist'} },
+      {id: 'mbti7', abr: 'ENFJ', title: { fa: 'قهرمان', en: 'Protagonist'} },
+    ],
+    famousPeople: [
+      {en: "بیانسه", fa: "بیانسه"}, {en: "کیت میدلتون", fa: "کیت میدلتون"}, {en: "رزا پارکس", fa: "رزا پارکس"}, {en: "سر آرتور کانن دوئل", fa: "سر آرتور کانن دوئل"}, {en: "ویتو کورلئونه", fa: "ویتو کورلئونه"}
+    ],
+    pros: [
+      {en: "something positive", fa: "متعهد"}, {en: "something positive", fa: "رفتار دوستانه"}, {en: "something positive", fa: "شنونده خوب"}, {en: "something positive", fa: "سخت‌کوش"}, {en: "something positive", fa: "سازمان‌یافته"}, {en: "something positive", fa: "عمل‌گرا"}
+    ],
+    cons: [
+      {en: "something negative", fa: "ذهنیت بسته"}, {en: "something negative", fa: "روحیه‌ی راکد"}, {en: "something negative", fa: "درگیری‌های درونی"}
     ]
   },
   {
@@ -513,30 +393,18 @@ export const mbtiTypes = [
       { fa: 'قاضی', en: 'Sample Job' },{ fa: 'مربی ورزش', en: 'Sample Job' },{ fa: 'مسئول امور مالی', en: 'Sample Job' },{ fa: 'مدیر هتل', en: 'Sample Job' },{ fa: 'نماینده بنگاه املاک و مستغلات', en: 'Sample Job' },
     ],
     suitableMates: [
-      {
-        id: 'mbti7',
-        abr: 'ENFJ',
-        title: {
-          fa: 'قهرمان',
-          en: 'Protagonist'
-        },
-      },
-      {
-        id: 'mbti6',
-        abr: 'INFP',
-        title: {
-          fa: 'تسهیل گر',
-          en: 'Mediator'
-        },
-      },
-      {
-        id: 'mbti9',
-        abr: 'ISTJ',
-        title: {
-          fa: 'بازرس',
-          en: 'Logistician'
-        },
-      },
+      {id: 'mbti7', abr: 'ENFJ', title: { fa: 'قهرمان', en: 'Protagonist'} },
+      {id: 'mbti7', abr: 'ENFJ', title: { fa: 'قهرمان', en: 'Protagonist'} },
+      {id: 'mbti7', abr: 'ENFJ', title: { fa: 'قهرمان', en: 'Protagonist'} },
+    ],
+    famousPeople: [
+      {en: "جورج دبلیو بوش", fa: "جورج دبلیو بوش"}, {en: "سیمون کاول", fa: "سیمون کاول"}, {en: "قاضی جودی", fa: "قاضی جودی"}, {en: "الا بیکر", fa: "الا بیکر"}, {en: "فرانک سیناترا", fa: "فرانک سیناترا"}, {en: "لیندون بی جانسون", fa: "لیندون بی جانسون"}
+    ],
+    pros: [
+      {en: "something positive", fa: "با اطمینان"}, {en: "something positive", fa: "مشتاق"}, {en: "something positive", fa: "مدیریت مالی خوب"}, {en: "something positive", fa: "با مسئولیت"}, {en: "something positive", fa: "با ثبات"}
+    ],
+    cons: [
+      {en: "something negative", fa: "سرسخت"}, {en: "something negative", fa: "کنترل‌کننده"}, {en: "something negative", fa: "بی‌حوصله"}, {en: "something negative", fa: "بی‌احساس"}, {en: "something negative", fa: "مادی‌گرا"}
     ]
   },
   {
@@ -562,30 +430,18 @@ export const mbtiTypes = [
       { fa: 'مدیر دفتر', en: 'Sample Job' },{ fa: 'متخصص پشتیبانی فنی', en: 'Sample Job' },{ fa: 'موزه‌دار', en: 'Sample Job' },{ fa: 'روانشناس', en: 'Sample Job' },{ fa: 'محقق پزشکی', en: 'Sample Job' },
     ],
     suitableMates: [
-      {
-        id: 'mbti7',
-        abr: 'ENFJ',
-        title: {
-          fa: 'قهرمان',
-          en: 'Protagonist'
-        },
-      },
-      {
-        id: 'mbti6',
-        abr: 'INFP',
-        title: {
-          fa: 'تسهیل گر',
-          en: 'Mediator'
-        },
-      },
-      {
-        id: 'mbti9',
-        abr: 'ISTJ',
-        title: {
-          fa: 'بازرس',
-          en: 'Logistician'
-        },
-      },
+      {id: 'mbti7', abr: 'ENFJ', title: { fa: 'قهرمان', en: 'Protagonist'} },
+      {id: 'mbti7', abr: 'ENFJ', title: { fa: 'قهرمان', en: 'Protagonist'} },
+      {id: 'mbti7', abr: 'ENFJ', title: { fa: 'قهرمان', en: 'Protagonist'} },
+    ],
+    famousPeople: [
+      {en: "التون جان", fa: "التون جان"}, {en: "بیل کلینتون", fa: "بیل کلینتون"}, {en: "استیو هاروی", fa: "استیو هاروی"}, {en: "تیلور سویفت", fa: "تیلور سویفت"}, {en: "دنی گلاور", fa: "دنی گلاور"}, {en: "مونیکا در سریال فرندز", fa: "مونیکا در سریال فرندز"}
+    ],
+    pros: [
+      {en: "something positive", fa: "رفتاری دوستانه"}, {en: "something positive", fa: "مدیریت مالی خوب"}, {en: "something positive", fa: "سخت‌کوش"}, {en: "something positive", fa: "علاقه‌مند به سنت‌ها"}
+    ],
+    cons: [
+      {en: "something negative", fa: "از تغییرات ناراحت می‌شوند"}, {en: "something negative", fa: "سوءاستفاده‌گر"}, {en: "something negative", fa: "خود را فدا می‌کنند"}, {en: "something negative", fa: "دارای تعارضات درونی"}
     ]
   },
   {
@@ -611,30 +467,18 @@ export const mbtiTypes = [
       { fa: 'تکنسین و متخصص فنی', en: 'Sample Job' },{ fa: 'کارگر ساختمانی ماهر', en: 'Sample Job' },{ fa: 'مهندس', en: 'Sample Job' },{ fa: 'دانشمند پزشکی قانونی', en: 'Sample Job' },{ fa: 'بازرس', en: 'Sample Job' },
     ],
     suitableMates: [
-      {
-        id: 'mbti7',
-        abr: 'ENFJ',
-        title: {
-          fa: 'قهرمان',
-          en: 'Protagonist'
-        },
-      },
-      {
-        id: 'mbti6',
-        abr: 'INFP',
-        title: {
-          fa: 'تسهیل گر',
-          en: 'Mediator'
-        },
-      },
-      {
-        id: 'mbti9',
-        abr: 'ISTJ',
-        title: {
-          fa: 'بازرس',
-          en: 'Logistician'
-        },
-      },
+      {id: 'mbti7', abr: 'ENFJ', title: { fa: 'قهرمان', en: 'Protagonist'} },
+      {id: 'mbti7', abr: 'ENFJ', title: { fa: 'قهرمان', en: 'Protagonist'} },
+      {id: 'mbti7', abr: 'ENFJ', title: { fa: 'قهرمان', en: 'Protagonist'} },
+    ],
+    famousPeople: [
+      {en: "مایکل جردن", fa: "مایکل جردن"}, {en: "بروس لی", fa: "بروس لی"}, {en: "تام کروز", fa: "تام کروز"}, {en: "آریا استارک", fa: "آریا استارک"}
+    ],
+    pros: [
+      {en: "something positive", fa: "دارای اعتماد به نفس"}, {en: "something positive", fa: "شنونده‌ی خوب"}, {en: "something positive", fa: "خوش‌بین"}, {en: "something positive", fa: "واقع‌بین"}, {en: "something positive", fa: "با احترام"}
+    ],
+    cons: [
+      {en: "something negative", fa: "دارای ذهنیتی بسته"}, {en: "something negative", fa: "کم‌حرف"}, {en: "something negative", fa: "بی‌احساس"}, {en: "something negative", fa: "کوته‌بین"}
     ]
   },
   {
@@ -656,34 +500,19 @@ export const mbtiTypes = [
       fa: 'هنرمندان منعطف و دوست داشتنی که همیشه آماده اکتشاف و تجربه موضوع جدیدی هستند.',
       en: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry.'
     },
-    suitableJobs: [
-      { fa: 'مدیر شبکه‌های اجتماعی', en: 'Sample Job' },{ fa: 'عینک‌ساز', en: 'Sample Job' },{ fa: 'کتابدار', en: 'Sample Job' },{ fa: 'دامپزشک', en: 'Sample Job' },{ fa: 'باستان شناس', en: 'Sample Job' },{ fa: 'مددکار اجتماعی', en: 'Sample Job' },{ fa: 'کاردرمانگر', en: 'Sample Job' },
-    ],
     suitableMates: [
-      {
-        id: 'mbti7',
-        abr: 'ENFJ',
-        title: {
-          fa: 'قهرمان',
-          en: 'Protagonist'
-        },
-      },
-      {
-        id: 'mbti6',
-        abr: 'INFP',
-        title: {
-          fa: 'تسهیل گر',
-          en: 'Mediator'
-        },
-      },
-      {
-        id: 'mbti9',
-        abr: 'ISTJ',
-        title: {
-          fa: 'بازرس',
-          en: 'Logistician'
-        },
-      },
+      {id: 'mbti7', abr: 'ENFJ', title: { fa: 'قهرمان', en: 'Protagonist'} },
+      {id: 'mbti7', abr: 'ENFJ', title: { fa: 'قهرمان', en: 'Protagonist'} },
+      {id: 'mbti7', abr: 'ENFJ', title: { fa: 'قهرمان', en: 'Protagonist'} },
+    ],
+    famousPeople: [
+      {en: "موتزارت", fa: "موتزارت"}, {en: "جان تراولتا", fa: "جان تراولتا"}, {en: "ماری آنتوانت", fa: "ماری آنتوانت"}, {en: "مایکل جکسون", fa: "مایکل جکسون"}, {en: "استیون اسپیلبرگ", fa: "استیون اسپیلبرگ"}, {en: "لانا دل ری", fa: "لانا دل ری"}, {en: "فریدا کالو", fa: "فریدا کالو"}
+    ],
+    pros: [
+      {en: "something positive", fa: "رفتار محبت‌آمیز"}, {en: "something positive", fa: "انعطاف‌پذیر"}, {en: "something positive", fa: "خوش‌بین"}, {en: "something positive", fa: "عمل‌گرا"}, {en: "something positive", fa: "با احساس"}, {en: "something positive", fa: "خوش‌مشرب"}
+    ],
+    cons: [
+      {en: "something negative", fa: "نگرش بدبینانه"}, {en: "something negative", fa: "نگرش کوته‌بینانه"}, {en: "something negative", fa: "تعارضات داخلی"}
     ]
   },
   {
@@ -709,30 +538,18 @@ export const mbtiTypes = [
       { fa: 'آتش نشان', en: 'Sample Job' },{ fa: 'پیراپزشک', en: 'Sample Job' },{ fa: 'کارگردان خلاق', en: 'Sample Job' },{ fa: 'هماهنگ کننده پروژه', en: 'Sample Job' },{ fa: 'مدیر ساخت و ساز', en: 'Sample Job' },
     ],
     suitableMates: [
-      {
-        id: 'mbti7',
-        abr: 'ENFJ',
-        title: {
-          fa: 'قهرمان',
-          en: 'Protagonist'
-        },
-      },
-      {
-        id: 'mbti6',
-        abr: 'INFP',
-        title: {
-          fa: 'تسهیل گر',
-          en: 'Mediator'
-        },
-      },
-      {
-        id: 'mbti9',
-        abr: 'ISTJ',
-        title: {
-          fa: 'بازرس',
-          en: 'Logistician'
-        },
-      },
+      {id: 'mbti7', abr: 'ENFJ', title: { fa: 'قهرمان', en: 'Protagonist'} },
+      {id: 'mbti7', abr: 'ENFJ', title: { fa: 'قهرمان', en: 'Protagonist'} },
+      {id: 'mbti7', abr: 'ENFJ', title: { fa: 'قهرمان', en: 'Protagonist'} },
+    ],
+    famousPeople: [
+      {en: "دونالد ترامپ", fa: "دونالد ترامپ"}, {en: "مدونا", fa: "مدونا"}, {en: "ادی مورفی", fa: "ادی مورفی"}, {en: "جک نیکلسون", fa: "جک نیکلسون"}, {en: "ساموئل آل جکسون", fa: "ساموئل آل جکسون"}
+    ],
+    pros: [
+      {en: "something positive", fa: "جذاب"}, {en: "something positive", fa: "روشن‌فکر"}, {en: "something positive", fa: "با اطمینان"}, {en: "something positive", fa: "سخاوتمند"}, {en: "something positive", fa: "با احساس"}, {en: "something positive", fa: "شوخ‌طبع"}
+    ],
+    cons: [
+      {en: "something negative", fa: "به راحتی خسته می‌شوند"}, {en: "something negative", fa: "بی تعهد"}, {en: "something negative", fa: "پرخطر"}, {en: "something negative", fa: "کوته‌بین"}, {en: "something negative", fa: "بیش از حد سخاوتمند"}
     ]
   },
   {
@@ -758,30 +575,18 @@ export const mbtiTypes = [
       { fa: 'برنامه‌ریز رویداد', en: 'Sample Job' },{ fa: 'سرگرم‌کننده حرفه‌‌ای', en: 'Sample Job' },{ fa: 'نماینده فروش', en: 'Sample Job' },{ fa: 'متخصص زیبایی', en: 'Sample Job' },{ fa: 'مهماندار هواپیما', en: 'Sample Job' },{ fa: 'راهنمای تور', en: 'Sample Job' },
     ],
     suitableMates: [
-      {
-        id: 'mbti7',
-        abr: 'ENFJ',
-        title: {
-          fa: 'قهرمان',
-          en: 'Protagonist'
-        },
-      },
-      {
-        id: 'mbti6',
-        abr: 'INFP',
-        title: {
-          fa: 'تسهیل گر',
-          en: 'Mediator'
-        },
-      },
-      {
-        id: 'mbti9',
-        abr: 'ISTJ',
-        title: {
-          fa: 'بازرس',
-          en: 'Logistician'
-        },
-      },
+      {id: 'mbti7', abr: 'ENFJ', title: { fa: 'قهرمان', en: 'Protagonist'} },
+      {id: 'mbti7', abr: 'ENFJ', title: { fa: 'قهرمان', en: 'Protagonist'} },
+      {id: 'mbti7', abr: 'ENFJ', title: { fa: 'قهرمان', en: 'Protagonist'} },
+    ],
+    famousPeople: [
+      {en: "مرلین مونرو", fa: "مرلین مونرو"}, {en: "الویس پریسلی", fa: "الویس پریسلی"}, {en: "مایلی سایرس", fa: "مایلی سایرس"}, {en: "جیمی فاکس", fa: "جیمی فاکس"}, {en: "آدام لوین", fa: "آدام لوین"}
+    ],
+    pros: [
+      {en: "something positive", fa: "باهوش"}, {en: "something positive", fa: "خلاق"}, {en: "something positive", fa: "سخاوتمند"}, {en: "something positive", fa: "عمل‌گرا"}, {en: "something positive", fa: "با احساس"}, {en: "something positive", fa: "انعطاف‌پذیر"}
+    ],
+    cons: [
+      {en: "something negative", fa: "مادی‌گرا"}, {en: "something negative", fa: "غیر متعهد"}, {en: "something negative", fa: "بی‌توجه به خود"}, {en: "something negative", fa: "حساس"}
     ]
   }
 ];
