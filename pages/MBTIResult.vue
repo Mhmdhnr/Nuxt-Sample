@@ -300,10 +300,10 @@
     border-radius: 10px 0 0 10px;
   }
   .start > span {
-    margin: auto 10px auto auto;
+    margin: auto 3px auto auto;
   }
   .end > span {
-    margin: auto auto auto 10px;
+    margin: auto auto auto 3px;
   }
   @media screen and (max-width: 864px) {
     .types {
