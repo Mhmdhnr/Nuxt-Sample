@@ -49,7 +49,7 @@ export const mbtiTypes = [
       en: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged'
     },
     sentence: {
-      fa: 'مسايل رضايت بخش زيادي در ادراه‌ي يك شغل وجود دارد كه كاملا بي نياز از حمايت است.',
+      fa: 'مسايل رضايت بخش زيادی در ادراه‌ی يك شغل وجود دارد كه كاملا بی نياز از حمايت است.',
       en: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry.'
     },
     whoTheyAre: {
@@ -86,7 +86,7 @@ export const mbtiTypes = [
       en: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged'
     },
     sentence: {
-      fa: 'توسعه ي توانمندیهاي بالقوه سازمان هاي موجود.',
+      fa: 'توسعه ی توانمندیهای بالقوه سازمان های موجود.',
       en: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry.'
     },
     whoTheyAre: {
@@ -197,7 +197,7 @@ export const mbtiTypes = [
       en: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged'
     },
     sentence: {
-      fa: 'بهترين كار من اين است كه شخصا از آن راضي باشم. كاري كه بيان كننده شفاف نظر من باشد.',
+      fa: 'بهترين كار من اين است كه شخصا از آن راضی باشم. كاری كه بيان كننده شفاف نظر من باشد.',
       en: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry.'
     },
     whoTheyAre: {
@@ -234,7 +234,7 @@ export const mbtiTypes = [
       en: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged'
     },
     sentence: {
-      fa: 'من به‌شدت تحت تاثير شادی‌ها و ناراحتی‌هایی هستم كه روح و روان انسان میتواند آن را تجربه كند.',
+      fa: 'من به‌شدت تحت تاثير شادیی ها و ناراحتیی هایی هستم كه روح و روان انسان میتواند آن را تجربه كند.',
       en: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry.'
     },
     whoTheyAre: {
@@ -382,7 +382,7 @@ export const mbtiTypes = [
       en: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged'
     },
     sentence: {
-      fa: ' من انرژي فراواني دارم، بنابراين مي توانم هر كاري را كه بخواهم انجام دهم.',
+      fa: ' من انرژی فراوانی دارم، بنابراين می توانم هر كاری را كه بخواهم انجام دهم.',
       en: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry.'
     },
     whoTheyAre: {
@@ -456,7 +456,7 @@ export const mbtiTypes = [
       en: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged'
     },
     sentence: {
-      fa: 'من دوست دارم که بتوانم در حوزه‌ی خودم تفاوت‌های عينی و قابل لمس ايجاد می‌کنم.',
+      fa: 'من دوست دارم که بتوانم در حوزه‌ی خودم تفاوت‌های عينی و قابل لمس ايجاد ‌کنم.',
       en: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry.'
     },
     whoTheyAre: {
