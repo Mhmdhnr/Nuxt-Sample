@@ -15,13 +15,13 @@ export const links = {
       },
       link: 'https://wa.me/+989354162124',
       icon: 'whatsapp.svg'
-    }
+    },
   ],
   github: [
     {
       title: {
         fa: 'کد فرانت اند',
-        en: 'Front-end code'
+        en: 'Front-end'
       },
       link: 'https://github.com/Mhmdhnr/Nuxt-Sample',
       icon: 'github.svg'
@@ -29,7 +29,7 @@ export const links = {
     {
       title: {
         fa: 'کد بک اند',
-        en: 'Back-end code'
+        en: 'Back-end'
       },
       link: 'https://github.com/Mhmdhnr/Python-Nuxt',
       icon: 'github.svg'

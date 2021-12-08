@@ -5,15 +5,15 @@
         <img class="image" :src="require(`~/assets/images/${cardData.front.imageUrl}`)">
       </div>
       <div class="card-back flex flex-column">
-        <span v-show="this.$store.state.fa">
+        <span v-if="this.fa">
           {{cardData.back.title.fa}}
         </span>
-        <span v-show="!this.$store.state.fa">
+        <span v-if="!this.fa">
           {{cardData.back.title.en}}
         </span>
         <b-btn class="button" :to="cardData.back.pageLink">
-          <span v-show="this.$store.state.fa"> کلیک کنید </span>
-          <span v-show="!this.$store.state.fa"> Click Here </span>
+          <span v-if="this.fa"> کلیک کنید </span>
+          <span v-if="!this.fa"> Click Here </span>
         </b-btn>
       </div>
     </div>
@@ -21,6 +21,7 @@
 </template>
 
 <script>
+    import {mapState} from 'vuex'
     export default {
         name: "FlipCard",
         props:['duration', 'cardData'],
@@ -30,6 +31,7 @@
         },
         methods: {
         },
+        computed: mapState(['fa']),
         mounted() {
             let id = this.cardData.id;
             let flipCard = document.getElementById(id);
