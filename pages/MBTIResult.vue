@@ -1,93 +1,96 @@
 <template>
   <div class="mbti-result flex flex-column">
-    <div class="types">
-      <div class="types" v-if="this.fa">
-        <div class="type" v-for="mbtiType in this.mbtiTypes" :id="mbtiType.abr" @click="showType(mbtiType.id)">
-          <img class="image" :src="require(`@/assets/images/mbti/${mbtiType.abr}.png`)" :alt="mbtiType.abr">
-          <span class="title">{{mbtiType.title.fa}}</span>
-          <span class="abr">{{mbtiType.abr}}</span>
+    <div v-if="!this.fa">This page is not available in English now!</div>
+    <div v-if="this.fa">
+      <div class="types">
+        <div class="types" v-if="this.fa">
+          <div class="type" v-for="mbtiType in this.mbtiTypes" :id="mbtiType.abr" @click="showType(mbtiType.id)">
+            <img class="image" :src="require(`@/assets/images/mbti/${mbtiType.abr}.png`)" :alt="mbtiType.abr">
+            <span class="title">{{mbtiType.title.fa}}</span>
+            <span class="abr">{{mbtiType.abr}}</span>
+          </div>
+        </div>
+        <div class="types" v-if="!this.fa">
+          <div class="type" v-for="mbtiType in this.mbtiTypes" :id="mbtiType.abr" @click="showType(mbtiType.id)">
+            <img class="image" :src="require(`@/assets/images/mbti/${mbtiType.abr}.png`)" :alt="mbtiType.abr">
+            <span class="title">{{mbtiType.title.en}}</span>
+            <span class="abr">{{mbtiType.abr}}</span>
+          </div>
         </div>
       </div>
-      <div class="types" v-if="!this.fa">
-        <div class="type" v-for="mbtiType in this.mbtiTypes" :id="mbtiType.abr" @click="showType(mbtiType.id)">
-          <img class="image" :src="require(`@/assets/images/mbti/${mbtiType.abr}.png`)" :alt="mbtiType.abr">
-          <span class="title">{{mbtiType.title.en}}</span>
-          <span class="abr">{{mbtiType.abr}}</span>
+      <div v-if="this.fa" class="bars flex flex-column">
+        <span>جزئیات شخصیت شما</span>
+        <div class="ei flex duo">
+          <span>برون گرا (E)</span>
+          <div class="bar">
+            <div class="e indicator start"><span></span></div>
+            <div class="i indicator end"><span></span></div>
+          </div>
+          <span>(I) درون گرا</span>
+        </div>
+        <div class="sn flex duo">
+          <span>حسی (S)</span>
+          <div class="bar">
+            <div class="s indicator start"><span></span></div>
+            <div class="n indicator end"><span></span> </div>
+          </div>
+          <span>(N) شهودی</span>
+        </div>
+        <div class="tf flex duo">
+          <span>منطقی (T)</span>
+          <div class="bar">
+            <div class="t indicator start"><span></span></div>
+            <div class="f indicator end"><span></span></div>
+          </div>
+          <span>(F) احساسی</span>
+        </div>
+        <div class="jp flex duo">
+          <span>قضاوت گر (J)</span>
+          <div class="bar">
+            <div class="j indicator start"><span></span></div>
+            <div class="p indicator end"><span></span></div>
+          </div>
+          <span>(P) ادراکی</span>
         </div>
       </div>
+      <div v-if="!this.fa" class="bars flex flex-column">
+        <div class="ei flex duo">
+          <span>Extraverts</span>
+          <div class="bar">
+            <div class="e indicator start"><span></span></div>
+            <div class="i indicator end"><span></span></div>
+          </div>
+          <span>Introverts</span>
+        </div>
+        <div class="sn flex duo">
+          <span>Sensing</span>
+          <div class="bar">
+            <div class="s indicator start"><span></span></div>
+            <div class="n indicator end"><span></span></div>
+          </div>
+          <span>Intuition</span>
+        </div>
+        <div class="tf flex duo">
+          <span>Thinking</span>
+          <div class="bar">
+            <div class="t indicator start"><span></span></div>
+            <div class="f indicator end"><span></span></div>
+          </div>
+          <span>Feeling</span>
+        </div>
+        <div class="jp flex duo">
+          <span>Judging</span>
+          <div class="bar">
+            <div class="j indicator start"><span></span></div>
+            <div class="p indicator end"><span></span></div>
+          </div>
+          <span>Perceiving</span>
+        </div>
+      </div>
+      <MBTIType  v-on:selectedType="showType" class="types-box" :key="`main${mbtiTypes.filter(x => x.abr === this.typeToWatch)[0].id}`"
+                :id="`main${mbtiTypes.filter(x => x.abr === this.typeToWatch)[0].id}`"
+                :typeData="mbtiTypes.filter(x => x.abr === this.typeToWatch)[0]" />
     </div>
-    <div v-if="this.fa" class="bars flex flex-column">
-      <span>جزئیات شخصیت شما</span>
-      <div class="ei flex duo">
-        <span>برون گرا (E)</span>
-        <div class="bar">
-          <div class="e indicator start"><span></span></div>
-          <div class="i indicator end"><span></span></div>
-        </div>
-        <span>(I) درون گرا</span>
-      </div>
-      <div class="sn flex duo">
-        <span>حسی (S)</span>
-        <div class="bar">
-          <div class="s indicator start"><span></span></div>
-          <div class="n indicator end"><span></span> </div>
-        </div>
-        <span>(N) شهودی</span>
-      </div>
-      <div class="tf flex duo">
-        <span>منطقی (T)</span>
-        <div class="bar">
-          <div class="t indicator start"><span></span></div>
-          <div class="f indicator end"><span></span></div>
-        </div>
-        <span>(F) احساسی</span>
-      </div>
-      <div class="jp flex duo">
-        <span>قضاوت گر (J)</span>
-        <div class="bar">
-          <div class="j indicator start"><span></span></div>
-          <div class="p indicator end"><span></span></div>
-        </div>
-        <span>(P) ادراکی</span>
-      </div>
-    </div>
-    <div v-if="!this.fa" class="bars flex flex-column">
-      <div class="ei flex duo">
-        <span>Extraverts</span>
-        <div class="bar">
-          <div class="e indicator start"><span></span></div>
-          <div class="i indicator end"><span></span></div>
-        </div>
-        <span>Introverts</span>
-      </div>
-      <div class="sn flex duo">
-        <span>Sensing</span>
-        <div class="bar">
-          <div class="s indicator start"><span></span></div>
-          <div class="n indicator end"><span></span></div>
-        </div>
-        <span>Intuition</span>
-      </div>
-      <div class="tf flex duo">
-        <span>Thinking</span>
-        <div class="bar">
-          <div class="t indicator start"><span></span></div>
-          <div class="f indicator end"><span></span></div>
-        </div>
-        <span>Feeling</span>
-      </div>
-      <div class="jp flex duo">
-        <span>Judging</span>
-        <div class="bar">
-          <div class="j indicator start"><span></span></div>
-          <div class="p indicator end"><span></span></div>
-        </div>
-        <span>Perceiving</span>
-      </div>
-    </div>
-    <MBTIType  v-on:selectedType="showType" class="types-box" :key="`main${mbtiTypes.filter(x => x.abr === this.typeToWatch)[0].id}`"
-              :id="`main${mbtiTypes.filter(x => x.abr === this.typeToWatch)[0].id}`"
-              :typeData="mbtiTypes.filter(x => x.abr === this.typeToWatch)[0]" />
   </div>
 </template>
 

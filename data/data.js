@@ -265,6 +265,17 @@ export const slider = [
     },
     imageUrl: "ISFJ.png"
   },
+  {
+    summary: {
+      fa: "تست هالند",
+      en: "Holland test"
+    },
+    detail: {
+      fa: "تست شخصیت شناسی MBTI یک تست استاندارد برای برای تعیین تیپ شخصیتی شما از بین 16 تیپ شخصیتی موجود است.",
+      en: "MBTI type test is an standard test to determine your type from 16 available types."
+    },
+    imageUrl: "ISFJ.png"
+  },
 ];
 export const colorPicker = {
   light: {

@@ -10,16 +10,16 @@
         <img v-if="question.question_image" class="question-image" :src="require(`~/assets/images/raven/${question.question_image}.jpg`)">
       </div>
       <div class="choices choices-text">
-        <div v-if="choice.choice_fa" v-for="choice in question.choices" class="choice choice-text flex">
+        <div v-if="choice.content.choice_fa" v-for="choice in question.choices" class="choice choice-text flex">
           <input class="test-input" :id="choice.id" type="radio" v-bind:value="choice.index" v-model="selected">
-          <label  class="choice-label" @click="check(question, choice)">{{choice.choice_fa}}</label>
+          <label  class="choice-label" @click="check(question, choice)">{{choice.content.choice_fa}}</label>
         </div>
       </div>
       <div class="choices choices-image">
-        <div v-if="choice.choice_image" v-for="choice in question.choices" class="choice choice-image flex">
+        <div v-if="choice.content.choice_image" v-for="choice in question.choices" class="choice choice-image flex">
           <input class="test-input" :id="choice.id" type="radio" v-bind:value="choice.index" v-model="selected">
           <label class="choice-label-image" @click="check(question, choice)">
-            <img class="image" :src="require(`~/assets/images/raven/${choice.choice_image}.jpg`)">
+            <img class="image" :src="require(`~/assets/images/raven/${choice.content.choice_image}.jpg`)">
           </label>
         </div>
       </div>

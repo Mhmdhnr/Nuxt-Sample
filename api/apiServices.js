@@ -1,8 +1,8 @@
 import axios from 'axios';
 
 
-const API_URL = 'https://flask-restful-nuxt.herokuapp.com';
-// const API_URL = 'http://127.0.0.1:5000';
+// const API_URL = 'https://flask-restful-nuxt.herokuapp.com';
+const API_URL = 'http://127.0.0.1:5000';
 let axi = axios.create({
   headers: {
     'Content-Type' : 'application/json',
@@ -83,6 +83,13 @@ export default {
       let jsonString = JSON.stringify(clientAnswers);
       console.log(jsonString);
       const url = `${API_URL}/post_mbti_response?clientAnswers=${jsonString}`;
+      return await this.toPromise(url, 'post', clientAnswers);
+    },
+    async postHollandResponse(clientAnswers) {
+      console.log(clientAnswers);
+      let jsonString = JSON.stringify(clientAnswers);
+      console.log(jsonString);
+      const url = `${API_URL}/post_holland_response?clientAnswers=${jsonString}`;
       return await this.toPromise(url, 'post', clientAnswers);
     },
   }
