@@ -1,6 +1,8 @@
 <template>
   <div class="mbti-result flex flex-column">
-    <div v-if="!this.fa">This page is not available in English now!</div>
+    <div v-if="!this.fa">
+      <EnNotAvailable />
+    </div>
     <div v-if="this.fa">
       <div class="types">
         <div class="types" v-if="this.fa">
@@ -98,9 +100,10 @@
     import {mbtiTypes} from "../data/MBTI";
     import {mapState} from 'vuex'
     import MBTIType from "../components/MBTIType";
+    import EnNotAvailable from "../components/EnNotAvailable";
     export default {
         name: "MBTIResult",
-        components: {MBTIType},
+        components: {EnNotAvailable, MBTIType},
         data() {
             return {
                 mbtiTypes: mbtiTypes,

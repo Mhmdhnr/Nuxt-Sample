@@ -8,15 +8,17 @@
         <span class="fa">FA</span>
         <span class="en">EN</span>
       </div>
-      <input type = 'checkbox' v-model="checked">
+      <input class="subject" type = 'checkbox' v-model="checked">
       <span class = 'slide'></span>
     </label>
 </template>
 
 <script>
+    import {mapState} from 'vuex'
     export default {
         name: "Toggle",
         props: ['subject'],
+        computed: mapState(['fa']),
         data() {
             return {
                 checked: false
@@ -48,6 +50,14 @@
                       this.$store.commit('fa', true)
                   }
                 }
+            },
+            fa(newFa) {
+                console.log(document.getElementsByClassName("subject"));
+            }
+        },
+        mounted() {
+            if (this.subject === "language") {
+                this.checked = !this.fa
             }
         }
     }

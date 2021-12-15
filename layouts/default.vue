@@ -14,7 +14,7 @@
     import TopHeader from "../components/TopHeader";
     export default {
         components: {TopHeader, MainHeader, Toggle},
-        computed: mapState(['fa']),
+        computed: mapState(['fa', 'theme']),
         data(){
             return{
 
@@ -37,6 +37,15 @@
             }
         },
         mounted() {
+            if(this.theme === 'light'){
+                document.documentElement.style.setProperty("--primary-color", 'hsl(220, 100%, 70%)');
+                document.documentElement.style.setProperty("--text-color", '#444');
+                document.documentElement.style.setProperty("--bg-color", '#fff');
+            } else {
+                document.documentElement.style.setProperty("--primary-color", 'hsl(220, 80%, 40%)');
+                document.documentElement.style.setProperty("--text-color", '#eee');
+                document.documentElement.style.setProperty("--bg-color", '#222');
+            }
             if(this.fa) {
                 document.body.style.direction = "rtl";
                 document.body.style.textAlign = "right";

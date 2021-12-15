@@ -1,6 +1,8 @@
 <template>
     <div>
-      <div v-if="!this.fa">This page is not available in English now!</div>
+      <div v-if="!this.fa">
+        <EnNotAvailable />
+      </div>
       <div class="flex flex-column" v-if="this.fa">
         <Slider v-bind:slider="slider[6]" />
         <Test :mustAnsweredAll="true"  v-on:submit="submit" testId="1"/>
@@ -14,9 +16,10 @@
     import {slider} from "../data/data";
     import Test from "../components/Test";
     import Slider from "../components/Slider";
+    import EnNotAvailable from "../components/EnNotAvailable";
     export default {
         name: "MBTI",
-        components: {Slider, Test},
+        components: {EnNotAvailable, Slider, Test},
         data() {
             return {
                 slider: slider,
