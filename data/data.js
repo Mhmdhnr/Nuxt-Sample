@@ -267,7 +267,7 @@ export const slider = [
   },
   {
     summary: {
-      fa: "تست هالند",
+      fa: "تست هالند. میزان علاقه خود به کارهای زیر را انتخاب کنید.",
       en: "Holland test"
     },
     detail: {
