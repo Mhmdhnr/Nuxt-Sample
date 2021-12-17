@@ -15,6 +15,7 @@
 
 <style scoped>
   .en-available {
+    margin: auto;
     width: 1080px;
     height: 50vh;
     justify-content: center;
