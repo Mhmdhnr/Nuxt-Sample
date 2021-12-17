@@ -293,9 +293,9 @@ export const slider = [
     },
     detail: {
       fa: "وقتی کارهایی را انجام می‌دهید که دوست دارید، از کار خود لذت می‌برید. کدهای تست شخصیت شناسی هالند مجموعه‌ای از انواع شخصیت است که توسط روانشناس جان ل. هالند در دهه ۱۹۷۰ ساخته‌شده است. دکتر هالند معتقد است که مردم بهترین عملکرد خود را در محیط‌های کاری‌ای نشان می‌دهند که با ترجیحات و علاقه‌مندی‌هایشان مطابقت دارد.",
-      en: "MBTI type test is an standard test to determine your type from 16 available types."
+      en: ""
     },
-    imageUrl: "ISFJ.png"
+    imageUrl: "holland.svg"
   },
 ];
 export const colorPicker = {

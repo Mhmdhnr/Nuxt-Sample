@@ -52,7 +52,9 @@
                 }
             },
             fa(newFa) {
-                console.log(document.getElementsByClassName("subject"));
+                if(this.subject === "language") {
+                    this.checked = !newFa;
+                }
             }
         },
         mounted() {
