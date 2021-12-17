@@ -5,7 +5,7 @@
     </div>
     <div class="flex flex-column" v-if="this.fa">
       <Slider v-bind:slider="slider[7]" />
-      <Test :mustAnsweredAll="false"  v-on:submit="submit" testId="3"/>
+      <Test :mustAnsweredAll="true"  v-on:submit="submit" testId="3"/>
     </div>
   </div>
 </template>
