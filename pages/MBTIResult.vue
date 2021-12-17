@@ -4,7 +4,6 @@
       <EnNotAvailable />
     </div>
     <div v-if="this.fa">
-      <div class="types">
         <div class="types" v-if="this.fa">
           <div class="type" v-for="mbtiType in this.mbtiTypes" :id="mbtiType.abr" @click="showType(mbtiType.id)">
             <img class="image" :src="require(`@/assets/images/mbti/${mbtiType.abr}.png`)" :alt="mbtiType.abr">
@@ -92,7 +91,6 @@
       <MBTIType  v-on:selectedType="showType" class="types-box" :key="`main${mbtiTypes.filter(x => x.abr === this.typeToWatch)[0].id}`"
                 :id="`main${mbtiTypes.filter(x => x.abr === this.typeToWatch)[0].id}`"
                 :typeData="mbtiTypes.filter(x => x.abr === this.typeToWatch)[0]" />
-    </div>
   </div>
 </template>
 
@@ -109,7 +107,7 @@
                 mbtiTypes: mbtiTypes,
                 random: 0,
                 // typeToWatch: 'INTP',
-                typeToWatch: this.$route.params.type,
+                typeToWatch: "INTP",
             }
         },
         computed: mapState(['fa']),
@@ -124,6 +122,9 @@
             }
         },
         mounted() {
+            if (!this.$route.params.type) {
+                this.$router.push({name: 'MBTI'})
+            }
             // this.typeToWatch = 'INTP';
             this.typeToWatch = this.$route.params.type;
             let _this = this;
@@ -224,6 +225,8 @@
     scroll-margin: 20px;
   }
   .types {
+    width: max-content;
+    margin: auto;
     display: grid;
     grid-template-columns: auto auto auto auto;
   }
@@ -306,9 +309,11 @@
     border-radius: 10px 0 0 10px;
   }
   .start > span {
+    display: none;
     margin: auto 3px auto auto;
   }
   .end > span {
+    display: none;
     margin: auto auto auto 3px;
   }
   @media screen and (max-width: 864px) {

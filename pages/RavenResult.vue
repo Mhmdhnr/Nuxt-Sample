@@ -36,10 +36,10 @@
       </div>
     </div>
     <div class="con flex flex-column">
-      <span v-if="this.fa">شما به {{this.$route.params.correct}} سوال از 60 سوال پاسخ درست دادید.</span>
-      <span v-if="!this.fa">You have answered correctly to {{this.$route.params.correct}} questions from 60 questions.</span>
-      <span class="iq-span-con" v-if="this.fa & this.$route.params.correct.toString() === '60'">تبریک!!! ضریب هوشی محاسبه شده، ماکزیمم مقدار قابل محاسبه توسط این آزمون برای سن شما میباشد.</span>
-      <span class="iq-span-con" v-if="!this.fa & this.$route.params.correct.toString() === '60'">Congratulations!!! The calculate IQ is the maximum value which can be calculate by this test for your age.</span>
+      <span v-if="this.fa">شما به {{this.correct}} سوال از 60 سوال پاسخ درست دادید.</span>
+      <span v-if="!this.fa">You have answered correctly to {{this.correct}} questions from 60 questions.</span>
+      <span class="iq-span-con" v-if="this.fa & this.correct.toString() === '60'">تبریک!!! ضریب هوشی محاسبه شده، ماکزیمم مقدار قابل محاسبه توسط این آزمون برای سن شما میباشد.</span>
+      <span class="iq-span-con" v-if="!this.fa & this.correct.toString() === '60'">Congratulations!!! The calculate IQ is the maximum value which can be calculate by this test for your age.</span>
     </div>
   </div>
 </template>
@@ -53,7 +53,15 @@
             fa (newValue) {
             }
         },
+        data() {
+          return {
+              correct: this.$route.params.correct? this.$route.params.correct: 0,
+          }
+        },
         mounted() {
+            if (!this.$route.params.iq) {
+                this.$router.push({name: 'Raven'})
+            }
             let range;
             // let iq = 149;
             let iq = this.$route.params.iq;

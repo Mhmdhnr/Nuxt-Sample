@@ -98,6 +98,9 @@
         components: {TypingMachine, EnNotAvailable},
         computed: mapState(['fa']),
         mounted() {
+            if (!this.$route.params.R) {
+                this.$router.push({name: 'Holland'})
+            }
             let base = 500;
             if(window.screen.width <= 864){
                 base = 350;

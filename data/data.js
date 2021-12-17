@@ -90,16 +90,24 @@ export const menu = [
       {
         id:"sub21",
         title : {
-          fa: "MBTI",
-          en: "MBTI"
+          fa: "تست شخصیت MBTI",
+          en: "MBTI Type Test"
         },
         link: "MBTI",
       },
       {
         id:"sub22",
         title : {
-          fa: "Raven",
-          en: "Raven"
+          fa: "تست هالند",
+          en: "Holland Test"
+        },
+        link: "Holland",
+      },
+      {
+        id:"sub22",
+        title : {
+          fa: "تست هوش ریون",
+          en: "Raven IQ Test"
         },
         link: "Raven",
       }
@@ -184,6 +192,19 @@ export const workCards = [
         en: "MBTI type test"
       },
       pageLink: "/MBTI",
+    }
+  },
+  {
+    id: "work7",
+    front: {
+      imageUrl: "holland.svg"
+    },
+    back: {
+      title: {
+        fa: "تست هالند",
+        en: "Holland Test"
+      },
+      pageLink: "/Holland",
     }
   },
 ];

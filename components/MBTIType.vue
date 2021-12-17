@@ -122,13 +122,21 @@
               let image = document.getElementsByClassName('image')[16];
               if (newValue) {
                   sentence.style.right = 'unset';
-                  sentence.style.left = '150px';
+                  if(window.screen.width <= 864) {
+                      sentence.style.left = '90px';
+                  } else {
+                      sentence.style.left = '150px';
+                  }
                   sentence.style.clipPath = 'polygon(100% 0%,100% 100%,10% 100%,10% 50%,0% 70%,10% 70%,10% 0%)';
                   sentence.style.padding = '1vh 1vw 1vh calc(1vw + 5%)';
                   image.style.transform = 'scaleX(1)'
               } else {
                   sentence.style.left = 'unset';
-                  sentence.style.right = '150px';
+                  if(window.screen.width <= 864) {
+                      sentence.style.right = '90px';
+                  } else {
+                      sentence.style.right = '150px';
+                  }
                   sentence.style.clipPath = 'polygon(0% 0%,0% 100%,90% 100%,90% 50%,100% 70%,90% 70%,90% 0%)';
                   sentence.style.padding = '1vh calc(1vw + 5%) 1vh 1vw';
                   image.style.transform = 'scaleX(-1)'
@@ -152,16 +160,23 @@
             let image = document.getElementsByClassName('image')[16];
             if (this.fa) {
                 sentence.style.right = 'unset';
-                sentence.style.left = '150px';
+                if(window.screen.width <= 864) {
+                    sentence.style.left = '90px';
+                } else {
+                    sentence.style.left = '150px';
+                }
                 sentence.style.clipPath = 'polygon(100% 0%,100% 100%,10% 100%,10% 50%,0% 70%,10% 70%,10% 0%)';
                 sentence.style.padding = '1vh 1vw 1vh calc(1vw + 5%)';
                 image.style.transform = 'scaleX(1)'
             } else {
                 sentence.style.left = 'unset';
-                sentence.style.right = '150px';
+                if(window.screen.width <= 864) {
+                    sentence.style.right = '90px';
+                } else {
+                    sentence.style.right = '150px';
+                }
                 sentence.style.clipPath = 'polygon(0% 0%,0% 100%,90% 100%,90% 50%,100% 70%,90% 70%,90% 0%)';
                 sentence.style.padding = '1vh calc(1vw + 5%) 1vh 1vw';
-                console.log(image)
                 image.style.transform = 'scaleX(-1)'
             }
         },
@@ -307,7 +322,7 @@
       font-size: 0.75em;
     }
     .sentence {
-      left:90px;
+      /*left:90px;*/
       top: 0;
       width: 120px;
       font-size: 0.6em;
@@ -321,7 +336,8 @@
     }
     .typing-span {
       font-size: 0.7em;
-    }.types {
+    }
+    .types {
        padding-top: 1vh;
      }
     .type {
