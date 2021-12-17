@@ -4,7 +4,14 @@
         <EnNotAvailable />
       </div>
       <div v-if="this.fa" class="holland-result flex flex-column">
-        <div class="hexagon"></div>
+        <div class="hexagon">
+        </div>
+        <div class="hexagon-r">واقع گرا</div>
+        <div class="hexagon-i">جستجوگر</div>
+        <div class="hexagon-a">هنری</div>
+        <div class="hexagon-s">اجتماعی</div>
+        <div class="hexagon-e">جسور و سازنده</div>
+        <div class="hexagon-c">قاعده مند</div>
         <div class="r triangle flex flex-column">
           <span class="value"></span>
           <div class="details flex flex-column">
@@ -101,7 +108,7 @@
             let s = this.$route.params.S;
             let e = this.$route.params.E;
             let c = this.$route.params.C;
-            // let r = 48;
+            // let r = 40;
             // let i = 20;
             // let a = 15;
             // let s = 35;
@@ -167,6 +174,46 @@
     background-color: var(--primary-color);
     opacity: 0.5;
   }
+  .hexagon-r, .hexagon-i, .hexagon-a, .hexagon-s, .hexagon-e, .hexagon-c {
+    opacity: 0;
+    display: flex;
+    justify-content: center;
+    width: 500px;
+    height: 600px;
+    position: absolute;
+    color: var(--primary-color);
+    font-size: 1.3em;
+  }
+  .hexagon-r{
+    transform: rotateZ(30deg);
+    color: #ff5082;
+    animation: 400ms opacity ease-in-out forwards 500ms;
+  }
+  .hexagon-i{
+    transform: rotateZ(90deg);
+    color: #577bff;
+    animation: 400ms opacity ease-in-out 1500ms forwards;
+  }
+  .hexagon-a{
+    transform: rotateZ(150deg);
+    color: #ff5356;
+    animation: 400ms opacity ease-in-out 2500ms forwards;
+  }
+  .hexagon-s{
+    transform: rotateZ(210deg);
+    color: #37e67f;
+    animation: 400ms opacity ease-in-out 3500ms forwards;
+  }
+  .hexagon-e{
+    transform: rotateZ(270deg);
+    color: #e061df;
+    animation: 400ms opacity ease-in-out 4500ms forwards;
+  }
+  .hexagon-c{
+    transform: rotateZ(330deg);
+    color: #ff6f3c;
+    animation: 400ms opacity ease-in-out 5500ms forwards;
+  }
   .details {
     display: none;
     justify-content: center;
@@ -221,6 +268,14 @@
     background-color: #ff6f3c;
     transform: rotateZ(330deg);
   }
+  @keyframes opacity {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
   @media screen and (max-width: 864px) {
     .value {
       margin-bottom: 75%;
@@ -231,6 +286,11 @@
       width: 350px;
       height: 403px;
     }
+    .hexagon-r, .hexagon-i, .hexagon-a, .hexagon-s, .hexagon-e, .hexagon-c {
+        width: 350px;
+        height: 410px;
+        font-size: 1em;
+      }
     .details > span {
       font-size: 1.2em;
     }
