@@ -90,8 +90,8 @@ export const menu = [
       {
         id:"sub21",
         title : {
-          fa: "تست شخصیت MBTI",
-          en: "MBTI Type Test"
+          fa: "تست MBTI",
+          en: "MBTI Test"
         },
         link: "MBTI",
       },
@@ -104,10 +104,18 @@ export const menu = [
         link: "Holland",
       },
       {
-        id:"sub22",
+        id:"sub23",
         title : {
-          fa: "تست هوش ریون",
-          en: "Raven IQ Test"
+          fa: "تست اُکانر",
+          en: "O'connor Test"
+        },
+        link: "Holland",
+      },
+      {
+        id:"sub24",
+        title : {
+          fa: "تست ریون",
+          en: "Raven Test"
         },
         link: "Raven",
       }
@@ -207,6 +215,19 @@ export const workCards = [
       pageLink: "/Holland",
     }
   },
+  {
+    id: "work8",
+    front: {
+      imageUrl: "johnson.svg"
+    },
+    back: {
+      title: {
+        fa: "تست اُکانر",
+        en: "O'connor Test"
+      },
+      pageLink: "/Johnson",
+    }
+  },
 ];
 export const slider = [
   {
@@ -296,6 +317,17 @@ export const slider = [
       en: ""
     },
     imageUrl: "holland.svg"
+  },
+  {
+    summary: {
+      fa: "تست استعدادیابی جانسون اکانر. قابل استفاده برای تعیین میزان استعداد شغلی در افراد.",
+      en: "Holland test"
+    },
+    detail: {
+      fa: "وقتی کارهایی را انجام می‌دهید که دوست دارید، از کار خود لذت می‌برید. کدهای تست شخصیت شناسی هالند مجموعه‌ای از انواع شخصیت است که توسط روانشناس جان ل. هالند در دهه ۱۹۷۰ ساخته‌شده است. دکتر هالند معتقد است که مردم بهترین عملکرد خود را در محیط‌های کاری‌ای نشان می‌دهند که با ترجیحات و علاقه‌مندی‌هایشان مطابقت دارد.",
+      en: ""
+    },
+    imageUrl: "johnson.svg"
   },
 ];
 export const colorPicker = {

@@ -167,13 +167,13 @@
   }
   @media screen and (max-width: 864px){
     .message {
-      font-size: 1.5em;
+      font-size: 1.3em;
     }
     .loading-message {
-      margin: 3vh;
+      margin: 1vh;
     }
     .loading {
-      padding: 2vh 2vw;
+      padding: 1vh 2vw;
     }
     .loader {
       width: 300px;

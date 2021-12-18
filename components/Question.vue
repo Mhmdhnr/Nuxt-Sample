@@ -80,7 +80,6 @@
     padding: 0;
   }
   .question-main{
-
     padding: 2vh 0;
   }
   .question-main-text {

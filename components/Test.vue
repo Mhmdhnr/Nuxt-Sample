@@ -84,10 +84,14 @@
                 }
                 this.choices_array[questionIndex - 1] = choiceIndex;
                 this.allAnswered = this.choices_array.filter(no => no !== 0).length === this.test.questions.length;
+                let submit = document.getElementById('submit');
                 if (!this.allAnswered) {
+                    if(this.mustAnsweredAll) {
+                        submit.enabled = false;
+                        submit.disabled = true;
+                    }
                     this.unAnswered();
                 } else {
-                    let submit = document.getElementById('submit');
                     submit.disabled = false;
                     submit.enabled = true;
                     submit.scrollIntoView({ behavior: 'smooth', block: 'center' });

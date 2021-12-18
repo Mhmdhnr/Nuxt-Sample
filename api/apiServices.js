@@ -92,5 +92,12 @@ export default {
       const url = `${API_URL}/post_holland_response?clientAnswers=${jsonString}`;
       return await this.toPromise(url, 'post', clientAnswers);
     },
+    async postJohnsonResponse(clientAnswers) {
+      console.log(clientAnswers);
+      let jsonString = JSON.stringify(clientAnswers);
+      console.log(jsonString);
+      const url = `${API_URL}/post_johnson_response?clientAnswers=${jsonString}`;
+      return await this.toPromise(url, 'post', clientAnswers);
+    },
   }
 }

@@ -9,11 +9,12 @@
 <!--      <FlipCard duration="500" v-bind:cardData="workCards[4]"/>-->
 <!--    </Carousel3D>-->
     <Carousel3dFlat class="carousel-3d-flat-main">
+      <FlipCard duration="500" v-bind:cardData="workCards[6]" class="carousel-element"/>
       <FlipCard duration="500" v-bind:cardData="workCards[4]" class="carousel-element"/>
-      <FlipCard duration="500" v-bind:cardData="workCards[3]" class="carousel-element"/>
       <FlipCard duration="500" v-bind:cardData="workCards[0]" class="carousel-element"/>
       <FlipCard duration="500" v-bind:cardData="workCards[1]" class="carousel-element"/>
       <FlipCard duration="500" v-bind:cardData="workCards[2]" class="carousel-element"/>
+      <FlipCard duration="500" v-bind:cardData="workCards[3]" class="carousel-element"/>
       <FlipCard duration="500" v-bind:cardData="workCards[5]" class="carousel-element"/>
 <!--      <FlipCard duration="500" v-bind:cardData="workCards[5]"/>-->
     </Carousel3dFlat>

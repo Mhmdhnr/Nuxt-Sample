@@ -6,80 +6,16 @@
       <div v-if="this.fa" class="holland-result flex flex-column">
         <div class="hexagon">
         </div>
-        <div class="hexagon-r">واقع گرا</div>
-        <div class="hexagon-i">جستجوگر</div>
-        <div class="hexagon-a">هنری</div>
-        <div class="hexagon-s">اجتماعی</div>
-        <div class="hexagon-e">جسور و سازنده</div>
-        <div class="hexagon-c">قاعده مند</div>
-        <div class="r triangle flex flex-column">
+        <img src="~/assets/images/dividerHolland.svg" alt="" class="divider">
+        <div v-for="(hollandType, index) in this.hollandTypes" :class="`hexagon-${hollandType.abr}`">{{hollandType.title.fa}}</div>
+        <div v-for="(hollandType, index) in this.hollandTypes" :class="hollandType.abr" class="triangle flex flex-column">
           <span class="value"></span>
           <div class="details flex flex-column">
-            <span>واقع گرا</span>
+            <span>{{hollandType.title.fa}}</span>
             <br>
             <div class="des">
-              <TypingMachine subject="holland1" delay="800" speed="1500" :forwards="true">
-                <span>تیپ شخصیت واقع گرایی در تست استعدادسنجی هالند به افرادی تعلق می‌گیرد که عملگرا هستند و در واقع استعدادشان کار با ابزار آلات و ماشین آلات است. این افراد کار های فیزیکی و دشوار را به خوبی انجام می‌دهند. بسیاری از افراد که در این گروه قرار دارند به کارکردن در محیط های باز تمایل دارند و خیلی با کاغذ بازی و یا کار کردن با دیگران علاقه ای ندارند و ارتباط برقرار نمی‌کنند! مشاغل واقع گرایانه اغلب فعالیت هایی را با کار های عملی و راه حل های دستی را شامل می‌شود.</span>
-              </TypingMachine>
-            </div>
-          </div>
-        </div>
-        <div class="i triangle flex flex-column">
-          <span class="value"></span>
-          <div class="details flex flex-column">
-            <span>جستجوگر</span>
-            <br>
-            <div class="des">
-              <TypingMachine subject="holland2" delay="800" speed="1500" :forwards="true">
-                <span>ویژگی های شخصیتی مثل: انجام کارهای عملی، فکری، اکتشافی، اندیشمندانه و افرادی که تفکر تحلیلی و علمی دارند در تیپ شخصیتی جستجو گر معرفی می‌شود. مشاغل جستجو گر معمولاً شامل کار با ایده ها بوده و این گونه از مشاغل به دنبال رسیدن به حقیقت و حل کردن ذهنی مسائل هستند.</span>
-              </TypingMachine>
-            </div>
-          </div>
-        </div>
-        <div class="a triangle flex flex-column">
-          <span class="value"></span>
-          <div class="details flex flex-column">
-            <span>هنری</span>
-            <br>
-            <div class="des">
-              <TypingMachine subject="holland3" delay="800" speed="1500" :forwards="true">
-                <span>این افراد در شناسایی و بیان خصوصیات و ویژگی های خود مهارت دارند. کمتر خودشان را کنترل می‌کنند و احساساتشان را به راحتی بیان می‌کنند. مشاغل هنری معمولاً شامل کار با الگوهای مختلف، طرح‌ها و اشکال است. افرادی که درگیر این‌گونه کارها هستند اغلب احوالات خود را در کار به راحتی بیان می‌کنند.</span>
-              </TypingMachine>
-            </div>
-          </div>
-        </div>
-        <div class="s triangle flex flex-column">
-          <span class="value"></span>
-          <div class="details flex flex-column">
-            <span>اجتماعی</span>
-            <br>
-            <div class="des">
-              <TypingMachine subject="holland4" delay="800" speed="1500" :forwards="true">
-                <span>افرادی با ویژگی شخصیتی حمایت گری، درمان، مراقبت هستند و با انجام کارهایی مانند مادری کردن، باغبانی و امداد گری احساس رضایت می‌کنند. مهارت های کلامی بالایی دارند و دوست دارند با مردم کار کنند تا آنها را رشد دهند و مطلع و آگاه سازند.</span>
-              </TypingMachine>
-            </div>
-          </div>
-        </div>
-        <div class="e triangle flex flex-column">
-          <span class="value"></span>
-          <div class="details flex flex-column">
-            <span>جسور و سازنده</span>
-            <br>
-            <div class="des">
-              <TypingMachine subject="holland5" delay="800" speed="1500" :forwards="true">
-                <span>این افراد قدرت رهبری، متقاعد کردن و قرار گرفتن در محیط‌ های رقابتی و توانایی تصمیم گیری های مهم را دارند. معمولاً این افراد ریسک پذیر بوده و در کارهای تجاری می توانند موفقیت های فراوانی کسب کنند. شروع کردن و به سرانجام رساندن کارها ازجمله مواردی است که این گونه افراد به خوبی آن را انجام می‌دهند.</span>
-              </TypingMachine>
-            </div>
-          </div>
-        </div>
-        <div class="c triangle flex flex-column">
-          <span class="value"></span>
-          <div class="details flex flex-column">
-            <span>قاعده مند</span>
-            <br>
-            <div class="des">
-              <TypingMachine subject="holland6" delay="800" speed="1500" :forwards="true">
-                <span>این افراد جرئی گرا هستند و می‌توانند کارهای سازمانی و دفتری را به خوبی انجام می‌دهند. آن ها بیش تر از اینکه با ایده ها سر و کار داشته باشند، با داده‌ها، جزئیات و اطلاعات کار می‌کنند. این تیپ افراد معمولاً خط مشی واضحی دارند که از آن پیروی می‌کنند.</span>
+              <TypingMachine :subject="hollandType.id" delay="800" speed="2000" :forwards="true">
+                <span>{{hollandType.shortDes.fa}}</span>
               </TypingMachine>
             </div>
           </div>
@@ -90,6 +26,7 @@
 </template>
 
 <script>
+    import {hollandTypes} from "../data/Holland.js";
     import {mapState} from 'vuex'
     import EnNotAvailable from "../components/EnNotAvailable";
     import TypingMachine from "../components/TypingMachine";
@@ -97,13 +34,18 @@
         name: "HollandResult",
         components: {TypingMachine, EnNotAvailable},
         computed: mapState(['fa']),
+        data () {
+            return {
+                hollandTypes: hollandTypes
+            }
+        },
         mounted() {
             if (!this.$route.params.R) {
                 this.$router.push({name: 'Holland'})
             }
             let base = 500;
             if(window.screen.width <= 864){
-                base = 350;
+                base = 320;
             }
             let r = this.$route.params.R;
             let i = this.$route.params.I;
@@ -162,7 +104,8 @@
     clip-path: polygon(21% 0, 79% 0, 50% 50%);
     background-color: var(--bg-color);
     justify-content: center;
-    transition: all 800ms;
+    transition: all 800ms ease-in-out;
+    z-index: 11;
   }
   .value {
     margin-bottom: 75%;
@@ -175,6 +118,13 @@
     position: absolute;
     clip-path: polygon(50% 0, 100% 25%, 100% 75%, 50% 100%, 0 75%, 0 25%);
     background-color: var(--primary-color);
+    opacity: 0.5;
+  }
+  .divider {
+    position: absolute;
+    width: 700px;
+    height: 700px;
+    z-index: 10;
     opacity: 0.5;
   }
   .hexagon-r, .hexagon-i, .hexagon-a, .hexagon-s, .hexagon-e, .hexagon-c {
@@ -286,12 +236,12 @@
       color: var(--bg-color)
     }
     .hexagon {
-      width: 350px;
-      height: 403px;
+      width: 320px;
+      height: 367px;
     }
     .hexagon-r, .hexagon-i, .hexagon-a, .hexagon-s, .hexagon-e, .hexagon-c {
-        width: 350px;
-        height: 410px;
+        width: 320px;
+        height: 367px;
         font-size: 1em;
       }
     .details > span {
