@@ -192,7 +192,7 @@ export const workCards = [
   {
     id: "work6",
     front: {
-      imageUrl: "ISFJ.png"
+      imageUrl: "INTP.png"
     },
     back: {
       title: {
@@ -305,7 +305,7 @@ export const slider = [
       fa: "تست شخصیت شناسی MBTI یک تست استاندارد برای برای تعیین تیپ شخصیتی شما از بین 16 تیپ شخصیتی موجود است.",
       en: "MBTI type test is an standard test to determine your type from 16 available types."
     },
-    imageUrl: "ISFJ.png"
+    imageUrl: "INTP.png"
   },
   {
     summary: {
