@@ -249,62 +249,62 @@
   .circle-1{
     transform: rotate(15deg);
     color: hsl(0, 80%, 50%);
-    animation: 200ms opacity ease-in-out forwards 1000ms;
+    animation: 200ms opacity ease-in-out forwards 500ms;
   }
   .circle-2{
     transform: rotate(45deg);
     color: hsl(30, 80%, 50%);
-    animation: 200ms opacity ease-in-out forwards 1500ms;
+    animation: 200ms opacity ease-in-out forwards 1000ms;
   }
   .circle-3{
     transform: rotate(75deg);
     color: hsl(60, 80%, 50%);
-    animation: 200ms opacity ease-in-out forwards 2000ms;
+    animation: 200ms opacity ease-in-out forwards 1500ms;
   }
   .circle-4{
     transform: rotate(105deg);
     color: hsl(90, 80%, 50%);
-    animation: 200ms opacity ease-in-out forwards 2500ms;
+    animation: 200ms opacity ease-in-out forwards 2000ms;
   }
   .circle-5{
     transform: rotate(135deg);
     color: hsl(120, 80%, 50%);
-    animation: 200ms opacity ease-in-out forwards 3000ms;
+    animation: 200ms opacity ease-in-out forwards 2500ms;
   }
   .circle-6{
     transform: rotate(165deg);
     color: hsl(150, 80%, 50%);
-    animation: 200ms opacity ease-in-out forwards 3500ms;
+    animation: 200ms opacity ease-in-out forwards 3000ms;
   }
   .circle-7{
     transform: rotate(195deg);
     color: hsl(180, 80%, 50%);
-    animation: 200ms opacity ease-in-out forwards 4000ms;
+    animation: 200ms opacity ease-in-out forwards 3500ms;
   }
   .circle-8{
     transform: rotate(225deg);
     color: hsl(210, 80%, 50%);
-    animation: 200ms opacity ease-in-out forwards 4500ms;
+    animation: 200ms opacity ease-in-out forwards 4000ms;
   }
   .circle-9{
     transform: rotate(255deg);
     color: hsl(240, 80%, 50%);
-    animation: 200ms opacity ease-in-out forwards 5000ms;
+    animation: 200ms opacity ease-in-out forwards 4500ms;
   }
   .circle-10{
     transform: rotate(285deg);
     color: hsl(270, 80%, 50%);
-    animation: 200ms opacity ease-in-out forwards 5500ms;
+    animation: 200ms opacity ease-in-out forwards 5000ms;
   }
   .circle-11{
     transform: rotate(315deg);
     color: hsl(300, 80%, 50%);
-    animation: 200ms opacity ease-in-out forwards 6000ms;
+    animation: 200ms opacity ease-in-out forwards 5500ms;
   }
   .circle-12{
     transform: rotate(345deg);
     color: hsl(330, 80%, 50%);
-    animation: 200ms opacity ease-in-out forwards 6500ms;
+    animation: 200ms opacity ease-in-out forwards 6000ms;
   }
   @keyframes opacity {
     from {
