@@ -1,5 +1,5 @@
 <template>
-    <div class="typing-machine" :id="subject">
+    <div class="typing-machine" :id="subject" @click="play()">
       <slot />
       <span :id="subject+'cursor'" class="cursor">|</span>
     </div>
@@ -12,11 +12,14 @@
         data(){
             return {
                 typeStarted: false,
+                audio: null,
             }
         },
         mounted() {
+            let audio1 = new Audio("https://www.fesliyanstudios.com/soundeffects/2019-01-24/c/fast-pace-Typing-on-mechanical-keyboard-1-www.FesliyanStudios.com.mp3");
+            audio1.volume = 0.4;
+            audio1.currentTime = 4;
             let main = document.getElementById(this.subject);
-            console.log(this.hideCursor)
             if (this.hideCursor) {
                 document.getElementById(this.subject + 'cursor').innerText = ''
             }
@@ -38,18 +41,22 @@
                     setTimeout(function () {
                         let typingInterval = setInterval(() => {
                             span.innerText += text[i];
+                            audio1.play();
                             hidden.innerText = hidden.innerText.substring(1);
                             i++;
                             if (i === text.length) {
                                 clearInterval(typingInterval);
+                                audio1.pause();
                                 // document.getElementById(sub + 'cursor').innerText = ''
                             }
                         }, interval);
                     }, parseInt(this.delay));
+                } else {
+                    audio1.pause();
                 }
             });
             observer.observe(document.getElementById(this.subject));
-        }
+        },
     }
 </script>
 
