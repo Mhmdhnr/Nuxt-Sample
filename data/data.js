@@ -109,7 +109,7 @@ export const menu = [
           fa: "تست اُکانر",
           en: "O'connor Test"
         },
-        link: "Holland",
+        link: "Johnson",
       },
       {
         id:"sub24",
