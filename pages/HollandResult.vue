@@ -74,15 +74,15 @@
                     elements[j].style.height = base * 1.152 + "px";
                 };
                 elements[j].onmouseleave = function (){
-                    elements[j].style.width = (values[j] / 48 * base) + 'px';
-                    elements[j].style.height = (values[j]  / 48 * base) + 'px';
+                    elements[j].style.width = (values[j] / 40 * base) + 'px';
+                    elements[j].style.height = (values[j]  / 40 * base) + 'px';
                 };
             }
             for (let j = 0; j < 6; j++){
                 setTimeout(() => {
-                    elements[j].style.height = (values[j] / 48 * base) + 'px';
-                    elements[j].style.width = (values[j] / 48 * base) + 'px';
-                    elements[j].children[0].innerText = Math.floor(values[j] / 48 * 100) + "%";
+                    elements[j].style.height = (values[j] / 40 * base) + 'px';
+                    elements[j].style.width = (values[j] / 40 * base) + 'px';
+                    elements[j].children[0].innerText = Math.floor(values[j] / 40 * 100) + "%";
                 }, j * 1000)
             }
         }
