@@ -1,13 +1,6 @@
 <template>
   <div class="flex flex-column">
     <Slider v-bind:slider="slider[0]" />
-<!--    <Carousel3D class="carousel-3d-main">-->
-<!--      <FlipCard duration="500" v-bind:cardData="workCards[0]"/>-->
-<!--      <FlipCard duration="500" v-bind:cardData="workCards[1]"/>-->
-<!--      <FlipCard duration="500" v-bind:cardData="workCards[2]"/>-->
-<!--      <FlipCard duration="500" v-bind:cardData="workCards[3]"/>-->
-<!--      <FlipCard duration="500" v-bind:cardData="workCards[4]"/>-->
-<!--    </Carousel3D>-->
     <Carousel3dFlat class="carousel-3d-flat-main">
       <FlipCard duration="500" v-bind:cardData="workCards[6]" class="carousel-element"/>
       <FlipCard duration="500" v-bind:cardData="workCards[4]" class="carousel-element"/>
@@ -16,16 +9,8 @@
       <FlipCard duration="500" v-bind:cardData="workCards[2]" class="carousel-element"/>
       <FlipCard duration="500" v-bind:cardData="workCards[3]" class="carousel-element"/>
       <FlipCard duration="500" v-bind:cardData="workCards[5]" class="carousel-element"/>
-<!--      <FlipCard duration="500" v-bind:cardData="workCards[5]"/>-->
     </Carousel3dFlat>
-<!--    <Carousel3dFlat class="carousel-3d-flat-main">-->
-<!--      <Flip3DCard duration="500"  v-bind:cardData="workCards[0]"/>-->
-<!--      <Flip3DCard duration="500" v-bind:cardData="workCards[1]"/>-->
-<!--      <Flip3DCard duration="500" v-bind:cardData="workCards[2]"/>-->
-<!--      <Flip3DCard duration="500" v-bind:cardData="workCards[3]"/>-->
-<!--      <Flip3DCard duration="500" v-bind:cardData="workCards[4]"/>-->
-<!--    </Carousel3dFlat>-->
-<!--    <WorksCard />-->
+
     <Links class="links"/>
   </div>
 </template>
@@ -40,9 +25,10 @@
     import FlipCard from "../components/FlipCard";
     import Carousel3dFlat from "../components/Carousel3dFlat";
     import Flip3DCard from "../components/Flip3DCard";
+    import Loading from "../components/Loading";
     export default {
         name: "Home",
-        components: {Flip3DCard, Carousel3dFlat, FlipCard, Carousel3D, WorksCard, Links, Slider},
+        components: {Loading, Flip3DCard, Carousel3dFlat, FlipCard, Carousel3D, WorksCard, Links, Slider},
         data () {
             return {
                 slider: slider,

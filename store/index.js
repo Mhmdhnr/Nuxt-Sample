@@ -3,8 +3,8 @@ export const state = () => ({
   api: '',
   theme: 'light',
   loadingMessage: {
-    fa: '',
-    en: '',
+    fa: 'در حال بارگزاری...',
+    en: 'Loading...',
   },
   loadingMessageEn: '',
 

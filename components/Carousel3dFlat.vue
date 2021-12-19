@@ -182,11 +182,18 @@
     /*height: 5vh;*/
   }
   .btn {
-    background-color: var(--primary-color);
-    color: var(--bg-color);
+    background-color: var(--bg-color);
+    color: var(--primary-color);
     width: 50px;
     height: 50px;
-    border-radius: 50%;
+    border-radius: 10px;
+    border: 2px solid var(--primary-color);
+    transition: all 50ms;
+  }
+  .btn:hover {
+    background-color: var(--primary-color);
+    color: var(--bg-color);
+    transition: all 50ms;
   }
   .next {
     position: absolute;
@@ -198,7 +205,6 @@
     justify-self: flex-end;
     left: -400px;
   }
-
   .scene {
     position: relative;
     width: 100%;
