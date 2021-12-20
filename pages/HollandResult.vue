@@ -55,10 +55,10 @@
             let c = this.$route.params.C;
             // let r = 40;
             // let i = 20;
-            // let a = 15;
+            // let a = 22;
             // let s = 35;
             // let e = 30;
-            // let c = 42;
+            // let c = 28;
             let rElement = document.getElementsByClassName('r')[0];
             let iElement = document.getElementsByClassName('i')[0];
             let aElement = document.getElementsByClassName('a')[0];
@@ -104,7 +104,7 @@
     clip-path: polygon(21% 0, 79% 0, 50% 50%);
     background-color: var(--bg-color);
     justify-content: center;
-    transition: all 800ms ease-in-out;
+    transition: all 400ms ease-in-out;
     z-index: 11;
   }
   .value {
@@ -118,7 +118,7 @@
     position: absolute;
     clip-path: polygon(50% 0, 100% 25%, 100% 75%, 50% 100%, 0 75%, 0 25%);
     background-color: var(--primary-color);
-    opacity: 0.5;
+    opacity: 0.3;
   }
   .divider {
     position: absolute;
@@ -177,7 +177,6 @@
     font-size: 1.5em;
   }
   .r:hover, .i:hover, .a:hover, .s:hover, .e:hover, .c:hover{
-    /*transform: scaleY(2) scaleX(1.72) rotateZ(360deg);*/
     transform: rotateZ(360deg);
     transition: all 500ms;
     clip-path: polygon(50% 0, 100% 25%, 100% 75%, 50% 100%, 0 75%, 0 25%);

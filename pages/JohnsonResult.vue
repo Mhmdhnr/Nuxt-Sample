@@ -57,17 +57,17 @@
             let a10 = this.$route.params.a10;
             let a11 = this.$route.params.a11;
             let a12 = this.$route.params.a12;
-            // let a1 = 50;
-            // let a2 = 53;
+            // let a1 = 68;
+            // let a2 = 79;
             // let a3 = 75;
             // let a4 = 89;
-            // let a5 = 25;
+            // let a5 = 58;
             // let a6 = 48;
-            // let a7 = 38;
-            // let a8 = 15;
+            // let a7 = 91;
+            // let a8 = 48;
             // let a9 = 75;
             // let a10 = 68;
-            // let a11 = 56;
+            // let a11 = 89;
             // let a12 = 43;
             let element1 = document.getElementsByClassName('arc-1')[0];
             let element2 = document.getElementsByClassName('arc-2')[0];
@@ -126,7 +126,7 @@
     height: 700px;
     border-radius: 50%;
     background-color: var(--primary-color);
-    opacity: 0.5;
+    opacity: 0.3;
   }
   .divider {
     position: absolute;
