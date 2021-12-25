@@ -13,7 +13,7 @@
           <span>{{johnsonType.title.fa}}</span>
           <br>
           <div class="des">
-            <TypingMachine :subject="johnsonType.id" delay="800" speed="2000" :forwards="true">
+            <TypingMachine :subject="johnsonType.id" delay="800" speed="2000" :forwards="true" :sound="true">
               <span>{{johnsonType.shortDes.fa}}</span>
             </TypingMachine>
           </div>
@@ -38,37 +38,37 @@
             }
         },
         mounted() {
-            if (!this.$route.params.a1) {
-                this.$router.push({name: 'Johnson'})
-            }
+            // if (!this.$route.params.a1) {
+            //     this.$router.push({name: 'Johnson'})
+            // }
             let base = 700;
             if(window.screen.width <= 864){
                 base = 320;
             }
-            let a1 = this.$route.params.a1;
-            let a2 = this.$route.params.a2;
-            let a3 = this.$route.params.a3;
-            let a4 = this.$route.params.a4;
-            let a5 = this.$route.params.a5;
-            let a6 = this.$route.params.a6;
-            let a7 = this.$route.params.a7;
-            let a8 = this.$route.params.a8;
-            let a9 = this.$route.params.a9;
-            let a10 = this.$route.params.a10;
-            let a11 = this.$route.params.a11;
-            let a12 = this.$route.params.a12;
-            // let a1 = 68;
-            // let a2 = 79;
-            // let a3 = 75;
-            // let a4 = 89;
-            // let a5 = 58;
-            // let a6 = 48;
-            // let a7 = 91;
-            // let a8 = 48;
-            // let a9 = 75;
-            // let a10 = 68;
-            // let a11 = 89;
-            // let a12 = 43;
+            // let a1 = this.$route.params.a1;
+            // let a2 = this.$route.params.a2;
+            // let a3 = this.$route.params.a3;
+            // let a4 = this.$route.params.a4;
+            // let a5 = this.$route.params.a5;
+            // let a6 = this.$route.params.a6;
+            // let a7 = this.$route.params.a7;
+            // let a8 = this.$route.params.a8;
+            // let a9 = this.$route.params.a9;
+            // let a10 = this.$route.params.a10;
+            // let a11 = this.$route.params.a11;
+            // let a12 = this.$route.params.a12;
+            let a1 = 68;
+            let a2 = 79;
+            let a3 = 75;
+            let a4 = 89;
+            let a5 = 58;
+            let a6 = 48;
+            let a7 = 91;
+            let a8 = 48;
+            let a9 = 75;
+            let a10 = 68;
+            let a11 = 89;
+            let a12 = 43;
             let element1 = document.getElementsByClassName('arc-1')[0];
             let element2 = document.getElementsByClassName('arc-2')[0];
             let element3 = document.getElementsByClassName('arc-3')[0];

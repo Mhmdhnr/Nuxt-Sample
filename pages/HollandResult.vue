@@ -14,7 +14,7 @@
             <span>{{hollandType.title.fa}}</span>
             <br>
             <div class="des">
-              <TypingMachine :subject="hollandType.id" delay="800" speed="2000" :forwards="true">
+              <TypingMachine :subject="hollandType.id" delay="800" speed="2000" :forwards="true" sound="true">
                 <span>{{hollandType.shortDes.fa}}</span>
               </TypingMachine>
             </div>

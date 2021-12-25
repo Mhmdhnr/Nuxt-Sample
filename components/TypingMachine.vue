@@ -8,11 +8,10 @@
 <script>
     export default {
         name: "TypingMachine",
-        props: ['subject', 'delay', 'speed', 'forwards', 'hideCursor'],
+        props: ['subject', 'delay', 'speed', 'forwards', 'hideCursor', 'sound'],
         data(){
             return {
                 typeStarted: false,
-                audio: null,
             }
         },
         mounted() {
@@ -35,13 +34,16 @@
             let interval = 60000 / this.speed;
             let i = 0;
             let sub = this.subject;
+            let _sound = this.sound;
             const observer = new IntersectionObserver((entries) => {
                 if (entries[0].isIntersecting && !this.typeStarted) {
                     this.typeStarted = true;
                     setTimeout(function () {
                         let typingInterval = setInterval(() => {
                             span.innerText += text[i];
-                            audio1.play();
+                            if(_sound) {
+                                audio1.play();
+                            }
                             hidden.innerText = hidden.innerText.substring(1);
                             i++;
                             if (i === text.length) {
