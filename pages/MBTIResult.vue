@@ -125,8 +125,21 @@
             if (!this.$route.params.type) {
                 this.$router.push({name: 'MBTI'})
             }
-            // this.typeToWatch = 'INTP';
             this.typeToWatch = this.$route.params.type;
+            let EI = this.$route.params.EI;
+            let SN = this.$route.params.SN;
+            let TF = this.$route.params.TF;
+            let JP = this.$route.params.JP;
+            let clientType = this.$route.params.type;
+
+            // this.typeToWatch = "ENTP";
+            // let type = "ENTP";
+            // let EI = {'value': 40, 'result': "E"};
+            // let SN = {'value': 40, 'result': "N"};
+            // let TF = {'value': 40, 'result': "T"};
+            // let JP = {'value': 40, 'result': "P"};
+            // let clientType = "ENTP";
+
             let _this = this;
             let suspension = 30;
             if (!this.fa) {
@@ -135,7 +148,6 @@
                     duo[i].style.flexDirection = 'row-reverse'
                 }
             }
-            let clientType = this.$route.params.type;
             let delay = 0;
             let types = document.getElementsByClassName('type');
             for (let i = 0; i < suspension; i++) {
@@ -163,47 +175,47 @@
                 document.getElementById(clientType).classList.add('client-type');
                 setTimeout(() => {
                     document.getElementsByClassName('types-box')[0].scrollIntoView({behavior: 'smooth'});
-                    _this.handleBars();
+                    _this.handleBars(EI, SN, TF, JP);
                 }, 2000)
             }, (suspension) * delay)
         },
         methods: {
-            handleBars(){
-                if (this.$route.params.EI.result === 'E') {
-                    document.getElementsByClassName('e')[0].style.width = this.$route.params.EI.value.toString() + "%";
+            handleBars(EI, SN, TF, JP){
+                if (EI.result === 'E') {
+                    document.getElementsByClassName('e')[0].style.width = EI.value.toString() + "%";
                     let e = document.getElementsByClassName('e')[0];
-                    e.getElementsByTagName('span')[0].innerText = this.$route.params.EI.value.toString()
+                    e.getElementsByTagName('span')[0].innerText = EI.value.toString()
                 } else {
-                    document.getElementsByClassName('i')[0].style.width = this.$route.params.EI.value.toString() + "%";
+                    document.getElementsByClassName('i')[0].style.width = EI.value.toString() + "%";
                     let i = document.getElementsByClassName('i')[0];
-                    i.getElementsByTagName('span')[0].innerText = this.$route.params.EI.value.toString()
+                    i.getElementsByTagName('span')[0].innerText = EI.value.toString()
                 }
-                if (this.$route.params.SN.result === 'S') {
-                    document.getElementsByClassName('s')[0].style.width = this.$route.params.SN.value.toString() + "%";
+                if (SN.result === 'S') {
+                    document.getElementsByClassName('s')[0].style.width = SN.value.toString() + "%";
                     let s = document.getElementsByClassName('s')[0];
-                    s.getElementsByTagName('span')[0].innerText = this.$route.params.SN.value.toString()
+                    s.getElementsByTagName('span')[0].innerText = SN.value.toString()
                 } else {
-                    document.getElementsByClassName('n')[0].style.width = this.$route.params.SN.value.toString() + "%";
+                    document.getElementsByClassName('n')[0].style.width = SN.value.toString() + "%";
                     let n = document.getElementsByClassName('n')[0];
-                    n.getElementsByTagName('span')[0].innerText = this.$route.params.SN.value.toString()
+                    n.getElementsByTagName('span')[0].innerText = SN.value.toString()
                 }
-                if (this.$route.params.TF.result === 'T') {
-                    document.getElementsByClassName('t')[0].style.width = this.$route.params.TF.value.toString() + "%";
+                if (TF.result === 'T') {
+                    document.getElementsByClassName('t')[0].style.width = TF.value.toString() + "%";
                     let t = document.getElementsByClassName('t')[0];
-                    t.getElementsByTagName('span')[0].innerText = this.$route.params.TF.value.toString()
+                    t.getElementsByTagName('span')[0].innerText = TF.value.toString()
                 } else {
-                    document.getElementsByClassName('f')[0].style.width = this.$route.params.TF.value.toString() + "%";
+                    document.getElementsByClassName('f')[0].style.width = TF.value.toString() + "%";
                     let f = document.getElementsByClassName('f')[0];
-                    f.getElementsByTagName('span')[0].innerText = this.$route.params.TF.value.toString()
+                    f.getElementsByTagName('span')[0].innerText = TF.value.toString()
                 }
-                if (this.$route.params.JP.result === 'J') {
-                    document.getElementsByClassName('j')[0].style.width = this.$route.params.JP.value.toString() + "%";
+                if (JP.result === 'J') {
+                    document.getElementsByClassName('j')[0].style.width = JP.value.toString() + "%";
                     let j = document.getElementsByClassName('j')[0];
-                    j.getElementsByTagName('span')[0].innerText = this.$route.params.JP.value.toString()
+                    j.getElementsByTagName('span')[0].innerText = JP.value.toString()
                 } else {
-                    document.getElementsByClassName('p')[0].style.width = this.$route.params.JP.value.toString() + "%";
+                    document.getElementsByClassName('p')[0].style.width = JP.value.toString() + "%";
                     let p = document.getElementsByClassName('p')[0];
-                    p.getElementsByTagName('span')[0].innerText = this.$route.params.JP.value.toString()
+                    p.getElementsByTagName('span')[0].innerText = JP.value.toString()
                 }
             },
             showType(id){

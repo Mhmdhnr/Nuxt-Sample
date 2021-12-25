@@ -25,31 +25,31 @@
         <span v-if="this.fa">ویژگی ها</span>
         <span v-if="!this.fa">Features</span>
       </div>
-      <TypingMachine :subject="typeData.id" delay="800" speed="1500" :forwards="true" sound="true">
+      <TypingMachine :subject="typeData.id" delay="800" speed="2000" :forwards="true" :sound="true">
         <span v-if="this.fa" class="typing-span">{{typeData.shortDes.fa}}</span>
         <span v-if="!this.fa" class="typing-span">{{typeData.shortDes.en}}</span>
       </TypingMachine>
       <div v-if="this.fa">
         <hr>
         <span style="color: seagreen">نقاط مثبت</span>
-        <TypingMachine :key="index" v-for="(p, index) in typeData.pros" :subject="p.fa" :delay="1000" speed="1500" :forwards="true" :hideCursor="true" sound="false">
+        <TypingMachine :key="`pros${index}`" v-for="(p, index) in typeData.pros" :subject="p.fa" :delay="1000" speed="1500" :forwards="true" :hideCursor="true" :sound="false">
           <span class="typing-span">☺{{p.fa}}</span>
         </TypingMachine>
         <hr>
         <span style="color: red">نقاط منفی</span>
-        <TypingMachine :key="index" v-for="(c, index) in typeData.cons" :subject="c.fa" :delay="1000" speed="1500" :forwards="true" :hideCursor="true" sound="false">
+        <TypingMachine :key="`cons${index}`" v-for="(c, index) in typeData.cons" :subject="c.fa" :delay="1000" speed="1500" :forwards="true" :hideCursor="true" :sound="false">
           <span class="typing-span">☻{{c.fa}}</span>
         </TypingMachine>
       </div>
       <div v-if="!this.fa">
         <hr>
         <span style="color: seagreen">Pros</span>
-        <TypingMachine :key="index" v-for="(p, index) in typeData.pros" :subject="p.fa" :delay="1000" speed="1500" :forwards="true" :hideCursor="true" sound="false">
+        <TypingMachine :key="`pros${index}`" v-for="(p, index) in typeData.pros" :subject="p.fa" :delay="1000" speed="1500" :forwards="true" :hideCursor="true" :sound="false">
           <span class="typing-span">☺{{p.en}}</span>
         </TypingMachine>
         <hr>
         <span style="color: red">Cons</span>
-        <TypingMachine :key="index" v-for="(c, index) in typeData.cons" :subject="c.fa" :delay="1000" speed="1500" :forwards="true" :hideCursor="true" sound="false">
+        <TypingMachine :key="`cons${index}`" v-for="(c, index) in typeData.cons" :subject="c.fa" :delay="1000" speed="1500" :forwards="true" :hideCursor="true" :sound="false">
           <span class="typing-span">☻{{c.en}}</span>
         </TypingMachine>
       </div>
@@ -153,7 +153,7 @@
             }
             for(let i = 0; i < famousPeople.length; i++){
                 setTimeout(function () {
-                    jobs[i].classList.add('bounce-in')
+                    famousPeople[i].classList.add('bounce-in')
                 }, 1000 + i * 100)
             }
             let sentence = document.getElementsByClassName('sentence')[0];
@@ -191,7 +191,6 @@
 
 <style scoped>
   .mbti-types {
-    /*background-color: var(--contrast-color);*/
     border: 2px solid var(--primary-color);
     box-shadow: 0 5px 12px 0 rgba(40, 40, 40, 0.1);
     border-radius: 16px;
