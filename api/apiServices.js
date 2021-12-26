@@ -1,8 +1,8 @@
 import axios from 'axios';
 
 
-const API_URL = 'https://flask-restful-nuxt.herokuapp.com';
-// const API_URL = 'http://127.0.0.1:5000';
+// const API_URL = 'https://flask-restful-nuxt.herokuapp.com';
+const API_URL = 'http://127.0.0.1:5000';
 let axi = axios.create({
   headers: {
     'Content-Type' : 'application/json',
@@ -70,6 +70,14 @@ export default {
     async getTest(id) {
       const url = `${API_URL}/get_test/${id}`;
       return await this.toPromise(url);
+    },
+    async sendVerificationToken(phoneNumber) {
+      const url = `${API_URL}/send_token?phone_number=${phoneNumber}`;
+      return await this.toPromise(url, 'post');
+    },
+    async signInUp(phoneNumber, token) {
+      const url = `${API_URL}/sign?phone_number=${phoneNumber}&token=${token}`;
+      return await this.toPromise(url, 'post');
     },
     async postRavenResponse(clientAnswers) {
       console.log(clientAnswers);
