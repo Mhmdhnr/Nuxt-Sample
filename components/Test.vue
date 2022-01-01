@@ -59,7 +59,6 @@
         computed: mapState(['api','fa']),
         mounted() {
             let submit = document.getElementById('submit');
-            console.log(this.mustAnsweredAll);
             if(!this.mustAnsweredAll) {
                 submit.disabled = false;
                 submit.enabled = true;

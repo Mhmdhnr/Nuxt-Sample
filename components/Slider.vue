@@ -113,7 +113,7 @@
     width: 100%;
     height: 100%;
     background-image: linear-gradient(180deg, rgba(255,255,255,0) 0%, rgba(255,255,255,0) 80%, var(--primary-color)  100%);
-    z-index: 1000;
+    z-index: 50;
   }
   .content {
     width: 50%;

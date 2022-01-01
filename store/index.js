@@ -1,3 +1,5 @@
+import apiServices from "../api/apiServices";
+
 export const state = () => ({
   fa: true,
   api: '',
@@ -7,12 +9,19 @@ export const state = () => ({
     en: 'Loading...',
   },
   loadingMessageEn: '',
-
+  needSignIn: false,
+  signedIn: false,
 });
 
 export const mutations = {
   fa(state, bool) {
     state.fa = bool;
+  },
+  needSignIn(state, bool) {
+    state.needSignIn = bool;
+  },
+  signedIn(state, bool) {
+    state.signedIn = bool;
   },
   api(state, el) {
     state.api = el;
@@ -30,7 +39,8 @@ export const getters = {
   },
   api: (state) => {
     return state.api
-  }
+  },
 };
+
 
 

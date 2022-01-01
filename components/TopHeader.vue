@@ -7,6 +7,7 @@
         </div>
       </NuxtLink>
       <div class="toggles flex">
+        <span class="sign-out" @click="signOut()">sign out</span>
         <div class="color-panel" >
           <div class="background-color" v-on:click="showColorPicker('bg-color-picker')">
             <ColorPicker id="bg-color-picker" class="bg-color-picker" subject="--bg-color"
@@ -35,6 +36,7 @@
     import {colorPicker} from "../data/data";
     import Toggle from "./Toggle";
     import ColorPicker from "./ColorPicker";
+    import apiServices from "../api/apiServices";
 
     export default {
         name: "TopHeader",
@@ -67,9 +69,15 @@
         methods: {
             showColorPicker(colorPicker) {
                 let colorPickerEl = document.getElementsByClassName(colorPicker)[0];
-                console.log(colorPickerEl)
+                console.log(colorPickerEl);
                 colorPickerEl.style.display = 'flex';
+            },
+            signOut() {
+                apiServices.methods.signOut().then(response => {
+                    console.log(response)
+                })
             }
+
         },
     }
 </script>
@@ -120,6 +128,11 @@
     height: 26px;
     margin: auto 10px auto 0;
     padding: 0;
+  }
+  .sign-out {
+    cursor: pointer;
+    margin: 0 2vw;
+    font-size: 0.8em;
   }
   .logo {
     width: 35px;

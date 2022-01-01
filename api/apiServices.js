@@ -1,6 +1,13 @@
 import axios from 'axios';
 
 
+let store;
+if (process.browser) {
+  window.onNuxtReady(({$store}) => {
+    store = $store
+  })
+}
+
 // const API_URL = 'https://flask-restful-nuxt.herokuapp.com';
 const API_URL = 'http://127.0.0.1:5000';
 let axi = axios.create({
@@ -8,11 +15,12 @@ let axi = axios.create({
     'Content-Type' : 'application/json',
     // 'Access-Control-Allow-Origin' : '*',
     // 'Access-Control-Allow-Credentials' : 'true',
+    // 'Access-Control-Allow-Headers' : 'Content-Type, Access-Control-Allow-Headers, Authorization, X-Requested-With',
     // 'Access-Control-Allow-Methods': 'GET,POST,OPTIONS,DELETE,PUT'
   },
-  // xsrfCookieName: 'XSRF-TOKEN',
-  // xsrfHeaderName: 'X-XSRF-TOKEN',
-  // withCredentials: true,
+  xsrfCookieName: 'XSRF-TOKEN',
+  xsrfHeaderName: 'X-XSRF-TOKEN',
+  withCredentials: true,
 });
 export default {
   name: 'apiServices',
@@ -25,12 +33,11 @@ export default {
   },
   methods: {
     async toPromise(url, method, data) {
-      // console.log(store)
-      // store.commit('api', 'pending');
       if (method === 'post') {
         return await new Promise((resolve1, reject1) =>
           axi.post(url, data)
             .then(response => {
+              console.log(response.status);
               // if (!response || response.data.type === 'error') {
               if (!response) {
                 reject1(response);
@@ -38,7 +45,7 @@ export default {
                 resolve1(response.data);
               }
             }).then(response => {
-            return response;
+              return response;
           }).catch(
             // () => this.toPromise(url, method, data)
           )
@@ -47,14 +54,20 @@ export default {
       return await new Promise((resolve1, reject1) =>
         axi.get(url)
           .then(response => {
+            // console.log(response);
             if (!response || response.data.type === 'error') {
               reject1(response);
             } else {
-              resolve1(response.data)
+              resolve1(response.data);
+              return response;
             }
           }).then(response => {
-          return response
-        }).catch(
+            return response;
+        }).catch( function (error) {
+            if(error.response.status === 401) {
+              store.commit('needSignIn', true);
+            }
+          }
           // () => this.toPromise(url, method, data)
         )
       )
@@ -78,6 +91,14 @@ export default {
     async signInUp(phoneNumber, token) {
       const url = `${API_URL}/sign?phone_number=${phoneNumber}&token=${token}`;
       return await this.toPromise(url, 'post');
+    },
+    async signOut() {
+      const url = `${API_URL}/sign_out`;
+      return await this.toPromise(url, 'get');
+    },
+    async userInfo() {
+      const url = `${API_URL}/info`;
+      return await this.toPromise(url, 'get');
     },
     async postRavenResponse(clientAnswers) {
       console.log(clientAnswers);

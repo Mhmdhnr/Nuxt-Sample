@@ -1,6 +1,7 @@
 <template>
-  <div class="form-total">
+  <div class="form-total flex flex-column">
     <form v-if="tokenSign" class="sign-form flex flex-column" @submit.prevent="handleSubmit()">
+      <span>◄برای استفاده از این قسمت باید وارد شوید.</span>
       <div v-if="!tokenSend" class="form-row flex">
         <span>شماره تلفن خود را وارد کنید</span>
         <input type="tel" minlength="11" maxlength="11" v-model="phoneNumber" class="phone-number" required @input="normalize()" placeholder="09354162124" >
@@ -36,11 +37,15 @@
                 phoneNumber: "",
                 tokenSign: true,
                 tokenSend: false,
-                token: "0000",
+                token: "",
                 loading: false,
             }
         },
         mounted() {
+            let submit = document.getElementsByClassName("cta-button")[0];
+            this.phoneNumber = "09354162124";
+            submit.disabled = false;
+            submit.enabled = true;
         },
         methods: {
             handleSubmit() {
@@ -57,6 +62,9 @@
                     apiServices.methods.signInUp(this.phoneNumber, this.token).then(response => {
                         this.loading = false;
                         console.log(response)
+                        if (response.message === "Successfully signed in") {
+                            this.$store.commit('needSignIn', false)
+                        }
                     })
                 }
             },
@@ -93,9 +101,14 @@
   }
   .form-total {
     width: 100%;
+    height: 400px;
+    justify-content: space-evenly;
+  }
+  .sign-form {
+    width: 100%;
   }
   .form-row {
-    width: 55%;
+    width: 80%;
     padding: 2vh 2vw;
     justify-content: space-between;
   }

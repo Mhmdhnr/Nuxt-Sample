@@ -4,20 +4,29 @@
       <TopHeader class="top-header" />
       <MainHeader class="main-header"/>
     </div>
-    <nuxt class="nuxt"/>
+    <div>
+      <nuxt class="nuxt"/>
+      <SignInUpModal v-show="this.needSignIn & !this.signedIn"/>
+    </div>
   </div>
 </template>
 <script>
+    import apiServices from "../api/apiServices";
     import Toggle from "../components/Toggle";
     import { mapState } from 'vuex';
+    import { mapGetters } from 'vuex';
     import MainHeader from "../components/MainHeader";
     import TopHeader from "../components/TopHeader";
+    import SignInUpModal from "../components/SignInUpModal";
     export default {
-        components: {TopHeader, MainHeader, Toggle},
-        computed: mapState(['fa', 'theme']),
+        components: {SignInUpModal, TopHeader, MainHeader, Toggle},
+        // computed: mapState(['fa', 'theme', 'needSignIn', 'signedIn']),
+        computed: {
+            ...mapState(['fa', 'theme', 'needSignIn', 'signedIn']),
+            // ...mapGetters(['loggedInUser'])
+        },
         data(){
             return{
-
             }
         },
         watch: {
@@ -34,9 +43,13 @@
                     document.body.style.fontFamily = "vazir, sans-serif";
                     document.body.style.fontWeight = "400";
                 }
-            }
+            },
         },
         mounted() {
+            apiServices.methods.userInfo().then(response => {
+                console.log(response);
+                this.$store.commit('signedIn', true);
+            });
             if(this.theme === 'light'){
                 document.documentElement.style.setProperty("--primary-color", 'hsl(220, 100%, 70%)');
                 document.documentElement.style.setProperty("--text-color", '#444');

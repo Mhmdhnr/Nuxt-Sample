@@ -47,7 +47,6 @@
                 x = width / 2;
             }
             this.translateZ = Math.round((width / 2) / Math.tan(Math.PI / this.elementsCount));
-            console.log(this.elementsCount);
             // carousel3d.style.transform = `translateZ(${-1 * this.translateZ}px)`;
             for (let i = 1 ; i <= this.elementsCount; i++) {
                 let elementAngel = (i - 1) * (360 / this.elementsCount);
@@ -78,12 +77,10 @@
                     let element = elements[(i)%this.elementsCount];
                     element.style.transform = `translateZ(${tranZ}px) translateX(${tranX}px)`
                 }
-                console.log("_______________________")
             },
             next() {
                 this.selectedIndex ++;
                 this.selectedIndex = this.selectedIndex === this.elementsCount? 0:this.selectedIndex;
-                console.log("_______________________")
                 this.rotateCarousel();
             },
             previous() {
@@ -92,7 +89,6 @@
                 this.rotateCarousel();
             },
             detectSwipe(id) {
-                console.log("touch");
                 let swipe_det = {};
                 swipe_det.sX = 0;
                 swipe_det.sY = 0;
