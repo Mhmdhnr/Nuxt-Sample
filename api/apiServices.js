@@ -36,7 +36,6 @@ export default {
         return await new Promise((resolve1, reject1) =>
           axi.post(url, data)
             .then(response => {
-              console.log(response.status);
               if (!response || response.data.type === 'error') {
                 reject1(response);
               } else {
@@ -48,7 +47,7 @@ export default {
           })
             .catch (error => {
               if(error.response.status === 401) {
-                console.log("4011111111111111")
+                console.log("4011111111111111");
                 store.commit('needSignIn', true);
               }
             }
@@ -59,7 +58,7 @@ export default {
       return await new Promise((resolve, reject) =>
         axi.get(url)
           .then(response => {
-            console.log(response);
+            // console.log(response);
             if (!response || response.status === 401) {
               reject(response);
             } else {
@@ -71,7 +70,7 @@ export default {
         })
           .catch (error => {
           if(error.response.status === 401) {
-            console.log("4011111111111111")
+            console.log("4011111111111111");
             store.commit('needSignIn', true);
           }
         }
