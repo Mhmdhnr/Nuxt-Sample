@@ -8,9 +8,9 @@ export const state = () => ({
     fa: 'در حال بارگزاری...',
     en: 'Loading...',
   },
-  loadingMessageEn: '',
   needSignIn: false,
-  signedIn: false,
+  signedIn: null,
+  user: {}
 });
 
 export const mutations = {
@@ -32,15 +32,18 @@ export const mutations = {
   theme(state, el) {
     state.theme = el;
   },
-};
-export const getters = {
-  fa: (state) => {
-    return state.fa
-  },
-  api: (state) => {
-    return state.api
+  user(state, payload) {
+    state.user = payload;
   },
 };
+// export const getters = {
+//   fa: (state) => {
+//     return state.fa
+//   },
+//   api: (state) => {
+//     return state.api
+//   },
+// };
 
 
 

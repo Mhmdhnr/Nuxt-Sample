@@ -6,7 +6,7 @@
     </div>
     <div>
       <nuxt class="nuxt"/>
-      <SignInUpModal v-show="this.needSignIn & !this.signedIn"/>
+      <SignInUpModal v-if="this.needSignIn & !this.signedIn"/>
     </div>
   </div>
 </template>
@@ -23,7 +23,7 @@
         // computed: mapState(['fa', 'theme', 'needSignIn', 'signedIn']),
         computed: {
             ...mapState(['fa', 'theme', 'needSignIn', 'signedIn']),
-            // ...mapGetters(['loggedInUser'])
+            // ...mapGetters(['signedIn'])
         },
         data(){
             return{
@@ -45,10 +45,20 @@
                 }
             },
         },
+        updated() {
+        },
         mounted() {
             apiServices.methods.userInfo().then(response => {
                 console.log(response);
-                this.$store.commit('signedIn', true);
+                if(response.message !== "unauthorized"){
+                    const user = {};
+                    user.firstName = response.first_name;
+                    user.lastName = response.last_name;
+                    user.phoneNumber = response.phone_number;
+                    user.userName = response.user_name;
+                    this.$store.commit('user', user);
+                    this.$store.commit('signedIn', true);
+                }
             });
             if(this.theme === 'light'){
                 document.documentElement.style.setProperty("--primary-color", 'hsl(220, 100%, 70%)');
@@ -70,6 +80,8 @@
                 document.body.style.fontFamily = "Ubuntu, sans-serif";
                 document.body.style.fontWeight = "500";
             }
+        },
+        methods: {
         }
     }
 </script>

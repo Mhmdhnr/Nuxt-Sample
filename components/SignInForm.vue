@@ -1,15 +1,15 @@
 <template>
   <div class="form-total flex flex-column">
     <form v-if="tokenSign" class="sign-form flex flex-column" @submit.prevent="handleSubmit()">
-      <span>◄برای استفاده از این قسمت باید وارد شوید.</span>
-      <div v-if="!tokenSend" class="form-row flex">
-        <span>شماره تلفن خود را وارد کنید</span>
-        <input type="tel" minlength="11" maxlength="11" v-model="phoneNumber" class="phone-number" required @input="normalize()" placeholder="09354162124" >
+<!--      <span>◄برای استفاده از این قسمت باید وارد شوید.</span>-->
+      <div v-if="!tokenSend" class="form-row flex flex-column">
+        <span>شماره تلفن</span>
+        <input type="tel" minlength="11" maxlength="11" v-model="phoneNumber" class="phone-number" required @input="normalizePhoneNumber()" placeholder="09354162124" >
         <span class="hint"></span>
       </div>
-      <div v-if="tokenSend" class="form-row flex">
+      <div v-if="tokenSend" class="form-row flex flex-column">
         <span>کد 4 رقمی را وارد کنید</span>
-        <input type="text" v-model="token" class="token" required @input="normalize()" placeholder="----" >
+        <input type="text" v-model="token" class="token" required @input="normalizeToken()" placeholder="----" >
       </div>
       <button disabled class="cta-button" type="submit">
         <span v-if="!tokenSend & !this.loading" class="cta-text">دریافت کد</span>
@@ -46,37 +46,49 @@
             this.phoneNumber = "09354162124";
             submit.disabled = false;
             submit.enabled = true;
+            this.tokenSign = true;
+            this.tokenSend = false;
         },
         methods: {
             handleSubmit() {
+                let submit = document.getElementsByClassName("cta-button")[0];
                 if(!this.tokenSend) {
                     this.loading = true;
                     apiServices.methods.sendVerificationToken(this.phoneNumber).then(response => {
                         this.tokenSend = true;
                         this.loading = false;
-                        console.log(response);
+                        submit.enabled = false;
+                        submit.disabled = true;
+                        console.log(response[0].message);
                     })
                 }
                 if(this.tokenSend) {
                     this.loading = true;
                     apiServices.methods.signInUp(this.phoneNumber, this.token).then(response => {
                         this.loading = false;
-                        console.log(response)
-                        if (response.message === "Successfully signed in") {
-                            this.$store.commit('needSignIn', false)
+                        console.log(response);
+                        if (response.message === "Successfully signed in" || response.message === 'Successfully signed up') {
+                            this.$store.commit('needSignIn', false);
+                            this.$store.commit('signedIn', true);
+                            apiServices.methods.userInfo().then(response => {
+                                console.log(response);
+                                const user = {};
+                                user.firstName = response.first_name;
+                                user.lastName = response.last_name;
+                                user.phoneNumber = response.phone_number;
+                                user.userName = response.user_name;
+                                this.$store.commit('user', user);
+                            })
                         }
-                    })
+                    });
                 }
             },
-            normalize() {
+            normalizePhoneNumber() {
                 this.phoneNumber = this.phoneNumber.replace(/[^0123456789 ]/g,'');
                 let submit = document.getElementsByClassName("cta-button")[0];
                 if (this.phoneNumber.charAt(0) !== "0" && this.phoneNumber.length > 0){
                     this.phoneNumber = "0" + this.phoneNumber;
                 }
-                // if (this.phoneNumber.length === 4) {
-                //     this.phoneNumber = this.phoneNumber + " ";
-                // }
                 if(this.phoneNumber.length === 11) {
                     submit.disabled = false;
                     submit.enabled = true;
@@ -86,6 +98,19 @@
                 }
                 console.log(this.phoneNumber)
             },
+            normalizeToken() {
+                this.token = this.token.replace(/[^0123456789 ]/g,'');
+                let submit = document.getElementsByClassName("cta-button")[0];
+                if(this.token.length === 4) {
+                    submit.disabled = false;
+                    submit.enabled = true;
+                    this.handleSubmit();
+                } else {
+                    submit.enabled = false;
+                    submit.disabled = true;
+                }
+                console.log(this.token)
+            },
             switch() {
                 this.tokenSign = !this.tokenSign
             }
@@ -94,15 +119,19 @@
 </script>
 
 <style scoped>
+  .form-total {
+    width: 100%;
+    height: 100%;
+    justify-content: space-evenly;
+    position: relative;
+  }
   .switch {
+    position: absolute;
+    bottom: 10px;
     padding-top: 3vh;
     justify-content: space-between;
     cursor: pointer;
-  }
-  .form-total {
-    width: 100%;
-    height: 400px;
-    justify-content: space-evenly;
+    font-size: 0.7em;
   }
   .sign-form {
     width: 100%;
@@ -117,6 +146,7 @@
     border: 2px solid var(--primary-color);
     width: 300px;
     padding: 5px 10px;
+    margin: 10px auto;
     direction: ltr;
     text-align: center;
   }
@@ -201,5 +231,38 @@
     transform: translateY(1px);
     transition: all 200ms;
     box-shadow: 0 1px 2px 0 rgba(40, 40, 40, 0.3);
+  }
+  @media screen and (max-width: 864px) {
+    .form-total {
+      width: 100%;
+      height: 100%;
+    }
+    .switch {
+      bottom: 5px;
+      padding-top: 3vh;
+      font-size: 0.7em;
+    }
+    .form-row {
+      width: 70%;
+      padding: 2vh 2vw;
+    }
+    input {
+      width: 200px;
+      padding: 5px 10px;
+      margin: 10px auto;
+    }
+    .cta-button {
+      width: 150px;
+      height: 45px;
+      overflow: hidden;
+    }
+    .cta-button::after {
+      width: 150px;
+      height: 45px;
+    }
+    .cta-button::before {
+      width: 150px;
+      height: 45px;
+    }
   }
 </style>

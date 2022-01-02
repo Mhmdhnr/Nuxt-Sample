@@ -1,6 +1,5 @@
 import axios from 'axios';
 
-
 let store;
 if (process.browser) {
   window.onNuxtReady(({$store}) => {
@@ -38,36 +37,44 @@ export default {
           axi.post(url, data)
             .then(response => {
               console.log(response.status);
-              // if (!response || response.data.type === 'error') {
-              if (!response) {
+              if (!response || response.data.type === 'error') {
                 reject1(response);
               } else {
                 resolve1(response.data);
               }
-            }).then(response => {
+            })
+            .then(response => {
               return response;
-          }).catch(
+          })
+            .catch (error => {
+              if(error.response.status === 401) {
+                console.log("4011111111111111")
+                store.commit('needSignIn', true);
+              }
+            }
             // () => this.toPromise(url, method, data)
           )
         )
       }
-      return await new Promise((resolve1, reject1) =>
+      return await new Promise((resolve, reject) =>
         axi.get(url)
           .then(response => {
-            // console.log(response);
-            if (!response || response.data.type === 'error') {
-              reject1(response);
+            console.log(response);
+            if (!response || response.status === 401) {
+              reject(response);
             } else {
-              resolve1(response.data);
-              return response;
+              resolve(response.data);
             }
-          }).then(response => {
+          })
+          .then(response => {
             return response;
-        }).catch( function (error) {
-            if(error.response.status === 401) {
-              store.commit('needSignIn', true);
-            }
+        })
+          .catch (error => {
+          if(error.response.status === 401) {
+            console.log("4011111111111111")
+            store.commit('needSignIn', true);
           }
+        }
           // () => this.toPromise(url, method, data)
         )
       )
