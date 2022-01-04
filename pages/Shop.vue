@@ -18,7 +18,7 @@
                 specs: [
                     {
                         productName: "shoeCollection1",
-                        imageNames : ["shoe1", "shoe3"]
+                        imageNames : ["shoe1", "shoe2"]
                     },
                     {
                         productName: "shoeCollection2",

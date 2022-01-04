@@ -29,23 +29,23 @@
 <script>
     export default {
         name: "Question",
-        props: ['question'],
+        props: ['question', 'lastChoosedIndex'],
         data() {
             return {
                 selected: false
             }
         },
         mounted() {
-            // let questions = document.getElementsByClassName('question');
-            // let i = 1;
-            // for(let question of questions) {
-            //     if(i%2 === 0) {
-            //       question.style.backgroundColor = "#eee"
-            //     } else {
-            //       question.style.backgroundColor = "#ddd"
-            //     }
-            //     i ++
-            // }
+            let choiceArray = JSON.parse(localStorage.getItem('testResponse'));
+            let questionChoices = this.question.choices;
+            let index = this.question.index;
+            let questionResponseIndex = choiceArray[index - 1];
+            let choiceId = null;
+                // console.log(questionChoices.find(x => x.index = questionResponseIndex))
+            if(questionChoices[questionResponseIndex - 1]){
+                choiceId = questionChoices[questionResponseIndex - 1].id;
+                document.getElementById(choiceId.toString()).checked = true;
+            }
         },
         methods: {
             check(question, choice) {

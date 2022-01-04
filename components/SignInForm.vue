@@ -71,14 +71,19 @@
                             this.$store.commit('needSignIn', false);
                             this.$store.commit('signedIn', true);
                             apiServices.methods.userInfo().then(response => {
-                                console.log(response);
+                                // console.log(response);
                                 const user = {};
                                 user.firstName = response.first_name;
                                 user.lastName = response.last_name;
                                 user.phoneNumber = response.phone_number;
                                 user.userName = response.user_name;
                                 this.$store.commit('user', user);
-                            })
+                                this.$router.go(0);
+                            });
+                            // apiServices.methods.toPromise(localStorage.getItem('lastCallUrl'), localStorage.getItem('lastCallHttpMethod')).then(response => {
+                            //     console.log('re call');
+                            //     console.log(response);
+                            // })
                         }
                     });
                 }

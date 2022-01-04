@@ -32,6 +32,7 @@ export default {
   },
   methods: {
     async toPromise(url, method, data) {
+      let interval;
       if (method === 'post') {
         return await new Promise((resolve1, reject1) =>
           axi.post(url, data)
@@ -59,24 +60,35 @@ export default {
         axi.get(url)
           .then(response => {
             // console.log(response);
-            if (!response || response.status === 401) {
-              reject(response);
+            if (response.status === 401 || response.status === 500) {
+              console.log('rejected');
+              reject(response.status);
+              console.log(response.status)
             } else {
+              console.log('resolved');
               resolve(response.data);
+              console.log(response.data);
             }
           })
-          .then(response => {
-            return response;
-        })
-          .catch (error => {
-          if(error.response.status === 401) {
-            console.log("4011111111111111");
-            store.commit('needSignIn', true);
-          }
-        }
-          // () => this.toPromise(url, method, data)
-        )
-      )
+            .then(data => {
+              // console.log('returning from then >>> ' + url);
+              // console.log(data);
+              // return response;
+          })
+            .catch (error => {
+              // console.log(error);
+              if(error.response.status === 401) {
+                store.commit('needSignIn', true);
+                // interval = setInterval(() => {
+                //   if(store.state.signedIn){
+                //     clearInterval(interval);
+                //     console.log('calling again');
+                //     return this.toPromise(url, method, data)
+                //   }
+                // },2000)
+              }
+          })
+      );
     },
     async getRandomXY(count) {
       const url = `${API_URL}/get_random_x_y/${count}`;
@@ -88,6 +100,8 @@ export default {
     },
     async getTest(id) {
       const url = `${API_URL}/get_test/${id}`;
+      // localStorage.setItem('lastCallUrl', url);
+      // localStorage.setItem('lastCallHttpMethod', 'get');
       return await this.toPromise(url);
     },
     async sendVerificationToken(phoneNumber) {

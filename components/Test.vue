@@ -53,7 +53,7 @@
                 timerStarted: false,
                 test: {},
                 slider: slider,
-                choices_array: [],
+                choicesArray: [],
             }
         },
         computed: mapState(['api','fa']),
@@ -66,10 +66,32 @@
             this.$store.commit('loadingMessage' , {fa: 'در حال بارگزاری آزمون شما ...', en: 'Loading your test ...'});
             this.$store.commit('api', 'pending');
             apiServices.methods.getTest(this.testId).then(response => {
+              console.log("from test");
               this.test = response;
-              console.log(this.test);
               this.$store.commit('api', 'done');
-              this.choices_array = Array(this.test.questions.length).fill(0);
+              this.choicesArray = Array(this.test.questions.length).fill(0);
+              let lastTestId = localStorage.getItem('responsesTestId') ? localStorage.getItem('responsesTestId') : 0;
+              if(lastTestId !== this.test.id.toString()){
+                  localStorage.setItem('testResponse', JSON.stringify(this.choicesArray))
+              } else {
+                  this.choicesArray = JSON.parse(localStorage.getItem('testResponse'));
+                  this.allAnswered = this.choicesArray.filter(no => no !== 0).length === this.test.questions.length;
+                  let submit = document.getElementById('submit');
+                  if (!this.allAnswered) {
+                      if(this.mustAnsweredAll) {
+                          submit.enabled = false;
+                          submit.disabled = true;
+                      }
+                      this.$nextTick(function () {
+                          this.unAnswered();
+                      })
+                  } else {
+                      submit.disabled = false;
+                      submit.enabled = true;
+                      submit.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                  }
+              }
+              localStorage.setItem('responsesTestId', this.test.id);
             })
         },
         methods:{
@@ -81,8 +103,9 @@
                     // this.countdownTimer(3, display);
                     this.timerStarted = true;
                 }
-                this.choices_array[questionIndex - 1] = choiceIndex;
-                this.allAnswered = this.choices_array.filter(no => no !== 0).length === this.test.questions.length;
+                this.choicesArray[questionIndex - 1] = choiceIndex;
+                localStorage.setItem('testResponse', JSON.stringify(this.choicesArray));
+                this.allAnswered = this.choicesArray.filter(no => no !== 0).length === this.test.questions.length;
                 let submit = document.getElementById('submit');
                 if (!this.allAnswered) {
                     if(this.mustAnsweredAll) {
@@ -97,10 +120,10 @@
                 }
             },
             submit(){
-                this.$emit('submit', {choices: this.choices_array})
+                this.$emit('submit', {choices: this.choicesArray})
             },
             unAnswered() {
-                let index = this.choices_array.findIndex(x => x === 0);
+                let index = this.choicesArray.findIndex(x => x === 0);
                 let unAnsweredQuestionId = this.test.questions[index].id;
                 document.getElementById("q" + unAnsweredQuestionId.toString()).scrollIntoView({ behavior: 'smooth', block: 'center' });
             },
