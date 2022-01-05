@@ -11,6 +11,9 @@
         <span>کد 4 رقمی را وارد کنید</span>
         <input type="text" v-model="token" class="token" required @input="normalizeToken()" placeholder="----" >
       </div>
+      <div class="sign-alert-container">
+        <span class="sign-alert">{{this.alertMessage}}</span>
+      </div>
       <button disabled class="cta-button" type="submit">
         <span v-if="!tokenSend & !this.loading" class="cta-text">دریافت کد</span>
         <span v-if="!tokenSend & this.loading" class="cta-text">شکیبا باشید</span>
@@ -18,6 +21,10 @@
         <span v-if="tokenSend & this.loading" class="cta-text">شکیبا باشید</span>
       </button>
       <div v-if="this.loading" class="loading"></div>
+      <div class="timer flex">
+        <button v-show="this.tokenSend" class="resend text-button" @click="resendCode()">ارسال دوباره کد</button>
+        <span id="time"></span>
+      </div>
     </form>
     <div v-on:click="this.switch" class="switch flex flex-column">
       <span v-if="tokenSign"> ورود/عضویت با ایمیل و گذرواژه </span>
@@ -39,26 +46,38 @@
                 tokenSend: false,
                 token: "",
                 loading: false,
+                alertMessage: "",
+                tokenExpiration: 0.1,
             }
         },
         mounted() {
             let submit = document.getElementsByClassName("cta-button")[0];
+            let resend = document.getElementsByClassName("resend")[0];
             this.phoneNumber = "09354162124";
             submit.disabled = false;
             submit.enabled = true;
+            resend.enabled = false;
+            resend.disabled = true;
             this.tokenSign = true;
             this.tokenSend = false;
         },
         methods: {
             handleSubmit() {
                 let submit = document.getElementsByClassName("cta-button")[0];
+                let resend = document.getElementsByClassName("resend")[0];
                 if(!this.tokenSend) {
                     this.loading = true;
                     apiServices.methods.sendVerificationToken(this.phoneNumber).then(response => {
                         this.tokenSend = true;
                         this.loading = false;
+                        resend.enabled = false;
+                        resend.disabled = true;
                         submit.enabled = false;
                         submit.disabled = true;
+                        let display = document.querySelector('#time');
+                        let time = this.tokenExpiration * 60;
+                        // let time = 5;
+                        this.countdownTimer(time, display);
                         console.log(response[0].message);
                     })
                 }
@@ -66,12 +85,17 @@
                     this.loading = true;
                     apiServices.methods.signInUp(this.phoneNumber, this.token).then(response => {
                         this.loading = false;
-                        console.log(response);
+                        if(response === "wrong token" || response === "Wrong token and expired") {
+                            this.alertMessage = "کد وارد شده اشتباه است و یا کد منقضی شده است";
+                            document.getElementsByClassName('sign-alert')[0].classList.add('alert-animation');
+                            setTimeout(function () {
+                              document.getElementsByClassName('sign-alert')[0].classList.remove('alert-animation');
+                            }, 6000)
+                        }
                         if (response.message === "Successfully signed in" || response.message === 'Successfully signed up') {
                             this.$store.commit('needSignIn', false);
                             this.$store.commit('signedIn', true);
                             apiServices.methods.userInfo().then(response => {
-                                // console.log(response);
                                 const user = {};
                                 user.firstName = response.first_name;
                                 user.lastName = response.last_name;
@@ -87,6 +111,46 @@
                         }
                     });
                 }
+            },
+            resendCode() {
+                let resend = document.getElementsByClassName("resend")[0];
+                console.log("resend");
+                this.loading = true;
+                apiServices.methods.sendVerificationToken(this.phoneNumber).then(response => {
+                    this.tokenSend = true;
+                    this.loading = false;
+                    let display = document.querySelector('#time');
+                    resend.enabled = false;
+                    resend.disabled = true;
+                    let time = this.tokenExpiration * 60;
+                    this.countdownTimer(time, display);
+                    console.log(response[0].message);
+                })
+            },
+            countdownTimer(duration, display) {
+                let timer = duration, minutes, seconds;
+                let interval = setInterval(() => {
+                    minutes = parseInt(timer / 60, 10);
+                    seconds = parseInt(timer % 60, 10);
+
+                    minutes = minutes < 10 ? "0" + minutes : minutes;
+                    seconds = seconds < 10 ? "0" + seconds : seconds;
+
+                    display.textContent = minutes + ":" + seconds;
+                    if (timer > 0) {
+                        timer --
+                    } else {
+                        clearInterval(interval);
+                        let resend = document.getElementsByClassName("resend")[0];
+                        if(this.tokenSend) {
+                            resend.disabled = false;
+                            resend.enabled = true;
+                            apiServices.methods.sendVerificationToken(this.phoneNumber).then(response => {
+                                console.log(response[0].message);
+                            })
+                        }
+                    }
+                }, 1000);
             },
             normalizePhoneNumber() {
                 this.phoneNumber = this.phoneNumber.replace(/[^0123456789 ]/g,'');
@@ -143,15 +207,57 @@
   }
   .form-row {
     width: 80%;
-    padding: 2vh 2vw;
+    padding: 2vh 2vw 0;
     justify-content: space-between;
+  }
+  .sign-alert-container {
+    overflow: hidden;
+    height: 30px;
+    width: 80%;
+    position: relative;
+  }
+  .timer {
+    overflow: hidden;
+    height: 30px;
+    width: 30%;
+    position: relative;
+    justify-content: space-between;
+  }
+  #time {
+    font-size: 0.8em;
+  }
+  .text-button {
+    font-size: 0.8em;
+    border: none;
+    cursor: pointer;
+    background: none;
+    color: var(--text-color);
+  }
+  .text-button:disabled {
+    color: lightgray;
+  }
+  .sign-alert {
+    position: absolute;
+    width: 100%;
+    bottom: -30px;
+    left: 0;
+    font-size: 0.7em;
+    color: red;
+    margin-bottom: 10px;
+    transition: all 500ms ;
+  }
+  .alert-animation {
+    transform: translateY(-30px);
+    transition: all 500ms;
+  }
+  @keyframes sign-alert {
   }
   input {
     border-radius: 8px;
     border: 2px solid var(--primary-color);
     width: 300px;
     padding: 5px 10px;
-    margin: 10px auto;
+    margin: 10px auto 5px;
     direction: ltr;
     text-align: center;
   }
