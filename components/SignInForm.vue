@@ -126,6 +126,7 @@
                     let time = this.tokenExpiration * 60;
                     this.countdownTimer(time, display);
                     console.log(response[0].message);
+                    alert(response[0].message)
                 })
             },
             countdownTimer(duration, display) {
