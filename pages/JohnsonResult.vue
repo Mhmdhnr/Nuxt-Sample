@@ -28,6 +28,7 @@
     import {mapState} from 'vuex'
     import EnNotAvailable from "../components/EnNotAvailable";
     import TypingMachine from "../components/TypingMachine";
+    import apiServices from "../api/apiServices";
     export default {
         name: "JohnsonResult",
         components: {TypingMachine, EnNotAvailable},
@@ -38,76 +39,100 @@
             }
         },
         mounted() {
+            let a1 = null;
+            let a2 = null;
+            let a3 = null;
+            let a4 = null;
+            let a5 = null;
+            let a6 = null;
+            let a7 = null;
+            let a8 = null;
+            let a9 = null;
+            let a10 = null;
+            let a11 = null;
+            let a12 = null;
             if (!this.$route.params.a1) {
-                this.$router.push({name: 'Johnson'})
+                // this.$router.push({name: 'Johnson'})
+                apiServices.methods.userTestResults().then(response => {
+                    console.log(response);
+                    a1 = response.user_johnson_results.aptitude_1;
+                    a2 = response.user_johnson_results.aptitude_2;
+                    a3 = response.user_johnson_results.aptitude_3;
+                    a4 = response.user_johnson_results.aptitude_4;
+                    a5 = response.user_johnson_results.aptitude_5;
+                    a6 = response.user_johnson_results.aptitude_6;
+                    a7 = response.user_johnson_results.aptitude_7;
+                    a8 = response.user_johnson_results.aptitude_8;
+                    a9 = response.user_johnson_results.aptitude_9;
+                    a10 = response.user_johnson_results.aptitude_10;
+                    a11 = response.user_johnson_results.aptitude_11;
+                    a12 = response.user_johnson_results.aptitude_12;
+                    let values = [a1, a2, a3, a4, a5, a6, a7, a8, a9, a10, a11, a12];
+                    console.log(values);
+                    this.handleDisplay(values);
+                })
+            } else {
+                a1 = this.$route.params.a1;
+                a2 = this.$route.params.a2;
+                a3 = this.$route.params.a3;
+                a4 = this.$route.params.a4;
+                a5 = this.$route.params.a5;
+                a6 = this.$route.params.a6;
+                a7 = this.$route.params.a7;
+                a8 = this.$route.params.a8;
+                a9 = this.$route.params.a9;
+                a10 = this.$route.params.a10;
+                a11 = this.$route.params.a11;
+                a12 = this.$route.params.a12;
+                let values = [a1, a2, a3, a4, a5, a6, a7, a8, a9, a10, a11, a12];
+                this.handleDisplay(values);
             }
-            let base = 700;
-            if(window.screen.width <= 864){
-                base = 320;
-            }
-            let a1 = this.$route.params.a1;
-            let a2 = this.$route.params.a2;
-            let a3 = this.$route.params.a3;
-            let a4 = this.$route.params.a4;
-            let a5 = this.$route.params.a5;
-            let a6 = this.$route.params.a6;
-            let a7 = this.$route.params.a7;
-            let a8 = this.$route.params.a8;
-            let a9 = this.$route.params.a9;
-            let a10 = this.$route.params.a10;
-            let a11 = this.$route.params.a11;
-            let a12 = this.$route.params.a12;
-            // let a1 = 68;
-            // let a2 = 79;
-            // let a3 = 75;
-            // let a4 = 89;
-            // let a5 = 58;
-            // let a6 = 48;
-            // let a7 = 91;
-            // let a8 = 48;
-            // let a9 = 75;
-            // let a10 = 68;
-            // let a11 = 89;
-            // let a12 = 43;
-            let element1 = document.getElementsByClassName('arc-1')[0];
-            let element2 = document.getElementsByClassName('arc-2')[0];
-            let element3 = document.getElementsByClassName('arc-3')[0];
-            let element4 = document.getElementsByClassName('arc-4')[0];
-            let element5 = document.getElementsByClassName('arc-5')[0];
-            let element6 = document.getElementsByClassName('arc-6')[0];
-            let element7 = document.getElementsByClassName('arc-7')[0];
-            let element8 = document.getElementsByClassName('arc-8')[0];
-            let element9 = document.getElementsByClassName('arc-9')[0];
-            let element10 = document.getElementsByClassName('arc-10')[0];
-            let element11 = document.getElementsByClassName('arc-11')[0];
-            let element12 = document.getElementsByClassName('arc-12')[0];
-            let elements = [element1, element2, element3, element4, element5, element6, element7, element8, element9, element10, element11, element12];
-            let values = [a1, a2, a3, a4, a5, a6, a7, a8, a9, a10, a11, a12];
-            for (let j = 0; j < 12; j++){
-                elements[j].onmouseover = function () {
-                    elements[j].style.width = base + "px";
-                    elements[j].style.height = base + "px";
-                    if(values[j] <= 35 || base <= 500) {
-                        elements[j].children[0].style.display = 'unset';
-                    }
-                };
-                elements[j].onmouseleave = function (){
-                    elements[j].style.width = (values[j] * base / 100) + 'px';
-                    elements[j].style.height = (values[j] * base / 100) + 'px';
-                    if(values[j] <= 35 || base <= 500) {
-                        elements[j].children[0].style.display = 'none';
-                    }
-                };
-            }
-            for (let j = 0; j < 12; j++){
-                setTimeout(() => {
-                    elements[j].style.height = (values[j] * base / 100) + 'px';
-                    elements[j].style.width = (values[j] * base / 100) + 'px';
-                    elements[j].children[0].innerText = Math.floor(values[j]) + "%";
-                    if(values[j] <= 35 || base <= 500) {
-                        elements[j].children[0].style.display = 'none';
-                    }
-                }, j * 500)
+        },
+        methods: {
+            handleDisplay(values) {
+                let base = 700;
+                if(window.screen.width <= 864){
+                    base = 320;
+                }
+                let element1 = document.getElementsByClassName('arc-1')[0];
+                let element2 = document.getElementsByClassName('arc-2')[0];
+                let element3 = document.getElementsByClassName('arc-3')[0];
+                let element4 = document.getElementsByClassName('arc-4')[0];
+                let element5 = document.getElementsByClassName('arc-5')[0];
+                let element6 = document.getElementsByClassName('arc-6')[0];
+                let element7 = document.getElementsByClassName('arc-7')[0];
+                let element8 = document.getElementsByClassName('arc-8')[0];
+                let element9 = document.getElementsByClassName('arc-9')[0];
+                let element10 = document.getElementsByClassName('arc-10')[0];
+                let element11 = document.getElementsByClassName('arc-11')[0];
+                let element12 = document.getElementsByClassName('arc-12')[0];
+                let elements = [element1, element2, element3, element4, element5, element6, element7, element8, element9, element10, element11, element12];
+                for (let j = 0; j < 12; j++){
+                    elements[j].onmouseover = function () {
+                        elements[j].style.width = base + "px";
+                        elements[j].style.height = base + "px";
+                        if(values[j] <= 35 || base <= 500) {
+                            elements[j].children[0].style.display = 'unset';
+                        }
+                    };
+                    elements[j].onmouseleave = function (){
+                        elements[j].style.width = (values[j] * base / 100) + 'px';
+                        elements[j].style.height = (values[j] * base / 100) + 'px';
+                        if(values[j] <= 35 || base <= 500) {
+                            elements[j].children[0].style.display = 'none';
+                        }
+                    };
+                }
+                for (let j = 0; j < 12; j++){
+                    setTimeout(() => {
+                        elements[j].style.height = (values[j] * base / 100) + 'px';
+                        elements[j].style.width = (values[j] * base / 100) + 'px';
+                        elements[j].children[0].innerText = Math.floor(values[j]) + "%";
+                        if(values[j] <= 35 || base <= 500) {
+                            elements[j].children[0].style.display = 'none';
+                        }
+                    }, j * 500)
+                }
             }
         }
     }

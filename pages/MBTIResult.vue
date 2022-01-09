@@ -95,6 +95,7 @@
 </template>
 
 <script>
+    import apiServices from "../api/apiServices";
     import {mbtiTypes} from "../data/MBTI";
     import {mapState} from 'vuex'
     import MBTIType from "../components/MBTIType";
@@ -106,7 +107,6 @@
             return {
                 mbtiTypes: mbtiTypes,
                 random: 0,
-                // typeToWatch: 'INTP',
                 typeToWatch: "INTP",
             }
         },
@@ -121,65 +121,75 @@
                 }
             }
         },
-        mounted() {
+        beforeMount() {
+            this.typeToWatch = "INTP";
+            let EI = null;
+            let SN = null;
+            let TF = null;
+            let JP = null;
+            let clientType = null;
             if (!this.$route.params.type) {
-                this.$router.push({name: 'MBTI'})
+                apiServices.methods.userTestResults().then(response => {
+                    console.log(response);
+                    this.typeToWatch = response.user_mbti_results.type;
+                    EI = response.user_mbti_results.ei;
+                    SN = response.user_mbti_results.sn;
+                    TF = response.user_mbti_results.tf;
+                    JP = response.user_mbti_results.jp;
+                    clientType = response.user_mbti_results.type;
+                    this.handleDisplay(clientType, EI, SN, TF, JP);
+                })
+            } else {
+                this.typeToWatch = this.$route.params.type;
+                EI = this.$route.params.EI;
+                SN = this.$route.params.SN;
+                TF = this.$route.params.TF;
+                JP = this.$route.params.JP;
+                clientType = this.$route.params.type;
+                this.handleDisplay(clientType, EI, SN, TF, JP);
             }
-            this.typeToWatch = this.$route.params.type;
-            let EI = this.$route.params.EI;
-            let SN = this.$route.params.SN;
-            let TF = this.$route.params.TF;
-            let JP = this.$route.params.JP;
-            let clientType = this.$route.params.type;
-
-            // this.typeToWatch = "ENTP";
-            // let type = "ENTP";
-            // let EI = {'value': 40, 'result': "E"};
-            // let SN = {'value': 40, 'result': "N"};
-            // let TF = {'value': 40, 'result': "T"};
-            // let JP = {'value': 40, 'result': "P"};
-            // let clientType = "ENTP";
-
-            let _this = this;
-            let suspension = 30;
-            if (!this.fa) {
-                let duo = document.getElementsByClassName('duo');
-                for (let i = 0; i < duo.length; i++) {
-                    duo[i].style.flexDirection = 'row-reverse'
+        },
+        methods: {
+            handleDisplay(clientType, EI, SN, TF, JP) {
+                let _this = this;
+                let suspension = 30;
+                if (!this.fa) {
+                    let duo = document.getElementsByClassName('duo');
+                    for (let i = 0; i < duo.length; i++) {
+                        duo[i].style.flexDirection = 'row-reverse'
+                    }
                 }
-            }
-            let delay = 0;
-            let types = document.getElementsByClassName('type');
-            for (let i = 0; i < suspension; i++) {
-                delay = Math.pow(i, 1.3) * 2;
-                let random = Math.floor(Math.random() * 16);
-                if (random === this.random) {
-                    random = Math.floor(Math.random() * 16);
-                } else {
-                    this.random = random
+                let delay = 0;
+                let types = document.getElementsByClassName('type');
+                for (let i = 0; i < suspension; i++) {
+                    delay = Math.pow(i, 1.3) * 2;
+                    let random = Math.floor(Math.random() * 16);
+                    if (random === this.random) {
+                        random = Math.floor(Math.random() * 16);
+                    } else {
+                        this.random = random
+                    }
+                    console.log(random);
+                    let elem = document.getElementById(this.mbtiTypes[random].abr);
+                    setTimeout(function () {
+                        for (let type of types) {
+                            type.classList.remove('client-type')
+                        }
+                        elem.classList.add('client-type');
+                    }, i * delay);
                 }
-                console.log(random);
-                let elem = document.getElementById(this.mbtiTypes[random].abr);
+                delay = Math.pow(suspension, 1.3) * 2;
                 setTimeout(function () {
                     for (let type of types) {
                         type.classList.remove('client-type')
                     }
-                    elem.classList.add('client-type');
-                }, i * delay);
-            }
-            delay = Math.pow(suspension, 1.3) * 2;
-            setTimeout(function () {
-                for (let type of types) {
-                    type.classList.remove('client-type')
-                }
-                document.getElementById(clientType).classList.add('client-type');
-                setTimeout(() => {
-                    document.getElementsByClassName('types-box')[0].scrollIntoView({behavior: 'smooth'});
-                    _this.handleBars(EI, SN, TF, JP);
-                }, 2000)
-            }, (suspension) * delay)
-        },
-        methods: {
+                    document.getElementById(clientType).classList.add('client-type');
+                    setTimeout(() => {
+                        document.getElementsByClassName('types-box')[0].scrollIntoView({behavior: 'smooth'});
+                        _this.handleBars(EI, SN, TF, JP);
+                    }, 2000)
+                }, (suspension) * delay)
+            },
             handleBars(EI, SN, TF, JP){
                 if (EI.result === 'E') {
                     document.getElementsByClassName('e')[0].style.width = EI.value.toString() + "%";

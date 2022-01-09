@@ -9,7 +9,7 @@
       </div>
       <div v-if="tokenSend" class="form-row flex flex-column">
         <span>کد 4 رقمی را وارد کنید</span>
-        <input type="text" v-model="token" class="token" required @input="normalizeToken()" placeholder="----" >
+        <input type="text" v-model="token" maxlength="4" class="token" required @input="normalizeToken()" placeholder="----" >
       </div>
       <div class="sign-alert-container">
         <span class="sign-alert">{{this.alertMessage}}</span>
@@ -75,8 +75,8 @@
                         submit.enabled = false;
                         submit.disabled = true;
                         let display = document.querySelector('#time');
-                        let time = this.tokenExpiration * 60;
-                        // let time = 5;
+                        // let time = this.tokenExpiration * 60;
+                        let time = 5;
                         this.countdownTimer(time, display);
                         console.log(response[0].message);
                     })
@@ -135,8 +135,8 @@
 
                     minutes = minutes < 10 ? "0" + minutes : minutes;
                     seconds = seconds < 10 ? "0" + seconds : seconds;
-
-                    display.textContent = minutes + ":" + seconds;
+                    console.log(timer)
+                    display.innerText = minutes + ":" + seconds;
                     if (timer > 0) {
                         timer --
                     } else {
@@ -145,9 +145,9 @@
                         if(this.tokenSend) {
                             resend.disabled = false;
                             resend.enabled = true;
-                            apiServices.methods.sendVerificationToken(this.phoneNumber).then(response => {
-                                console.log(response[0].message);
-                            })
+                            // apiServices.methods.sendVerificationToken(this.phoneNumber).then(response => {
+                            //     console.log(response[0].message);
+                            // })
                         }
                     }
                 }, 1000);
@@ -178,7 +178,6 @@
                     submit.enabled = false;
                     submit.disabled = true;
                 }
-                console.log(this.token)
             },
             switch() {
                 this.tokenSign = !this.tokenSign

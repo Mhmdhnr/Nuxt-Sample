@@ -30,6 +30,7 @@
     import {mapState} from 'vuex'
     import EnNotAvailable from "../components/EnNotAvailable";
     import TypingMachine from "../components/TypingMachine";
+    import apiServices from "../api/apiServices";
     export default {
         name: "HollandResult",
         components: {TypingMachine, EnNotAvailable},
@@ -40,50 +41,66 @@
             }
         },
         mounted() {
+            let r = null;
+            let i = null;
+            let a = null;
+            let s = null;
+            let e = null;
+            let c = null;
             if (!this.$route.params.R) {
-                this.$router.push({name: 'Holland'})
+                apiServices.methods.userTestResults().then(response => {
+                    console.log(response);
+                    r = response.user_holland_results.realistic;
+                    i = response.user_holland_results.investigative;
+                    a = response.user_holland_results.artistic;
+                    s = response.user_holland_results.social;
+                    e = response.user_holland_results.enterprising;
+                    c = response.user_holland_results.conventional;
+                    let values = [r, i, a, s, e, c];
+                    console.log(values);
+                    this.handleDisplay(values);
+                })
+            } else {
+                r = this.$route.params.R;
+                i = this.$route.params.I;
+                a = this.$route.params.A;
+                s = this.$route.params.S;
+                e = this.$route.params.E;
+                c = this.$route.params.C;
+                let values = [r, i, a, s, e, c];
+                this.handleDisplay(values);
             }
-            let base = 500;
-            if(window.screen.width <= 864){
-                base = 320;
-            }
-            let r = this.$route.params.R;
-            let i = this.$route.params.I;
-            let a = this.$route.params.A;
-            let s = this.$route.params.S;
-            let e = this.$route.params.E;
-            let c = this.$route.params.C;
-            // let r = 40;
-            // let i = 20;
-            // let a = 22;
-            // let s = 35;
-            // let e = 30;
-            // let c = 28;
-            let rElement = document.getElementsByClassName('r')[0];
-            let iElement = document.getElementsByClassName('i')[0];
-            let aElement = document.getElementsByClassName('a')[0];
-            let sElement = document.getElementsByClassName('s')[0];
-            let eElement = document.getElementsByClassName('e')[0];
-            let cElement = document.getElementsByClassName('c')[0];
+        }, methods: {
+            handleDisplay(values){
+                let base = 500;
+                if(window.screen.width <= 864){
+                    base = 320;
+                }
+                let rElement = document.getElementsByClassName('r')[0];
+                let iElement = document.getElementsByClassName('i')[0];
+                let aElement = document.getElementsByClassName('a')[0];
+                let sElement = document.getElementsByClassName('s')[0];
+                let eElement = document.getElementsByClassName('e')[0];
+                let cElement = document.getElementsByClassName('c')[0];
 
-            let elements = [rElement, iElement, aElement, sElement, eElement, cElement];
-            let values = [r, i, a, s, e, c];
-            for (let j = 0; j < 6; j++){
-                elements[j].onmouseover = function () {
-                    elements[j].style.width = base + "px";
-                    elements[j].style.height = base * 1.152 + "px";
-                };
-                elements[j].onmouseleave = function (){
-                    elements[j].style.width = (values[j] / 40 * base) + 'px';
-                    elements[j].style.height = (values[j]  / 40 * base) + 'px';
-                };
-            }
-            for (let j = 0; j < 6; j++){
-                setTimeout(() => {
-                    elements[j].style.height = (values[j] / 40 * base) + 'px';
-                    elements[j].style.width = (values[j] / 40 * base) + 'px';
-                    elements[j].children[0].innerText = Math.floor(values[j] / 40 * 100) + "%";
-                }, j * 1000)
+                let elements = [rElement, iElement, aElement, sElement, eElement, cElement];
+                for (let j = 0; j < 6; j++){
+                    elements[j].onmouseover = function () {
+                        elements[j].style.width = base + "px";
+                        elements[j].style.height = base * 1.152 + "px";
+                    };
+                    elements[j].onmouseleave = function (){
+                        elements[j].style.width = (values[j] * base / 100) + 'px';
+                        elements[j].style.height = (values[j]  * base / 100) + 'px';
+                    };
+                }
+                for (let j = 0; j < 6; j++){
+                    setTimeout(() => {
+                        elements[j].style.height = (values[j]  * base / 100) + 'px';
+                        elements[j].style.width = (values[j]  * base / 100) + 'px';
+                        elements[j].children[0].innerText = values[j] + "%";
+                    }, j * 1000)
+                }
             }
         }
     }

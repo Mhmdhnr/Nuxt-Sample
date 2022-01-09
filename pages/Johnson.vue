@@ -35,9 +35,9 @@
                     console.log(response);
                     this.$router.push({name:'JohnsonResult',
                         params:{
-                            a1: response.aptitude1, a2: response.aptitude2, a3: response.aptitude3, a4: response.aptitude4,
-                            a5: response.aptitude5, a6: response.aptitude6, a7: response.aptitude7, a8: response.aptitude8,
-                            a9: response.aptitude9, a10: response.aptitude10, a11: response.aptitude11, a12: response.aptitude12,
+                            a1: response.aptitude_1, a2: response.aptitude_2, a3: response.aptitude_3, a4: response.aptitude_4,
+                            a5: response.aptitude_5, a6: response.aptitude_6, a7: response.aptitude_7, a8: response.aptitude_8,
+                            a9: response.aptitude_9, a10: response.aptitude_10, a11: response.aptitude_11, a12: response.aptitude_12,
                         }});
                 })
             }

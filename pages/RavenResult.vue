@@ -38,14 +38,15 @@
     <div class="con flex flex-column">
       <span v-if="this.fa">شما به {{this.correct}} سوال از 60 سوال پاسخ درست دادید.</span>
       <span v-if="!this.fa">You have answered correctly to {{this.correct}} questions from 60 questions.</span>
-      <span class="iq-span-con" v-if="this.fa & this.correct.toString() === '60'">تبریک!!! ضریب هوشی محاسبه شده، ماکزیمم مقدار قابل محاسبه توسط این آزمون برای سن شما میباشد.</span>
-      <span class="iq-span-con" v-if="!this.fa & this.correct.toString() === '60'">Congratulations!!! The calculate IQ is the maximum value which can be calculate by this test for your age.</span>
+      <span class="iq-span-con" v-if="this.fa & this.correct === 60">تبریک!!! ضریب هوشی محاسبه شده، ماکزیمم مقدار قابل محاسبه توسط این آزمون برای سن شما میباشد.</span>
+      <span class="iq-span-con" v-if="!this.fa & this.correct === 60">Congratulations!!! The calculate IQ is the maximum value which can be calculate by this test for your age.</span>
     </div>
   </div>
 </template>
 
 <script>
     import {mapState} from 'vuex'
+    import apiServices from "../api/apiServices";
     export default {
         name: "RavenResult",
         computed: mapState(['fa']),
@@ -55,62 +56,73 @@
         },
         data() {
           return {
-              correct: this.$route.params.correct? this.$route.params.correct: 0,
+              correct: this.$route.params.correct? this.$route.params.correct : 0,
           }
         },
         mounted() {
+            let iq = null;
             if (!this.$route.params.iq) {
-                this.$router.push({name: 'Raven'})
+                apiServices.methods.userTestResults().then(response => {
+                    console.log(response);
+                    iq = response.user_raven_results.iq;
+                    this.correct = response.user_raven_results.correct_count;
+                    this.handleDisplay(iq);
+                })
+            } else {
+                iq = this.$route.params.iq;
+                this.handleDisplay(iq);
             }
-            let range;
-            // let iq = 149;
-            let iq = this.$route.params.iq;
-            let iqElement = document.getElementsByClassName('iq')[0];
-            for(let i = 51 ; i <= iq; i++){
-                setTimeout(function () {
-                  iqElement.innerText = i.toString();
-                  if (i === 51) {
-                    iqElement.innerText =  i.toString() + "- " ;
-                  } else if (i === 149) {
-                    iqElement.innerText = i.toString() + "+ ";
-                  }
-                  switch (true) {
-                      case i <= 64:
-                          range = 'retarded';
-                          document.getElementsByClassName(range)[0].classList.add('current');
-                          break;
-                      case i > 64 && i <= 76:
-                          range = 'borderline-retarded';
-                          document.getElementsByClassName('retarded')[0].classList.remove('current');
-                          document.getElementsByClassName(range)[0].classList.add('current');
-                          break;
-                      case i > 76 && i <= 88:
-                          range = 'below-average';
-                          document.getElementsByClassName('borderline-retarded')[0].classList.remove('current');
-                          document.getElementsByClassName(range)[0].classList.add('current');
-                          break;
-                      case i > 88 && i <= 112:
-                          range = 'average';
-                          document.getElementsByClassName('below-average')[0].classList.remove('current');
-                          document.getElementsByClassName(range)[0].classList.add('current');
-                          break;
-                      case i > 112 && i <= 124:
-                          range = 'excellent';
-                          document.getElementsByClassName('average')[0].classList.remove('current');
-                          document.getElementsByClassName(range)[0].classList.add('current');
-                          break;
-                      case i > 124 && i <= 148:
-                          range = 'super-excellent';
-                          document.getElementsByClassName('excellent')[0].classList.remove('current');
-                          document.getElementsByClassName(range)[0].classList.add('current');
-                          break;
-                      case i > 148:
-                          range = 'genius';
-                          document.getElementsByClassName('super-excellent')[0].classList.remove('current');
-                          document.getElementsByClassName(range)[0].classList.add('current');
-                          break;
-                  }
-                }, (Math.pow(i, 4) / (iq * 200)))
+        },
+        methods: {
+            handleDisplay(iq) {
+                let range;
+                let iqElement = document.getElementsByClassName('iq')[0];
+                for(let i = 51 ; i <= iq; i++){
+                    setTimeout(function () {
+                        iqElement.innerText = i.toString();
+                        if (i === 51) {
+                            iqElement.innerText =  i.toString() + "- " ;
+                        } else if (i === 149) {
+                            iqElement.innerText = i.toString() + "+ ";
+                        }
+                        switch (true) {
+                            case i <= 64:
+                                range = 'retarded';
+                                document.getElementsByClassName(range)[0].classList.add('current');
+                                break;
+                            case i > 64 && i <= 76:
+                                range = 'borderline-retarded';
+                                document.getElementsByClassName('retarded')[0].classList.remove('current');
+                                document.getElementsByClassName(range)[0].classList.add('current');
+                                break;
+                            case i > 76 && i <= 88:
+                                range = 'below-average';
+                                document.getElementsByClassName('borderline-retarded')[0].classList.remove('current');
+                                document.getElementsByClassName(range)[0].classList.add('current');
+                                break;
+                            case i > 88 && i <= 112:
+                                range = 'average';
+                                document.getElementsByClassName('below-average')[0].classList.remove('current');
+                                document.getElementsByClassName(range)[0].classList.add('current');
+                                break;
+                            case i > 112 && i <= 124:
+                                range = 'excellent';
+                                document.getElementsByClassName('average')[0].classList.remove('current');
+                                document.getElementsByClassName(range)[0].classList.add('current');
+                                break;
+                            case i > 124 && i <= 148:
+                                range = 'super-excellent';
+                                document.getElementsByClassName('excellent')[0].classList.remove('current');
+                                document.getElementsByClassName(range)[0].classList.add('current');
+                                break;
+                            case i > 148:
+                                range = 'genius';
+                                document.getElementsByClassName('super-excellent')[0].classList.remove('current');
+                                document.getElementsByClassName(range)[0].classList.add('current');
+                                break;
+                        }
+                    }, (Math.pow(i, 4) / (iq * 200)))
+                }
             }
         }
     }

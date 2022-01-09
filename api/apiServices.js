@@ -120,6 +120,10 @@ export default {
       const url = `${API_URL}/info`;
       return await this.toPromise(url, 'get');
     },
+    async userTestResults() {
+      const url = `${API_URL}/user_test_result`;
+      return await this.toPromise(url, 'get');
+    },
     async postRavenResponse(clientAnswers) {
       console.log(clientAnswers);
       let jsonString = JSON.stringify(clientAnswers);
