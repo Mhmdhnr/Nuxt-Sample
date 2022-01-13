@@ -5,7 +5,8 @@
     </div>
     <div class="flex flex-column" v-if="this.fa">
       <Slider v-bind:slider="slider[8]" />
-      <Test :mustAnsweredAll="true"  v-on:submit="submit" testId="4"/>
+      <TestR :mustAnsweredAll="true"  v-on:submit="submit" testId="4"/>
+<!--      <Test :mustAnsweredAll="true"  v-on:submit="submit" testId="4"/>-->
     </div>
   </div>
 </template>
@@ -17,9 +18,10 @@
     import {slider} from "../data/data";
     import Slider from "../components/Slider";
     import Test from "../components/Test";
+    import TestR from "../components/TestR";
     export default {
         name: "Johnson",
-        components: {Test, Slider, EnNotAvailable},
+        components: {TestR, Test, Slider, EnNotAvailable},
         data() {
             return {
                 slider: slider,

@@ -5,7 +5,7 @@ export const state = () => ({
   api: '',
   theme: 'light',
   loadingMessage: {
-    fa: 'در حال بارگزاری...',
+    fa: 'در حال بارگذاری...',
     en: 'Loading...',
   },
   needSignIn: false,

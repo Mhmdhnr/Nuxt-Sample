@@ -113,7 +113,7 @@
     width: 100%;
     height: 100%;
     background-image: linear-gradient(180deg, rgba(255,255,255,0) 0%, rgba(255,255,255,0) 80%, var(--primary-color)  100%);
-    z-index: 50;
+    z-index: 5;
   }
   .content {
     width: 50%;
@@ -225,10 +225,10 @@
       display:none;
     }
     .short-content {
-      font-size: 0.9em;
+      font-size: 0.8em;
     }
     .long-content {
-      font-size: 0.75em;
+      font-size: 0.7em;
     }
     .content {
       width: 90%;

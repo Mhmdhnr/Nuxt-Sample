@@ -367,7 +367,7 @@
       font-size: 0.7em;
     }
     .des {
-      font-size: 0.7em;
+      font-size: 0.6em;
       width: 80%;
       margin: 2vh auto;
     }

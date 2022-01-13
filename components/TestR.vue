@@ -105,7 +105,7 @@
                 submit.disabled = false;
                 submit.enabled = true;
             }
-            this.$store.commit('loadingMessage' , {fa: 'در حال بارگزاری آزمون شما ...', en: 'Loading your test ...'});
+            this.$store.commit('loadingMessage' , {fa: 'در حال بارگذاری آزمون شما ...', en: 'Loading your test ...'});
             this.$store.commit('api', 'pending');
             apiServices.methods.getTest(this.testId).then(response => {
                 this.test = response;
@@ -160,7 +160,7 @@
                 window.addEventListener('scroll', function(){
                     scrollY = window.scrollY;
                     console.log(scrollY)
-                    if(scrollY > 100){
+                    if(scrollY > 500){
                         document.getElementsByClassName('stations')[0].classList.add('top-fixed')
                     }
                     else {
@@ -259,7 +259,7 @@
   .stations {
     position: relative;
     padding: 20px 0;
-    width: 1080px;
+    width: 100vw;
     background-color: var(--bg-color);
     z-index: 10;
     justify-content: space-around;

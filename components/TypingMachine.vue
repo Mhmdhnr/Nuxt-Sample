@@ -1,5 +1,5 @@
 <template>
-    <div class="typing-machine" :id="subject" @click="play()">
+    <div class="typing-machine" :id="subject">
       <slot />
       <span :id="subject+'cursor'" class="cursor">|</span>
     </div>

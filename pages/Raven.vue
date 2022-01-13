@@ -21,7 +21,8 @@
           <span class="age-submit-text" v-if="!this.fa">Confirm</span>
         </button>
       </div>
-      <Test v-show="ageSubmitted" :mustAnsweredAll="false" v-on:submit="submit" testId="2"/>
+      <TestR v-show="ageSubmitted" :mustAnsweredAll="false" v-on:submit="submit" testId="2"/>
+<!--      <Test v-show="ageSubmitted" :mustAnsweredAll="false" v-on:submit="submit" testId="2"/>-->
     </div>
   </div>
 </template>
@@ -33,9 +34,10 @@
     import Test from "../components/Test";
     import Slider from "../components/Slider";
     import Loading from "../components/Loading";
+    import TestR from "../components/TestR";
     export default {
         name: "Raven",
-        components: {Loading, Slider, Test},
+        components: {TestR, Loading, Slider, Test},
         data() {
             return {
                 slider: slider,

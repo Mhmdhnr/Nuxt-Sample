@@ -26,7 +26,7 @@
 </template>
 
 <script>
-    import {hollandTypes} from "../data/Holland.js";
+    import {hollandTypes} from "../data/holland.js";
     import {mapState} from 'vuex'
     import EnNotAvailable from "../components/EnNotAvailable";
     import TypingMachine from "../components/TypingMachine";
@@ -264,7 +264,7 @@
       font-size: 1.2em;
     }
     .des {
-      font-size: 0.7em;
+      font-size: 0.6em;
       width: 80%;
       margin: 2vh auto;
     }

@@ -118,6 +118,14 @@ export const menu = [
           en: "Raven Test"
         },
         link: "Raven",
+      },
+      {
+        id:"sub25",
+        title : {
+          fa: "تست گلاسر",
+          en: "Glasser Test"
+        },
+        link: "Glasser",
       }
     ]
   }
@@ -228,6 +236,19 @@ export const workCards = [
       pageLink: "/Johnson",
     }
   },
+  {
+    id: "work9",
+    front: {
+      imageUrl: "johnson.svg"
+    },
+    back: {
+      title: {
+        fa: "تست گلاسر",
+        en: "Glasser Test"
+      },
+      pageLink: "/Glasser",
+    }
+  },
 ];
 export const slider = [
   {
@@ -329,6 +350,17 @@ export const slider = [
     },
     imageUrl: "johnson.svg"
   },
+  {
+    summary: {
+      fa: "آزمون گلاسر. آزمونی جهت شناخت میزان نیازهای اساسی شما.",
+      en: "Holland test"
+    },
+    detail: {
+      fa: "شناخت دقیق نیازها از دو جنبه بسیار حائز اهمیت است. از یک طرف ریشه انتظارات ما از دیگران را تشکیل میدهد، یعنی بخش مهمی از انتظارات ما به دلیل نیازهای طبیعی خودمان است و از طرف دیگر نیازهای ما نباید به گونه ای باشد که نیازهای طرف مقابل را تحت الشعاع خود قرار دهد.",
+      en: ""
+    },
+    imageUrl: "holland.svg"
+  }
 ];
 export const colorPicker = {
   light: {

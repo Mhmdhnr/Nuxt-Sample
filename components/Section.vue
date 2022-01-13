@@ -68,7 +68,8 @@
     /*border-top: 1px solid var(--text-color);*/
     justify-content: flex-start;
     width: 100%;
-    padding-bottom: 15vh;
+    /*height: 70vh;*/
+    padding: 0 2vw 14vh;
   }
   .hint {
     cursor: pointer;
