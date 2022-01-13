@@ -52,7 +52,7 @@
             hideSubItems(id) {
                 document.getElementById(id).classList.remove("come-in");
                 document.getElementById(id).classList.add("get-out");
-                // document.getElementById(id).style.display = "none";
+                document.getElementById(id).style.display = "none";
             }
         }
     }

@@ -29,7 +29,7 @@
 <script>
     export default {
         name: "Question",
-        props: ['question', 'lastChoosedIndex'],
+        props: ['question'],
         data() {
             return {
                 selected: false
@@ -38,27 +38,27 @@
         mounted() {
             let choiceArray = JSON.parse(localStorage.getItem('testResponse'));
             let questionChoices = this.question.choices;
-            let index = this.question.index;
-            let questionResponseIndex = choiceArray[index - 1];
+            let questionResponseIndex = choiceArray.find(x => x.questionId === this.question.id).choice;
             let choiceId = null;
-                // console.log(questionChoices.find(x => x.index = questionResponseIndex))
             if(questionChoices[questionResponseIndex - 1]){
                 choiceId = questionChoices[questionResponseIndex - 1].id;
-                document.getElementById(choiceId.toString()).checked = true;
+                this.$nextTick(function () {
+                    this.check(this.question, questionChoices[questionResponseIndex - 1]);
+                })
             }
         },
         methods: {
             check(question, choice) {
                 if (document.getElementById(choice.id).checked === true) {
                     document.getElementById(choice.id).checked = false;
-                    this.$emit('selected', {choiceIndex: 0, questionIndex: question.index})
+                    this.$emit('selected', {choiceIndex: 0, questionId: question.id})
                 }
                 else {
                   for (const choice of question.choices) {
                       document.getElementById(choice.id).checked = false
                   }
                   document.getElementById(choice.id).checked = true;
-                  this.$emit('selected', {choiceIndex: choice.index, questionIndex: question.index})
+                  this.$emit('selected', {choiceIndex: choice.index, questionId: question.id})
                 }
             },
         }
@@ -80,7 +80,7 @@
     padding: 0;
   }
   .question-main{
-    padding: 2vh 0;
+    padding: 1vh 0;
   }
   .question-main-text {
     width: 100%;
@@ -95,7 +95,7 @@
     top: 2vh;
   }
   .question-text {
-    padding: 2vh 2vw 2vh;
+    padding: 1vh 2vw 1vh;
     /*background-color: var(--primary-color);*/
     /*color: var(--bg-color);*/
     font-size: 0.9em;
@@ -111,7 +111,7 @@
     justify-content: center;
     width: 100%;
     height: auto;
-    padding: 0 2vw 1vh;
+    padding: 0 2vw;
   }
   .choices-image {
     display: grid;

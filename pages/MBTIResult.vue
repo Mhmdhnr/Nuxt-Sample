@@ -121,7 +121,7 @@
                 }
             }
         },
-        beforeMount() {
+        mounted() {
             this.typeToWatch = "INTP";
             let EI = null;
             let SN = null;
