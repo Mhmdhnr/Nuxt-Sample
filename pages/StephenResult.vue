@@ -3,18 +3,20 @@
     <div v-if="!this.fa">
       <EnNotAvailable />
     </div>
-    <div v-if="this.fa" class="glasser-result flex flex-column">
-      <img src="~/assets/images/dividerGlasser.svg" alt="" class="divider">
-      <div class="circle"></div>
-      <div v-for="(glasserType, index) in this.glasserTypes" :class="`circle-${index + 1}`" class="circle-title">{{glasserType.title.fa}}</div>
-      <div v-for="(glasserType, index) in this.glasserTypes" :class="`arc-${index + 1}`" class="arc">
+    <div v-if="this.fa" class="stephen-result flex flex-column">
+      <div class="half">
+        <img src="~/assets/images/dividerJohnson.svg" alt="" class="divider">
+        <div class="circle"></div>
+      </div>
+      <div v-for="(stephenType, index) in this.stephenTypes" :class="`circle-${index + 1}`" class="circle-title">{{stephenType.title.fa}}</div>
+      <div v-for="(stephenType, index) in this.stephenTypes" :class="`arc-${index + 1}`" class="arc">
         <span class="value"></span>
         <div class="details flex flex-column">
-          <span>{{glasserType.title.fa}}</span>
+          <span>{{stephenType.title.fa}}</span>
           <br>
           <div class="des">
-            <TypingMachine :subject="glasserType.id" delay="800" speed="2000" :forwards="true" :sound="true">
-              <span>{{glasserType.shortDes.fa}}</span>
+            <TypingMachine :subject="stephenType.id" delay="800" speed="2000" :forwards="true" :sound="true">
+              <span>{{stephenType.shortDes.fa}}</span>
             </TypingMachine>
           </div>
         </div>
@@ -24,45 +26,39 @@
 </template>
 
 <script>
-    import {glasserTypes} from "../data/glasser.js";
+    import {stephenTypes} from "../data/stephen.js";
     import {mapState} from 'vuex'
     import EnNotAvailable from "../components/EnNotAvailable";
     import TypingMachine from "../components/TypingMachine";
     import apiServices from "../api/apiServices";
     export default {
-        name: "GlasserResult",
+        name: "StephenResult",
         components: {TypingMachine, EnNotAvailable},
         computed: mapState(['fa']),
         data() {
             return {
-                glasserTypes: glasserTypes
+                stephenTypes: stephenTypes
             }
         },
         mounted() {
-            let n1 = null;
-            let n2 = null;
-            let n3 = null;
-            let n4 = null;
-            let n5 = null;
+            let dependent = null;
+            let independent = null;
+            let interdependent = null;
             if (!this.$route.params.n1) {
                 apiServices.methods.userTestResults().then(response => {
                     console.log(response);
-                    n1 = response.user_glasser_results.need_1;
-                    n2 = response.user_glasser_results.need_2;
-                    n3 = response.user_glasser_results.need_3;
-                    n4 = response.user_glasser_results.need_4;
-                    n5 = response.user_glasser_results.need_5;
-                    let values = [n1, n2, n3, n4, n5];
+                    dependent = response.user_stephen_results.dependent;
+                    independent = response.user_stephen_results.independent;
+                    interdependent = response.user_stephen_results.interdependent;
+                    let values = [dependent, independent, interdependent];
                     console.log(values);
                     this.handleDisplay(values);
                 })
             } else {
-                n1 = this.$route.params.n1;
-                n2 = this.$route.params.n2;
-                n3 = this.$route.params.n3;
-                n4 = this.$route.params.n4;
-                n5 = this.$route.params.n5;
-                let values = [n1, n2, n3, n4, n5];
+                dependent = this.$route.params.dependent;
+                independent = this.$route.params.independent;
+                interdependent = this.$route.params.interdependent;
+                let values = [dependent, independent, interdependent];
                 this.handleDisplay(values);
             }
         },
@@ -70,17 +66,15 @@
             handleDisplay(values) {
                 let base = 700;
                 if(window.screen.width <= 864){
-                    base = 320;
+                    base = 330;
                 }
                 let element1 = document.getElementsByClassName('arc-1')[0];
                 let element2 = document.getElementsByClassName('arc-2')[0];
                 let element3 = document.getElementsByClassName('arc-3')[0];
-                let element4 = document.getElementsByClassName('arc-4')[0];
-                let element5 = document.getElementsByClassName('arc-5')[0];
 
-                let elements = [element1, element2, element3, element4, element5];
+                let elements = [element1, element2, element3];
                 console.log(elements);
-                for (let j = 0; j < 5; j++){
+                for (let j = 0; j < 3; j++){
                     elements[j].onmouseover = function () {
                         elements[j].style.width = base + "px";
                         elements[j].style.height = base + "px";
@@ -96,7 +90,7 @@
                         }
                     };
                 }
-                for (let j = 0; j < 5; j++){
+                for (let j = 0; j < 3; j++){
                     setTimeout(() => {
                         elements[j].style.height = (values[j] * base / 100) + 'px';
                         elements[j].style.width = (values[j] * base / 100) + 'px';
@@ -112,11 +106,11 @@
 </script>
 
 <style scoped>
-  .glasser-result {
+  .stephen-result {
     justify-content: center;
     height: 800px;
     position: relative;
-    padding-top: 4vh;
+    margin-top: 4vh;
   }
   .circle {
     position: absolute;
@@ -125,6 +119,13 @@
     border-radius: 50%;
     background-color: var(--primary-color);
     opacity: 0.3;
+  }
+  .half {
+    position: relative;
+    width: 700px;
+    height: 350px;
+    overflow: hidden;
+    margin: 50px auto auto;
   }
   .divider {
     position: absolute;
@@ -152,7 +153,7 @@
     justify-content: center;
     text-align: center;
     border-radius: 50%;
-    clip-path: polygon(13.6% 0, 86.2% 0, 50% 50%);
+    clip-path: polygon(21.2% 0, 78.8% 0, 50% 50%);
     transition: all 400ms ease-in-out;
     z-index: 11;
   }
@@ -178,68 +179,50 @@
   .des > * > span {
     color: var(--bg-color);
   }
-  .arc-1:hover, .arc-2:hover, .arc-3:hover, .arc-4:hover, .arc-5:hover {
+  .arc-1:hover, .arc-2:hover, .arc-3:hover{
     clip-path: none;
     transform: rotate(360deg);
     transition: all 400ms;
     z-index: 20;
   }
-  .arc-1:hover .details, .arc-2:hover .details, .arc-3:hover .details, .arc-4:hover .details, .arc-5:hover .details {
+  .arc-1:hover .details, .arc-2:hover .details, .arc-3:hover .details{
     display: block;
   }
-  .arc-1:hover .value, .arc-2:hover .value, .arc-3:hover .value, .arc-4:hover .value, .arc-5:hover .value {
+  .arc-1:hover .value, .arc-2:hover .value, .arc-3:hover .value {
     margin-bottom: 2vh;
     font-size: 1.5em;
   }
-  .arc-1, .arc-3, .arc-5{
+  .arc-1, .arc-3{
     background-color: var(--primary-color);
   }
-  .arc-2, .arc-4 {
+  .arc-2 {
   }
   .arc-1 {
-    transform: rotate(36deg);
+    transform: rotate(-60deg);
     background-color: hsl(0, 80%, 60%);
   }
   .arc-2 {
-    transform: rotate(108deg);
-    background-color: hsl(30, 80%, 60%);
+    transform: rotate(0deg);
+    background-color: hsl(250, 80%, 60%);
   }
   .arc-3 {
-    transform: rotate(180deg);
+    transform: rotate(60deg);
     background-color: hsl(144, 80%, 60%);
   }
-  .arc-4 {
-    transform: rotate(252deg);
-    background-color: hsl(216, 80%, 60%);
-  }
-  .arc-5 {
-    transform: rotate(324deg);
-    background-color: hsl(288, 80%, 60%);
-  }
   .circle-1{
-    transform: rotate(36deg);
+    transform: rotate(-60deg);
     color: hsl(0, 80%, 50%);
     animation: 200ms opacity ease-in-out forwards 500ms;
   }
   .circle-2{
-    transform: rotate(108deg);
-    color: hsl(30, 80%, 50%);
+    transform: rotate(0deg);
+    color: hsl(250, 80%, 50%);
     animation: 200ms opacity ease-in-out forwards 1000ms;
   }
   .circle-3{
-    transform: rotate(180deg);
+    transform: rotate(60deg);
     color: hsl(144, 80%, 50%);
     animation: 200ms opacity ease-in-out forwards 1500ms;
-  }
-  .circle-4{
-    transform: rotate(252deg);
-    color: hsl(216, 80%, 50%);
-    animation: 200ms opacity ease-in-out forwards 2000ms;
-  }
-  .circle-5{
-    transform: rotate(324deg);
-    color: hsl(288, 80%, 50%);
-    animation: 200ms opacity ease-in-out forwards 2500ms;
   }
 
   @keyframes opacity {
@@ -251,24 +234,34 @@
     }
   }
   @media screen and (max-width: 864px) {
-    .glasser-result {
+    .stephen-result {
       height: 80vh;
     }
     .value {
       margin-bottom: 75%;
       font-size: 0.8em;
     }
-    .arc-1:hover .value, .arc-2:hover .value, .arc-3:hover .value, .arc-4:hover .value, .arc-5:hover .value {
+    .arc-1:hover .value, .arc-2:hover .value, .arc-3:hover .value {
       margin-bottom: 1vh;
       font-size: 1em;
     }
     .circle {
-      width: 320px;
-      height: 320px;
+      width: 330px;
+      height: 330px;
+    }
+    .divider {
+      display: none;
+    }
+    .half {
+      position: relative;
+      width: 330px;
+      height: 165px;
+      overflow: hidden;
+      margin: calc((80vh - 330px) / 2) auto auto;
     }
     .circle-title {
-      width: 350px;
-      height: 360px;
+      width: 370px;
+      height: 375px;
       font-size: 0.7em;
     }
     .arc {

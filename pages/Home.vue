@@ -8,6 +8,7 @@
       <FlipCard duration="500" v-bind:cardData="workCards[1]" class="carousel-element"/>
       <FlipCard duration="500" v-bind:cardData="workCards[2]" class="carousel-element"/>
       <FlipCard duration="500" v-bind:cardData="workCards[7]" class="carousel-element"/>
+      <FlipCard duration="500" v-bind:cardData="workCards[8]" class="carousel-element"/>
       <FlipCard duration="500" v-bind:cardData="workCards[3]" class="carousel-element"/>
       <FlipCard duration="500" v-bind:cardData="workCards[5]" class="carousel-element"/>
     </Carousel3dFlat>

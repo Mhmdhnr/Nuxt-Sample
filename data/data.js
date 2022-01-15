@@ -126,6 +126,14 @@ export const menu = [
           en: "Glasser Test"
         },
         link: "Glasser",
+      },
+      {
+        id:"sub26",
+        title : {
+          fa: "آزمون کاوی",
+          en: "Covey Test"
+        },
+        link: "Stephen",
       }
     ]
   }
@@ -300,6 +308,27 @@ export const workCards = [
       pageLink: "/Glasser",
     }
   },
+  {
+    id: "work10",
+    front: {
+      imageUrl: "holland.svg",
+      text: {
+        fa: "آزمون شناخت شخصیت استفان کاوی",
+        en: "Stephen Covey Test"
+      }
+    },
+    back: {
+      title: {
+        fa: "آزمون شناخت شخصیت استفان کاوی",
+        en: "Stephen Covey Test"
+      },
+      description: {
+        fa: "وابستگی و استقلال شخصیتی خود را با آزمون استفان کاوی بشناسید.",
+        en: "Find your character dependence and independence with Stephen Covey test."
+      },
+      pageLink: "/Stephen",
+    }
+  },
 ];
 export const slider = [
   {
@@ -411,6 +440,17 @@ export const slider = [
       en: ""
     },
     imageUrl: "holland.svg"
+  },
+  {
+    summary: {
+      fa: "آزمون استفان کاوی. آزمونی برای شناخت میزان وابستگی و استقلال شخصیتی شما.",
+      en: "Stephen Covey. A test to find out your character dependence and independence."
+    },
+    detail: {
+      fa: "کتاب هفت عادت مردمان موثر برای تمامی افرادی که تمایل دارند در زندگی خود به موفقیت برسند نوشته شده است. مقصود از موفقیت، یک مفهوم جامع و کلی است. به بیان دیگر قرار نیست که فقط در زمینه کسب و کار موفق شوید بلکه در حوزه زندگی شخصی، سلامت، ورزش و غیره نیز باید به موفقیت و پیروزی دست پیدا کنید. این کتاب به شما کمک می‌کند عادت‌های مهمی را فرا بگیرید که باعث پیروزی شما می‌شود.",
+      en: ""
+    },
+    imageUrl: "johnson.svg"
   }
 ];
 export const colorPicker = {

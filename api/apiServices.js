@@ -159,5 +159,12 @@ export default {
       const url = `${API_URL}/post_glasser_response?clientAnswers=${jsonString}`;
       return await this.toPromise(url, 'post', clientAnswers);
     },
+    async postStephenResponse(clientAnswers) {
+      console.log(clientAnswers);
+      let jsonString = JSON.stringify(clientAnswers);
+      console.log(jsonString);
+      const url = `${API_URL}/post_stephen_response?clientAnswers=${jsonString}`;
+      return await this.toPromise(url, 'post', clientAnswers);
+    },
   }
 }

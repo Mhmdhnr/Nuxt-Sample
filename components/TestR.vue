@@ -6,6 +6,7 @@
         <div class="test-head flex flex-row">
           <span v-if="this.fa" class="title">{{this.test.name_fa}}</span>
           <span v-if="!this.fa" class="title">{{this.test.name_en}}</span>
+          <button v-show="this.alreadyDone" class="text-button" @click="pushToResult()">مشاهده نتیجه قبلی</button>
           <div v-show="this.test.time !== 0" class="timer">
           <span id="time">
             <span v-if="this.fa">زمان آزمون</span>
@@ -16,18 +17,20 @@
           </span>
           </div>
         </div>
-        <div class="stations flex">
-          <button class="next secondary-btn" @click="currentSection ++" v-show="currentSection !== sectionCount">بخش بعدی</button>
-          <button class="pre secondary-btn" @click="currentSection --" v-show="currentSection !== 1">بخش قبلی</button>
-          <div class="flex">
-            <div class="line"></div>
-            <div class="bar"></div>
-            <div class="test-progress-stations flex" :id="`st${section.id}`" @click="switchSection(section.index)" v-for="section in test.sections">
-              <div>{{section.index}}</div>
-              <div class="bar" :id="`bar${section.id}`"></div>
+        <div class="stations flex flex-column">
+          <div class="st flex">
+            <button class="next secondary-btn" @click="currentSection ++" v-show="currentSection !== sectionCount">بخش بعدی</button>
+            <button class="pre secondary-btn" @click="currentSection --" v-show="currentSection !== 1">بخش قبلی</button>
+            <div class="flex">
+              <div class="line"></div>
+              <div class="test-progress-stations flex" :id="`st${section.id}`" @click="switchSection(section.index)" v-for="section in test.sections">
+                <div>{{section.index}}</div>
+  <!--              <div class="bar" :id="`bar${section.id}`"></div>-->
+              </div>
+              <div class="test-progress-stations test-done flex" >✔</div>
             </div>
-            <div class="test-progress-stations test-done flex" >✔</div>
           </div>
+          <div class="bar"></div>
         </div>
       </div>
       <Section v-show="section.index === currentSection" v-for="section in test.sections" :id="`s${section.id}`" v-on:selected="select" v-on:done="sectionDone" v-bind:section="section" />
@@ -71,6 +74,7 @@
                 questionCount: 0,
                 choicesArray: [],
                 currentSection: null,
+                alreadyDone: false,
             }
         },
         watch: {
@@ -94,9 +98,9 @@
         },
         computed: mapState(['api','fa']),
         mounted() {
+            this.handleUserTestResults();
             this.observe();
             let bars = document.getElementsByClassName('bar');
-            console.log(bars);
             for(let bar of bars) {
                 bar.style.width = (600 / this.sectionCount) + "px";
             }
@@ -155,11 +159,33 @@
             })
         },
         methods: {
+            handleUserTestResults() {
+                apiServices.methods.userTestResults().then(response => {
+                    console.log(response.user_test_result.stephen);
+                    if (parseInt(this.testId) === 1 && response.user_test_result.mbti) {
+                        this.alreadyDone = true;
+                    }
+                    if (parseInt(this.testId) === 2 && response.user_test_result.raven) {
+                        this.alreadyDone = true;
+                    }
+                    if (parseInt(this.testId) === 3 && response.user_test_result.holland) {
+                        this.alreadyDone = true;
+                    }
+                    if (parseInt(this.testId) === 4 && response.user_test_result.johnson) {
+                        this.alreadyDone = true;
+                    }
+                    if (parseInt(this.testId) === 5 && response.user_test_result.glasser) {
+                        this.alreadyDone = true;
+                    }
+                    if (parseInt(this.testId) === 6 && response.user_test_result.stephen) {
+                        this.alreadyDone = true;
+                    }
+                });
+            },
             observe(){
                 let scrollY = window.scrollY;
                 window.addEventListener('scroll', function(){
                     scrollY = window.scrollY;
-                    console.log(scrollY)
                     if(scrollY > 500){
                         document.getElementsByClassName('stations')[0].classList.add('top-fixed')
                     }
@@ -181,8 +207,7 @@
                 localStorage.setItem('testResponse', JSON.stringify(this.choicesArray));
                 this.allAnswered = !this.choicesArray.some(x => x.choice === 0);
                 let bar = document.getElementsByClassName('bar')[0];
-                console.log(this.choicesArray.filter(x => x.choice !== 0).length);
-                bar.style.width = (95 * this.choicesArray.filter(x => x.choice !== 0).length / this.questionCount).toString() + "%";
+                bar.style.width = (100 * this.choicesArray.filter(x => x.choice !== 0).length / this.questionCount).toString() + "vw";
                 let submit = document.getElementById('submit');
                 if (!this.allAnswered) {
                     if(this.mustAnsweredAll) {
@@ -237,6 +262,29 @@
                         this.submit()
                     }
                 }, 1000);
+            },
+            pushToResult() {
+                switch(this.test.id) {
+                    case 1:
+                        this.$router.push("MBTIResult");
+                        break;
+                    case 2:
+                        this.$router.push("RavenResult");
+                        break;
+                    case 3:
+                        this.$router.push("HollandResult");
+                        break;
+                    case 4:
+                        this.$router.push("JohnsonResult");
+                        break;
+                    case 5:
+                        this.$router.push("GlasserResult");
+                        break;
+                    case 6:
+                        this.$router.push("StephenResult");
+                        break;
+
+                }
             }
         },
     }
@@ -257,15 +305,17 @@
     border-top: 1px solid var(--text-color);
   }
   .stations {
-    position: relative;
-    padding: 20px 0;
-    width: 100vw;
+    border-bottom: 1px solid var(--text-color);
     background-color: var(--bg-color);
     z-index: 10;
-    justify-content: space-around;
-    border-bottom: 1px solid var(--text-color);
   }
-  .stations > div {
+  .st {
+    padding: 20px 0;
+    width: 100vw;
+    justify-content: space-around;
+    position: relative;
+  }
+  .st > div {
     position: relative;
     width: 600px;
     flex-direction: row-reverse;
@@ -273,11 +323,11 @@
   }
   .next {
     position: absolute;
-    right: 0;
+    right: 20px;
   }
   .pre {
     position: absolute;
-    left: 0;
+    left: 20px;
   }
   .beat {
     animation: 400ms beat alternate infinite;
@@ -296,9 +346,9 @@
     background-color: var(--primary-color);
     color: var(--bg-color);
   }
-  .line, .bar {
+  .line {
     position: absolute;
-    background-color: var(--contrast-color);
+    background-color: var(--primary-color);
     top: calc(50% - 5px);
     left: 2.5%;
     width: 95%;
@@ -306,8 +356,9 @@
     z-index: -2;
   }
   .bar {
+    margin: 0 auto 0 0;
     background-color: var(--primary-color);
-    width: 0;
+    height: 7px;
     transition: all 300ms ease-in-out;
   }
   .test-progress-stations {

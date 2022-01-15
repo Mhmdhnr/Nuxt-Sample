@@ -122,8 +122,8 @@
     position: relative;
   }
   .choice-text {
-    margin: 1vw;
-    height: 6vh;
+    margin: 1vh 1vw;
+    height: 5.5vh;
   }
   .choice-image {
     height: 125px;

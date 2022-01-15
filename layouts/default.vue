@@ -183,6 +183,16 @@
     order: 3;
     box-sizing: content-box;
   }
+  .text-button {
+    font-size: 0.8em;
+    border: none;
+    cursor: pointer;
+    background: none;
+    color: var(--text-color);
+  }
+  .text-button:disabled {
+    color: lightgray;
+  }
   .nuxt::-webkit-scrollbar {
     display: none;
   }

@@ -238,16 +238,6 @@
   #time {
     font-size: 0.8em;
   }
-  .text-button {
-    font-size: 0.8em;
-    border: none;
-    cursor: pointer;
-    background: none;
-    color: var(--text-color);
-  }
-  .text-button:disabled {
-    color: lightgray;
-  }
   .sign-alert {
     position: absolute;
     width: 100%;
