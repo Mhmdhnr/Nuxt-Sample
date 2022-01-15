@@ -478,6 +478,7 @@
       height: var(--main-header-height);
       max-height: var(--main-header-height);
       box-shadow: 0 0 20px 5px rgba(100,100,100,0.2);
+      z-index: 50;
     }
   }
 </style>

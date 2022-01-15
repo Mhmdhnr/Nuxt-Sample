@@ -96,7 +96,10 @@
             }
 
         },
-        computed: mapState(['api','fa']),
+        computed: mapState(['api','fa', 'signedIn']),
+        updated() {
+            this.handleUserTestResults();
+        },
         mounted() {
             this.handleUserTestResults();
             this.observe();
@@ -160,9 +163,10 @@
         },
         methods: {
             handleUserTestResults() {
-                if (this.$store.signedIn) {
+                console.log(this.signedIn)
+                console.log("________________________")
+                if (this.signedIn) {
                     apiServices.methods.userTestResults().then(response => {
-                        console.log(response.user_test_result.stephen);
                         if (parseInt(this.testId) === 1 && response.user_test_result.mbti) {
                             this.alreadyDone = true;
                         }
@@ -303,7 +307,7 @@
     width: 1080px;
     background-color: var(--bg-color);
     justify-content: center;
-    z-index: 1000;
+    z-index: 10;
     border-top: 1px solid var(--text-color);
   }
   .stations {
