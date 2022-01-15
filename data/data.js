@@ -90,7 +90,7 @@ export const menu = [
       {
         id:"sub21",
         title : {
-          fa: "تست MBTI",
+          fa: "آزمون MBTI",
           en: "MBTI Test"
         },
         link: "MBTI",
@@ -98,7 +98,7 @@ export const menu = [
       {
         id:"sub22",
         title : {
-          fa: "تست هالند",
+          fa: "آزمون هالند",
           en: "Holland Test"
         },
         link: "Holland",
@@ -106,7 +106,7 @@ export const menu = [
       {
         id:"sub23",
         title : {
-          fa: "تست اُکانر",
+          fa: "آزمون اُکانر",
           en: "O'connor Test"
         },
         link: "Johnson",
@@ -114,7 +114,7 @@ export const menu = [
       {
         id:"sub24",
         title : {
-          fa: "تست ریون",
+          fa: "آزمون ریون",
           en: "Raven Test"
         },
         link: "Raven",
@@ -122,7 +122,7 @@ export const menu = [
       {
         id:"sub25",
         title : {
-          fa: "تست گلاسر",
+          fa: "آزمون گلاسر",
           en: "Glasser Test"
         },
         link: "Glasser",
@@ -135,12 +135,20 @@ export const workCards = [
   {
     id: "work1",
     front: {
-      imageUrl: "chart.svg"
+      imageUrl: "chart.svg",
+      text: {
+        fa: 'نمودار خطی',
+        en: 'Linear-Chart'
+      }
     },
     back: {
       title: {
         fa: "نمودار خطی",
         en: "Linear-Chart"
+      },
+      description: {
+        fa: "یک نمودار پیشرونده با اعداد تصادفی به اضافه آخرین تغییرات نمودار",
+        en: "A Progressive Linear chart with random numbers plus last chart changes."
       },
       pageLink: "/LinearChartPage",
     }
@@ -148,38 +156,41 @@ export const workCards = [
   {
     id: "work2",
     front: {
-      imageUrl: "LB.svg"
+      imageUrl: "LB.svg",
+      text: {
+        fa: "جدول رده بندی",
+        en: "Leader Board"
+      }
     },
     back: {
       title: {
         fa: "جدول رده بندی",
         en: "Leader Board"
       },
+      description: {
+        fa: "یک جدول رده بندی که جایگاه کاربر همیشه توش نشون داده میشه حتی اگه توی صفحه نباشه",
+        en: "A leaderboard which always shows the user rank even if it's not visible on the page."
+      },
       pageLink: "/LeaderBoardPage",
     }
   },
-  // {
-  //   id: "work3",
-  //   front: {
-  //     imageUrl: "swipe.svg"
-  //   },
-  //   back: {
-  //     title: {
-  //       fa: "سوایپ در بروزر",
-  //       en: "Swipe in browser"
-  //     },
-  //     pageLink: "/SwipePage",
-  //   }
-  // },
   {
     id: "work4",
     front: {
-      imageUrl: "shoe.svg"
+      imageUrl: "shoe.svg",
+      text: {
+        fa: "گالری کفش!",
+        en: "Show Gallery"
+      }
     },
     back: {
       title: {
         fa: "گالری کفش!",
         en: "Show Gallery"
+      },
+      description: {
+        fa: "مقایسه رنگ کفش ها رو جالب تر از قبل انجام بده.",
+        en: "Compare shoe color in a fun and new way."
       },
       pageLink: "/Shop",
     }
@@ -187,12 +198,20 @@ export const workCards = [
   {
     id: "work5",
     front: {
-      imageUrl: "raven.svg"
+      imageUrl: "raven.svg",
+      text: {
+        fa: "آزمون هوش ریون",
+        en: "Raven IQ test"
+      }
     },
     back: {
       title: {
-        fa: "تست هوش ریون",
+        fa: "آزمون هوش ریون",
         en: "Raven IQ test"
+      },
+      description: {
+        fa: "تو این قسمت میزان هوش منطقی خودت رو با یک آزمون استاندار بسنج",
+        en: "Test your logical iq with a standard test here"
       },
       pageLink: "/Raven",
     }
@@ -200,12 +219,20 @@ export const workCards = [
   {
     id: "work6",
     front: {
-      imageUrl: "INTP.png"
+      imageUrl: "INTP.png",
+      text: {
+        fa: "آزمون شخصیت شناسی MBTI",
+        en: "MBTI type test"
+      }
     },
     back: {
       title: {
-        fa: "تست شخصیت شناسی MBTI",
+        fa: "آزمون شخصیت شناسی MBTI",
         en: "MBTI type test"
+      },
+      description: {
+        fa: "تیپ شخصیتی خودت رو از بین 16 تیپ شخصیتی پیدا کن.",
+        en: "Find your personality type between 16 personality types."
       },
       pageLink: "/MBTI",
     }
@@ -213,12 +240,20 @@ export const workCards = [
   {
     id: "work7",
     front: {
-      imageUrl: "holland.svg"
+      imageUrl: "holland.svg",
+      text: {
+        fa: "آزمون رغبت شغلی هالند",
+        en: "Holland Test"
+      }
     },
     back: {
       title: {
-        fa: "تست هالند",
+        fa: "آزمون رغبت شغلی هالند",
         en: "Holland Test"
+      },
+      description: {
+        fa: "علائق شغلی خودت رو با این آزمون بسنج",
+        en: "Test your job interest with this test."
       },
       pageLink: "/Holland",
     }
@@ -226,12 +261,20 @@ export const workCards = [
   {
     id: "work8",
     front: {
-      imageUrl: "johnson.svg"
+      imageUrl: "johnson.svg",
+      text: {
+        fa: "آزمون استعداد سنجی اُکانر",
+        en: "O'connor Test"
+      }
     },
     back: {
       title: {
-        fa: "تست اُکانر",
+        fa: "آزمون استعداد سنجی اُکانر",
         en: "O'connor Test"
+      },
+      description: {
+        fa: "استعدادهای خودت رو بسنج و ببین چه شغلهایی برات مناسب تره.",
+        en: "Test your aptitudes and find suitable jobs for yourself."
       },
       pageLink: "/Johnson",
     }
@@ -239,12 +282,20 @@ export const workCards = [
   {
     id: "work9",
     front: {
-      imageUrl: "johnson.svg"
+      imageUrl: "johnson.svg",
+      text: {
+        fa: "آزمون نیازهای اساسی گلاسر",
+        en: "Glasser Test"
+      }
     },
     back: {
       title: {
-        fa: "تست گلاسر",
+        fa: "آزمون نیازهای اساسی گلاسر",
         en: "Glasser Test"
+      },
+      description: {
+        fa: "میزان نیازهای اساسی خودت رو از بین 5 نیاز معرفی شده توسط ویلیام گلاسر بشناس.",
+        en: "Find your basic needs amount from 5 basic needs presented by william glasser."
       },
       pageLink: "/Glasser",
     }

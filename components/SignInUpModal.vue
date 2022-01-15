@@ -69,7 +69,7 @@
   .close-icon {
     color: var(--bg-color);
     font-size: 1.5em;
-    margin-right: 10px;
+    margin: 0 10px;
     cursor: pointer;
   }
   @media screen and (max-width: 864px) {

@@ -46,7 +46,7 @@
   .carousel-3d-flat-main {
     margin: 9vh;
     width: 300px;
-    height: 300px;
+    height: 320px;
   }
   .carousel-3d-main {
     margin: 9vh;
@@ -58,10 +58,6 @@
   }
   @media screen and (max-width: 864px) {
     .carousel-3d-flat-main {
-      width: 200px;
-      height: 300px;
-    }
-    .carousel-3d-main {
       width: 200px;
       height: 300px;
     }

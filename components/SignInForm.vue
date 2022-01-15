@@ -3,42 +3,53 @@
     <form v-if="tokenSign" class="sign-form flex flex-column" @submit.prevent="handleSubmit()">
 <!--      <span>◄برای استفاده از این قسمت باید وارد شوید.</span>-->
       <div v-if="!tokenSend" class="form-row flex flex-column">
-        <span>شماره تلفن</span>
+        <span v-if="this.fa">شماره تلفن</span>
+        <span v-if="!this.fa">Phone Number</span>
         <input type="tel" minlength="11" maxlength="11" v-model="phoneNumber" class="phone-number" required @input="normalizePhoneNumber()" placeholder="09354162124" >
         <span class="hint"></span>
       </div>
       <div v-if="tokenSend" class="form-row flex flex-column">
-        <span>کد 4 رقمی را وارد کنید</span>
+        <span v-if="this.fa">کد 4 رقمی را وارد کنید</span>
+        <span v-if="!this.fa">Enter verification token</span>
         <input type="text" v-model="token" maxlength="4" class="token" required @input="normalizeToken()" placeholder="----" >
       </div>
       <div class="sign-alert-container">
         <span class="sign-alert">{{this.alertMessage}}</span>
       </div>
       <button disabled class="cta-button" type="submit">
-        <span v-if="!tokenSend & !this.loading" class="cta-text">دریافت کد</span>
-        <span v-if="!tokenSend & this.loading" class="cta-text">شکیبا باشید</span>
-        <span v-if="tokenSend & !this.loading" class="cta-text">ورود</span>
-        <span v-if="tokenSend & this.loading" class="cta-text">شکیبا باشید</span>
+        <span v-if="!tokenSend & !this.loading & this.fa" class="cta-text">دریافت کد</span>
+        <span v-if="!tokenSend & !this.loading & !this.fa" class="cta-text">Request Token</span>
+        <span v-if="tokenSend & !this.loading & this.fa" class="cta-text">ورود</span>
+        <span v-if="tokenSend & !this.loading & !this.fa" class="cta-text">Sign In</span>
+        <span v-if="this.loading & this.fa" class="cta-text">منتظر بمانید</span>
+        <span v-if="this.loading & !this.fa" class="cta-text">Loading</span>
       </button>
       <div v-if="this.loading" class="loading"></div>
       <div class="timer flex">
-        <button v-show="this.tokenSend" class="resend text-button" @click="resendCode()">ارسال دوباره کد</button>
+        <button v-show="this.tokenSend" class="resend text-button" @click="resendCode()">
+          <span v-if="this.fa">ارسال دوباره کد</span>
+          <span v-if="!this.fa">Resend Code</span>
+        </button>
         <span id="time"></span>
       </div>
     </form>
     <div v-on:click="this.switch" class="switch flex flex-column">
-      <span v-if="tokenSign"> ورود/عضویت با ایمیل و گذرواژه </span>
-      <span v-if="!tokenSign"> ورود/عضویت با شماره تلفن </span>
+      <span v-if="tokenSign & this.fa"> ورود/عضویت با ایمیل و گذرواژه </span>
+      <span v-if="tokenSign & !this.fa"> Login / Register with email </span>
+      <span v-if="!tokenSign & this.fa"> ورود/عضویت با شماره تلفن </span>
+      <span v-if="!tokenSign & !this.fa"> Login / Register with phone number </span>
     </div>
   </div>
 </template>
 
 <script>
+    import {mapState} from 'vuex';
     import apiServices from "../api/apiServices";
     import Loading from "./Loading";
     export default {
         name: "SignInForm",
         components: {Loading},
+        computed: mapState(['fa']),
         data() {
             return {
                 phoneNumber: "",
@@ -53,7 +64,7 @@
         mounted() {
             let submit = document.getElementsByClassName("cta-button")[0];
             let resend = document.getElementsByClassName("resend")[0];
-            this.phoneNumber = "09354162124";
+            // this.phoneNumber = "09354162124";
             submit.disabled = false;
             submit.enabled = true;
             resend.enabled = false;
@@ -103,7 +114,7 @@
                                 user.phoneNumber = response.phone_number;
                                 user.userName = response.user_name;
                                 this.$store.commit('user', user);
-                                this.$router.go(0);
+                                // this.$router.go(0);
                             });
                             // apiServices.methods.toPromise(localStorage.getItem('lastCallUrl'), localStorage.getItem('lastCallHttpMethod')).then(response => {
                             //     console.log('re call');

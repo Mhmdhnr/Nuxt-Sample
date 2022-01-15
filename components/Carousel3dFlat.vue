@@ -6,10 +6,10 @@
       </div>
     </div>
     <div class="buttons">
-      <button class="next btn" v-on:click="next()">
+      <button class="next btn" v-on:click="previous()">
         ►
       </button>
-      <button class="previous btn" v-on:click="previous()">
+      <button class="previous btn" v-on:click="next()">
         ◄
       </button>
     </div>
@@ -224,5 +224,10 @@
     top: 0;
     transition: all 0.5s;
     transition-timing-function: cubic-bezier(.175, .885, .32, 1.2);
+  }
+  @media screen and (max-width: 864px){
+    .previous, .next {
+      display: none;
+    }
   }
 </style>

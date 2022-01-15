@@ -1,16 +1,18 @@
 <template>
   <div class="flip-card-main" :id="`flip-main${cardData.id}`">
     <div class="flip-card"  :id="cardData.id">
-      <div class="card-front">
+      <div class="card-front flex flex-column">
         <img class="image" :src="require(`~/assets/images/${cardData.front.imageUrl}`)">
+        <span v-if="this.fa" class="front-span">{{cardData.front.text.fa}}</span>
+        <span v-if="!this.fa" class="front-span">{{cardData.front.text.en}}</span>
       </div>
       <div class="card-back flex flex-column">
-        <span v-if="this.fa">
-          {{cardData.back.title.fa}}
-        </span>
-        <span v-if="!this.fa">
-          {{cardData.back.title.en}}
-        </span>
+        <div class="flex flex-column">
+          <span class="back-title" v-if="this.fa">{{cardData.back.title.fa}}</span>
+          <span class="back-title" v-if="!this.fa">{{cardData.back.title.en}}</span>
+          <span class="back-des" v-if="this.fa">{{cardData.back.description.fa}}</span>
+          <span class="back-des" v-if="!this.fa">{{cardData.back.description.en}}</span>
+        </div>
         <b-btn class="button" :to="cardData.back.pageLink">
           <span v-if="this.fa"> کلیک کنید </span>
           <span v-if="!this.fa"> Click Here </span>
@@ -48,6 +50,13 @@
 </script>
 
 <style scoped>
+  .front-span {
+    margin: 1vh 0;
+  }
+  .back-des {
+    font-size: 0.8em;
+    margin-top: 2vh ;
+  }
   .button {
     background-color: var(--bg-color);
     border-radius: 4px;
@@ -117,7 +126,7 @@
   }
   .image {
     width: 100%;
-    height: 100%;
+    height: 80%;
   }
   @media screen and (max-width: 864px) {
     .card-back {
@@ -125,7 +134,22 @@
     }
     .button {
        padding: 1vh 6vw;
-     }
+    }
+    .front-span {
+      margin: 1vh 0;
+      font-size: 0.6em;
+    }
+    .image {
+      width: 90%;
+      height: 80%;
+    }
+    .back-title {
+      font-size: 0.9em;
+    }
+    .back-des {
+      font-size: 0.7em;
+      margin-top: 2vh ;
+    }
   }
 
 </style>
