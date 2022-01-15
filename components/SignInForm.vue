@@ -58,7 +58,7 @@
                 token: "",
                 loading: false,
                 alertMessage: "",
-                tokenExpiration: 0.1,
+                tokenExpiration: 0.5,
             }
         },
         mounted() {
@@ -209,7 +209,7 @@
   .switch {
     position: absolute;
     bottom: 10px;
-    padding-top: 3vh;
+    margin-top: 3vh;
     justify-content: space-between;
     cursor: pointer;
     font-size: 0.7em;
@@ -352,7 +352,7 @@
     }
     .switch {
       bottom: 5px;
-      padding-top: 3vh;
+      margin-top: 3vh;
       font-size: 0.7em;
     }
     .form-row {
@@ -376,6 +376,15 @@
     .cta-button::before {
       width: 150px;
       height: 45px;
+    }
+    .timer {
+      font-size: 0.7em;
+      margin: 1vh auto;
+      overflow: hidden;
+      height: 30px;
+      width: 50%;
+      position: relative;
+      justify-content: space-between;
     }
   }
 </style>

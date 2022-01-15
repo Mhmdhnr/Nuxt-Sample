@@ -160,27 +160,29 @@
         },
         methods: {
             handleUserTestResults() {
-                apiServices.methods.userTestResults().then(response => {
-                    console.log(response.user_test_result.stephen);
-                    if (parseInt(this.testId) === 1 && response.user_test_result.mbti) {
-                        this.alreadyDone = true;
-                    }
-                    if (parseInt(this.testId) === 2 && response.user_test_result.raven) {
-                        this.alreadyDone = true;
-                    }
-                    if (parseInt(this.testId) === 3 && response.user_test_result.holland) {
-                        this.alreadyDone = true;
-                    }
-                    if (parseInt(this.testId) === 4 && response.user_test_result.johnson) {
-                        this.alreadyDone = true;
-                    }
-                    if (parseInt(this.testId) === 5 && response.user_test_result.glasser) {
-                        this.alreadyDone = true;
-                    }
-                    if (parseInt(this.testId) === 6 && response.user_test_result.stephen) {
-                        this.alreadyDone = true;
-                    }
-                });
+                if (this.$store.signedIn) {
+                    apiServices.methods.userTestResults().then(response => {
+                        console.log(response.user_test_result.stephen);
+                        if (parseInt(this.testId) === 1 && response.user_test_result.mbti) {
+                            this.alreadyDone = true;
+                        }
+                        if (parseInt(this.testId) === 2 && response.user_test_result.raven) {
+                            this.alreadyDone = true;
+                        }
+                        if (parseInt(this.testId) === 3 && response.user_test_result.holland) {
+                            this.alreadyDone = true;
+                        }
+                        if (parseInt(this.testId) === 4 && response.user_test_result.johnson) {
+                            this.alreadyDone = true;
+                        }
+                        if (parseInt(this.testId) === 5 && response.user_test_result.glasser) {
+                            this.alreadyDone = true;
+                        }
+                        if (parseInt(this.testId) === 6 && response.user_test_result.stephen) {
+                            this.alreadyDone = true;
+                        }
+                    });
+                }
             },
             observe(){
                 let scrollY = window.scrollY;
@@ -414,6 +416,12 @@
     justify-content: center;
   }
   @media screen and (max-width: 864px) {
+    .next {
+      margin: auto -10px auto auto;
+    }
+    .pre {
+      margin: auto auto auto -10px;
+    }
     .test {
       width: 100vw;
     }
@@ -423,11 +431,16 @@
     .test-head {
       padding: 1vh 3vw;
     }
-    .stations {
+    .st {
       padding: 20px 0;
-      width: 95vw;
+      width: 100vw;
     }
-    .stations > div {
+    .stations {
+      border-bottom: 1px solid var(--text-color);
+      background-color: var(--bg-color);
+      z-index: 10;
+    }
+    .st > div {
       width: 200px;
     }
     .line, .bar {
@@ -452,8 +465,14 @@
       background-color: var(--bg-color);
       border-bottom: 1px solid var(--text-color);
     }
+    .text-button {
+      font-size: 0.5em;
+    }
     #time > span, #time, .title {
       font-size: 0.8em;
+    }
+    .title {
+      font-size: 0.6em;
     }
     .bottom {
       bottom: var(--main-header-height);
