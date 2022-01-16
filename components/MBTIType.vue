@@ -60,12 +60,12 @@
       <span v-if="!this.fa">Suitable Jobs</span>
     </div>
     <div v-if="this.fa" class="jobs">
-      <div v-for="job in typeData.suitableJobs" class="job">
+      <div v-for="job in typeData.suitableJobs" class="job" @click="searchGoogle(job.fa)">
         <span >{{job.fa}}</span>
       </div>
     </div>
     <div v-if="!this.fa" class="jobs">
-      <div v-for="job in typeData.suitableJobs" class="job">
+      <div v-for="job in typeData.suitableJobs" class="job" @click="searchGoogle(job.en)">
         <span>{{job.en}}</span>
       </div>
     </div>
@@ -75,12 +75,12 @@
       <span v-if="!this.fa">Most famous people of this type</span>
     </div>
     <div v-if="this.fa" class="famousPeople">
-      <div v-for="famous in typeData.famousPeople" class="job">
+      <div v-for="famous in typeData.famousPeople" class="job" @click="searchGoogle(famous.fa)">
         <span >{{famous.fa}}</span>
       </div>
     </div>
     <div v-if="!this.fa" class="famousPeople">
-      <div v-for="famous in typeData.famousPeople" class="job">
+      <div v-for="famous in typeData.famousPeople" class="job" @click="searchGoogle(famous.en)">
         <span>{{famous.en}}</span>
       </div>
     </div>
@@ -182,8 +182,10 @@
         },
         methods: {
             showType(id) {
-                console.log(id)
                 this.$emit('selectedType', id)
+            },
+            searchGoogle(str) {
+                window.open('http://google.com/search?q=' + str)
             }
         }
     }
@@ -262,6 +264,7 @@
     justify-content: center;
   }
   .job {
+    cursor: pointer;
     display: flex;
     justify-content: center;
     border: 1px solid var(--text-color);
