@@ -114,7 +114,7 @@
                                 user.phoneNumber = response.phone_number;
                                 user.userName = response.user_name;
                                 this.$store.commit('user', user);
-                                // this.$router.go(0);
+                                this.$router.go(0);
                             });
                             // apiServices.methods.toPromise(localStorage.getItem('lastCallUrl'), localStorage.getItem('lastCallHttpMethod')).then(response => {
                             //     console.log('re call');
