@@ -16,7 +16,7 @@
         },
         mounted() {
             let audio1 = new Audio("https://www.fesliyanstudios.com/soundeffects/2019-01-24/c/fast-pace-Typing-on-mechanical-keyboard-1-www.FesliyanStudios.com.mp3");
-            audio1.volume = 0.2;
+            audio1.volume = 0.4;
             audio1.currentTime = 4;
             let main = document.getElementById(this.subject);
             if (this.hideCursor) {
