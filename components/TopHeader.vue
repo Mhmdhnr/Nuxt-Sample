@@ -61,7 +61,7 @@
                         }
                     } else if(newValue.phoneNumber) {
                         if (this.fa) {
-                            span.innerText = newValue.phoneNumber + "سلام"
+                            span.innerText =  " سلام " + newValue.phoneNumber
                         } else {
                             span.innerText = newValue.phoneNumber + "Hello"
                         }
