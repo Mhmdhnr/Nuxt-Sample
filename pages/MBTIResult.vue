@@ -138,6 +138,8 @@
                     JP = response.user_mbti_results.jp;
                     clientType = response.user_mbti_results.type;
                     this.handleDisplay(clientType, EI, SN, TF, JP);
+                }).catch(function () {
+                    this.handleDisplay(clientType, EI, SN, TF, JP);
                 })
             } else {
                 this.typeToWatch = this.$route.params.type;

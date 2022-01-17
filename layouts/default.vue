@@ -4,7 +4,7 @@
       <TopHeader class="top-header" />
       <MainHeader class="main-header"/>
     </div>
-    <ScrollProgress />
+    <ScrollProgress :id="this.route" :key="this.route"/>
     <div>
       <nuxt class="nuxt"/>
       <SignInUpModal v-if="this.needSignIn & !this.signedIn"/>
@@ -15,7 +15,6 @@
     import apiServices from "../api/apiServices";
     import Toggle from "../components/Toggle";
     import { mapState } from 'vuex';
-    import { mapGetters } from 'vuex';
     import MainHeader from "../components/MainHeader";
     import TopHeader from "../components/TopHeader";
     import SignInUpModal from "../components/SignInUpModal";
@@ -29,9 +28,15 @@
         },
         data(){
             return{
+                route: 'route',
             }
         },
         watch: {
+            $route(newValue) {
+                console.log('routeChanged');
+                console.log(newValue.name);
+                this.route = newValue.name;
+            },
             fa (newValue) {
                 if (!newValue) {
                     document.body.style.direction = "ltr";

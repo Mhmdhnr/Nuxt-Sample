@@ -67,6 +67,8 @@
                     iq = response.user_raven_results.iq;
                     this.correct = response.user_raven_results.correct_count;
                     this.handleDisplay(iq);
+                }).catch(function () {
+                    this.handleDisplay(iq);
                 })
             } else {
                 iq = this.$route.params.iq;

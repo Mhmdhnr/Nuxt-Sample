@@ -44,6 +44,7 @@
             let n3 = null;
             let n4 = null;
             let n5 = null;
+            let values = [n1, n2, n3, n4, n5];
             if (!this.$route.params.n1) {
                 apiServices.methods.userTestResults().then(response => {
                     console.log(response);
@@ -52,8 +53,10 @@
                     n3 = response.user_glasser_results.need_3;
                     n4 = response.user_glasser_results.need_4;
                     n5 = response.user_glasser_results.need_5;
-                    let values = [n1, n2, n3, n4, n5];
+                    values = [n1, n2, n3, n4, n5];
                     console.log(values);
+                    this.handleDisplay(values);
+                }).catch(function () {
                     this.handleDisplay(values);
                 })
             } else {
@@ -62,7 +65,7 @@
                 n3 = this.$route.params.n3;
                 n4 = this.$route.params.n4;
                 n5 = this.$route.params.n5;
-                let values = [n1, n2, n3, n4, n5];
+                values = [n1, n2, n3, n4, n5];
                 this.handleDisplay(values);
             }
         },

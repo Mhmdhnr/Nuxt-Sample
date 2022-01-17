@@ -18,66 +18,89 @@
         watch : {
           api(newValue) {
               if(newValue === 'done') {
-                  console.log('done')
-                  let scrollBar = document.getElementsByClassName('scroll-bar')[0];
-                  let bodyHeight = document.getElementsByClassName('nuxt')[0].scrollHeight;
-                  scrollBar.style.width = (scrollY / bodyHeight * 100) + "vw";
-                  let screenHeight = window.screen.height;
-                  // let scrollHeight = Math.max(
-                  //     document.body.scrollHeight, document.documentElement.scrollHeight,
-                  //     document.body.offsetHeight, document.documentElement.offsetHeight,
-                  //     document.body.clientHeight, document.documentElement.clientHeight
-                  // );
-                  console.log('screen height');
-                  console.log(screenHeight);
-                  console.log("body height");
-                  console.log(bodyHeight);
-                  window.addEventListener('scroll', function(){
-                      let scrollY = window.scrollY;
-                      scrollBar.style.width = ((scrollY) / (bodyHeight - screenHeight) * 98) + "vw";
-                  });
-                  window.addEventListener('touchmove', function(){
-                      let scrollYMobile = document.getElementsByClassName('nuxt')[0].scrollTop;
-                      bodyHeight = document.getElementsByClassName('nuxt')[0].scrollHeight;
-                      console.log(scrollYMobile)
-                      scrollBar.style.width = ((scrollYMobile) / (bodyHeight - screenHeight) * 98) + "vw";
-                  });
+                  setTimeout(function () {
+                      let scrollBar = document.getElementsByClassName('scroll-bar')[0];
+                      let bodyHeight = document.body.scrollHeight;
+                      scrollBar.style.width = (scrollY / bodyHeight * 100) + "vw";
+                      let screenHeight = window.screen.height;
+                      let scrollHeight = Math.max(
+                          document.body.scrollHeight, document.documentElement.scrollHeight,
+                          document.body.offsetHeight, document.documentElement.offsetHeight,
+                          document.body.clientHeight, document.documentElement.clientHeight
+                      );
+                      console.log(scrollHeight)
+                      console.log('screen height');
+                      console.log(screenHeight);
+                      console.log("body height");
+                      console.log(bodyHeight);
+                      window.addEventListener('scroll', function(){
+                          let scrollY = window.scrollY;
+                          scrollBar.style.width = ((scrollY) / (bodyHeight - screenHeight) * 98) + "vw";
+                      });
+                      window.addEventListener('touchmove', function(){
+                          let scrollYMobile = document.getElementsByClassName('nuxt')[0].scrollTop;
+                          bodyHeight = document.getElementsByClassName('nuxt')[0].scrollHeight;
+                          console.log(scrollYMobile)
+                          scrollBar.style.width = ((scrollYMobile) / (bodyHeight - screenHeight) * 98) + "vw";
+                      });
+                  }, 100);
               }
           }
         },
         mounted() {
-            this.$nextTick( ()  => {
-                let scrollBar = document.getElementsByClassName('scroll-bar')[0];
-                let bodyHeight = document.body.scrollHeight;
-                scrollBar.style.width = (scrollY / bodyHeight * 100) + "vw";
-                let screenHeight = window.screen.height;
-                let scrollHeight = Math.max(
-                    document.body.scrollHeight, document.documentElement.scrollHeight,
-                    document.body.offsetHeight, document.documentElement.offsetHeight,
-                    document.body.clientHeight, document.documentElement.clientHeight
-                );
-                console.log(scrollHeight)
-                console.log('screen height');
-                console.log(screenHeight);
-                console.log("body height");
-                console.log(bodyHeight);
-                window.addEventListener('scroll', function(){
-                    let scrollY = window.scrollY;
-                    scrollBar.style.width = ((scrollY) / (bodyHeight - screenHeight) * 98) + "vw";
-                });
-                window.addEventListener('touchmove', function(){
-                    let scrollYMobile = document.getElementsByClassName('nuxt')[0].scrollTop;
-                    bodyHeight = document.getElementsByClassName('nuxt')[0].scrollHeight;
-                    console.log(scrollYMobile)
-                    scrollBar.style.width = ((scrollYMobile) / (bodyHeight - screenHeight) * 98) + "vw";
-                });
+            console.log('mounted___________________________');
+            let scrollBar = document.getElementsByClassName('scroll-bar')[0];
+            let bodyHeight = document.body.scrollHeight;
+            scrollBar.style.width = (scrollY / bodyHeight * 100) + "vw";
+            let screenHeight = window.screen.height;
+            let scrollHeight = Math.max(
+                document.body.scrollHeight, document.documentElement.scrollHeight,
+                document.body.offsetHeight, document.documentElement.offsetHeight,
+                document.body.clientHeight, document.documentElement.clientHeight
+            );
+            console.log(scrollHeight)
+            console.log('screen height');
+            console.log(screenHeight);
+            console.log("body height");
+            console.log(bodyHeight);
+            window.addEventListener('scroll', function(){
+                let scrollY = window.scrollY;
+                scrollBar.style.width = ((scrollY) / (bodyHeight - screenHeight) * 98) + "vw";
+            });
+            window.addEventListener('touchmove', function(){
+                let scrollYMobile = document.getElementsByClassName('nuxt')[0].scrollTop;
+                bodyHeight = document.getElementsByClassName('nuxt')[0].scrollHeight;
+                console.log(scrollYMobile)
+                scrollBar.style.width = ((scrollYMobile) / (bodyHeight - screenHeight) * 98) + "vw";
             });
         },
-        methods:{
-            handleProgress() {
-
-            }
-        }
+        updated() {
+            console.log('updated___________________________');
+            let scrollBar = document.getElementsByClassName('scroll-bar')[0];
+            let bodyHeight = document.body.scrollHeight;
+            scrollBar.style.width = (scrollY / bodyHeight * 100) + "vw";
+            let screenHeight = window.screen.height;
+            let scrollHeight = Math.max(
+                document.body.scrollHeight, document.documentElement.scrollHeight,
+                document.body.offsetHeight, document.documentElement.offsetHeight,
+                document.body.clientHeight, document.documentElement.clientHeight
+            );
+            console.log(scrollHeight)
+            console.log('screen height');
+            console.log(screenHeight);
+            console.log("body height");
+            console.log(bodyHeight);
+            window.addEventListener('scroll', function(){
+                let scrollY = window.scrollY;
+                scrollBar.style.width = ((scrollY) / (bodyHeight - screenHeight) * 98) + "vw";
+            });
+            window.addEventListener('touchmove', function(){
+                let scrollYMobile = document.getElementsByClassName('nuxt')[0].scrollTop;
+                bodyHeight = document.getElementsByClassName('nuxt')[0].scrollHeight;
+                console.log(scrollYMobile)
+                scrollBar.style.width = ((scrollYMobile) / (bodyHeight - screenHeight) * 98) + "vw";
+            });
+        },
     }
 </script>
 

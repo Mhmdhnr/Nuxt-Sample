@@ -51,6 +51,7 @@
             let a10 = null;
             let a11 = null;
             let a12 = null;
+            let values = [a1, a2, a3, a4, a5, a6, a7, a8, a9, a10, a11, a12];
             if (!this.$route.params.a1) {
                 // this.$router.push({name: 'Johnson'})
                 apiServices.methods.userTestResults().then(response => {
@@ -67,9 +68,11 @@
                     a10 = response.user_johnson_results.aptitude_10;
                     a11 = response.user_johnson_results.aptitude_11;
                     a12 = response.user_johnson_results.aptitude_12;
-                    let values = [a1, a2, a3, a4, a5, a6, a7, a8, a9, a10, a11, a12];
+                    values = [a1, a2, a3, a4, a5, a6, a7, a8, a9, a10, a11, a12];
                     console.log(values);
                     this.handleDisplay(values);
+                }).catch(function () {
+                    this.handleDisplay(values)
                 })
             } else {
                 a1 = this.$route.params.a1;
@@ -84,7 +87,7 @@
                 a10 = this.$route.params.a10;
                 a11 = this.$route.params.a11;
                 a12 = this.$route.params.a12;
-                let values = [a1, a2, a3, a4, a5, a6, a7, a8, a9, a10, a11, a12];
+                values = [a1, a2, a3, a4, a5, a6, a7, a8, a9, a10, a11, a12];
                 this.handleDisplay(values);
             }
         },

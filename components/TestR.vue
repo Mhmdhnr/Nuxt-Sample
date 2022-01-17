@@ -84,7 +84,6 @@
                   st.classList.remove('beat');
               }
               document.getElementById("st" + id.toString()).classList.add('beat');
-              console.log("s" + id.toString())
             },
             allAnswered(newValue) {
               let done = document.getElementsByClassName('test-done')[0];
@@ -118,12 +117,9 @@
                 this.test = response;
                 this.$store.commit('api', 'done');
                 this.sectionCount = this.test.sections.length;
-                    console.log(this.test.sections);
                 for (let section of this.test.sections) {
-                    console.log(section.questions.length);
                     this.questionCount += section.questions.length;
                 }
-                console.log(this.questionCount);
                 for (let section of this.test.sections) {
                     for (let question of section.questions) {
                         let slot = {
@@ -133,7 +129,6 @@
                         this.choicesArray.push(slot);
                     }
                 }
-                console.log(this.choicesArray);
                 let lastTestId = localStorage.getItem('responsesTestId') ? localStorage.getItem('responsesTestId') : 0;
                 if(lastTestId !== this.test.id.toString()){
                     localStorage.setItem('testResponse', JSON.stringify(this.choicesArray))
@@ -163,8 +158,6 @@
         },
         methods: {
             handleUserTestResults() {
-                console.log(this.signedIn)
-                console.log("________________________")
                 if (this.signedIn) {
                     apiServices.methods.userTestResults().then(response => {
                         if (parseInt(this.testId) === 1 && response.user_test_result.mbti) {
@@ -217,7 +210,6 @@
                     // this.countdownTimer(3, display);
                     this.timerStarted = true;
                 }
-                console.log(this.choicesArray.find(x => x.questionId === questionId));
                 this.choicesArray.find(x => x.questionId === questionId).choice = choiceIndex;
                 localStorage.setItem('testResponse', JSON.stringify(this.choicesArray));
                 this.allAnswered = !this.choicesArray.some(x => x.choice === 0);
@@ -235,7 +227,6 @@
                     submit.enabled = true;
                     submit.scrollIntoView({ behavior: 'smooth', block: 'center' });
                 }
-                console.log(this.choicesArray)
             },
             sectionDone({sectionId, done}) {
                 let station = document.getElementById("st" + sectionId.toString());

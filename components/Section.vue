@@ -42,7 +42,6 @@
         },
         methods: {
             select({choiceIndex, questionId}){
-                console.log('from section');
                 this.choices.find(x => x.questionId === questionId).choice = choiceIndex;
                 this.done = !this.choices.some(x => x.choice === 0);
                 if(this.done) {

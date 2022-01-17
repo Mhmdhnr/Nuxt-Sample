@@ -44,21 +44,24 @@
             let dependent = null;
             let independent = null;
             let interdependent = null;
+            let values = [dependent, independent, interdependent];
             if (!this.$route.params.n1) {
                 apiServices.methods.userTestResults().then(response => {
                     console.log(response);
                     dependent = response.user_stephen_results.dependent;
                     independent = response.user_stephen_results.independent;
                     interdependent = response.user_stephen_results.interdependent;
-                    let values = [dependent, independent, interdependent];
+                    values = [dependent, independent, interdependent];
                     console.log(values);
+                    this.handleDisplay(values);
+                }).catch(function () {
                     this.handleDisplay(values);
                 })
             } else {
                 dependent = this.$route.params.dependent;
                 independent = this.$route.params.independent;
                 interdependent = this.$route.params.interdependent;
-                let values = [dependent, independent, interdependent];
+                values = [dependent, independent, interdependent];
                 this.handleDisplay(values);
             }
         },

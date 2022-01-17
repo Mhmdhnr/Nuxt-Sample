@@ -47,6 +47,7 @@
             let s = null;
             let e = null;
             let c = null;
+            let values = [r, i, a, s, e, c];
             if (!this.$route.params.R) {
                 apiServices.methods.userTestResults().then(response => {
                     console.log(response);
@@ -56,9 +57,11 @@
                     s = response.user_holland_results.social;
                     e = response.user_holland_results.enterprising;
                     c = response.user_holland_results.conventional;
-                    let values = [r, i, a, s, e, c];
+                    values = [r, i, a, s, e, c];
                     console.log(values);
                     this.handleDisplay(values);
+                }).catch(function () {
+                    this.handleDisplay(values)
                 })
             } else {
                 r = this.$route.params.R;
@@ -67,7 +70,7 @@
                 s = this.$route.params.S;
                 e = this.$route.params.E;
                 c = this.$route.params.C;
-                let values = [r, i, a, s, e, c];
+                values = [r, i, a, s, e, c];
                 this.handleDisplay(values);
             }
         }, methods: {
