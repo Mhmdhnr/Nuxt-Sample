@@ -4,7 +4,7 @@
       <TopHeader class="top-header" />
       <MainHeader class="main-header"/>
     </div>
-    <ScrollProgress :id="this.route" :key="this.route"/>
+    <ScrollProgress :id="this.routeName" :key="this.routeName"/>
     <div>
       <nuxt class="nuxt"/>
       <SignInUpModal v-if="this.needSignIn & !this.signedIn"/>
@@ -28,7 +28,7 @@
         },
         data(){
             return{
-                route: 'route',
+                routeName: 'route',
             }
         },
         watch: {

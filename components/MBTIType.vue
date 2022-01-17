@@ -75,12 +75,12 @@
       <span v-if="!this.fa">Most famous people of this type</span>
     </div>
     <div v-if="this.fa" class="famousPeople">
-      <div v-for="famous in typeData.famousPeople" class="job" @click="searchGoogle(famous.fa)">
+      <div v-for="famous in typeData.famousPeople" class="famous" @click="searchGoogle(famous.fa)">
         <span >{{famous.fa}}</span>
       </div>
     </div>
     <div v-if="!this.fa" class="famousPeople">
-      <div v-for="famous in typeData.famousPeople" class="job" @click="searchGoogle(famous.en)">
+      <div v-for="famous in typeData.famousPeople" class="famous" @click="searchGoogle(famous.en)">
         <span>{{famous.en}}</span>
       </div>
     </div>
@@ -145,7 +145,7 @@
         },
         mounted() {
             let jobs = document.getElementsByClassName('job');
-            let famousPeople = document.getElementsByClassName('famousPeople');
+            let famousPeople = document.getElementsByClassName('famous');
             for(let i = 0; i < jobs.length; i++){
                 setTimeout(function () {
                     jobs[i].classList.add('bounce-in')
@@ -178,6 +178,20 @@
                 sentence.style.clipPath = 'polygon(0% 0%,0% 100%,90% 100%,90% 50%,100% 70%,90% 70%,90% 0%)';
                 sentence.style.padding = '1vh calc(1vw + 5%) 1vh 1vw';
                 image.style.transform = 'scaleX(-1)'
+            }
+        },
+        updated() {
+            let jobs = document.getElementsByClassName('job');
+            let famousPeople = document.getElementsByClassName('famous');
+            for(let i = 0; i < jobs.length; i++){
+                setTimeout(function () {
+                    jobs[i].classList.add('bounce-in')
+                }, 1000 + i * 100)
+            }
+            for(let i = 0; i < famousPeople.length; i++){
+                setTimeout(function () {
+                    famousPeople[i].classList.add('bounce-in')
+                }, 1000 + i * 100)
             }
         },
         methods: {
@@ -263,7 +277,7 @@
     flex-wrap: wrap;
     justify-content: center;
   }
-  .job {
+  .job, .famous {
     cursor: pointer;
     display: flex;
     justify-content: center;

@@ -183,24 +183,32 @@
             },
             observe(){
                 let scrollY = window.scrollY;
-                window.addEventListener('scroll', function(){
+                document.addEventListener('scroll', function(){
                     scrollY = window.scrollY;
                     if(scrollY > 500){
-                        document.getElementsByClassName('stations')[0].classList.add('top-fixed')
+                        if(document.getElementsByClassName('stations')[0]) {
+                            document.getElementsByClassName('stations')[0].classList.add('top-fixed')
+                        }
                     }
                     else {
-                        document.getElementsByClassName('stations')[0].classList.remove('top-fixed')
+                        if(document.getElementsByClassName('stations')[0]) {
+                            document.getElementsByClassName('stations')[0].classList.remove('top-fixed')
+                        }
                     }
-                });
-                window.addEventListener('touchmove', function(){
+                }, false);
+                document.addEventListener('touchmove', function(){
                     let scrollYMobile = document.getElementsByClassName('nuxt')[0].scrollTop;
                     if(scrollYMobile > 300){
-                        document.getElementsByClassName('stations')[0].classList.add('top-fixed')
+                        if(document.getElementsByClassName('stations')[0]) {
+                            document.getElementsByClassName('stations')[0].classList.add('top-fixed')
+                        }
                     }
                     else {
-                        document.getElementsByClassName('stations')[0].classList.remove('top-fixed')
+                        if(document.getElementsByClassName('stations')[0]) {
+                            document.getElementsByClassName('stations')[0].classList.remove('top-fixed')
+                        }
                     }
-                });
+                }, false);
             },
             select({choiceIndex, questionId}){
                 if (this.test.time !== 0 && !this.timerStarted) {
