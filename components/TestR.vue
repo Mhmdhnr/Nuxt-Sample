@@ -199,6 +199,15 @@
                         document.getElementsByClassName('stations')[0].classList.remove('top-fixed')
                     }
                 });
+                window.addEventListener('touchmove', function(){
+                    let scrollYMobile = document.getElementsByClassName('nuxt')[0].scrollTop;
+                    if(scrollYMobile > 300){
+                        document.getElementsByClassName('stations')[0].classList.add('top-fixed')
+                    }
+                    else {
+                        document.getElementsByClassName('stations')[0].classList.remove('top-fixed')
+                    }
+                });
             },
             select({choiceIndex, questionId}){
                 if (this.test.time !== 0 && !this.timerStarted) {
@@ -480,6 +489,9 @@
     }
     .bottom {
       bottom: var(--main-header-height);
+    }
+    .top-fixed {
+      top: var(--top-header-height)
     }
   }
 </style>

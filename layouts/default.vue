@@ -4,6 +4,7 @@
       <TopHeader class="top-header" />
       <MainHeader class="main-header"/>
     </div>
+    <ScrollProgress />
     <div>
       <nuxt class="nuxt"/>
       <SignInUpModal v-if="this.needSignIn & !this.signedIn"/>
@@ -18,8 +19,9 @@
     import MainHeader from "../components/MainHeader";
     import TopHeader from "../components/TopHeader";
     import SignInUpModal from "../components/SignInUpModal";
+    import ScrollProgress from "../components/ScrollProgress";
     export default {
-        components: {SignInUpModal, TopHeader, MainHeader, Toggle},
+        components: {ScrollProgress, SignInUpModal, TopHeader, MainHeader, Toggle},
         // computed: mapState(['fa', 'theme', 'needSignIn', 'signedIn']),
         computed: {
             ...mapState(['fa', 'theme', 'needSignIn', 'signedIn']),
