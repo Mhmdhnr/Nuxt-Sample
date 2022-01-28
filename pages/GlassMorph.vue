@@ -2,7 +2,7 @@
   <div>
     <BG :bgCount="5" :bgRangeMin="100" :bgRangeMax="180" :bgDurationRange="30000">
       <div class="glass-content">
-        <div class="glass-card">
+        <div v-for="n in 8" class="glass card">
           <div class="who flex flex-column">
             <img class="avatar" src="~/assets/images/me.jpeg" alt="">
             <div class="text-area flex flex-column">
@@ -41,18 +41,17 @@
     flex-wrap: wrap;
     justify-content: center;
     width: 1080px;
+    padding: 100px 0;
     /*z-index: 10;*/
   }
-  .glass-card {
+  .card {
     position: relative;
     display: flex;
     flex-direction: column;
-    backdrop-filter: blur(25px) saturate(120%) ;
-    background-color: rgba(255, 255, 255, 0.1);
     border-radius: 24px;
     border: 3px solid transparent;
     background-clip: padding-box;
-    margin: 200px 10px;
+    margin: 10px 10px;
     width: 250px;
     height: 180px;
     box-shadow: 0 4px 12px 0 rgba(40, 40, 40, 0.5);
@@ -60,7 +59,11 @@
     transition: all 500ms cubic-bezier(.175, .885, .32, 1.2);
     overflow: hidden;
   }
-  .glass-card:hover {
+  .glass {
+    backdrop-filter: blur(25px) saturate(120%) ;
+    background-color: rgba(255, 255, 255, 0.1);
+  }
+  .card:hover {
     height: 300px;
   }
   .who{

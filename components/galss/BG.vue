@@ -1,6 +1,6 @@
 <template>
   <div class="glass-container">
-    <div v-for="n in bgCount" :id="`s${n}`" class="bg-square"></div>
+    <div v-for="n in bgCount" :id="`s${n}`" class="bg-square glass"></div>
     <slot />
   </div>
 </template>
@@ -52,16 +52,23 @@
     background: linear-gradient(90deg, rgba(80,0,134,1) 0%, rgba(73,0,91,1) 50%, rgb(111, 6, 106) 100%);
     /*background-position: center;*/
     width: 100vw;
-    height: 80vh;
+    /*height: 80vh;*/
+    height: auto;
     overflow: hidden;
     background-size: 200% 200%;
     -webkit-animation: bg-animation 10s ease infinite;
   }
+  .glass {
+    backdrop-filter: blur(25px) saturate(120%) ;
+    background-color: rgba(255, 255, 255, 0.1);
+  }
   .bg-square {
     position: absolute;
-    background: linear-gradient(100deg, rgb(255, 104, 5) 0%, rgb(255, 169, 40) 100%);
     border-radius: 10%;
     transition: all step-end;
+    /*backdrop-filter: blur(25px) saturate(120%) ;*/
+    /*background: linear-gradient(100deg, rgba(255, 104, 5, 0.5) 0%, rgba(255, 169, 40, 0.5) 100%);*/
+    background: linear-gradient(100deg, rgba(255, 104, 5, 1) 0%, rgba(255, 169, 40, 1) 100%);
     box-shadow: 0 4px 12px 0 rgba(40, 40, 40, 0.1);
   }
   @-webkit-keyframes bg-animation {
