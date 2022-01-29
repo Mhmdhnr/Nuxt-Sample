@@ -52,6 +52,7 @@
 <style scoped>
   .front-span {
     margin: 1vh 0;
+    font-size: 0.8em;
   }
   .back-des {
     font-size: 0.8em;

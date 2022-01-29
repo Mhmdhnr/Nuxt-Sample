@@ -129,6 +129,10 @@
     --toggle-light: #28292c;
     --toggle-dark: #d8dbe0;
   }
+  .glass {
+    backdrop-filter: blur(25px) saturate(120%) ;
+    background-color: rgba(255, 255, 255, 0.1);
+  }
   span {
     color: var(--text-color);
   }

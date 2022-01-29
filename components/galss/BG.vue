@@ -52,8 +52,8 @@
     background: linear-gradient(90deg, rgb(48, 0, 144) 0%, rgb(55, 0, 180) 50%, rgb(47, 8, 128) 100%);
     /*background-position: center;*/
     width: 100vw;
-    height: 90vh;
-    /*height: auto;*/
+    /*height: 90vh;*/
+    height: auto;
     overflow: hidden;
     background-size: 200% 200%;
     -webkit-animation: bg-animation 10s ease infinite;
