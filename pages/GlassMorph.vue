@@ -51,7 +51,7 @@
     border-radius: 24px;
     border: 3px solid transparent;
     background-clip: padding-box;
-    margin: 10px 10px;
+    margin: 60px 10px;
     width: 250px;
     height: 180px;
     box-shadow: 0 4px 12px 0 rgba(40, 40, 40, 0.5);
@@ -67,6 +67,9 @@
   .card:hover {
     height: 300px;
     margin-top: -60px;
+  }
+  .card:hover .des {
+    display: unset;
   }
   .who{
     justify-content: center;
@@ -110,6 +113,7 @@
     direction: ltr;
     font-family: Ubuntu, sans-serif;
     margin: 20px auto;
+    display: none;
   }
   .glass-card:before {
     /*content: "";*/
