@@ -24,7 +24,7 @@
             },
             randomPosition(element) {
                 let baseTop = this.getRandom(10, 90);
-                let baseLeft = this.getRandom(10, 90);
+                let baseLeft = this.getRandom(10, 100);
                 element.style.transform = `rotate(${this.getRandom(-180, +180)}deg)`;
                 element.style.top = baseTop + "%";
                 element.style.left = baseLeft + "%";
@@ -48,12 +48,12 @@
     position: relative;
     display: flex;
     justify-content: center;
-    background: rgb(80,0,134);
-    background: linear-gradient(90deg, rgba(80,0,134,1) 0%, rgba(73,0,91,1) 50%, rgb(111, 6, 106) 100%);
+    background: rgb(44, 0, 133);
+    background: linear-gradient(90deg, rgb(48, 0, 144) 0%, rgb(55, 0, 180) 50%, rgb(47, 8, 128) 100%);
     /*background-position: center;*/
     width: 100vw;
-    /*height: 80vh;*/
-    height: auto;
+    height: 90vh;
+    /*height: auto;*/
     overflow: hidden;
     background-size: 200% 200%;
     -webkit-animation: bg-animation 10s ease infinite;
@@ -68,7 +68,7 @@
     transition: all step-end;
     /*backdrop-filter: blur(25px) saturate(120%) ;*/
     /*background: linear-gradient(100deg, rgba(255, 104, 5, 0.5) 0%, rgba(255, 169, 40, 0.5) 100%);*/
-    background: linear-gradient(100deg, rgba(255, 104, 5, 1) 0%, rgba(255, 169, 40, 1) 100%);
+    background: linear-gradient(100deg, rgb(255, 147, 216) 0%, rgb(232, 92, 255) 100%);
     box-shadow: 0 4px 12px 0 rgba(40, 40, 40, 0.1);
   }
   @-webkit-keyframes bg-animation {

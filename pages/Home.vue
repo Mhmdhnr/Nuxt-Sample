@@ -45,7 +45,7 @@
 
 <style scoped>
   .carousel-3d-flat-main {
-    margin: 9vh;
+    margin: 7vh;
     width: 300px;
     height: 320px;
   }
@@ -56,6 +56,8 @@
   }
   .links {
     justify-content: flex-end;
+    position: fixed;
+    bottom: 0;
   }
   @media screen and (max-width: 864px) {
     .carousel-3d-flat-main {

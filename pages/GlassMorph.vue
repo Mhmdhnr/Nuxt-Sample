@@ -1,6 +1,6 @@
 <template>
   <div>
-    <BG :bgCount="5" :bgRangeMin="100" :bgRangeMax="180" :bgDurationRange="30000">
+    <BG :bgCount="20" :bgRangeMin="70" :bgRangeMax="100" :bgDurationRange="50000">
       <div class="glass-content">
         <div v-for="n in 8" class="glass card">
           <div class="who flex flex-column">
@@ -56,6 +56,7 @@
     height: 180px;
     box-shadow: 0 4px 12px 0 rgba(40, 40, 40, 0.5);
     padding: 20px;
+    transform-origin: top;
     transition: all 500ms cubic-bezier(.175, .885, .32, 1.2);
     overflow: hidden;
   }
@@ -65,6 +66,7 @@
   }
   .card:hover {
     height: 300px;
+    margin-top: -60px;
   }
   .who{
     justify-content: center;

@@ -30,6 +30,14 @@
             }
         },
         mounted() {
+            let _this = this;
+            window.addEventListener('wheel', function(e){
+                if (e.deltaY > 0) {
+                    _this.next();
+                } else {
+                    _this.previous();
+                }
+            });
             let element = document.getElementById("swipe-root");
             element.addEventListener("touchstart", this.detectSwipe("swipe-root"));
 

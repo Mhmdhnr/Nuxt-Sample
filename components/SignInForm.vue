@@ -174,6 +174,7 @@
                 if(this.phoneNumber.length === 11) {
                     submit.disabled = false;
                     submit.enabled = true;
+                    this.handleSubmit();
                 } else {
                     submit.enabled = false;
                     submit.disabled = true;
