@@ -9,7 +9,7 @@
     export default {
         name: "BG",
         props:['bgCount', 'bgRangeMin', 'bgRangeMax', 'bgDurationRange'],
-        mounted() {
+        beforeMount() {
             for(let i = 1; i <= this.bgCount; i++) {
                 let random = this.getRandom(this.bgRangeMin, this.bgRangeMax);
                 let element = document.getElementById("s" + i);
