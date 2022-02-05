@@ -141,8 +141,8 @@
       font-size: 0.6em;
     }
     .image {
-      width: 90%;
-      height: 80%;
+      width: 80%;
+      height: 70%;
     }
     .back-title {
       font-size: 0.9em;

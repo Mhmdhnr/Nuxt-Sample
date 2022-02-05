@@ -62,7 +62,8 @@
   @media screen and (max-width: 864px) {
     .carousel-3d-flat-main {
       width: 200px;
-      height: 300px;
+      height: 200px;
+      margin: 10vh;
     }
   }
 </style>
