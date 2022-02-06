@@ -7,10 +7,10 @@
 </template>
 
 <script>
-    import {slider} from '../data/data.js';
-    import Slider from "../components/Slider";
-    import AnimatedWaves from "../components/AnimatedWaves";
-    import Swipe from "../components/Swipe";
+    import {slider} from '../../data/data.js';
+    import Slider from "../../components/fun/Slider";
+    import AnimatedWaves from "../../components/fun/AnimatedWaves";
+    import Swipe from "../../components/works/Swipe";
     export default {
         name: "SwipePage",
         components: {Swipe, AnimatedWaves, Slider},

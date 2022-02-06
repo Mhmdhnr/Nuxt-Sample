@@ -6,9 +6,9 @@
 </template>
 
 <script>
-    import ImageSlider from "../components/ImageSlider";
-    import {slider} from "../data/data";
-    import Slider from "../components/Slider";
+    import ImageSlider from "../../components/works/ImageSlider";
+    import {slider} from "../../data/data";
+    import Slider from "../../components/fun/Slider";
 
     export default {
         name: "Shop",

@@ -20,17 +20,16 @@
 <script>
     import {workCards} from '../data/data.js';
     import {slider} from '../data/data.js';
-    import Slider from "../components/Slider";
-    import Links from "../components/Links";
-    import WorksCard from "../components/WorksCard";
-    import Carousel3D from "../components/carousel3D";
-    import FlipCard from "../components/FlipCard";
-    import Carousel3dFlat from "../components/Carousel3dFlat";
-    import Flip3DCard from "../components/Flip3DCard";
-    import Loading from "../components/Loading";
+    import Slider from "../components/fun/Slider";
+    import Links from "../components/layout/Links";
+    import Carousel3D from "../components/carousel/carousel3D";
+    import FlipCard from "../components/cards/FlipCard";
+    import Carousel3dFlat from "../components/carousel/Carousel3dFlat";
+    import Flip3DCard from "../components/cards/Flip3DCard";
+    import Loading from "../components/fun/Loading";
     export default {
         name: "Home",
-        components: {Loading, Flip3DCard, Carousel3dFlat, FlipCard, Carousel3D, WorksCard, Links, Slider},
+        components: {Loading, Flip3DCard, Carousel3dFlat, FlipCard, Carousel3D, Links, Slider},
         data () {
             return {
                 slider: slider,

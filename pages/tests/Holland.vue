@@ -13,15 +13,14 @@
 
 <script>
     import {mapState} from 'vuex';
-    import apiServices from "../api/apiServices";
-    import {slider} from "../data/data";
-    import Slider from "../components/Slider";
-    import Test from "../components/Test";
-    import EnNotAvailable from "../components/EnNotAvailable";
-    import TestR from "../components/TestR";
+    import apiServices from "../../api/apiServices";
+    import {slider} from "../../data/data";
+    import Slider from "../../components/fun/Slider";
+    import EnNotAvailable from "../../components/layout/EnNotAvailable";
+    import TestR from "../../components/test/TestR";
     export default {
         name: "Holland",
-        components: {TestR, EnNotAvailable, Test, Slider},
+        components: {TestR, EnNotAvailable, Slider},
         data() {
             return {
                 slider: slider,
@@ -35,7 +34,7 @@
                 apiServices.methods.postHollandResponse({choices}).then(response => {
                     // this.$store.commit('api', 'done');
                     console.log(response);
-                    this.$router.push({name:'HollandResult', params:{ R: response.R, I: response.I, A: response.A, S: response.S, E: response.E, C: response.C}});
+                    this.$router.push({name:'tests-results-HollandResult', params:{ R: response.R, I: response.I, A: response.A, S: response.S, E: response.E, C: response.C}});
                 })
             }
         }

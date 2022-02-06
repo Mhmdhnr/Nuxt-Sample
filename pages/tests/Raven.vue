@@ -29,15 +29,14 @@
 
 <script>
     import {mapState} from 'vuex'
-    import apiServices from "../api/apiServices";
-    import {slider} from "../data/data";
-    import Test from "../components/Test";
-    import Slider from "../components/Slider";
-    import Loading from "../components/Loading";
-    import TestR from "../components/TestR";
+    import apiServices from "../../api/apiServices";
+    import {slider} from "../../data/data";
+    import Slider from "../../components/fun/Slider";
+    import Loading from "../../components/fun/Loading";
+    import TestR from "../../components/test/TestR";
     export default {
         name: "Raven",
-        components: {TestR, Loading, Slider, Test},
+        components: {TestR, Loading, Slider},
         data() {
             return {
                 slider: slider,
@@ -53,7 +52,7 @@
                 apiServices.methods.postRavenResponse({choices, age: this.age}).then(response => {
                     this.$store.commit('api', 'done');
                     console.log(response);
-                    this.$router.push({name:'RavenResult', params:{iq: response.iq, age: response.age, correct: response.correct}});
+                    this.$router.push({name:'tests-results-RavenResult', params:{iq: response.iq, age: response.age, correct: response.correct}});
                 })
             },
             check(n) {

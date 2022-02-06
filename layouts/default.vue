@@ -13,12 +13,12 @@
 </template>
 <script>
     import apiServices from "../api/apiServices";
-    import Toggle from "../components/Toggle";
+    import Toggle from "../components/layout/Toggle";
     import { mapState } from 'vuex';
-    import MainHeader from "../components/MainHeader";
-    import TopHeader from "../components/TopHeader";
-    import SignInUpModal from "../components/SignInUpModal";
-    import ScrollProgress from "../components/ScrollProgress";
+    import MainHeader from "../components/headers/MainHeader";
+    import TopHeader from "../components/headers/TopHeader";
+    import SignInUpModal from "../components/sign/SignInUpModal";
+    import ScrollProgress from "../components/layout/ScrollProgress";
     export default {
         components: {ScrollProgress, SignInUpModal, TopHeader, MainHeader, Toggle},
         // computed: mapState(['fa', 'theme', 'needSignIn', 'signedIn']),

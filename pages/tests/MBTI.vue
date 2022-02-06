@@ -13,15 +13,14 @@
 
 <script>
     import {mapState} from 'vuex'
-    import apiServices from "../api/apiServices";
-    import {slider} from "../data/data";
-    import Test from "../components/Test";
-    import Slider from "../components/Slider";
-    import EnNotAvailable from "../components/EnNotAvailable";
-    import TestR from "../components/TestR";
+    import apiServices from "../../api/apiServices";
+    import {slider} from "../../data/data";
+    import Slider from "../../components/fun/Slider";
+    import EnNotAvailable from "../../components/layout/EnNotAvailable";
+    import TestR from "../../components/test/TestR";
     export default {
         name: "MBTI",
-        components: {TestR, EnNotAvailable, Slider, Test},
+        components: {TestR, EnNotAvailable, Slider},
         data() {
             return {
                 slider: slider,
@@ -35,7 +34,7 @@
                 apiServices.methods.postMBTIResponse({choices}).then(response => {
                     // this.$store.commit('api', 'done');
                     console.log(response);
-                    this.$router.push({name:'MBTIResult', params:{type: response.type, EI: response.EI, SN: response.SN, TF: response.TF, JP: response.JP}});
+                    this.$router.push({name:'tests-results-MBTIResult', params:{type: response.type, EI: response.EI, SN: response.SN, TF: response.TF, JP: response.JP}});
                 })
             }
         }

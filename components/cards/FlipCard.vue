@@ -13,7 +13,7 @@
           <span class="back-des" v-if="this.fa">{{cardData.back.description.fa}}</span>
           <span class="back-des" v-if="!this.fa">{{cardData.back.description.en}}</span>
         </div>
-        <b-btn class="button" :to="cardData.back.pageLink">
+        <b-btn class="button" @click="goTo(cardData.back.pageLink)">
           <span v-if="this.fa"> کلیک کنید </span>
           <span v-if="!this.fa"> Click Here </span>
         </b-btn>
@@ -32,6 +32,9 @@
           }
         },
         methods: {
+            goTo(link) {
+                this.$router.push({name: link});
+            }
         },
         computed: mapState(['fa']),
         mounted() {

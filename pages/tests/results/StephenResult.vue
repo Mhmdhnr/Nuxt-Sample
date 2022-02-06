@@ -26,11 +26,11 @@
 </template>
 
 <script>
-    import {stephenTypes} from "../data/stephen.js";
+    import {stephenTypes} from "../../../data/testData/stephen.js";
     import {mapState} from 'vuex'
-    import EnNotAvailable from "../components/EnNotAvailable";
-    import TypingMachine from "../components/TypingMachine";
-    import apiServices from "../api/apiServices";
+    import EnNotAvailable from "../../../components/layout/EnNotAvailable";
+    import TypingMachine from "../../../components/fun/TypingMachine";
+    import apiServices from "../../../api/apiServices";
     export default {
         name: "StephenResult",
         components: {TypingMachine, EnNotAvailable},

@@ -24,11 +24,11 @@
 </template>
 
 <script>
-    import {glasserTypes} from "../data/glasser.js";
+    import {glasserTypes} from "../../../data/testData/glasser.js";
     import {mapState} from 'vuex'
-    import EnNotAvailable from "../components/EnNotAvailable";
-    import TypingMachine from "../components/TypingMachine";
-    import apiServices from "../api/apiServices";
+    import EnNotAvailable from "../../../components/layout/EnNotAvailable";
+    import TypingMachine from "../../../components/fun/TypingMachine";
+    import apiServices from "../../../api/apiServices";
     export default {
         name: "GlasserResult",
         components: {TypingMachine, EnNotAvailable},

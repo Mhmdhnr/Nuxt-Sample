@@ -110,7 +110,7 @@
 
 <script>
     import {mapState} from 'vuex';
-    import TypingMachine from "./TypingMachine";
+    import TypingMachine from "../fun/TypingMachine";
     export default {
         name: "MBTIType",
         components: {TypingMachine},

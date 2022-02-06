@@ -38,7 +38,7 @@
 </template>
 
 <script>
-    import {links} from "../data/data";
+    import {links} from "../../data/data";
     export default {
         name: "Links",
         data() {

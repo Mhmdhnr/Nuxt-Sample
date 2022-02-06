@@ -12,11 +12,11 @@
 
 <script>
     import {mapState} from 'vuex';
-    import apiServices from "../api/apiServices";
-    import EnNotAvailable from "../components/EnNotAvailable";
-    import {slider} from "../data/data";
-    import TestR from "../components/TestR";
-    import Slider from "../components/Slider";
+    import apiServices from "../../api/apiServices";
+    import EnNotAvailable from "../../components/layout/EnNotAvailable";
+    import {slider} from "../../data/data";
+    import TestR from "../../components/test/TestR";
+    import Slider from "../../components/fun/Slider";
     export default {
         name: "Stephen",
         components: {Slider, EnNotAvailable, TestR},
@@ -37,7 +37,7 @@
                 apiServices.methods.postStephenResponse({choices}).then(response => {
                     // this.$store.commit('api', 'done');
                     console.log(response);
-                    this.$router.push({name:'StephenResult', params:{ dependent: response.dependent_from_100,
+                    this.$router.push({name:'tests-results-StephenResult', params:{ dependent: response.dependent_from_100,
                             independent: response.independent_from_100, interdependent: response.interdependent_from_100,
                             }});
                 })

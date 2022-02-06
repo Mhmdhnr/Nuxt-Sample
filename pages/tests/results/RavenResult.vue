@@ -46,7 +46,7 @@
 
 <script>
     import {mapState} from 'vuex'
-    import apiServices from "../api/apiServices";
+    import apiServices from "../../../api/apiServices";
     export default {
         name: "RavenResult",
         computed: mapState(['fa']),

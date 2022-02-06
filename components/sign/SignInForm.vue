@@ -44,8 +44,8 @@
 
 <script>
     import {mapState} from 'vuex';
-    import apiServices from "../api/apiServices";
-    import Loading from "./Loading";
+    import apiServices from "../../api/apiServices";
+    import Loading from "../fun/Loading";
     export default {
         name: "SignInForm",
         components: {Loading},

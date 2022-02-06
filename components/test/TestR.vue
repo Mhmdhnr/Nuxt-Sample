@@ -57,8 +57,8 @@
 
 <script>
     import {mapState} from 'vuex';
-    import Loading from "./Loading";
-    import apiServices from "../api/apiServices";
+    import Loading from "../fun/Loading";
+    import apiServices from "../../api/apiServices";
     import Section from "./Section";
 
     export default {
@@ -280,22 +280,22 @@
             pushToResult() {
                 switch(this.test.id) {
                     case 1:
-                        this.$router.push("MBTIResult");
+                        this.$router.push({name:"tests-results-MBTIResult"});
                         break;
                     case 2:
-                        this.$router.push("RavenResult");
+                        this.$router.push({name:"tests-results-RavenResult"});
                         break;
                     case 3:
-                        this.$router.push("HollandResult");
+                        this.$router.push({name: "tests-results-HollandResult"});
                         break;
                     case 4:
-                        this.$router.push("JohnsonResult");
+                        this.$router.push({name: "tests-results-JohnsonResult"});
                         break;
                     case 5:
-                        this.$router.push("GlasserResult");
+                        this.$router.push({name: "tests-results-GlasserResult"});
                         break;
                     case 6:
-                        this.$router.push("StephenResult");
+                        this.$router.push({name: "tests-results-StephenResult"});
                         break;
 
                 }

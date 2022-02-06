@@ -6,9 +6,9 @@
 </template>
 
 <script>
-    import {slider} from '../data/data.js';
-    import LinearChart from "../components/LinearChart";
-    import Slider from "../components/Slider";
+    import {slider} from '../../data/data.js';
+    import LinearChart from "../../components/works/LinearChart";
+    import Slider from "../../components/fun/Slider";
     export default {
         name: "LinearChartPage",
         components: {Slider, LinearChart},

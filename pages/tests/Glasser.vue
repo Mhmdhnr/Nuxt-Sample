@@ -12,11 +12,11 @@
 
 <script>
     import {mapState} from 'vuex';
-    import apiServices from "../api/apiServices";
-    import EnNotAvailable from "../components/EnNotAvailable";
-    import {slider} from "../data/data";
-    import TestR from "../components/TestR";
-    import Slider from "../components/Slider";
+    import apiServices from "../../api/apiServices";
+    import EnNotAvailable from "../../components/layout/EnNotAvailable";
+    import {slider} from "../../data/data";
+    import TestR from "../../components/test/TestR";
+    import Slider from "../../components/fun/Slider";
     export default {
         name: "Glasser",
         components: {Slider, EnNotAvailable, TestR},
@@ -33,7 +33,7 @@
                 apiServices.methods.postGlasserResponse({choices}).then(response => {
                     // this.$store.commit('api', 'done');
                     console.log(response);
-                    this.$router.push({name:'GlasserResult', params:{ n1: response.need_1_from_100,
+                    this.$router.push({name:'tests-results-GlasserResult', params:{ n1: response.need_1_from_100,
                             n2: response.need_2_from_100, n3: response.need_3_from_100,
                             n4: response.need_4_from_100, n5: response.need_5_from_100}});
                 })

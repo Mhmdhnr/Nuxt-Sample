@@ -6,17 +6,17 @@
         <span  v-show="!fa"> {{i.title.en}} </span>
       </NuxtLink>
       <div v-show="i.subItems.length !== 0" v-bind:id="i.id" class="sub-items">
-        <NuxtLink :key="s.id" v-for="s in i.subItems" class="sub-item" :to="s.link">
+        <div :key="s.id" v-for="s in i.subItems" class="sub-item"  v-on:click="goTo(s.link)">
          <span  v-show="fa"> {{s.title.fa}} </span>
          <span  v-show="!fa"> {{s.title.en}} </span>
-        </NuxtLink>
+        </div>
       </div>
     </div>
   </div>
 </template>
 
 <script>
-    import {menu} from '../data/data.js';
+    import {menu} from '../../data/data.js';
     import { mapState } from 'vuex';
     export default {
         name: "MainHeader",
@@ -53,6 +53,9 @@
                 document.getElementById(id).classList.remove("come-in");
                 document.getElementById(id).classList.add("get-out");
                 document.getElementById(id).style.display = "none";
+            },
+            goTo(link) {
+                this.$router.push({name: link});
             }
         }
     }

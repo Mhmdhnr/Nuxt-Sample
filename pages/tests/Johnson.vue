@@ -12,16 +12,15 @@
 </template>
 
 <script>
-    import apiServices from "../api/apiServices";
+    import apiServices from "../../api/apiServices";
     import {mapState} from 'vuex';
-    import EnNotAvailable from "../components/EnNotAvailable";
-    import {slider} from "../data/data";
-    import Slider from "../components/Slider";
-    import Test from "../components/Test";
-    import TestR from "../components/TestR";
+    import EnNotAvailable from "../../components/layout/EnNotAvailable";
+    import {slider} from "../../data/data";
+    import Slider from "../../components/fun/Slider";
+    import TestR from "../../components/test/TestR";
     export default {
         name: "Johnson",
-        components: {TestR, Test, Slider, EnNotAvailable},
+        components: {TestR, Slider, EnNotAvailable},
         data() {
             return {
                 slider: slider,
@@ -35,7 +34,7 @@
                 apiServices.methods.postJohnsonResponse({choices}).then(response => {
                     // this.$store.commit('api', 'done');
                     console.log(response);
-                    this.$router.push({name:'JohnsonResult',
+                    this.$router.push({name:'tests-results-JohnsonResult',
                         params:{
                             a1: response.aptitude_1, a2: response.aptitude_2, a3: response.aptitude_3, a4: response.aptitude_4,
                             a5: response.aptitude_5, a6: response.aptitude_6, a7: response.aptitude_7, a8: response.aptitude_8,

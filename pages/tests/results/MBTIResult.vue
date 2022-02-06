@@ -95,11 +95,11 @@
 </template>
 
 <script>
-    import apiServices from "../api/apiServices";
-    import {mbtiTypes} from "../data/MBTI";
+    import apiServices from "../../../api/apiServices";
+    import {mbtiTypes} from "../../../data/testData/MBTI";
     import {mapState} from 'vuex'
-    import MBTIType from "../components/MBTIType";
-    import EnNotAvailable from "../components/EnNotAvailable";
+    import MBTIType from "../../../components/test/MBTIType";
+    import EnNotAvailable from "../../../components/layout/EnNotAvailable";
     export default {
         name: "MBTIResult",
         components: {EnNotAvailable, MBTIType},

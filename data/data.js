@@ -51,7 +51,7 @@ export const menu = [
           fa: "نمودار",
           en: "Chart"
         },
-        link: "LinearChartPage",
+        link: "works-LinearChartPage",
       },
       {
         id:"sub12",
@@ -59,7 +59,7 @@ export const menu = [
           fa: "رده بندی",
           en: "Board"
         },
-        link: "LeaderBoardPage",
+        link: "works-LeaderBoardPage",
       },
       // {
       //   id:"sub15",
@@ -75,7 +75,7 @@ export const menu = [
           fa: "گالری",
           en: "Gallery"
         },
-        link: "Shop",
+        link: "works-Shop",
       }
     ]
   },
@@ -93,7 +93,7 @@ export const menu = [
           fa: "آزمون MBTI",
           en: "MBTI Test"
         },
-        link: "MBTI",
+        link: "tests-MBTI",
       },
       {
         id:"sub22",
@@ -101,7 +101,7 @@ export const menu = [
           fa: "آزمون هالند",
           en: "Holland Test"
         },
-        link: "Holland",
+        link: "tests-Holland",
       },
       {
         id:"sub23",
@@ -109,7 +109,7 @@ export const menu = [
           fa: "آزمون اُکانر",
           en: "O'connor Test"
         },
-        link: "Johnson",
+        link: "tests-Johnson",
       },
       {
         id:"sub24",
@@ -117,7 +117,7 @@ export const menu = [
           fa: "آزمون ریون",
           en: "Raven Test"
         },
-        link: "Raven",
+        link: "tests-Raven",
       },
       {
         id:"sub25",
@@ -125,7 +125,7 @@ export const menu = [
           fa: "آزمون گلاسر",
           en: "Glasser Test"
         },
-        link: "Glasser",
+        link: "tests-Glasser",
       },
       {
         id:"sub26",
@@ -133,7 +133,7 @@ export const menu = [
           fa: "آزمون کاوی",
           en: "Covey Test"
         },
-        link: "Stephen",
+        link: "tests-Stephen",
       }
     ]
   }
@@ -158,7 +158,7 @@ export const workCards = [
         fa: "یک نمودار پیشرونده با اعداد تصادفی به اضافه آخرین تغییرات نمودار",
         en: "A Progressive Linear chart with random numbers plus last chart changes."
       },
-      pageLink: "/LinearChartPage",
+      pageLink: "works-LinearChartPage",
     }
   },
   {
@@ -179,7 +179,7 @@ export const workCards = [
         fa: "یک جدول رده بندی که جایگاه کاربر همیشه توش نشون داده میشه حتی اگه توی صفحه نباشه",
         en: "A leaderboard which always shows the user rank even if it's not visible on the page."
       },
-      pageLink: "/LeaderBoardPage",
+      pageLink: "works-LeaderBoardPage",
     }
   },
   {
@@ -200,7 +200,7 @@ export const workCards = [
         fa: "مقایسه رنگ کفش ها رو جالب تر از قبل انجام بده.",
         en: "Compare shoe color in a fun and new way."
       },
-      pageLink: "/Shop",
+      pageLink: "works-Shop",
     }
   },
   {
@@ -221,7 +221,7 @@ export const workCards = [
         fa: "تو این قسمت میزان هوش منطقی خودت رو با یک آزمون استاندار بسنج",
         en: "Test your logical iq with a standard test here"
       },
-      pageLink: "/Raven",
+      pageLink: "tests-Raven",
     }
   },
   {
@@ -242,7 +242,7 @@ export const workCards = [
         fa: "تیپ شخصیتی خودت رو از بین 16 تیپ شخصیتی پیدا کن.",
         en: "Find your personality type between 16 personality types."
       },
-      pageLink: "/MBTI",
+      pageLink: "tests-MBTI",
     }
   },
   {
@@ -263,7 +263,7 @@ export const workCards = [
         fa: "علائق شغلی خودت رو با این آزمون بسنج",
         en: "Test your job interest with this test."
       },
-      pageLink: "/Holland",
+      pageLink: "tests-Holland",
     }
   },
   {
@@ -284,7 +284,7 @@ export const workCards = [
         fa: "استعدادهای خودت رو بسنج و ببین چه شغلهایی برات مناسب تره.",
         en: "Test your aptitudes and find suitable jobs for yourself."
       },
-      pageLink: "/Johnson",
+      pageLink: "tests-Johnson",
     }
   },
   {
@@ -305,7 +305,7 @@ export const workCards = [
         fa: "میزان نیازهای اساسی خودت رو از بین 5 نیاز معرفی شده توسط ویلیام گلاسر بشناس.",
         en: "Find your basic needs amount from 5 basic needs presented by william glasser."
       },
-      pageLink: "/Glasser",
+      pageLink: "tests-Glasser",
     }
   },
   {
@@ -326,7 +326,7 @@ export const workCards = [
         fa: "وابستگی و استقلال شخصیتی خود را با آزمون استفان کاوی بشناسید.",
         en: "Find your character dependence and independence with Stephen Covey test."
       },
-      pageLink: "/Stephen",
+      pageLink: "tests-Stephen",
     }
   },
 ];

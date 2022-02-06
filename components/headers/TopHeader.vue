@@ -36,10 +36,10 @@
 
 <script>
     import {mapState} from 'vuex'
-    import {colorPicker} from "../data/data";
-    import Toggle from "./Toggle";
-    import ColorPicker from "./ColorPicker";
-    import apiServices from "../api/apiServices";
+    import {colorPicker} from "../../data/data";
+    import Toggle from "../layout/Toggle";
+    import ColorPicker from "../layout/ColorPicker";
+    import apiServices from "../../api/apiServices";
 
     export default {
         name: "TopHeader",
