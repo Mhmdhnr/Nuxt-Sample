@@ -21,7 +21,13 @@ export default {
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.svg' }
     ]
   },
-
+  pwa: {
+    manifest: {
+      name: 'Nuxt',
+      lang: 'fa',
+      useWebmanifestExtension: false
+    }
+  },
   // Global CSS: https://go.nuxtjs.dev/config-css
   css: [
   ],
@@ -36,6 +42,7 @@ export default {
   // Modules for dev and build (recommended): https://go.nuxtjs.dev/config-modules
   buildModules: [
     '@nuxtjs/color-mode',
+    '@nuxtjs/pwa',
   ],
 
   // Modules: https://go.nuxtjs.dev/config-modules
